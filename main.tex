@@ -4,7 +4,7 @@
 
 \usepackage[dvipdfmx]{graphicx,color}
 \usepackage{url}
-\usepackage{amsmath,amssymb,amsthm,braket,listings,physics,here,subfigure,longtable,color,comment,blkarray}
+\usepackage{amsmath,amssymb,amsthm,braket,listings,physics,here,subfigure,longtable,color,comment,blkarray,ascmac}
 \usepackage{mathtools}
 \usepackage[normalem]{ulem}
 
@@ -12,6 +12,8 @@
 \usepackage{subfiles}
 
 \newcommand{\imag}{{\mathrm i\,}}
+\newcommand{\pt}{\partial}
+\newcommand{\bm}[1]{\mbox{\boldmath $#1$}}
 
 \newtheoremstyle{break}
   {\topsep}{\topsep}%
@@ -66,10 +68,12 @@
 \clearpage}
 
 \mainmatter% ここから本文 %%% 本文 %%%%%%%%
-\subfile{chapters/intro.tex}
-\subfile{chapters/method-percolation.tex}
+% \subfile{chapters/notation.tex}
+% \subfile{chapters/intro.tex}
+\subfile{chapters/prev.tex}
 \subfile{chapters/method-3body.tex}
-\subfile{chapters/summary.tex}
+% \subfile{chapters/method-percolation.tex}
+% \subfile{chapters/summary.tex}
 \backmatter% ここから後付
 \chapter{謝辞}%%%%%%%%%%%%%%% 謝辞 %%%%%%%
 
@@ -80,5 +84,5 @@
 \bibliography{reference.bib}% BibTeX を使う場合
 
 \appendix% ここから付録 %%%%% 付録 %%%%%%%
-\subfile{chapters/appendix.tex}
+% \subfile{chapters/appendix.tex}
 \end{document}
