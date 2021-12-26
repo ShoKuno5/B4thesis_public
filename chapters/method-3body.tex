@@ -19,7 +19,7 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 \centering
 \includegraphics[width=105mm]{./images/cutting_N6K1.pdf}
 \centering
-\caption{固有振動数$1$の振動子3つと固有振動数の$-1$の振動子3つからなる6体の振動子ネットワークにおいて，枝を1本ずつランダムに選び全接続まで増やしたときの実効振動数の変化．}
+\caption{固有振動数$1$の振動子3つと固有振動数の$-1$の振動子3つからなる6体の振動子ネットワークにおいて，枝を1本ずつランダムに選び全接続まで連続的に増やしたときの各振動子の実効振動数の変化を表す．}
 \label{fig:cutting_N6K1}
 \end{figure}
 \section{鞍替え現象のモデル化}
@@ -41,7 +41,7 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
     \dot{\phi}_M&=\omega_M+\frac{m}{M}K\sin\left( \phi-\phi_M \right) \\
     \dot{\phi}_N&=\omega_N+\frac{n}{N}K\sin\left( \phi-\phi_N \right)    
 \end{align*}
-ここで，結合強度比$a=n/m$\ ,$N=1,M=1$と仮定すると，以下のような鎖状の3体ネットワークに簡略化される．（図\ref{fig:3body}）
+ここで，結合強度比$a=n/m,N=1,M=1$と仮定すると，図\ref{fig:3body}のような鎖状の3体ネットワークに簡略化される．
 \begin{figure}[t]
 \centering
 \includegraphics[width=105mm]{./images/three_obj_after.pdf}
@@ -49,18 +49,31 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 \caption{鞍替え現象に関わる部分ネットワークを簡略化した鎖状の3体ネットワーク}
 \label{fig:3body}
 \end{figure}
-\begin{align*}
-    \dot{\phi}&=\omega+K\sin\left( \phi_N-\phi \right)+aK\sin\left( \phi_M-\phi \right)\\
-    \dot{\phi}_M&=\omega_M+aK\sin\left( \phi-\phi_M \right) \\
-    \dot{\phi}_N&=\omega_N+K\sin\left( \phi-\phi_N \right)    
-\end{align*}
+\begin{align}
+    \label{eq:3body}
+    \begin{split}
+        \dot{\phi}&=\omega+K\sin\left( \phi_N-\phi \right)+aK\sin\left( \phi_M-\phi \right)\\
+        \dot{\phi}_M&=\omega_M+aK\sin\left( \phi-\phi_M \right) \\
+        \dot{\phi}_N&=\omega_N+K\sin\left( \phi-\phi_N \right)    
+    \end{split}
+\end{align}
 \section{3体系の同期状態}
-3体系について，結合強度比$a$を様々な値で固定し結合強度$K$を変化させたとき，最大で4つの同期状態が存在し，5つの臨界結合強度が存在することがわかった．
-図\\
-5つの臨界結合強度を，小さい順にそれぞれ$K_1,K_2,K_3,K_4$とする．
-$0\leq K<K_1$では3体が非同期であり，$K_1\leq K<K_2$では固有振動数の近い2体が同期する．($\phi=\phi_N$)そして，$K_2\leq K<K_3$では鞍替えが起こり非同期になり，$K_3\leq K<K_4$では振動数の遠い2体が同期する．($\phi=\phi_N$) 最後に$K\leq K_4$では3体が同期する．
-\section{3体系の同期状態の解析}
-$x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相差方程式になる．
+3体系について，結合強度比$a$を様々な値で固定し結合強度$K$を変化させたとき，最大で5つの同期状態が存在し，4つの臨界結合強度が存在することがわかった．
+特に$a=4.0,\omega=0.1,\Omega=2$は，最も多様に同期状態が変化するパラメータ集合の一つである．そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
+\begin{figure}[t]
+\centering
+\includegraphics[width=105mm]{./images/three-body-prob.pdf}
+\centering
+\caption{3体ネットワークで$a=4.0,\omega=0.1,\Omega=2$のしたときの結合強度$K$と実効振動数の関係．$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.05\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
+\label{fig:3body-state}
+\end{figure}
+4つの臨界結合強度を分岐点として5つの同期状態に分岐することが分かる．
+そこで，4つの臨界結合強度を小さい順にそれぞれ$K_1,K_2,K_3,K_4$とする．
+すると，次のようにまとめられる．\\
+$0\leq K<K_1$では3体が非同期であり (phase 1)，$K_1\leq K<K_2$では固有振動数の近い2体が同期する ($\phi=\phi_N$,\ phase 2)．そして，$K_2\leq K<K_3$では鞍替えが起こり非同期になり (phase 3)，$K_3\leq K<K_4$では振動数の遠い2体が同期する($\phi=\phi_N$,\ phase 4)．最後に$K\leq K_4$では3体が同期する (phase 5)．\\
+次節ではこれらの5つの同期状態が相平面上でどのように記述されるかを調べる．
+\section{3体系の同期状態の相平面解析}
+$x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2本の位相差方程式になる．
 \begin{align}
     \label{eq:phase-diff}
     \begin{split}
@@ -69,25 +82,63 @@ $x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相
     \end{split}
 \end{align}
 また，方程式の対称性から$\Omega\gg\omega$を仮定する．\\
-図　のそれぞれの同期状態に対応する$x-y$の相図を描いた．
+図\eqref{fig:3body-state}のそれぞれの同期状態に対応する$x-y$平面上の相図を図\ref{fig:phase}に示す．
+
+\captionsetup{justification=centering}
+\begin{figure}[t]
+    \begin{minipage}[b]{0.47\linewidth}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.42]{images/phase_a4K2.pdf}
+      \subcaption{$K=0.02$．3体が非同期．\\phase 1}
+      \label{fig:phase-k2}
+    \end{minipage}
+    \begin{minipage}[b]{0.47\linewidth}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.42]{images/phase_a4K10.pdf}
+      \subcaption[c]{$K=0.1$．固有振動数が近いものと同期．\\phase 2}
+      \label{fig:phase-k10}
+    \end{minipage}\\
+    \begin{minipage}[b]{0.47\linewidth}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.42]{images/phase_a4K22.pdf}
+      \subcaption{$K=0.22$．鞍替え後3体が非同期．\\phase 3}
+      \label{fig:phase-k22}
+    \end{minipage}
+    \begin{minipage}[b]{0.47\linewidth}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.42]{images/phase_a4K50.pdf}
+      \subcaption{$K=0.5$．固有振動数が遠いものと同期．\\phase 4}
+      \label{fig:phase-k50}
+    \end{minipage}\\
+    \begin{minipage}[b]{0.47\linewidth}
+      \centering
+      \includegraphics[keepaspectratio, scale=0.42]{images/phase_a4K80.pdf}
+      \subcaption{$K=0.8$．3体とも同期．\\phase 5}
+      \label{fig:phase-k80}
+    \end{minipage}
+    \caption{5つの同期状態における相図．$a=4.0,\omega=0.1,\Omega=2$}\label{fig:phase}
+\end{figure}
+\clearcaptionsetup{figure}
+
 それぞれの同期状態は2本の位相差方程式の安定解に対応し，それぞれ以下のような現象に対応する．
 \begin{itemize}
     \item 
-    2振動子の同期：任意の初期位相差から位相差$x,y$の片方のみが安定な$\mathbb{S}^1$と同相な周期軌道へ収束する．
+    2振動子の同期：任意の初期位相差から位相差$x,y$の片方のみが安定な$\mathbb{S}^1$と同相な周期軌道へ収束する．（図\ref{fig:phase-k10},\ \ref{fig:phase-k50}）
     \item
-    3振動子の同期：任意の初期位相差から位相差$x,y$の両方とも安定な平衡点へ収束する．
+    3振動子の同期：任意の初期位相差から位相差$x,y$の両方とも安定な平衡点へ収束する．（図\ref{fig:phase-k80}）
     \item
-    非同期：安定な周期軌道が存在せず，準周期軌道を描く．
+    非同期：安定な周期軌道が存在せず，準周期軌道を描く．（図\ref{fig:phase-k2},\ \ref{fig:phase-k22}）
 \end{itemize}
+以上の相平面解析の結果を元に，以降の節では4つ臨界結合強度を求める．
 \section{臨界結合強度の近似解}
 \subsection{固有振動数の近い2体との同期 ($K_1$,$K_2$)}
-固有振動数差$\Omega,\omega$に比べ，結合強度$K$が小さい状況($K\leq K_1$)では，以下の大小関係を仮定する．
+固有振動数差$\Omega,\omega$に比べ，結合強度$K$が小さい状況($K\leq K_1$)では，以下の大小関係が成り立つ．
 \begin{align}
     \label{eq:k1-approx}
     \Omega\gg\omega>K
 \end{align}
 また，
-結合強度$K$が固有振動数差$\Omega$に比べ小さく，固有振動数差$\omega$に比べ大きい状況($K\sim K_2$)では，以下の大小関係を仮定する．
+結合強度$K$が固有振動数差$\Omega$に比べ小さく，固有振動数差$\omega$に比べ大きい状況($K\sim K_2$)では，以下の大小関係が成り立つ．
 \begin{align}
     \label{eq:k2-approx}
     \Omega\gg K>\omega
@@ -127,13 +178,13 @@ $x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相
     式\eqref{eq:pertu-ytilde}を両辺$t$で微分すると，
     \begin{align*}
         \dv{\tilde{y}}{t}&=\dot{z}+k(\dot{z}\partial_zh_1+\partial_th_1)+k^2(\dot{z}\partial_zh_2+\partial_th_2)+O(k^3)\\
-        &=(1+k\partial_zh_1+k^2\partial_zh_2)\dot{z}+k\pt_th_1+k^2\pt_th_2+O(k^3)\\
+        &=(1+k\partial_zh_1+k^2\partial_zh_2)\dot{z}+k\pt_th_1+k^2\pt_th_2+O(k^3)
     \end{align*}
     整理すると，
     \begin{align*}
         \dot{z}&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{\tilde{y}}{t}-k\pt_th_1-k^2\pt_th_2 \right)+O(k^3)\\
         &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\epsilon+kS_1+k^2\Omega \pt_y S_1h_1+k^2S_2-k\pt_th_1-k^2\pt_th_2 \right)\\
-        &=\epsilon+k(S_1-\pt_th_1-\epsilon\pt_zh_1)\!+\!k^2\left(\Omega \pt_y S_1h_1 -\pt_th_2-\epsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\right)\\
+        &=\epsilon+k(S_1-\pt_th_1-\epsilon\pt_zh_1)\!+\!k^2\left(\Omega \pt_y S_1h_1 -\pt_th_2-\epsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\right)
     \end{align*}
     $\dot{z}$が以下のように展開されるとする．
     \begin{align*}
@@ -203,7 +254,7 @@ $x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相
     \end{align*}
     となり，臨界結合強度$K_1$は，
     \begin{align*}
-        K_2=\frac{\epsilon}{2}
+        K_1=\frac{\omega}{2}
     \end{align*}
     となる．\\
     次に，式\eqref{eq:k2-approx}の状況を考える．
@@ -244,18 +295,18 @@ $x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相
             K\geq \frac{\Omega}{2a-1}
         \end{align*}
         を満たすならば，
-        2つの安定，不安定な$x$-$\mathrm{nullcline}$付近に$\mathbb{S}^1$と同相な安定，不安定な周期解が存在し，任意の点から発する軌道は2つの周期解のどちらかに収束する．\\
+        2つの安定，不安定な$x$-$\mathrm{nullcline}$付近に$\mathbb{S}^1$と同相な安定，不安定な周期解がそれぞれ存在し，任意の点から発する軌道は2つの周期解のどちらかに収束する．
     \end{proposition}
     まず，以下の補題を示す．
     \begin{lemma}
         \label{lemma:annulus}
         命題\ref{prop:suff}の状況で
         安定な$x$-nullclineの$x$座標の最大値・最小値をそれぞれ$x_{\max},x_{\min}$とし，$D=[x_{\min},x_{\max}]\times (-\pi,\pi ]\subset\mathbb{T}^2$とする．
-        このとき，$D$内に$\mathbb{S}^1$に同相な安定な周期解がただ一つ存在する．        
+        このとき，円筒領域$D$内に$\mathbb{S}^1$に同相な安定な周期解がただ一つ存在する．        
     \end{lemma}
     \begin{proof}
         まず，$D$内の任意の点から発する軌道は$D$内に留まる．
-        なぜなら，$D$内の点から発して$D$外に出る軌道が存在すると仮定すると$D$の境界上で$D$外の流れを持つが，相図よりそのような点は存在しないからである．\\
+        なぜなら，$D$内の点から発して$D$外に出る軌道が存在すると仮定すると$D$の境界上で$D$外の流れを持つが，図\ref{fig:phase-k50}よりそのような点は存在しないからである．\\
         そして，命題\ref{prop:suff}の仮定より平衡点は存在せず，$D$は円環に同相でトーラス$\mathbb{T}^2$と同相でない．\\
         以上より，Poincare-Bendixsonの定理の一般化から$D$内に$\mathbb{S}^1$に周期解がただ一つ存在する．
         また，その周期解は安定な$x$-nullclineと交差することから安定な周期解である．        
@@ -280,9 +331,9 @@ $x=\phi_M-\phi$,$y=\phi_N-\phi$と位相差を取ると，式　は2本の位相
     K\geq \frac{2\Omega-\omega}{3a}\ \cap \ K\geq \frac{\Omega-2\omega}{3}
 \end{align*}
 となる．
-さらに，平衡点が存在するとき，平衡点は源点・沈点・2つの鞍点である．図
+さらに，平衡点が存在するとき，平衡点は源点・沈点・2つの鞍点である (図\ref{fig:phase-k80})．
 このとき，源点から2つの鞍点へ，2つの鞍点から沈点への流れがあるので，鞍点の安定多様体と交わるようなLimit Cycleは存在しない．
-また，平衡点は$x,y$-nullclineの交点であるので，平衡点を囲うようなLimit Cycleも存在しない．
+また，全ての平衡点は$x,y$-nullclineの交点であるので，平衡点を囲うようなLimit Cycleも存在しない．
 よって，平衡点を持つとき，周期解は持たず，Poincare-Bendixsonの定理の一般化から任意の点から発する軌道は沈点へ収束する．
 以上より，3体が同期する臨界結合強度$K_4$は，
 \begin{align*}
