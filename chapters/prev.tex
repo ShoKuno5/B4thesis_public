@@ -4,5 +4,77 @@
 \section{蔵元モデル}
 \subsection{近恒等変換}
 \section{ランダムグラフ}
+\section{力学系}
+本節を書くにあたっては，\cite{teschlordinary},\cite{Ciesielski+2012+2110+2128}を参考にした．
+\subsection{自律系と流れ}
+以下のような自律系を考える．
+\begin{align}
+    \label{eq:autonomous}
+    \dot{x}=f(x),\ x(0)=x_0
+\end{align}
+ただし，$f$は開集合$M\subset \mathbb{R}^n$上で定義された$C^k\ (k\geq 1)$級関数とする．\\
+式\eqref{eq:autonomous}の解$\phi:T\subset \mathbb{R}\to M$は積分曲線と呼ばれ，$\phi(0)=x_0$を満たすような積分曲線を$x_0$における積分曲線と呼ぶ．\\
+そして，微分方程式の流れを写像として以下のように定義する．
+\begin{align*}
+    \Phi:W\subset\mathbb{R}\times M\to M,\ (t,x)\mapsto \phi(t,x)
+\end{align*}
+ここで，$\phi(t,x)$とは$x$における積分曲線のうち，一意性が保証されるような最大の開区間$I_x=(T_-(x),T_+(x))$で定義されたものとする．
+\subsection{軌道と不変集合}
+$x$における軌道$\gamma(x)$とは以下で定義される．
+\begin{align*}
+    \gamma(x):=\Phi(I_x\times \{x\})\subset M
+\end{align*}
+同様に前進軌道，後退軌道が定義される．
+\begin{align*}
+    \gamma_\pm(x):=\Phi((0,T_\pm (x))\times \{x\})
+\end{align*}
 
+また，$\gamma(x)=\{x\}$のとき$x$は$\Phi$の平衡点と呼ぶ．
+そして，$\Phi(T,x)=x$なる$T>0$が存在するとき，$x$を周期点と呼び$T$の下限を周期と呼ぶ．
+特に，軌道の任意の点が周期点であるとき，その軌道を周期軌道と呼ぶ．
+
+$x\in M$の$\omega_\pm$-極限集合$\omega_\pm(x)$とは，点列$t_n\to \pm\infty$が存在して$\Phi(t_n,x)\to y$となるような点$y\in M$の集合である．\\
+集合$U\subset M$が$\sigma$不変 ($\sigma\in\{\pm\}$)とは，以下を満たすこと．
+\begin{align*}
+    \forall x\in U,\ \gamma_\sigma (x)\subset U
+\end{align*}
+また，$\pm$どちらでも不変のとき不変であると呼ぶ．\\
+集合$U\subset M$が minimal とは，非空で閉かつ不変であるような$M$の部分集合のうち最小のものであることをいう．
+\subsection{Poincaré-Bendixsonの定理}
+まず，広く知られている$\mathbb{R}^2$上のPoincaré-Bendixsonの定理について述べる．
+\begin{theorem}
+    以下の自律系について，解が一意に与えられ任意の$t\in\mathbb{R}$で定義されるとする．
+    \begin{align}
+        \dot{x}=f(x),\ x\in M\subset \mathbb{R}^2,\ f\in C^1(M,\mathbb{R}^2),\ M:\mathrm{open}         \label{eq:automonous-poincare}
+    \end{align}
+    $p\in M$の前進軌道$\gamma_+(p)$が連結な有界閉集合で，$\omega$極限集合$\omega(p)$が一つも平衡点を持たないと仮定する．
+    このとき，$\omega(p)$は周期軌道で$p$が周期点であるか，$\gamma_+(p)$がLimit Cycleに収束するかのどちらかである．
+    \label{theorem:poincare}
+\end{theorem}
+この定理により閉軌道の存在を示すことができるため，具体的に周期解を求めることが難しい非線形力学系の分野で重要な定理となっている．
+
+一方，$\mathbb{R}^2$と同じ2次元平面であっても，トーラス$\mathbb{T}^2$では異なるふるまいを示す．
+Schwartzは定理\ref{theorem:poincare}を任意の二次元多様体に拡張した\cite{Schwartz1963ErrataAG}．
+\begin{theorem}
+    $C^2$級のコンパクトで連結な二次元多様体$X$で定義された自律系 (式\eqref{eq:automonous-poincare}) が流れを与えるとする．
+    集合$M\subset X$がminimalならば，$M$は次のうちのどれか一つである．
+    \begin{enumerate}
+        \item 平衡点からなる一元集合
+        \item 単純かつ閉で$\mathbb{S}^1$に同相な軌道
+        \item $\mathbb{T}^2$に同相な$X$全体
+    \end{enumerate}
+\end{theorem}
+\subsection{準周期軌道}
+準周期軌道とは，周期的ではあるもののほぼ周期的でないくらい周期が長いような軌道のことであり，
+惑星の軌道や周期運動に摂動を加えた系でよく見られる．
+
+準周期性は，厳密には以下のように定義される\cite{Broer1996}．\\
+不変な$n$トーラスの多様体$M$上の滑らかなベクトル場$X$を考える．\\
+制限$X|_T$を$\dot{x}_i=\omega_i,\ i=1,2,\ldots ,n$に写す微分同相写像$T\to \mathbb{T}^n$が存在するとき，$T$上の$X$が parallel な流れを誘導するという．
+そして，$\omega=(\omega_1,\omega_2,\ldots,\omega_n)$を$T$上の流れの周期という．\\
+振動数$\omega$が rationally independent, i.e., $\forall k\in\mathbb{Z}^n\setminus \{0\},\ \sum_{i=1}^n\omega_ik_i\neq 0$のとき，振動数$\omega$をもつ parallel な$T$上の流れは準周期的もしくは非調和的と呼ぶ．
+
+例えば，$\mathbb{T}^2$上の流れ$\dot{x}_1=\omega_1,\ \dot{x}_2=\omega_2$が準周期的である必要十分条件は振動数の比$\omega_1/\omega_2$が無理数であることである．
+
+準周期的な流れによる軌道は，流れが定義された空間全体を密に満たす．しかしながら，初期値に鋭敏に依存しないためカオスとは区別される．
 \end{document}
