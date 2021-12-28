@@ -26,7 +26,8 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 ある1つの振動子が$M$体の集団から$N$体の別の集団に鞍替えを起こすとき，以下のようにモデル化できる．
 \begin{screen}
 固有振動数$\omega$の振動子が実効振動数$\omega_M$の$M$体の振動子集団$\Omega_M$との間に$m$本の枝で繋がっており，また，実効振動数$\omega_N$の$N$体の振動子集団$\Omega_N$との間に$n$本の枝で繋がっている．
-ただし，振動子集団$\Omega_M$と振動子集団$\Omega_N$との間に枝は存在しないとする．（図\ref{fig:switch}）
+ただし，振動子集団$\Omega_M$と振動子集団$\Omega_N$との間に枝は存在しないとする．（図\ref{fig:switch}）\\
+枝の本数$m,n$の変化すると，振動子の実効振動数が変化し鞍替えが生じる．
 \end{screen}
 \begin{figure}[t]
 \centering
@@ -58,8 +59,10 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
     \end{split}
 \end{align}
 \section{3体系の同期状態}
+元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,n$の変化は，3体系 (図\ref{fig:3body}) においてはパラメータ$a,K$の変化に対応する．
+
 3体系について，結合強度比$a$を様々な値で固定し結合強度$K$を変化させたとき，最大で5つの同期状態が存在し，4つの臨界結合強度が存在することがわかった．
-特に$a=4.0,\omega=0.1,\Omega=2$は，最も多様に同期状態が変化するパラメータ集合の一つである．そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
+特に$a=4.0,\omega=0.1,\Omega=2$は，最も多様に同期状態が変化するパラメータ集合の一つであった．そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
 \begin{figure}[t]
 \centering
 \includegraphics[width=105mm]{./images/three-body-prob.pdf}
@@ -308,7 +311,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
         まず，$D$内の任意の点から発する軌道は$D$内に留まる．
         なぜなら，$D$内の点から発して$D$外に出る軌道が存在すると仮定すると$D$の境界上で$D$外の流れを持つが，図\ref{fig:phase-k50}よりそのような点は存在しないからである．\\
         そして，命題\ref{prop:suff}の仮定より平衡点は存在せず，$D$は円環に同相でトーラス$\mathbb{T}^2$と同相でない．\\
-        以上より，Poincaré-Bendixsonの定理の一般化から$D$内に$\mathbb{S}^1$に周期解がただ一つ存在する．
+        以上より，Poincaré-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) から$D$内に$\mathbb{S}^1$に周期解がただ一つ存在する．
         また，その周期解は安定な$x$-nullclineと交差することから安定な周期解である．        
     \end{proof}
     次に命題\ref{prop:suff}の証明を示す．
@@ -317,7 +320,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
         他に周期解$\gamma$が存在すると仮定すると，$\gamma$は$\gamma_a,\gamma_b$と交わることはないので，任意の$y\in(-\pi,\pi]$に対し，ある$x\in(-\pi,\pi]$が存在して，$(x,y)\in\gamma$となる．
         また，そのような周期解は$x$-nullclineと交わる必要がある．なぜなら，$x$-nullclineと交わるまで流れの$x$成分の符号が変わらないので必ず$x$-nullclineの吸収領域に到達するからである．
         しかし，補題\ref{lemma:annulus}より，1つの$x$-nullclineは1つの周期解としか交わらないため矛盾する．
-        最後に，Poincaré-Bendixsonの定理の一般化により，任意の点から発する軌道は$\gamma_a,\gamma_b$のいずれかに収束する．
+        最後に，Poincaré-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) により，任意の点から発する軌道は$\gamma_a,\gamma_b$のいずれかに収束する．
     \end{proof}
 \subsection{3体の同期($K_4$)}
 式\eqref{eq:phase-diff}が平衡点を持つとき，
@@ -333,11 +336,12 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
 となる．
 さらに，平衡点が存在するとき，平衡点は源点・沈点・2つの鞍点である (図\ref{fig:phase-k80})．
 このとき，源点から2つの鞍点へ，2つの鞍点から沈点への流れがあるので，鞍点の安定多様体と交わるようなLimit Cycleは存在しない．
-また，全ての平衡点は$x,y$-nullclineの交点であるので，平衡点を囲うようなLimit Cycleも存在しない．
-よって，平衡点を持つとき，周期解は持たず，Poincaré-Bendixsonの定理の一般化から任意の点から発する軌道は沈点へ収束する．
+また，全ての平衡点は$x,y$-nullclineの交点であるので，源点を囲うようなLimit Cycleも存在しない．
+よって，平衡点を持つとき，周期解は持たず，Poincaré-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) から任意の点から発する軌道は沈点へ収束する．
 以上より，3体が同期する臨界結合強度$K_4$は，
 \begin{align*}
     K_4=\max\left(\frac{2\Omega-\omega}{3a},\frac{\Omega-2\omega}{3}\right)
 \end{align*}
 となる．
+
 \end{document}
