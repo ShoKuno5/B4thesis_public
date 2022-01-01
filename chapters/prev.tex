@@ -1,6 +1,7 @@
 \documentclass[../main]{subfiles}
 \begin{document}
 \chapter{前提知識}
+\label{chap:prev}
 \section{蔵元モデル}
 本節を書くにあたっては，\cite{RODRIGUES20161},\cite{biorhythm}を参考にした．
 
@@ -84,6 +85,76 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 
 非自律系であっても，近恒等変換を用いて自律系に変形することで詳細なふるまいを調べることができる．
 \section{ランダムグラフ}
+本節を書くにあたっては，\cite{Bollobas2013},\cite{Albert2002}を参考にした．
+\subsection{Erdős–Rényi グラフ}
+$V=\{1,2,\ldots,n\}$とラベリングされた$n$個の頂点と$N$本の枝を持つランダムグラフ$\Gamma_{n,N}$を考える．
+つまり，異なる頂点$i,j\in V,\ i\neq j$との間の枝-全$\binom{n}{2}$本から等しい確率で$N$本選んだものを考える．
+
+$\Gamma_{n,N(n)}$について，$N(n)$によりグラフの連結成分や次数などの性質がどのように変化するかという問題が生じる．
+Erdős 及び Rényi は，$N(n)$の増大に伴って巨大な連結成分が出現することを発見し，以下のような結果を得た．
+
+$n$を固定し，$N$を1から$\binom{n}{2}$まで増やしたときに，$\Gamma_{n,N}$は5つの異なる状態を経る．\\
+\renewcommand{\labelenumi}{Phase \theenumi}
+\begin{enumerate}
+    \item 
+    $N(n)=O(n)$のとき．\\
+    この場合ほとんど確実に$\Gamma_{n,N}$は木である．
+    木に含まれる頂点の最大次数が$k$になりうるのは，$N(n)=O(n^{(k-2)/(k-1)})$のときで，そのときの$|\Gamma_{n,N}|$はポアソン分布で，$\Gamma_{n,N}$は正規分布で漸近的に記述される．
+    \item
+    $N(n)=cn+O(n),\ 0<c<1/2$のとき．\\
+    この場合ほとんど確実に，高々1つの閉路しか存在せず，ほとんどの頂点は木に属する．また，頂点数最大の連結成分の頂点数は$|1/\alpha(\log n-5/2\log\log n)|$となる．$(\alpha=2c-1-\log 2c)$
+    \item
+    $N(n)=cn+O(n),\ c\geq 1/2$のとき．\\
+    $N(n)$が$n/2$を超えると最大の連結成分は漸近的に$n^{2/3}$個の頂点を持つが，その構造は複雑でなる．一方，この連結成分以外の連結成分はほとんど確実に木である．
+    \item
+    $N(n)=cn\log n+O(n\log n),\ c\leq 1/2$のとき．\\
+    このときほとんど確実にグラフ全体が連結となる．
+    \item
+    $N(n)\sim(n\log n)\omega(n)$のとき．\\
+    このときグラフ全体が連結なだけでなく全ての頂点の次数が漸近的に等しい．
+\end{enumerate}
+\renewcommand{\labelenumi}{\theenumi}
+\subsection{percolation}
+percolation は，ネットワーク全体を貫く (percolate) 道の存在を調べる理論である．
+percolation には頂点を固定して枝を確率的に配置する bond percolation と，枝を固定して頂点を確率的に配置する site percolation の2種類が知られている．
+いずれの場合も配置確率$p$に対し，主に以下の3つの指標に注目する．
+\begin{itemize}
+    \item パーコレーション確率$P$\\
+        無限に大きいネットワークにおいて，ある頂点がサイズが無限大のクラスター（連結成分）に属する確率である．
+        \begin{align*}
+            P=P_p(|C|=\infty)=1-\sum_{s<\infty}P_p(|C|=s)
+        \end{align*} 
+        ここで，$P_p(|C|=s)$はある頂点が属するクラスタのサイズが$s$である確率とする．
+        このとき，ある臨界確率$p_c$を境に$P$が変化する．
+        \begin{align*}
+            P
+            \begin{cases}
+                = 0 & (p<p_c)\\
+                > 0 & (p\geq p_c)
+            \end{cases}
+        \end{align*}
+    \item 平均的なクラスタのサイズ$\langle s \rangle$
+        \begin{align*}
+            \langle s\rangle =E_p(|C|)=\sum_{s=1}^\infty sP_p(|C|=s)
+        \end{align*}
+        $P>0$のときは$\langle s\rangle$は発散するので，代わりにサイズが有限のクラスタの平均サイズを考える．
+        \begin{align*}
+            \langle s\rangle^f =E_p(|C|,|C|<\infty)=\sum_{s<\infty} sP_p(|C|=s)            
+        \end{align*}
+    \item クラスタのサイズ分布$n(s)$
+    \begin{align*}
+        n(s)=\frac{1}{s}P_p(|C|=s)
+    \end{align*}
+    ここで，ある頂点がサイズ$s$のクラスタに含まれる確率とは必ずしも一致しないことに注意．
+\end{itemize}
+
+ランダムグラフで$N$個の頂点が互いに枝をもつことは，無限次元の系での bond percolation に対応する．
+このことからランダムグラフと percolation のアナロジーを考えることができる．
+実際，無限次元系において percolation における臨界確率$p_c$は$p_c\simeq 1/N$となり，Erdős–Rényi グラフの巨大な連結成分が出現する本数と対応する．
+\begin{align*}
+    \binom{N}{2}p_c\simeq N/2
+\end{align*}
+同じ問題に取り組む二つの理論が存在することは，互いの理論を相補的に活用することができるため重要視されている．
 \section{力学系}
 本節を書くにあたっては，\cite{teschlordinary},\cite{Ciesielski+2012+2110+2128}を参考にした．
 \subsection{自律系と流れ}

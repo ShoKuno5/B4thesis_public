@@ -3,14 +3,29 @@
 \chapter*{本論文で使用する記号}
 \begin{itemize}
     \item 
-    $A$：隣接行列
+    $A$：グラフの隣接行列．
     \item
-    $O(g(x))$：$x$が十分大きいとき$g(x)$以下に抑えられる項
+    $f(x)=O(g(x))$：$x$が十分大きいとき$f(x)$が$g(x)$以下に抑えられること．つまり，
+    \begin{align*}
+        \lim_{x\to\infty}f(x)/g(x)=0
+    \end{align*}
     \item
-    $\dot{x}(s)$：$x(t)$の$t=s$での微分係数
+    $f(x)=\omega(g(x))$：$x$が十分大きいとき$g(x)$が$f(x)$以下に抑えられること．つまり，
+    \begin{align*}
+        \lim_{x\to\infty}g(x)/f(x)=0
+    \end{align*}
     \item
-    $\imag$：虚数単位
+    $f(x)\sim g(x)$：$x$が十分大きいとき$f(x)$が$g(x)$にほとんど等しいこと．つまり，
+    \begin{align*}
+        \lim_{x\to\infty}f(x)/g(x)=1
+    \end{align*}    
     \item
-    $x\gg y$：$x$
+    $\dot{x}(s)$：$\mathrm{d}x/\mathrm{d}t|_{t=s}$．
+    \item
+    $\imag$：虚数単位．
+    \item
+    $G(V,E)$：頂点集合$V$，枝集合$E$とするグラフ$G$．
+    \item
+    $\gg$：
 \end{itemize}
 \end{document}
