@@ -4,7 +4,7 @@
 \label{chap:method-3body}
 \section{問題設定及び数値実験}
 \label{sec:method-3body-settting}
-ERモデル (Erdős–Rényi model)$\Gamma_{n,m}$ において，枝の本数$m$を変化することでモデルの構造を変化させることを振動子ネットワークで考える．
+ERモデル (Erdős–Rényi model) $\Gamma_{n,m}$ において，枝の本数$m$を変化することでモデルの構造を変化させることを振動子ネットワークで考える．
 すなわち，$n$ 体の振動子ネットワークにおいて$m=0$から$m=n(n-1)/2$まで枝の本数を連続的に変化させる．
 このとき，構造の変化に伴い同期状態が変化することが考えられる．\\
 以下，簡単のため固有振動数の分布として$\pm 1$の二項分布$\operatorname{Bin}(n,p)$を用いることとする．\\
@@ -42,7 +42,7 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
     \dot{\phi}_M&=\omega_M+\frac{m}{M}K\sin\left( \phi-\phi_M \right) \\
     \dot{\phi}_N&=\omega_N+\frac{n}{N}K\sin\left( \phi-\phi_N \right)    
 \end{align*}
-ここで，結合強度比$a=n/m,N=1,M=1$と仮定すると，図\ref{fig:3body}のような鎖状の3体ネットワークに簡略化される．
+ここで，結合強度比$a=n/m,N=1,M=1$と仮定すると，図\ref{fig:3body}のような鞍替えする振動子を中央とする鎖状の3体ネットワークに簡略化される．
 \begin{figure}[t]
 \centering
 \includegraphics[width=105mm]{./images/three_obj_after.pdf}
@@ -62,12 +62,12 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,n$の変化は，3体系 (図\ref{fig:3body}) においてはパラメータ$a,K$の変化に対応する．
 
 3体系について，結合強度比$a$を様々な値で固定し結合強度$K$を変化させたとき，最大で5つの同期状態が存在し，4つの臨界結合強度が存在することがわかった．
-特に$a=4.0,\omega=0.1,\Omega=2$は，最も多様に同期状態が変化するパラメータ集合の一つであった．そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
+特に$a=4.0,\ \omega=0.1,\ \Omega=2$は，最も多様に同期状態が変化するパラメータ集合の一つであった．そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
 \begin{figure}[t]
 \centering
 \includegraphics[width=105mm]{./images/three-body-prob.pdf}
 \centering
-\caption{3体ネットワークで$a=4.0,\omega=0.1,\Omega=2$のしたときの結合強度$K$と実効振動数の関係．$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.05\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
+\caption{3体ネットワークで$a=4.0,\ \omega=0.1,\ \Omega=2$のしたときの結合強度$K$と実効振動数の関係．$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.05\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
 \label{fig:3body-state}
 \end{figure}
 4つの臨界結合強度を分岐点として5つの同期状態に分岐することが分かる．
@@ -130,7 +130,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \item
     3振動子の同期：任意の初期位相差から位相差$x,y$の両方とも安定な平衡点へ収束する．（図\ref{fig:phase-k80}）
     \item
-    非同期：安定な周期軌道が存在せず，準周期軌道を描く．（図\ref{fig:phase-k2},\ \ref{fig:phase-k22}）
+    非同期：ほとんど確実に，安定な周期軌道が存在せず，$\mathbb{T}^2$全てを覆うような準周期軌道を描く．（図\ref{fig:phase-k2},\ \ref{fig:phase-k22}）
 \end{itemize}
 以上の相平面解析の結果を元に，以降の節では4つ臨界結合強度を求める．
 \section{臨界結合強度の近似解}
@@ -149,20 +149,20 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \end{align}
     式\eqref{eq:k1-approx},\eqref{eq:k2-approx}両方の状況とも，平均的に$x$は固有振動数$\Omega$で変化し，$y$は$\omega\ll\Omega$で変化する．
     よって，タイムスケールの分離を行うことができる．
-    つまり，$\dot{x}=\Omega, y=z\ (z:\textrm{const})$に対して，$\omega,K$に依存した周期外力が摂動した系として近似できる．\\
-    $\tilde{y}:=y/\Omega,\epsilon:=\omega/\Omega,k=K/\Omega,S(x,y)=-a\sin x-2\sin y$とすると，位相差$y$の時間発展は以下のように表される．
+    つまり，$\dot{x}=\Omega,\ y=z\ (\dot{z}=\omega)$に対して，$K$に依存した周期外力が摂動した系として近似できる．\\
+    $\tilde{y}:=y/\Omega,\varepsilon:=\omega/\Omega,k=K/\Omega,S(x,y)=-a\sin x-2\sin y$とすると，位相差$y$の時間発展は以下のように表される．
     \begin{align*}
-        \dv{\tilde{y}}{t}=\epsilon+k S(x,y) 
+        \dv{\tilde{y}}{t}=\varepsilon+k S(x,y) 
     \end{align*}
     このとき，$y$が以下のように近恒等変換されると仮定する．
     \begin{align}
         \tilde{y}=z+kh_1(z,t)+k^2h_2(z,t)+O(k^3)
         \label{eq:pertu-ytilde}
     \end{align}
-    このとき，$h_i$は$i=1,2,\ h_i(z+2\pi,t+2\pi/\Omega)=h_i(z,t),h(z,0)=0$を満たす関数である．
+    このとき，周期$\Omega$の外力を受けるため$h_i$は$i=1,2,\ h_i(z+2\pi,t+2\pi/\Omega)=h_i(z,t),h(z,0)=0$を満たす関数である．
     一方$x$については$k$の1次で展開すると，
     \begin{align*}
-        x&=\Omega t-\Omega k\int_0^t(2a\sin \Omega\tau+\sin\Omega (z+\epsilon\tau)\dd{\tau}+O(k^2)\\ 
+        x&=\Omega t-\Omega k\int_0^t(2a\sin \Omega\tau+\sin\Omega (z+\varepsilon\tau)\dd{\tau}+O(k^2)\\ 
         &=\Omega t+\Omega k\left(\frac{2a}{\Omega}\cos\Omega t+t\sin \Omega z\right)+O(k^2)
     \end{align*}
     最終行では，$\cos x(0)=0,\cos y(0)=0$となるように初期時刻$t=0$を定めたことに因る．
@@ -187,74 +187,75 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     整理すると，
     \begin{align*}
         \dot{z}&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{\tilde{y}}{t}-k\pt_th_1-k^2\pt_th_2 \right)+O(k^3)\\
-        &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\epsilon+kS_1+k^2\Omega \pt_y S_1h_1+k^2S_2-k\pt_th_1-k^2\pt_th_2 \right)\\
-        &=\epsilon+k(S_1-\pt_th_1-\epsilon\pt_zh_1)\!+\!k^2\left(\Omega \pt_y S_1h_1 -\pt_th_2-\epsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\right)
+        &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2\Omega \pt_y S_1h_1+k^2S_2-k\pt_th_1-k^2\pt_th_2 \right)\\
+        &=\varepsilon+k(S_1-\pt_th_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\Omega \pt_y S_1h_1 -\pt_th_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\right)
     \end{align*}
     $\dot{z}$が以下のように展開されるとする．
     \begin{align*}
-        \dot{z}=\epsilon+kH_1(z-\epsilon t)+k^2H_2(z-\epsilon t)+O(k^3)
+        \dot{z}=\varepsilon+kH_1(z-\varepsilon t)+k^2H_2(z-\varepsilon t)+O(k^3)
     \end{align*}
+    ここで，$z$が平均的に振動数$\omega$で変動することから$H_1,H_2$が$z-\varepsilon t$に依存するものとした．\\
     このとき，$k$の1次を比較すると新たな変数$\tau$を用いて以下の式が成立する．
     \begin{align*}
-        H_1(z-\epsilon t)=S_1(z+\epsilon\tau,t+\tau)-\pt_\tau h_1(z+\epsilon\tau,t+\tau)
+        H_1(z-\varepsilon t)=S_1(z+\varepsilon\tau,t+\tau)-\pt_\tau h_1(z+\varepsilon\tau,t+\tau)
     \end{align*}
     $\tau=0$から$\tau=-t$で両辺積分すると，
     \begin{align}
-        -tH_1(z-\epsilon t)&=\int_0^{-t}\left(-a\sin\Omega(t+\tau)-2\sin\Omega(z+\epsilon\tau)\right)\dd{\tau}+h_1(z,t)\\
-        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \epsilon}(\cos \Omega (z-\epsilon t)-\cos \Omega z)+h_1\\
-        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \epsilon}(\cos \Omega z+\Omega \epsilon t\sin \Omega z-\Omega^2\epsilon^2t^2/2\cdot\sin \Omega z-\cos \Omega z)+h_1\\
-        &=\frac{a}{\Omega}\sin\Omega t+2t\sin \Omega z-\Omega\epsilon t^2\cos \Omega z+h_1+O(\epsilon^2)
+        -tH_1(z-\varepsilon t)&=\int_0^{-t}\left(-a\sin\Omega(t+\tau)-2\sin\Omega(z+\varepsilon\tau)\right)\dd{\tau}+h_1(z,t)\\
+        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \varepsilon}(\cos \Omega (z-\varepsilon t)-\cos \Omega z)+h_1\\
+        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \varepsilon}(\cos \Omega z+\Omega \varepsilon t\sin \Omega z-\Omega^2\varepsilon^2t^2/2\cdot\sin \Omega z-\cos \Omega z)+h_1\\
+        &=\frac{a}{\Omega}\sin\Omega t+2t\sin \Omega z-\Omega\varepsilon t^2\cos \Omega z+h_1+O(\varepsilon^2)
         \label{eq-h1-H1}
     \end{align}
     $t=-2\pi/\Omega$を代入して，
     \begin{align*}
-        \frac{2\pi}{\Omega}H_1\left(z+\epsilon\frac{2\pi}{\Omega}\right)&=-\frac{4\pi}{\Omega}\sin\Omega z-\frac{4\pi^2}{\Omega}\epsilon \cos \Omega z+O(\epsilon^2)\\
-        H_1\left(z+\epsilon\frac{2\pi}{\Omega}\right)&=-2 \sin\Omega z-2\pi\epsilon \cos \Omega z+O(\epsilon^2)\\
-        H_1\left(z+\epsilon\frac{2\pi}{\Omega}\right)&=H_1(z)+H_1'(z)\epsilon\frac{2\pi}{\Omega}+O(\epsilon^2)
+        \frac{2\pi}{\Omega}H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=-\frac{4\pi}{\Omega}\sin\Omega z-\frac{4\pi^2}{\Omega}\varepsilon \cos \Omega z+O(\varepsilon^2)\\
+        H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=-2 \sin\Omega z-2\pi\varepsilon \cos \Omega z+O(\varepsilon^2)\\
+        H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=H_1(z)+H_1'(z)\varepsilon\frac{2\pi}{\Omega}+O(\varepsilon^2)
     \end{align*}
     下2式を比較すると，
     \begin{align*}
-        H_1(z)=-2\sin\Omega z+2\pi\epsilon \cos\Omega z+O(\epsilon^2)
+        H_1(z)=-2\sin\Omega z+2\pi\varepsilon \cos\Omega z+O(\varepsilon^2)
     \end{align*}
     が得られる．
     式\eqref{eq-h1-H1}に代入すると，
     \begin{align*}
-        h_1(z,t)&=2t\sin\Omega(z-\epsilon t)-2\pi\epsilon t\cos\Omega(z-\epsilon t)-\frac{a}{\Omega}\sin\Omega t-2t\sin \Omega z+\Omega\epsilon t^2\cos \Omega z\\
-        &=2t(\sin\Omega z-\Omega \epsilon t\cos\Omega z-\sin\Omega z)-\frac{a}{\Omega}\sin\Omega t+\epsilon(-2\pi t+\Omega t^2)\cos \Omega z+O(\epsilon^2)\\
-        &=-\frac{a}{\Omega}\sin\Omega t-\epsilon(2\pi t+\Omega t^2)\cos \Omega z+O(\epsilon^2)
+        h_1(z,t)&=2t\sin\Omega(z-\varepsilon t)-2\pi\varepsilon t\cos\Omega(z-\varepsilon t)-\frac{a}{\Omega}\sin\Omega t-2t\sin \Omega z+\Omega\varepsilon t^2\cos \Omega z\\
+        &=2t(\sin\Omega z-\Omega \varepsilon t\cos\Omega z-\sin\Omega z)-\frac{a}{\Omega}\sin\Omega t+\varepsilon(-2\pi t+\Omega t^2)\cos \Omega z+O(\varepsilon^2)\\
+        &=-\frac{a}{\Omega}\sin\Omega t-\varepsilon(2\pi t+\Omega t^2)\cos \Omega z+O(\varepsilon^2)
     \end{align*}
     $\dot{z}のk$の2次を比較し，$h_1$を代入する．
     \begin{align*}
-        H_2(z-\epsilon t)&=\Omega \pt_y S_1h_1 -\pt_th_2-\epsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\\
-        &=-2\Omega \cos \Omega z\left( -\frac{a}{\Omega}\sin\Omega t-\epsilon(2\pi t+\Omega t^2) \cos \Omega z \right)-\pt_\tau h_2\\
-        &-2a^2\cos^2\Omega t-a\Omega t\cos \Omega t\sin \Omega z+O(\epsilon^2)\\
-        &+\epsilon(2\pi\Omega t+\Omega^2 t^2)\sin\Omega z \left( -a\sin\Omega t-2\sin\Omega z +a\cos\Omega t+\epsilon(2\pi +2\Omega t)\cos\Omega z\right)
+        H_2(z-\varepsilon t)&=\Omega \pt_y S_1h_1 -\pt_th_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\\
+        &=-2\Omega \cos \Omega z\left( -\frac{a}{\Omega}\sin\Omega t-\varepsilon(2\pi t+\Omega t^2) \cos \Omega z \right)-\pt_\tau h_2\\
+        &-2a^2\cos^2\Omega t-a\Omega t\cos \Omega t\sin \Omega z+O(\varepsilon^2)\\
+        &+\varepsilon(2\pi\Omega t+\Omega^2 t^2)\sin\Omega z \left( -a\sin\Omega t-2\sin\Omega z +a\cos\Omega t+\varepsilon(2\pi +2\Omega t)\cos\Omega z\right)
     \end{align*}
     両辺$\tau=0$から$\tau=-t$で積分して，$\sin\Omega t\sim 0,\cos\Omega t\sim 1$とすると，
     \begin{align*}
-        -tH_2(z-\epsilon t)&=2a\cdot -\epsilon t\sin\Omega z+4\pi\epsilon\Omega\left( -\frac{t^2}{4} -\frac{t^2}{4}\cos 2\Omega z\right)+2\epsilon\Omega^2\left( -\frac{t^3}{6} -\frac{t^3}{6}\cos 2\Omega z\right)\\
-        &-2\pi a\epsilon\Omega\cdot\left(\frac{t}{\Omega}\sin\Omega z\right)+2\pi a\epsilon\Omega\left(-\frac{\epsilon t}{\Omega}\cos\Omega z\right)\\
-        &-4\pi\epsilon\Omega\left(-\frac{t^2}{4}+\frac{t^2}{4}\cos 2\Omega z\right)-2\epsilon\Omega^2\left( -\frac{t^3}{6} +\frac{t^3}{6}\cos 2\Omega z\right)+O(\epsilon^2)\\
-        &-a\epsilon\Omega^2\left( \frac{t^2}{\Omega}\sin\Omega z \right)+a\epsilon\Omega^2\left( -\frac{2t^2}{\Omega}\sin\Omega z \right)\\
+        -tH_2(z-\varepsilon t)&=2a\cdot -\varepsilon t\sin\Omega z+4\pi\varepsilon\Omega\left( -\frac{t^2}{4} -\frac{t^2}{4}\cos 2\Omega z\right)+2\varepsilon\Omega^2\left( -\frac{t^3}{6} -\frac{t^3}{6}\cos 2\Omega z\right)\\
+        &-2\pi a\varepsilon\Omega\cdot\left(\frac{t}{\Omega}\sin\Omega z\right)+2\pi a\varepsilon\Omega\left(-\frac{\varepsilon t}{\Omega}\cos\Omega z\right)\\
+        &-4\pi\varepsilon\Omega\left(-\frac{t^2}{4}+\frac{t^2}{4}\cos 2\Omega z\right)-2\varepsilon\Omega^2\left( -\frac{t^3}{6} +\frac{t^3}{6}\cos 2\Omega z\right)+O(\varepsilon^2)\\
+        &-a\varepsilon\Omega^2\left( \frac{t^2}{\Omega}\sin\Omega z \right)+a\varepsilon\Omega^2\left( -\frac{2t^2}{\Omega}\sin\Omega z \right)\\
         &-2a^2\left( -\frac{t}{2}-\frac{1}{4\Omega} \sin 2\Omega t\right)-a\Omega \left( -\frac{t}{\Omega} \cos\Omega z\right)\\
-        &=-2a\epsilon t\sin\Omega z-2\pi\epsilon\Omega t^2\cos 2\Omega z-\frac{2}{3}\epsilon\Omega^2t^3\cos 2\Omega z\\
-        &-2\pi a\epsilon t\sin\Omega z-3a\epsilon\Omega t^2\sin\Omega z+at(a+\cos\Omega z)+\frac{a^2}{2\Omega}\sin 2\Omega t
+        &=-2a\varepsilon t\sin\Omega z-2\pi\varepsilon\Omega t^2\cos 2\Omega z-\frac{2}{3}\varepsilon\Omega^2t^3\cos 2\Omega z\\
+        &-2\pi a\varepsilon t\sin\Omega z-3a\varepsilon\Omega t^2\sin\Omega z+at(a+\cos\Omega z)+\frac{a^2}{2\Omega}\sin 2\Omega t
     \end{align*}
     $t=-2\pi/\Omega$を代入して整理すると，
     \begin{align*}
-        &H_2(z+\epsilon 2\pi/\Omega)=-a(a+\cos\Omega z)\\
-        +&2\epsilon\left( a\sin\Omega z-2\pi^2\cos2\Omega z+\frac{4\pi^2}{3} \cos 2\Omega z+\pi a\sin\Omega z-3\pi a\sin\Omega z\right)
+        &H_2(z+\varepsilon 2\pi/\Omega)=-a(a+\cos\Omega z)\\
+        +&2\varepsilon\left( a\sin\Omega z-2\pi^2\cos2\Omega z+\frac{4\pi^2}{3} \cos 2\Omega z+\pi a\sin\Omega z-3\pi a\sin\Omega z\right)
     \end{align*}
     以上で，位相差$y$の近恒等変換$z$の従う微分方程式を近似的に求めることができる．
     よって，$z$が安定解を持つ条件を求めることで$y$が安定解を持つ条件を求めることができる．\\
     まず，式\eqref{eq:k1-approx}の状況では，
     \begin{align*}
-        \dot{z}&=\epsilon-2k\sin\Omega z
+        \dot{z}&=\varepsilon-2k\sin\Omega z
     \end{align*}
     となる．これは，式\eqref{eq:phase-diff}に対し$x$の周期で平均化を行った($\sin x\sim 0$)式である．\\
     $z$が安定解を持つ条件は，
     \begin{align*}
-        k\geq\frac{\epsilon}{2}
+        k\geq\frac{\varepsilon}{2}
     \end{align*}
     となり，臨界結合強度$K_1$は，
     \begin{align*}
@@ -262,25 +263,25 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \end{align*}
     となる．\\
     次に，式\eqref{eq:k2-approx}の状況を考える．
-    閉形式で$K_2$を求めるため$\epsilon \ll 1$を仮定すると，$H_2(z)=-a(a+\cos\Omega z)+O(\epsilon)$より，$k,\epsilon$が十分小さいとき，$2$次以下の微小量を無視すると，$z$は以下のような微分方程式に従う．
+    閉形式で$K_2$を求めるため$\varepsilon \ll 1$を仮定すると，$H_2(z)=-a(a+\cos\Omega z)+O(\varepsilon)$より，$k,\varepsilon$が十分小さいとき，$2$次以下の微小量を無視すると，$z$は以下のような微分方程式に従う．
     \begin{align*}
-        \dot{z}&=\epsilon-2k\sin\Omega z-k^2a(a+\cos \Omega z)\\
-        &=\epsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin (\Omega z-\alpha)\quad(\alpha:\mathrm{const})
+        \dot{z}&=\varepsilon-2k\sin\Omega z-k^2a(a+\cos \Omega z)\\
+        &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin (\Omega z-\alpha)\quad(\alpha:\mathrm{const})
     \end{align*}
     $z$が安定解を持つ条件は，
     \begin{align*}
-        |\epsilon-a^2k^2|&\leq k\sqrt{4+(2\pi\epsilon-ak)^2}\\
-        0\leq k&\leq \sqrt{\frac{1}{a^4-a^2}\left(2+a^2\epsilon+\sqrt{(2+2a^2\epsilon)^2-\epsilon^2(a^4-a^2)}\right)}
+        |\varepsilon-a^2k^2|&\leq k\sqrt{4+(2\pi\varepsilon-ak)^2}\\
+        0\leq k&\leq \sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
     \end{align*}
     となり，臨界結合強度$K_2$は，
     \begin{align*}
-        K_2=\Omega\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\epsilon+\sqrt{(2+2a^2\epsilon)^2-\epsilon^2(a^4-a^2)}\right)}
+        K_2=\Omega\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
     \end{align*}
     となる．    
     
     \subsection{固有振動数の遠い2体との同期($K_3$)}
     \label{sec:3body-k3}
-    固有振動数の遠い2体との同期については，命題\ref{prop:suff}により，
+    固有振動数の遠い2体との同期については，以下の命題\ref{prop:suff}により，
     \begin{align*}
         K_3\lessapprox \frac{\Omega}{2a-1}
     \end{align*}
@@ -321,7 +322,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \begin{proof}
         補題\ref{lemma:annulus}と式\eqref{eq:prop-2phase}の座標・時刻に対する対称性から，安定な$x$-nullclineと不安定な$x$-nullclineの付近にそれぞれ安定，不安定な周期解$\gamma_a,\gamma_b$を持つ．\\
         他に周期解$\gamma$が存在すると仮定すると，$\gamma$は$\gamma_a,\gamma_b$と交わることはないので，任意の$y\in(-\pi,\pi]$に対し，ある$x\in(-\pi,\pi]$が存在して，$(x,y)\in\gamma$となる．
-        また，そのような周期解は$x$-nullclineと交わる必要がある．なぜなら，$x$-nullclineと交わるまで流れの$x$成分の符号が変わらないので必ず$x$-nullclineの吸収領域に到達するからである．
+        また，そのような周期解は$x$-nullclineと交わる必要がある．なぜなら，$x$-nullclineと交わるまで流れの$x$成分の符号が変わらないので必ず$x$-nullclineに到達するからである．
         しかし，補題\ref{lemma:annulus}より，1つの$x$-nullclineは1つの周期解としか交わらないため矛盾する．
         最後に，Poincaré-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) により，任意の点から発する軌道は$\gamma_a,\gamma_b$のいずれかに収束する．
     \end{proof}
@@ -349,13 +350,13 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \end{align*}
     となる．
     
-    \subsection{まとめ}
-    \ref{sec:3body-k12},\ \ref{sec:3body-k3},\ \ref{sec:3body-k4}節で示したように，臨界結合強度は結合強度比$a$の関数として求められる．
+    \subsection{臨界結合強度のまとめ}
+    \ref{sec:3body-k12},\ \ref{sec:3body-k3},\ \ref{sec:3body-k4}節で示したように，臨界結合強度$K$は結合強度比$a$の関数として求められる．
     \begin{align}
         \label{eq:3body-matome}
         \begin{split}
             K_1&=\frac{\omega}{2}\\
-            K_2&=\Omega\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\epsilon+\sqrt{(2+2a^2\epsilon)^2-\epsilon^2(a^4-a^2)}\right)}\\
+            K_2&=\Omega\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}\\
             K_3&=\frac{\Omega}{2a-1}\\
             K_{41}&=\frac{2\Omega-\omega}{3a}\\
             K_{42}&=\frac{\Omega-2\omega}{3}\\
@@ -364,9 +365,9 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \end{align}
     また，$K_3,K_4$から固有振動数の離れた振動子との同期が起こる，つまり，鞍替え現象が発生するための結合強度比$a$の十分条件も求まる．
     \begin{align*}
-        a\geq \frac{2\Omega-\omega}{\Omega-2\omega}= 2+3\epsilon+O(\epsilon^2):=a^\ast    
+        a\geq \frac{2\Omega-\omega}{\Omega-2\omega}= 2+3\varepsilon+O(\varepsilon^2):=a^\ast    
     \end{align*}
-    このとき，$a^\ast$で$K_{3}(a^\ast)=K_{41}(a^\ast)=K_{42}(a^\ast)$となる．
+    このとき，$a=a^\ast$で$K_{3}(a^\ast)=K_{41}(a^\ast)=K_{42}(a^\ast)$となる．
     
     式\eqref{eq:3body-matome}の正当性を確かめるため，$K$-$a$平面における同期状態の分岐図を描くことを考える．
     そして，各状態の境界が臨界結合強度$K_1,K_2,K_3,K_4$で記述される曲線となっていることを確認する．\\
@@ -376,7 +377,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
 
     \begin{figure}[t]
     \centering
-    \includegraphics[width=120mm]{images/three-body-phase.pdf}
+    \includegraphics[width=135mm]{images/three-body-phase.pdf}
     \centering
     \caption{結合強度$K$，結合強度$a$における3体系の同期状態を表す分岐図．
     各格子に対し，3体全体の同期・固有振動数の離れた振動子との同期・固有振動数の近い振動子との同期・3体とも非同期の4状態を示している．
