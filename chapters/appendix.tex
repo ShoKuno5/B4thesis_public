@@ -1,6 +1,6 @@
 \documentclass[../main]{subfiles}
 \begin{document}
-\chapter{付録}
+\chapter{鎖状ネットワークの同期に関する先行研究}
 \label{chap:appendix}
 \cite{XiaHuang:130506}の解析内容について述べる．\\
 鎖状に無向グラフとして$N$個連なった位相振動子ネットワークのふるまいを以下で記述するとする．
@@ -12,7 +12,7 @@
 このモデルでは端の振動子$1$が固有振動数$\omega_1$をもつ駆動源となり，他の振動子は駆動源に近い方の隣接した振動子と相互作用する．\\
 
 $\omega_1=2,\omega_2=1$とし，他の$\omega_i$をランダムに選択するとして固有振動数を配置し，結合強度を高めていく数値実験を行ったところ，4つのクラスタリングパターンが観測された．
-\renewcommand{\labelenumi}{Case \theenumi}
+\renewcommand{\labelenumi}{Case  \theenumi}
 \begin{enumerate}
     \item \label{enu:case1} 隣接した駆動振動子と同期し局所クラスターが発生する．
     \item \label{enu:case2} 駆動源と同期する振動子が出現する．
@@ -24,10 +24,10 @@ $\omega_1=2,\omega_2=1$とし，他の$\omega_i$をランダムに選択する�
 
 特に$N=3,\ \omega_1=2,\ \omega_2=1$とする．$\omega_3$を変化させたとき全部で4つの領域に分かれた．
 \begin{itemize}
-    \item $\omega_3\in[1,2]$のとき，結合強度の増加により隣接した駆動振動子と同期する．Case\ref{enu:case1}に相当する．
-    \item $\omega_3\in(2,3]$のとき，結合強度の増加により駆動振動子と同期する．Case\ref{enu:case2}に相当する．
-    \item $\omega_3\lesssim 1$のとき，結合強度が小さい間は隣接した駆動振動子と同期し局所クラスターを構成した後，結合強度がある程度大きくなると局所クラスターが消滅する．Case\ref{enu:case3}に相当する．
-    \item $\omega_3$が$\omega_1,\omega_2$両方ともから離れた値のとき，隣接した駆動振動子が駆動源と同期した後，駆動される振動子自体も同期する．Case\ref{enu:case4}に相当する．
+    \item $\omega_3\in[1,2]$のとき，結合強度の増加により隣接した駆動振動子と同期する．Case \ref{enu:case1}に相当する．
+    \item $\omega_3\in(2,3]$のとき，結合強度の増加により駆動振動子と同期する．Case \ref{enu:case2}に相当する．
+    \item $\omega_3\lesssim 1$のとき，結合強度が小さい間は隣接した駆動振動子と同期し局所クラスターを構成した後，結合強度がある程度大きくなると局所クラスターが消滅する．Case \ref{enu:case3}に相当する．
+    \item $\omega_3$が$\omega_1,\omega_2$両方ともから離れた値のとき，隣接した駆動振動子が駆動源と同期した後，駆動される振動子自体も同期する．Case \ref{enu:case4}に相当する．
 \end{itemize}
 以上の分岐を調べるため，以下の方程式を考える．
 \begin{align}
@@ -46,7 +46,7 @@ $\omega_1=2,\omega_2=1$とし，他の$\omega_i$をランダムに選択する�
 となる．ここで，両辺の長時間平均$\langle\cdot\rangle$を考える．
 $\lambda$が同期が起こらないくらい小さいとき，$\phi_{21}$の確率分布$\rho(\phi_{21},t)$は十分時間が経つと安定分布に収束する．
 \begin{align*}
-    \rho(\phi_{21},t)=\frac{\Delta\omega_{21}-\lambda\sin\phi_{21}}{C}\quad C:\mathrm{normalization constant}
+    \rho(\phi_{21},t)=\frac{\Delta\omega_{21}-\lambda\sin\phi_{21}}{C},\quad C:\mathrm{normalization constant}
 \end{align*}
 この確率分布に$\phi_{21}$が従うとして式\eqref{eq:phasediff-21}の$\sin\phi_{21}$を平均する．
 すると，
@@ -81,7 +81,7 @@ $\Delta\omega_{21}< 0$のとき，
     \end{cases}
 \end{align*}
 ここで，$\Delta\omega_{31}=\omega_3-\omega_1$である．
-これらの同期条件から，$\omega_c=-\sqrt{2}|\Delta\omega_21|+\omega_1$という臨界振動数を境界とする領域$\omega_3\in(\omega_c,\omega_2)$でCase\ref{enu:case2}のような分離が起こることがわかる．\\
+これらの同期条件から，$\omega_c=-\sqrt{2}|\Delta\omega_{21}|+\omega_1$という臨界振動数を境界とする領域$\omega_3\in(\omega_c,\omega_2)$でCase \ref{enu:case2}のような分離が起こることがわかる．\\
 次に，振動子$1$と振動子$3$の同期条件を考える．
 $\phi_{31}=\theta_3-\theta_1$とすると，
 \begin{align*}
@@ -98,7 +98,7 @@ $\phi_{31}=\theta_3-\theta_1$とすると，
 \includegraphics[width=70mm]{./images/appendix-bifurcation.pdf}
 \centering
 \caption{$\omega_1=2,\ \omega_2=1$のときの固有振動数$\omega_3$と結合強度$\lambda$に対する相図．
-各領域で同期クラスタが発生する場合，その振動子の組を各領域に示している．}
+あるパラメータ領域で同期クラスタが発生する場合，その振動子の組を各領域に示している．また，同期クラスタが異なるパラメータ領域の境界を実線で示している．}
 \label{fig:appendix-bifurcation}
 \end{figure}
 また，式\eqref{eq:effective-approx}を再帰的に利用することで$N>3$の場合でも同様の解析が可能となる．
