@@ -1,12 +1,12 @@
-\documentclass[system, bachelor]{systemB}%���_�p 
-%\documentclass[oneside]{suribt}% �{���� * �y�[�W�ȉ��̂Ƃ��� (�f���ɒ���)
+\documentclass[system, bachelor]{systemB}%卒論用 
+%\documentclass[oneside]{suribt}% 本文が * ページ以下のときに (掲示に注意)
 \bibliographystyle{junsrt} 
 
 \usepackage[dvipdfmx]{graphicx,color,hyperref}
 \usepackage{url}
 \usepackage{pxjahyper}
 \hypersetup{
-	colorlinks=false, % �����N�ɐF�����Ȃ��ݒ�
+	colorlinks=false, % リンクに色をつけない設定
 	bookmarksnumbered=true,
 	pdfborder={0 0 0},
 	bookmarkstype=toc
@@ -34,52 +34,52 @@
   {\newline}{}%
 \theoremstyle{break}
 
-\newtheorem{axiom}{����}
-\newtheorem{define}{��`}
-\newtheorem{theorem}{�藝}
-\newtheorem{proposition}{����}
-\newtheorem{corollary}{�n}
-\newtheorem{lemma}{���}
-\newtheorem{note}{����}[section]
-\newtheorem{example}{��}[section]
-\renewcommand{\proofname}{\bf{�ؖ�}}
+\newtheorem{axiom}{公理}
+\newtheorem{define}{定義}
+\newtheorem{theorem}{定理}
+\newtheorem{proposition}{命題}
+\newtheorem{corollary}{系}
+\newtheorem{lemma}{補題}
+\newtheorem{note}{注意}[section]
+\newtheorem{example}{例}[section]
+\renewcommand{\proofname}{\bf{証明}}
 
-\title{�U���q�l�b�g���[�N�ɂ�����\\�N���X�^�[�\���ƃ_�C�i�~�N�X}
-%\titlewidth{}% �^�C�g���� (�w�肷��Ƃ��͒P�ʂ���)
-\author{�������}
-\eauthor{Masaki Kato}% Copyright �\���Ŏg����
+\title{振動子ネットワークにおける\\クラスター構造とダイナミクス}
+%\titlewidth{}% タイトル幅 (指定するときは単位つきで)
+\author{加藤雅己}
+\eauthor{Masaki Kato}% Copyright 表示で使われる
 \studentid{03-200613}
-\supervisor{�S�G ����}% 1 �������Ƃ� (��E�܂Ŋ܂߂ď���)
-%\supervisor{�w�������� ��E \and �w�������� ��E}% ���������̏ꍇ�C\and �łȂ���
-\handin{2021}{2}% ��o��. 2 �� (�N, ��) �������Ƃ�
-\keywords{���{�ʑ��U���q���f��,\ ���G�l�b�g���[�N,\ percolation} % �T�v�̉��ɕ\�������
+\supervisor{郡宏 教授}% 1 つ引数をとる (役職まで含めて書く)
+%\supervisor{指導教員名 役職 \and 指導教員名 役職}% 複数教員の場合，\and でつなげる
+\handin{2021}{2}% 提出月. 2 つ (年, 月) 引数をとる
+\keywords{蔵本位相振動子モデル,\ 複雑ネットワーク,\ percolation} % 概要の下に表示される
 
 \begin{document}
-\maketitle%%%%%%%%%%%%%%%%%%% �^�C�g�� %%%%
+\maketitle%%%%%%%%%%%%%%%%%%% タイトル %%%%
 
-\frontmatter% ��������O��
+\frontmatter% ここから前文
 
 %\etitle{Title in English}
 
-%\begin{eabstract}%%%%%%%%%%%%% �T�v %%%%%%%%
+%\begin{eabstract}%%%%%%%%%%%%% 概要 %%%%%%%%
 % 300 words abstract in English should be written here. 
 %\end{eabstract}
 
-\begin{abstract}%%%%%%%%%%%%% �T�v %%%%%%%%
-  �������ۂ̓z�^���̖��ł�_�o�זE�C�S�؍זE�Ȃǎ��R�E�ōL�������C�܂��C�d�͖ԂȂǂ̍H�w�n�ł�������D
-  �܂��C�������ۂ̐������f�����i���������Ńl�b�g���[�N�Ȋw�����W���C�ڑ������Ȃǂ̃l�b�g���[�N�̍\���Ɠ����C�g�U�Ȃǂ̓��I�ȃv���Z�X�Ƃ̊֌W������ɒ��ׂ��Ă���D  
-  �����n����Ȃ�l�b�g���[�N�ɂ����āCpercolation �̂悤�ȍ\���I�Ȑ������l�b�g���[�N���̂̋@�\�Ɋ֌W���邱�Ƃ��������Ă������C
-  percolation �Ɠ������ۂƂ𓯎��Ɏ�舵�������͏\���ɂȂ���Ă��Ȃ��D
-  �������ۂ𗝉�����ꍇ���ꂼ��̐U���q�̐U��������v�Ȗ������ʂ������߁C�������ۂȂǂ̓������ۂ𗝉������ł̓l�b�g���[�N�̍\���̈���������l�����邱�Ƃ͏\���Ƃ͌����Ȃ��D
-  ���̂��߁C�l�b�g���[�N�ɂ�����U�������z�����̍\���Ƃǂ̂悤�Ɋ֌W���邩���ׂ邱�Ƃ��]�܂��D
-  �{�_���ł́C�U���q�l�b�g���[�N�ɂ�����l�b�g���[�N�\���Ɠ�����Ԃ�N���X�^��Ԃ̊֌W�𒲂ׂ�D
-  ���ɁC�}�̐����E���łɔ���������Ԃ̕ω��Ƃ����ׂ��������y�сC
-  �}�̖{���ƐU�����ɂ��N���X�^��Ԃ̕��ϓI�Ȋ֌W�Ƃ�����ʓI�Ȑ����ɂ��Ē��ׂ�D
-  ����ɂ́C�����̏�ԊԂ̕�����������߁C������ percolation �Ƃ̊֌W�𒲂ׂ�D
+\begin{abstract}%%%%%%%%%%%%% 概要 %%%%%%%%
+  同期現象はホタルの明滅や神経細胞・心筋細胞の電気活動など自然界で広く見られ，また，電力網などの工学系でも見られる．
+  また，同期現象の数理モデルが進歩する一方でネットワーク科学が発展し，接続次数などのネットワークの構造と同期，拡散などの動的なプロセスとの関係が盛んに調べられている．  
+  興奮系からなるネットワークにおいて，percolation のような構造的な性質がネットワーク自体の機能に関係することが分かっている一方，
+  percolation と同期現象とを同時に取り扱う研究は十分になされていない．
+  同期現象を理解する場合それぞれの振動子の振動数が主要な役割を果たすため，興奮現象などの同期現象を理解する上ではネットワークの構造の一方だけを考慮することは十分とは言えない．
+  そのため，ネットワークにおける振動数分布がその構造とどのように関係するか調べることが望まれる．
+  本論文では，振動子ネットワークにおけるネットワーク構造と同期状態やクラスタ状態の関係を調べる．
+  特に，枝の生成・消滅に伴う同期状態の変化という細かい性質及び，
+  枝の本数と振動数によるクラスタ状態の平均的な関係という一般的な性質について調べる．
+  さらには，それらの状態間の分岐条件を求め，同期や percolation との関係を調べる．
 \end{abstract}
 
 
-%%%%%%%%%%%%% �ڎ� %%%%%%%%
+%%%%%%%%%%%%% 目次 %%%%%%%%
 %\tableofcontents
 {\makeatletter
 \let\ps@jpl@in\ps@empty
@@ -88,24 +88,24 @@
 \tableofcontents
 \clearpage}
 
-\mainmatter% ��������{�� %%% �{�� %%%%%%%%
+\mainmatter% ここから本文 %%% 本文 %%%%%%%%
 \subfile{chapters/notation.tex}
 \subfile{chapters/intro.tex}
 \subfile{chapters/prev.tex}
 \subfile{chapters/method-3body.tex}
 \subfile{chapters/method-percolation.tex}
 \subfile{chapters/summary.tex}
-\backmatter% ���������t
-\chapter{�ӎ�}%%%%%%%%%%%%%%% �ӎ� %%%%%%%
-�w�������ł���S�G�����ɂ́C�����̃e�[�}�ݒ肩��_���̎��M�܂ő�ϔM�S�Ɍ�w�������܂����D
-���肪�Ƃ��������܂��D
+\backmatter% ここから後付
+\chapter{謝辞}%%%%%%%%%%%%%%% 謝辞 %%%%%%%
+指導教員である郡宏教授には，研究のテーマ設定から論文の執筆まで大変熱心に御指導頂きました．
+ありがとうございます．
 
-% \begin{thebibliography}{}%%%% �Q�l���� %%%
+% \begin{thebibliography}{}%%%% 参考文献 %%%
 %  \bibitem{}
 % \end{thebibliography}
-\bibliographystyle{junsrt}%           BibTeX ���g���ꍇ
-\bibliography{reference.bib}% BibTeX ���g���ꍇ
+\bibliographystyle{junsrt}%           BibTeX を使う場合
+\bibliography{reference.bib}% BibTeX を使う場合
 
-\appendix% ��������t�^ %%%%% �t�^ %%%%%%%
+\appendix% ここから付録 %%%%% 付録 %%%%%%%
 \subfile{chapters/appendix.tex}
 \end{document}

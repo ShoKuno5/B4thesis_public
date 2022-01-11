@@ -18,7 +18,7 @@
     \label{eq:kuramoto-2body}
     \dot{\psi}=\delta\omega-2K\sin\psi  
 \end{align}
-式\eqref{eq:kuramoto-2body}を$\phi-\dot{\phi}$平面に描いたものを図\ref{fig:kuramoto-2}に示す．
+式\eqref{eq:kuramoto-2body}を$\psi-\dot{\psi}$平面に描いたものを図\ref{fig:kuramoto-2}に示す．
 $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$の解を持つ．
 特に，安定解$\delta\psi^\ast$と不安定解の2つの解が存在する．
 このとき，$t\to\infty$で$\psi\to\psi^\ast$に収束する．このとき$\dot{\psi}=0$であるので位相ロックしているという．
@@ -30,12 +30,12 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 \caption{式\eqref{eq:kuramoto-2body}が安定解を持つ場合．$\delta\psi^\ast$は安定解となる．}
 \label{fig:kuramoto-2}
 \end{figure}
-また，式\eqref{eq:kuramoto-2body}に従う振動子の実効振動数$\langle\dot{\phi}_i\rangle$を以下で定義する．
+また，式\eqref{eq:kuramoto-2}に従う振動子の実効振動数$\langle\dot{\phi}_i\rangle$を以下で定義する．
 \begin{align*}
     \langle\dot{\phi}_i\rangle:=\lim_{T\to\infty}\frac{\phi_i(T)-\phi_i(0)}{T}
 \end{align*}
 
-式\eqref{eq:kuramoto-2body}を$N$体 ($N\in\mathbb{N}$) に拡張したものは以下のようになる．
+式\eqref{eq:kuramoto-2}を$N$体 ($N\in\mathbb{N}$) に拡張したものは以下のようになる．
 \begin{align}
     \label{eq:kuramoto-N}
     \dot{\phi}_i=\omega_i+\frac{K}{N}\sum_{j=1}^N\sin(\phi_i-\phi_j),\ i=1,2,\ldots,N
@@ -50,7 +50,7 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 オーダーパラメータは，位相が$[0,2\pi)$に一様に分布しているとき，$R= 0$となる．つまり振動子同士に同期が見られない状態を表す．
 一方，振動子全体の位相が一致するとき，$R=1$となる．
 
-式\eqref{eq:kuramoto-N}は，一般の複雑ネットワークにおける位相振動子モデルに拡張できる．
+式\eqref{eq:kuramoto-N}は，一般の複雑ネットワークにおける位相振動子の大域結合モデルに拡張できる．
 \begin{align*}
     \dot{\phi}_i=\omega_i+\frac{K}{N}\sum_{j=1}^NA_{ij}\sin(\phi_i-\phi_j),\ i=1,2,\ldots,N
 \end{align*}
@@ -87,12 +87,12 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 このように，非自律系であっても近恒等変換を用いて自律系に変形することで詳細なふるまいを調べることができ，また周期的な系であっても平均化を行い周期性を保ちながら詳細なふるまいを調べることができる．
 \section{ランダムグラフ}
 本節を書くにあたっては，\cite{Bollobas2013},\cite{Albert2002}を参考にした．
-\subsection{Erdős–Rényi グラフ}
+\subsection{Erd\H{o}s–R\'{e}nyi グラフ}
 $V=\{1,2,\ldots,n\}$とラベリングされた$n$個の頂点と$N$本の枝を持つランダムグラフ$\Gamma_{n,N}$を考える．
 つまり，異なる頂点$i,j\in V,\ i\neq j$との間の枝-全$\binom{n}{2}$本から等しい確率で$N$本選んだものを考える．
 
 $\Gamma_{n,N(n)}$について，$N(n)$によりグラフの連結成分や次数などの性質がどのように変化するかという問題が生じる．
-Erdős 及び Rényi は，$N(n)$の増大に伴って巨大な連結成分が出現することを発見し，以下のような結果を得た．
+Erd\H{o}s 及び R\'{e}nyi は，$N(n)$の増大に伴って巨大な連結成分が出現することを発見し，以下のような結果を得た．
 
 $n$を固定し，$N$を1から$\binom{n}{2}$まで増やしたときに，$\Gamma_{n,N}$は5つの異なる状態を経る．
 ただし，漸近的とは，頂点数$n$を十分大きくする操作について述べているとする．
@@ -127,7 +127,7 @@ percolation には頂点を固定して枝を確率的に配置する bond perco
             P=P_p(|C|=\infty)=1-\sum_{1<s<\infty}P_p(|C|=s)
         \end{align*} 
         ここで，$P_p(|C|=s)$はある頂点が属するクラスタ$C$のサイズが$s$である確率とする．
-        ただし，$|C|/|V|<\infty$となるクラスタ$C$のサイズを$|C|=\infty$と定める．
+        ただし，$|C|/|V|<\infty$となるクラスタ$C$のサイズを$|C|=\infty$と定める．\\
         このとき，ある臨界確率$p_c$を境に$P$が変化する．
         \begin{align*}
             P
@@ -194,8 +194,8 @@ $x\in M$の$\omega_\pm$-極限集合$\omega_\pm(x)$とは，点列$t_n\to \pm\in
 \end{align*}
 また，$\pm$どちらでも不変のとき不変であると呼ぶ．\\
 集合$U\subset M$が minimal とは，非空で閉かつ不変であるような$M$の部分集合のうち最小のものであることをいう．
-\subsection{Poincaré-Bendixsonの定理}
-まず，広く知られている$\mathbb{R}^2$上のPoincaré-Bendixsonの定理について述べる．
+\subsection{Poincar\'{e}-Bendixsonの定理}
+まず，広く知られている$\mathbb{R}^2$上のPoincar\'{e}-Bendixsonの定理について述べる．
 \begin{theorem}
     以下の自律系について，解が一意に与えられ任意の$t\in\mathbb{R}$で定義されるとする．
     \begin{align}
