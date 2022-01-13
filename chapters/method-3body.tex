@@ -14,7 +14,7 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 ただし，時刻$t\ (0\leq t\leq T)$で位相$\phi_i(t)$の node $i$の実効振動数は，$\Omega_i^{\mathrm{eff}}:=(\phi_i(T)-\phi_i(T/2))/(T/2)$で定めた．\\
 ここで，$m=2$における node $0,1$，$m=7$における node $0$のように，枝の増加により増加前に同期していた node と非同期になり別の node と同期する，つまり同期クラスタが変化する現象が見られる．
 以下，このような同期状態の変化を「鞍替え」と呼ぶこととする．
-この鞍替え現象は鎖構造の蔵元モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}ものの(付録参照)，ネットワーク構造の変化で発生することは知られておらず，
+この鞍替え現象は鎖構造の蔵本モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}ものの(付録参照)，ネットワーク構造の変化で発生することは知られておらず，
 疎なネットワークにおける微視的なクラスタリングパターンの理解において重要な役割を果たすと考えられる．
 また，ネットワーク全体のクラスタリングパターンの変化は，一部の振動子についての同期現象と鞍替え現象に分割して理解することができる．\\
 次節ではこの鞍替え現象に注目し解析を行う．
@@ -40,7 +40,7 @@ $m=2$におけるnode $0,1$，$m=7$におけるnode $0$では，枝の増加に�
 \caption{鞍替え現象に関わる部分ネットワーク}
 \label{fig:switch}
 \end{figure}
-このとき，それぞれの振動子集団に属する振動子について平均化を行うと，発展方程式は以下のようになる．
+このとき，それぞれの振動子集団に属する振動子がそれぞれ同一の位相・固有振動数を持つとして平均場近似を行うと，発展方程式は以下のようになる．
 \begin{align*}
     \dot{\phi}&=\omega+mK\sin\left( \phi_N-\phi \right)+nK\sin\left( \phi_M-\phi \right)\\
     \dot{\phi}_M&=\omega_M+\frac{m}{M}K\sin\left( \phi-\phi_M \right) \\
@@ -163,7 +163,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
       \subcaption{$K=0.8$．3体とも同期．\\phase 5}
       \label{fig:phase-k80}
     \end{minipage}
-    \caption{5つの同期状態における相図．$a=4.0,\omega=0.1,\Omega=2$}\label{fig:phase}
+    \caption{$a=4.0,\omega=0.1,\Omega=2$における5つの同期状態における相図．ベクトル場，$x,\ y$-nullcline，沈点，及び$(x,y)=(0,0)$から発する軌道を示している．}\label{fig:phase}
 \end{figure}
 \clearcaptionsetup{figure}
 
@@ -181,7 +181,7 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
 \label{sec:3body-critical}
     \subsection{固有振動数の近い2体との同期 ($K_1$,$K_2$)}
     \label{sec:3body-k12}
-    本節では解析のために2つの振動数差が大きく異なるとし，一般性を失わずに以下の関係を仮定する
+    本節では解析のために2つの振動数差が大きく異なるとし，以下の関係を仮定する．
     \begin{align}
         \label{eq:assume}
         |\Omega|\gg|\omega|
@@ -200,107 +200,108 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     式\eqref{eq:k1-approx},\eqref{eq:k2-approx}両方の状況とも，平均的に$x$は固有振動数$\Omega$で変化し，$y$は$\omega\ (|\omega|\ll|\Omega|)$で変化する．
     よって，タイムスケールの分離を行うことができる．
     つまり，$\dot{x}=\Omega,\ y=z\ (\dot{z}=\omega)$に対して，$K$に依存した周期外力が摂動した系として近似できる．\\
-    $\tilde{y}:=y/\Omega,\varepsilon:=\omega/\Omega,k=K/\Omega,S(x,y)=-a\sin x-2\sin y$とすると，位相差$y$の時間発展は以下のように表される．
+    式\eqref{eq:phase-diff}において，$\tau:=\Omega t,\ \varepsilon:=\omega/\Omega,\ k=K/\Omega,\ S(x,y)=-a\sin x-2\sin y$とすると，位相差$y$の時間発展は以下のように表される．
     \begin{align*}
-        \dv{\tilde{y}}{t}=\varepsilon+k S(x,y) 
+        \dv{y}{\tau}=\varepsilon+k S(x,y) 
     \end{align*}
-    このとき，$y$が以下のように近恒等変換されると仮定する．
+    このとき，$y$を以下のように近恒等変換する．
     \begin{align}
-        \tilde{y}=z+kh_1(z,t)+k^2h_2(z,t)+O(k^3)
+        y=z+kh_1(z,\tau)+k^2h_2(z,\tau)+O(k^3)
         \label{eq:pertu-ytilde}
     \end{align}
-    このとき，周期$\Omega$の外力を受けるため$h_i$は$i=1,2,\ h_i(z+2\pi,t+2\pi/\Omega)=h_i(z,t),h(z,0)=0$を満たす関数である．
+    ここで，$h_i$は$i=1,2,\ h_i(z+2\pi,\tau+2\pi)=h_i(z,\tau),h_i(z,0)=0$を満たす関数とする．\\
     一方$x$については$k$の1次で展開すると，
     \begin{align*}
-        x&=\Omega t-\Omega k\int_0^t(2a\sin \Omega\tau+\sin\Omega (z+\varepsilon\tau)\dd{\tau}+O(k^2)\\ 
-        &=\Omega t+\Omega k\left(\frac{2a}{\Omega}\cos\Omega t+t\sin \Omega z\right)+O(k^2)
+        x&=\Omega t-\Omega k\int_0^t(2a\sin \Omega s+\sin z)\dd{s}+O(k^2)\\ 
+        &=\tau+\Omega k\left(\frac{2a}{\Omega}\cos\tau+\frac{\tau}{\Omega}\sin z\right)+O(k^2)
     \end{align*}
-    最終行では，$\cos x(0)=0,\cos y(0)=0$となるように初期時刻$t=0$を定めたことに因る．
+    最終行では，$\cos x(0)=0,\ \cos y(0)=0$となるように初期時刻$t=0$を定めたことに因る．\\
     また，$S(x,y)$を$z,t$に関して展開する．
     \begin{align*}
         S(x,y)&=-a\sin x-2\sin y\\
-        &=-a\sin\Omega t-2\sin \Omega z-2\Omega kh_1\cos\Omega z\\
-        &-a\cos\Omega t\cdot \Omega k\left(\frac{2a}{\Omega}\cos \Omega t+t\sin \Omega z\right)+O(k^2)\\
-        &=-a\sin\Omega t-\!2\sin \Omega z       +k\left(\!-2\Omega z \cos\Omega z\cdot h_1-\!2a^2\cos^2\Omega t-\!a\Omega t\cos \Omega  t\sin \Omega z\right)\\
+        &=-a\sin\tau-2\sin z-2 kh_1\cos z\\
+        &-a\cos\tau\cdot \Omega k\left(\frac{2a}{\Omega}\cos \tau+\frac{\tau}{\Omega}\sin z\right)+O(k^2)\\
+        &=-a\sin\tau-2\sin z+k\left(-2 \cos z\cdot h_1-2a^2\cos^2\tau-a\tau\cos \tau\sin z\right)\\
         &+O(k^2)
     \end{align*}
-    さらに，$S_1:=-a\sin\Omega t-2\sin\Omega z,S_2:=-2a^2\cos^2\Omega t-a\Omega t\cos \Omega t\sin \Omega z$と定めると，
+    さらに，$S_1:=-a\sin\tau-2\sin z,\ S_2:=-2a^2\cos^2\tau-a\tau\cos \tau\sin z$と定めると，
     \begin{align*}
-        S(x,y)=S_1+k\Omega\pt_y S_1\cdot h_1+kS_2
+        S(x,y)=S_1+k\pt_y S_1\cdot h_1+kS_2
     \end{align*}
     となる．\\
-    式\eqref{eq:pertu-ytilde}を両辺$t$で微分すると，
+    式\eqref{eq:pertu-ytilde}を両辺$\tau$で微分すると，$\dot{\ast}=\dd{\ast}/\dd{\tau}$として，
     \begin{align*}
-        \dv{\tilde{y}}{t}&=\dot{z}+k(\dot{z}\partial_zh_1+\partial_th_1)+k^2(\dot{z}\partial_zh_2+\partial_th_2)+O(k^3)\\
-        &=(1+k\partial_zh_1+k^2\partial_zh_2)\dot{z}+k\pt_th_1+k^2\pt_th_2+O(k^3)
+        \dv{y}{\tau}&=\dot{z}+k(\dot{z}\partial_zh_1+\partial_\tau h_1)+k^2(\dot{z}\partial_zh_2+\partial_\tau h_2)+O(k^3)\\
+        &=(1+k\partial_zh_1+k^2\partial_zh_2)\dot{z}+k\pt_\tau h_1+k^2\pt_\tau h_2+O(k^3)
     \end{align*}
     整理すると，
     \begin{align*}
-        \dot{z}&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{\tilde{y}}{t}-k\pt_th_1-k^2\pt_th_2 \right)+O(k^3)\\
-        &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2\Omega \pt_y S_1h_1+k^2S_2-k\pt_th_1-k^2\pt_th_2 \right)\\
-        &=\varepsilon+k(S_1-\pt_th_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\Omega \pt_y S_1h_1 -\pt_th_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\right)
+        \dot{z}&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{y}{t}-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)+O(k^3)\\
+        &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2 \pt_y S_1h_1+k^2S_2-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)\\
+        &=\varepsilon+k(S_1-\pt_\tau h_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\right)
     \end{align*}
     $\dot{z}$が以下のように展開されるとする．
     \begin{align*}
-        \dot{z}=\varepsilon+kH_1(z-\varepsilon t)+k^2H_2(z-\varepsilon t)+O(k^3)
+        \dot{z}=\varepsilon+kH_1(z-\varepsilon \tau)+k^2H_2(z-\varepsilon \tau)+O(k^3)
     \end{align*}
-    ここで，$z$が平均的に振動数$\omega$で変動することから$H_1,H_2$が$z-\varepsilon t$に依存するものとした．\\
-    このとき，$k$の1次を比較すると新たな変数$\tau$を用いて以下の式が成立する．
+    ここで，$z$が平均的に振動数$\omega$ (無次元時間$\tau$では$\varepsilon$) で変動することから$H_1,\ H_2$が$z-\varepsilon \tau$に依存するものとした．\\
+    このとき，$k$の1次を比較すると新たな変数$s$を用いて以下の式が成立する．
     \begin{align*}
-        H_1(z-\varepsilon t)=S_1(z+\varepsilon\tau,t+\tau)-\pt_\tau h_1(z+\varepsilon\tau,t+\tau)
+        H_1(z-\varepsilon \tau)=S_1(z+\varepsilon s,\tau+s)-\pt_s h_1(z+\varepsilon s,\tau+s)
     \end{align*}
-    $\tau=0$から$\tau=-t$で両辺積分すると，
+    $s=0$から$s=-\tau$で両辺積分すると，
     \begin{align}
-        -tH_1(z-\varepsilon t)&=\int_0^{-t}\left(-a\sin\Omega(t+\tau)-2\sin\Omega(z+\varepsilon\tau)\right)\dd{\tau}+h_1(z,t)\\
-        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \varepsilon}(\cos \Omega (z-\varepsilon t)-\cos \Omega z)+h_1\\
-        &=\frac{a}{\Omega}\sin\Omega t+\frac{2}{\Omega \varepsilon}(\cos \Omega z+\Omega \varepsilon t\sin \Omega z-\Omega^2\varepsilon^2t^2/2\cdot\sin \Omega z-\cos \Omega z)+h_1\\
-        &=\frac{a}{\Omega}\sin\Omega t+2t\sin \Omega z-\Omega\varepsilon t^2\cos \Omega z+h_1+O(\varepsilon^2)
+        -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\sin(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
+        &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon t)-\cos  z)+h_1(z,\tau)\notag\\
+        &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)\notag\\
+        &=a \sin\tau+2\tau\sin z-\varepsilon \tau^2\cos z+h_1(z,\tau)+O(\varepsilon^2)
         \label{eq-h1-H1}
     \end{align}
-    $t=-2\pi/\Omega$を代入して，
+    $\tau=-2\pi$を代入して，
     \begin{align*}
-        \frac{2\pi}{\Omega}H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=-\frac{4\pi}{\Omega}\sin\Omega z-\frac{4\pi^2}{\Omega}\varepsilon \cos \Omega z+O(\varepsilon^2)\\
-        H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=-2 \sin\Omega z-2\pi\varepsilon \cos \Omega z+O(\varepsilon^2)\\
-        H_1\left(z+\varepsilon\frac{2\pi}{\Omega}\right)&=H_1(z)+H_1'(z)\varepsilon\frac{2\pi}{\Omega}+O(\varepsilon^2)
+        2\pi H_1\left(z+ 2\pi\varepsilon\right)&=-4\pi\sin z-4\pi^2\varepsilon \cos z+O(\varepsilon^2)\\
+        H_1\left(z+2\pi\varepsilon\right)&=-2 \sin z-2\pi\varepsilon \cos z+O(\varepsilon^2)\\
+        H_1\left(z+2\pi\varepsilon\right)&=H_1(z)+H_1'(z) 2\pi\varepsilon+O(\varepsilon^2)
     \end{align*}
     下2式を比較すると，
     \begin{align*}
-        H_1(z)=-2\sin\Omega z+2\pi\varepsilon \cos\Omega z+O(\varepsilon^2)
+        H_1(z)=-2\sin z+2\pi\varepsilon \cos z+O(\varepsilon^2)
     \end{align*}
     が得られる．
     式\eqref{eq-h1-H1}に代入すると，
     \begin{align*}
-        h_1(z,t)&=2t\sin\Omega(z-\varepsilon t)-2\pi\varepsilon t\cos\Omega(z-\varepsilon t)-\frac{a}{\Omega}\sin\Omega t-2t\sin \Omega z+\Omega\varepsilon t^2\cos \Omega z\\
-        &=2t(\sin\Omega z-\Omega \varepsilon t\cos\Omega z-\sin\Omega z)-\frac{a}{\Omega}\sin\Omega t+\varepsilon(-2\pi t+\Omega t^2)\cos \Omega z+O(\varepsilon^2)\\
-        &=-\frac{a}{\Omega}\sin\Omega t-\varepsilon(2\pi t+\Omega t^2)\cos \Omega z+O(\varepsilon^2)
+        h_1(z,\tau)&=2\tau\sin(z-\varepsilon \tau)-2\pi\varepsilon \tau\cos(z-\varepsilon \tau)-a\sin\tau-2\tau\sin z+\varepsilon \tau^2\cos z\\
+        &=2\tau(\sin z-\varepsilon \tau\cos z-\sin z)-a\sin\tau+\varepsilon(-2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)\\
+        &=-a\sin\tau-\varepsilon(2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)
     \end{align*}
-    $\dot{z}のk$の2次を比較し，$h_1$を代入する．
+    次に$\dot{z}$の$k$の2次を比較し，$h_1$を代入する．
     \begin{align*}
-        H_2(z-\varepsilon t)&=\Omega \pt_y S_1h_1 -\pt_th_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_th_1)+S_2\\
-        &=-2\Omega \cos \Omega z\left( -\frac{a}{\Omega}\sin\Omega t-\varepsilon(2\pi t+\Omega t^2) \cos \Omega z \right)-\pt_\tau h_2\\
-        &-2a^2\cos^2\Omega t-a\Omega t\cos \Omega t\sin \Omega z+O(\varepsilon^2)\\
-        &+\varepsilon(2\pi\Omega t+\Omega^2 t^2)\sin\Omega z \left( -a\sin\Omega t-2\sin\Omega z +a\cos\Omega t+\varepsilon(2\pi +2\Omega t)\cos\Omega z\right)
+        H_2(z-\varepsilon \tau)=&\pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\\
+        =&-2\cos (z+\varepsilon s)\left( -a\sin(\tau+s)-\varepsilon(2\pi (\tau+s)+(\tau+s)^2) \cos (z+\varepsilon s) \right)-\pt_\tau h_2\\
+        -&2a^2\cos^2(\tau+s)-a(\tau+s)\cos (\tau+s)\sin (z+\varepsilon s)+O(\varepsilon^2)\\
+        +&\varepsilon(2\pi(\tau+s)+(\tau+s)^2)\sin (z+\varepsilon s) \\
+        &\left( -a\sin(\tau+s)-2\sin (z+\varepsilon s) +a\cos(\tau+s)+\varepsilon(2\pi +2(\tau+s))\cos (z+\varepsilon s)\right)
     \end{align*}
-    両辺$\tau=0$から$\tau=-t$で積分して，$\sin\Omega t\sim 0,\cos\Omega t\sim 1$とすると，
+    両辺$s=0$から$s=-\tau$で積分して，$\sin\tau\sim 0,\ \cos\tau\sim 1$とすると，
     \begin{align*}
-        -tH_2(z-\varepsilon t)&=2a\cdot -\varepsilon t\sin\Omega z+4\pi\varepsilon\Omega\left( -\frac{t^2}{4} -\frac{t^2}{4}\cos 2\Omega z\right)+2\varepsilon\Omega^2\left( -\frac{t^3}{6} -\frac{t^3}{6}\cos 2\Omega z\right)\\
-        &-2\pi a\varepsilon\Omega\cdot\left(\frac{t}{\Omega}\sin\Omega z\right)+2\pi a\varepsilon\Omega\left(-\frac{\varepsilon t}{\Omega}\cos\Omega z\right)\\
-        &-4\pi\varepsilon\Omega\left(-\frac{t^2}{4}+\frac{t^2}{4}\cos 2\Omega z\right)-2\varepsilon\Omega^2\left( -\frac{t^3}{6} +\frac{t^3}{6}\cos 2\Omega z\right)+O(\varepsilon^2)\\
-        &-a\varepsilon\Omega^2\left( \frac{t^2}{\Omega}\sin\Omega z \right)+a\varepsilon\Omega^2\left( -\frac{2t^2}{\Omega}\sin\Omega z \right)\\
-        &-2a^2\left( -\frac{t}{2}-\frac{1}{4\Omega} \sin 2\Omega t\right)-a\Omega \left( -\frac{t}{\Omega} \cos\Omega z\right)\\
-        &=-2a\varepsilon t\sin\Omega z-2\pi\varepsilon\Omega t^2\cos 2\Omega z-\frac{2}{3}\varepsilon\Omega^2t^3\cos 2\Omega z\\
-        &-2\pi a\varepsilon t\sin\Omega z-3a\varepsilon\Omega t^2\sin\Omega z+at(a+\cos\Omega z)+\frac{a^2}{2\Omega}\sin 2\Omega t
+        -\tau H_2(z-\varepsilon \tau)&=2a\cdot -\varepsilon \tau\sin z+4\pi\varepsilon\left( -\frac{\tau^2}{4} -\frac{\tau^2}{4}\cos 2z\right)+2\varepsilon\left( -\frac{\tau^3}{6} -\frac{\tau^3}{6}\cos 2 z\right)\\
+        &-2\pi a\varepsilon\cdot\left(\tau\sin z\right)+2\pi a\varepsilon\left(-\varepsilon \tau\cos z\right)\\
+        &-4\pi\varepsilon\left(-\frac{\tau^2}{4}+\frac{\tau^2}{4}\cos 2 z\right)-2\varepsilon\left( -\frac{\tau^3}{6} +\frac{\tau^3}{6}\cos 2z\right)+O(\varepsilon^2)\\
+        &-a\varepsilon\left( \tau^2\sin z \right)+a\varepsilon\left( -2\tau^2\sin z \right)\\
+        &-2a^2\left( -\frac{\tau}{2}-\frac{1}{4} \sin 2\tau\right)-a\left( -\tau \cos z\right)\\
+        &=-2a\varepsilon \tau\sin z-2\pi\varepsilon\tau^2\cos 2 z-\frac{2}{3}\varepsilon\tau^3\cos 2z\\
+        &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+\frac{a^2}{2}\sin 2\tau
     \end{align*}
-    $t=-2\pi/\Omega$を代入して整理すると，
+    $\tau=-2\pi$を代入して整理すると，
     \begin{align*}
-        &H_2(z+\varepsilon 2\pi/\Omega)=-a(a+\cos\Omega z)\\
-        +&2\varepsilon\left( a\sin\Omega z-2\pi^2\cos2\Omega z+\frac{4\pi^2}{3} \cos 2\Omega z+\pi a\sin\Omega z-3\pi a\sin\Omega z\right)
+        &H_2(z+2\pi\varepsilon )=-a(a+\cos z)\\
+        +&2\varepsilon\left( a\sin z-2\pi^2\cos2 z+\frac{4\pi^2}{3} \cos 2 z+\pi a\sin z-3\pi a\sin z\right)
     \end{align*}
     以上で，位相差$y$の近恒等変換$z$の従う微分方程式を近似的に求めることができる．
     よって，$z$が安定解を持つ条件を求めることで$y$が安定解を持つ条件を求めることができる．\\
     まず，式\eqref{eq:k1-approx}の状況では，
     \begin{align*}
-        \dot{z}&=\varepsilon-2k\sin\Omega z
+        \dot{z}&=\varepsilon-2k\sin z
     \end{align*}
     となる．これは，式\eqref{eq:phase-diff}に対し$x$の周期で平均化を行った($\sin x\sim 0$)式である．\\
     $z$が安定解を持つ条件は，
@@ -313,10 +314,11 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
     \end{align*}
     となる．\\
     次に，式\eqref{eq:k2-approx}の状況を考える．
-    閉形式で$K_2$を求めるため$|\varepsilon| \ll 1$を仮定すると，$H_2(z)=-a(a+\cos\Omega z)+O(\varepsilon)$より，$k,\ \varepsilon$が十分小さいとき，$2$次以下の微小量を無視すると，$z$は以下のような微分方程式に従う．
+    閉形式で$K_2$を求めるため$|\varepsilon| \ll 1$を仮定すると，$H_2(z)=-a(a+\cos z)+O(\varepsilon)$となる．
+    そして$k,\ \varepsilon$が十分小さいとして，$2$次以下の微小量を無視すると，$z$は以下のような微分方程式に従う．
     \begin{align*}
-        \dot{z}&=\varepsilon-2k\sin\Omega z-k^2a(a+\cos \Omega z)\\
-        &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin (\Omega z-\alpha)\quad(\alpha:\mathrm{const})
+        \dot{z}&=\varepsilon-2k\sin z-k^2a(a+\cos  z)\\
+        &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin ( z-\alpha)\quad(\alpha:\mathrm{const})
     \end{align*}
     $z$が安定解を持つ条件は，
     \begin{align*}
@@ -379,21 +381,50 @@ $x=\phi_M-\phi,y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2�
 
     \subsection{3体の同期($K_4$)}
     \label{sec:3body-k4}
-    式\eqref{eq:phase-diff}が平衡点を持つとき，
-    平衡点は，
+    本節では一般性を失わずに$\Omega<0,\ \omega>0$を仮定する．\\
+    式\eqref{eq:phase-diff}が (双曲的) 平衡点を持つとき，
+    \begin{alignat*}{2}
+        x_1&=\arcsin \frac{2\Omega-\omega}{3aK}<0,&\quad x_2&=-\pi-\arcsin \frac{2\Omega-\omega}{3aK}\\
+        y_1&=\arcsin \frac{2\omega-\Omega}{3K}>0,&\quad y_2&=\pi-\arcsin \frac{2\omega-\Omega}{3K}
+    \end{alignat*}
+    とすると，平衡点は，
     \begin{align*}
-        (x,y)=\left(\arcsin \frac{2\Omega-\omega}{3aK},\arcsin \frac{2\omega-\Omega}{3K}\right)
+        (x,y)=(x_1,y_1),\ (x_1,y_2),\ (x_2,y_1),\ (x_2,y_2)
     \end{align*}
     となる．
     よって，平衡点の存在条件は，
     \begin{align*}
         K\geq \frac{|2\Omega-\omega|}{3a}\ \cap \ K\geq \frac{|\Omega-2\omega|}{3}
     \end{align*}
-    となる．
-    さらに，平衡点が存在するとき，平衡点は源点・沈点・2つの鞍点である (図\ref{fig:phase-k80})．
+    となる．\\
+    また，式\eqref{eq:phase-diff}のヤコビ行列$J$は
+    \begin{align*}
+        J=-K\begin{pmatrix}
+            2a\cos x&\cos y\\
+            a\cos x&2\cos y
+        \end{pmatrix}
+    \end{align*}
+    であり，
+    \begin{align*}
+        \tr J&=-K(2a\cos x+2\cos y)\\
+        \det J&=3aK^2\cos x\cos y\\
+        (\tr J)^2-4\det J&=K^2(2a\cos x-2\cos y)^2> 0
+    \end{align*}
+    である．\\
+    ここで，$\cos x_1>0,\ \cos x_2<0,\ \cos y_1>0,\cos y_2<0$及び$a>0,\ K>0$より，
+    \begin{alignat*}{2}
+        \left.\det J \right|_{(x,y)=(x_1,y_1)}&>0, &\quad  \left.\tr J \right|_{(x,y)=(x_1,y_1)}&<0\\
+        \left.\det J \right|_{(x,y)=(x_1,y_2)}&<0 & &\\
+        \left.\det J \right|_{(x,y)=(x_2,y_1)}&<0 & &\\
+        \left.\det J \right|_{(x,y)=(x_2,y_2)}&>0, &\quad  \left.\tr J \right|_{(x,y)=(x_2,y_2)}&>0
+    \end{alignat*}
+    となるため，線形安定性から$(x_1,y_1)$は沈点，$(x_1,y_2),\ (x_2,y_1)$は鞍点，$(x_2,y_2)$は源点となる．
+    実際，図\ref{fig:phase-k80}では平衡点は源点，2つの鞍点，沈点に分かれている．\\
     このとき，源点から2つの鞍点へ，2つの鞍点から沈点への流れがあるので，鞍点の安定多様体と交わるようなLimit Cycleは存在しない．
-    また，全ての平衡点は$x,y$-nullclineの交点であるので，源点を囲うようなLimit Cycleも存在しない．
-    よって，平衡点を持つとき，周期解は持たず，Poincar\'{e}-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) から任意の点から発する軌道は沈点へ収束する．
+    また，全ての平衡点は$x,y$-nullclineの交点であるので，源点を囲うようなLimit Cycleも存在しない．\\
+    これまでの議論は双曲的平衡点が4つ存在する場合について述べたものであるが，非双曲的平衡点が2つ，つまり$x_1=x_2$もしくは$y_1=y_2$のときも，ベクトル場はほとんど変わらないことから同様の議論が成り立つ．\\
+    よって，平衡点を持つとき，周期解は持たず，Poincar\'{e}-Bendixsonの定理の一般化 (定理\ref{thm:poiben-gen}) から任意の点から発する軌道は平衡点へ収束する．
+    特に，平面上のほとんど全ての点から発する軌道は沈点に収束する．\\
     以上より，3体が同期する臨界結合強度$K_4$は，
     \begin{align*}
         K_4=\max\left(\frac{|2\Omega-\omega|}{3a},\frac{|\Omega-2\omega|}{3}\right)
