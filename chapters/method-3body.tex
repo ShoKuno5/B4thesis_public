@@ -290,9 +290,10 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         \label{eq:H1-taylor}
     \end{align}
     式\eqref{eq:H1-approx}と式\eqref{eq:H1-taylor}を$\varepsilon$について比較すると，
-    \begin{align*}
+    \begin{align}
+        \label{eq:nit-H1}
         H_1(z)=-2\sin z+2\pi\varepsilon \cos z+O(\varepsilon^2)
-    \end{align*}
+    \end{align}
     が得られる．
     式\eqref{eq-h1-H1}に代入すると，
     \begin{align*}
@@ -327,9 +328,10 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         &+2\varepsilon\left( a\sin z-2\pi^2\cos2 z+\frac{4\pi^2}{3} \cos 2 z+\pi a\sin z-3\pi a\sin z\right).
     \end{align*}
     $H_1$と同様に$z$まわりに$\varepsilon$に関して展開し，$\varepsilon$について比較すると，以下の式が得られる．
-    \begin{align*}
+    \begin{align}
+        \label{eq:nit-H2}
         H_2(z)=-a(a+\cos z)+2\varepsilon\left( (1-3\pi)a\sin z-\frac{2\pi^2}{3} \cos 2 z\right).
-    \end{align*}
+    \end{align}
 
     以上で，位相差$y$の近恒等変換$z$の従う微分方程式を近似的に求めることができる．
     よって，$z$が安定解を持つ条件を求めることで$y$が安定解を持つ条件を求めることができる．
@@ -538,6 +540,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \end{figure}
 \section{議論}
 \label{sec:3body-discussion}
+\subsection{同期状態の変化パターン}
 \ref{sec:3body-critical}節では結合強度$K_1,\ K_2$については$|\Omega|\gg|\omega|$の場合について求めた．
 また，\ref{sec:3body-summary}節では，$|\Omega|\gg|\omega|$の場合について，結合強度$K$の変化に対応する同期状態の変化パターンとその結合強度比$a$への依存性を調べた．
 
@@ -573,4 +576,67 @@ $|\Omega|\sim|\omega|$の分岐図を図\ref{fig:3body-phase-boundary}に示す�
 $a=1.5,\ 1.8$を境に$a$を固定し$K$を変化させたときの同期状態の変化パターンが変化している．}
 \label{fig:3body-phase-boundary}
 \end{figure}
+\subsection{$\Omega\gg\omega$により定まる臨界結合強度の適用限界}
+\ref{sec:3body-critical}節において$\varepsilon=|\Omega|/|\omega|\gg 1$を仮定し求めた結合強度$K_1,\ K_2$について，どの程度の$\varepsilon$まで有効か調べる．
+ここでは，\ref{sec:3body-k12}節において求めた$K_2$の閉形式の表現である式\eqref{eq:K2-approx}だけでなく，式\eqref{eq:nit-H1},\ \eqref{eq:nit-H2}より定まる以下のような$y$の近恒等変換$z$の微分方程式を考える．
+\begin{align}
+    \label{eq:k1k2-open}
+    \dot{z}=\varepsilon+kH_1(z)+k^2H_2(z)+O(k^3,\epsilon^2)
+\end{align}
+この式が$\dot{z}=0$の解を持つ同期条件を以下では開形式の同期条件と呼ぶことにする．
+特に，開形式の同期条件から定まる臨界結合強度を開形式の臨界結合強度と略することとする．
+この同期条件は振動数の近い振動子が同期する条件であり，その境界は$K$-$a$平面上の連結な曲線となる．
+
+まず，$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k1-compare}に示す．
+$\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=135mm]{./images/k1-compare.pdf}
+\centering
+\caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
+$\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．}
+\label{fig:k1-compare}
+\end{figure}
+
+次に，$a=1,\ 1.7$のときの$K_1$について閉形式の値及び開形式の同期条件から定まる値の数値実験による値との誤差を様々な$\varepsilon$で比較したものを図\ref{fig:k1-error}に示す．
+閉形式の値において$\varepsilon$の増加に伴った誤差の拡大が$a=1$より$a=1.7$で大きい．
+これは，図\ref{fig:3body-phase}で$a$が大きいほど$K_1$の真の値が大きいが，式\eqref{eq:K1-approx}は定数であるため，$a$が大きいほど誤差が拡大していると考えられる．
+一方，開形式については閉形式に比べ誤差及び$a$の増大に伴う誤差の増大は小さくなっている．
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=135mm]{./images/k1-error.pdf}
+\centering
+\caption{$a=1,\ 1.7$のときの$K_1$について数値実験による値と閉形式の値と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
+閉形式の値において$\varepsilon$の増加に伴った誤差の拡大が$a=1$より$a=1.7$で大きい一方で，開形式については閉形式に比べ誤差及び$a$の増大に伴う誤差の増大は小さくなっている．}
+\label{fig:k1-error}
+\end{figure}
+
+$a=4$のときの$K_2$について数値実験による値と閉形式の値 (式\eqref{eq:K2-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k2-compare}に示す．
+$K_1$と比べると，閉形式．開形式ともに精度が落ちるものの．$\varepsilon=0.045$までは閉形式，開形式ともにある程度の精度で近似できている．
+ここで，開形式よりも，より多くの仮定を課した閉形式が数値実験による値に近いのは，閉形式において$|\varepsilon k|\ll 1,\ |a\varepsilon k^2| \ll 1$という$\varepsilon$や$k$だけでなく$a$にも依存した仮定を課していることによるアーチファクトであると考えられる．
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=135mm]{./images/k2-compare.pdf}
+\centering
+\caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
+$K_1$と比べると，閉形式．開形式ともに精度が落ちるものの．$\varepsilon=0.045$までは閉形式，開形式ともにある程度の精度で近似できている．}
+\label{fig:k2-compare}
+\end{figure}
+
+図\ref{fig:3body-phase}，\ref{fig:3body-phase-boundary}からわかるように，$K_1$及び$K_2$はある$(K,a)$で一致し，$K$-$a$平面で連結な曲線を構成する．
+開形式による$K_1$及び$K_2$も連結な曲線となるため，ある$a$における両曲線の値を異なる$\varepsilon$で比較し精度を評価することが考えられる．
+$a=5$のときの$K_1,\ K_2$について数値実験による値とと開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k1k2-compare}に示す．
+$K_1$よりも$K_2$で開形式の精度が悪い．
+また，$K_1$と$K_2$が一致する$\varepsilon$も数値実験の値と開形式の値とで異なる．
+よって，開形式の値は，閉形式の値を用いるよりも$a$依存性をより精度よく近似しているものの，$\varepsilon$が大きくなると有効ではないと考えられる．
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=135mm]{./images/k1k2-compare-open.pdf}
+\centering
+\caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
+$K_1$よりも$K_2$で開形式の精度が悪い．
+また，$K_1$と$K_2$が一致する$\varepsilon$も数値実験の値と開形式の値とで異なる．}
+\label{fig:k1k2-compare}
+\end{figure}
+
 \end{document}
