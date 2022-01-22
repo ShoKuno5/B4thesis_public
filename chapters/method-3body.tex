@@ -19,7 +19,8 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 ただし，時刻$t\ (0\leq t\leq T)$で位相$\phi_i(t)$の node $i$の実効振動数は，$\Omega_i^{\mathrm{eff}}:=(\phi_i(T)-\phi_i(T/2))/(T/2)$で定めた．
 ここで，$m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$のように，枝の増加により増加前に同期していた node と非同期になり別の node と同期する，つまり同期クラスタが変化する現象が見られる．
 以下，このような同期状態の変化を「鞍替え」と呼ぶこととする．
-この鞍替え現象は鎖構造の蔵本モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}ものの(付録参照)，ネットワーク構造の変化で発生することは知られておらず，
+この鞍替え現象は，振動子が鎖状に繋がりの隣接した振動子の一方からのみ相互作用を受ける蔵本モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}(付録参照)．
+しかしながら，ネットワーク構造の変化で発生することは知られておらず，
 疎なネットワークにおける微視的なクラスタリングパターンの理解において重要な役割を果たすと考えられる．
 また，ネットワーク全体のクラスタリングパターンの変化は，一部の振動子についての同期現象と鞍替え現象に分割して理解することができる．
 
@@ -79,9 +80,10 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 
 次節では，3体系について鞍替え現象より広い範囲での同期状態を調べる．
 \section{3体系の同期状態}
+
 元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,\ n$の変化は，3体系 (図\ref{fig:3body}) においてはパラメータ$a,\ K$の変化に対応する．
 
-3体系について，様々な振動数差$\Omega,\ \omega$に対し，結合強度比$a$を様々な値で固定し結合強度$K$を変化させる数値実験を行うと，同期状態の変化が図\ref{fig:3body-abs}の4パターン見られた．
+3体系について，様々な振動数差$\Omega:=\omega-\omega_M,\ \omega:=\omega-\omega_N$に対し，結合強度比$a$を様々な値で固定し結合強度$K$を変化させる数値実験を行うと，同期状態の変化が図\ref{fig:3body-abs}の4パターン見られた．
 \captionsetup[figure]{justification=centering}
 \begin{figure}[tbp]
     \begin{minipage}[b]{0.47\linewidth}
@@ -120,13 +122,14 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 よって，3体系のふるまいを理解する上では，図\ref{fig:3body-notapprox175}の場合の同期状態の変化及び臨界結合強度を解析するだけで十分である．
 
 特に，次節以降の解析の都合，図\ref{fig:3body-notapprox175}と同様に最も多様に同期状態が変化するパラメータであり，
-$|\Omega|\gg|\omega|$となる$a=4.0,\ \Omega=-2,\ \omega=0.1$の場合について注目する．
+$|\Omega|\gg|\omega|$となる$a=4.0,\ \Omega=-2,\ \omega=0.05$の場合について注目する．
 そのときの結合強度と実効振動数の関係を図\ref{fig:3body-state}に示す．
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=105mm]{./images/three-body-prob.pdf}
 \centering
-\caption{3体ネットワークで$a=4.0,\ \Omega=-2,\ \omega=0.1$のしたときの結合強度$K$と実効振動数の関係．$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.05\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
+\caption{3体ネットワークで$a=4.0,\ \Omega=-2,\ \omega=0.05$のしたときの結合強度$K$と実効振動数の関係．
+$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.03\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
 \label{fig:3body-state}
 \end{figure}
 4つの臨界結合強度を分岐点として5つの同期状態に分岐することが分かる．
@@ -177,7 +180,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
       \subcaption{$K=0.8$．3体とも同期．\\phase 5}
       \label{fig:phase-k80}
     \end{minipage}
-    \caption{$a=4.0,\ \omega=0.1,\ \Omega=2$における5つの同期状態における相図．\\
+    \caption{$a=4.0,\ \omega=0.1,\ \Omega=-2$における5つの同期状態における相図．\\
     ベクトル場，$x$-nullcline，$y$-nullcline，沈点，及び$(x,y)=(0,0)$から発する軌道を示している．}\label{fig:phase}
 \end{figure}
 \clearcaptionsetup{figure}
@@ -426,7 +429,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
 
     \subsection{3体の同期($K_4$)}
     \label{sec:3body-k4}
-    本節では一般性を失わずに$\Omega<0,\ \omega>0$を仮定する．
+    本節では$2\Omega\leq\omega,\ 2\omega\geq\Omega$を仮定するが，それ以外の場合も同様の議論が成り立つ．
 
     式\eqref{eq:phase-diff}が (双曲的) 平衡点を持つとき，
     \begin{alignat*}{2}
@@ -457,7 +460,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         (\tr J)^2-4\det J&=K^2(2a\cos x-2\cos y)^2> 0
     \end{align*}
     である．
-    ここで，$\cos x_1>0,\ \cos x_2<0,\ \cos y_1>0,\cos y_2<0$及び$a>0,\ K>0$より，
+    ここで，$\cos x_1>0,\ \cos x_2<0,\ \cos y_1>0,\ \cos y_2<0$及び$a>0,\ K>0$より，
     \begin{alignat*}{2}
         \left.\det J \right|_{(x,y)=(x_1,y_1)}&>0, &\quad  \left.\tr J \right|_{(x,y)=(x_1,y_1)}&<0,\\
         \left.\det J \right|_{(x,y)=(x_1,y_2)}&<0, & &\\
@@ -502,9 +505,8 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     また，$K'_3\geq K_4$から固有振動数の離れた振動子との同期が起こる，つまり，鞍替え現象が発生するための結合強度比$a$の十分条件も求まる．
     \begin{align}
         \label{eq:a-ast1}
-        a\geq \frac{2|\Omega|+|\omega|}{|\Omega|+2|\omega|}= 2-3|\varepsilon|+O(|\varepsilon|^2):=a^\ast_1.    
+        a\geq \frac{|2\Omega-\omega|}{|4\Omega-2\omega|-3|\Omega|}= 2-3|\varepsilon|+O(|\varepsilon|^2):=a^\ast_1.    
     \end{align}
-    ここで，$\Omega,\ \omega$の定義から$\operatorname{sgn}(\Omega)=-\operatorname{sgn}(\omega)$となることを利用した．
     このとき，$a=a^\ast_1$で$K'_{3}(a^\ast_1)=K_{41}(a^\ast_1)=K_{42}(a^\ast_1)$となる．
     $a^\ast_1$を境に図\ref{fig:3body-notapprox150}の同期状態変化パターンから図\ref{fig:3body-notapprox175}に変化する．
 
@@ -513,7 +515,6 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         \label{eq:a-ast2}
         a\geq \frac{2|\Omega|+|\omega|}{2|\omega|}:=a^\ast_2.    
     \end{align}
-    ここで，同様に$\Omega,\ \omega$の定義から$\operatorname{sgn}(\Omega)=-\operatorname{sgn}(\omega)$となることを利用した．
     $a^\ast_2$を境に図\ref{fig:3body-notapprox175}の同期状態変化パターンから図\ref{fig:3body-notapprox200}に変化する．
 
     式\eqref{eq:3body-matome}の正当性を確かめるため，$K$-$a$平面における同期状態の分岐図を描くことを考える．
