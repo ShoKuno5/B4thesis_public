@@ -80,7 +80,7 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 
 次節では，3体系について鞍替え現象より広い範囲での同期状態を調べる．
 \section{3体系の同期状態}
-
+\label{sec:3body-synchro-state}
 元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,\ n$の変化は，3体系 (図\ref{fig:3body}) においてはパラメータ$a,\ K$の変化に対応する．
 
 3体系について，様々な振動数差$\Omega:=\omega-\omega_M,\ \omega:=\omega-\omega_N$に対し，結合強度比$a$を様々な値で固定し結合強度$K$を変化させる数値実験を行うと，同期状態の変化が図\ref{fig:3body-abs}の4パターン見られた．
@@ -138,7 +138,8 @@ $0\leq K<K_1$では3体が非同期であり (phase 1)，$K_1\leq K<K_2$では�
 
 次節ではこれらの5つの同期状態が相平面上でどのように記述されるかを調べる．
 \section{3体系の同期状態の相平面解析}
-$x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は2本の位相差方程式になる．
+\label{sec:3body-phase-plane}
+$x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は2本の位相差方程式になる．
 \begin{align}
     \label{eq:phase-diff}
     \begin{split}
@@ -146,8 +147,8 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \dot{y}&=\omega-K(a\sin x+2\sin y).
     \end{split}
 \end{align}
-図\ref{fig:3body-state}のそれぞれの同期状態に対応する$x-y$平面上の相図を図\ref{fig:phase}に示す．
 
+図\ref{fig:3body-state}のそれぞれの同期状態に対応する$x$-$y$平面上の相図を図\ref{fig:phase}に示す．
 \captionsetup[figure]{justification=centering}
 \begin{figure}[tbp]
     \begin{minipage}[b]{0.47\linewidth}
@@ -181,7 +182,8 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
       \label{fig:phase-k80}
     \end{minipage}
     \caption{$a=4.0,\ \omega=0.1,\ \Omega=-2$における5つの同期状態における相図．\\
-    ベクトル場，$x$-nullcline，$y$-nullcline，沈点，及び$(x,y)=(0,0)$から発する軌道を示している．}\label{fig:phase}
+    ベクトル場，$x$-nullcline，$y$-nullcline，沈点，及び$(x,y)=(0,0)$から発する軌道を示している．}
+    \label{fig:phase}
 \end{figure}
 \clearcaptionsetup{figure}
 
@@ -194,7 +196,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \item
     非同期：ほとんど確実に，安定な周期軌道が存在せず，$\mathbb{T}^2$全てを覆うような準周期軌道を描く．（図\ref{fig:phase-k2},\ \ref{fig:phase-k22}）
 \end{itemize}
-以上の相平面解析の結果を元に，以降の節では4つ臨界結合強度を求める．
+以上の相平面解析の結果を元に，以降の節では4つの臨界結合強度を求める．
 \section{臨界結合強度の近似解}
 \label{sec:3body-critical}
     \subsection{固有振動数の近い2体との同期 ($K_1$,$K_2$)}
@@ -223,6 +225,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \begin{align}
         \dv{y}{\tau}=\varepsilon+k S(x,y).
     \end{align}
+
     このとき，$y$を以下のように近恒等変換する．
     \begin{align}
         y=z+kh_1(z,\tau)+k^2h_2(z,\tau)+O(k^3).
@@ -231,21 +234,21 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     ここで，$h_i$は$i=1,2,\ h_i(z+2\pi,\tau+2\pi)=h_i(z,\tau),\ h_i(z,0)=0$を満たす関数とする．
 
     一方，$x$については$k$の1次で展開すると以下のようになる．
-    \begin{align*}
-        x&=\Omega t-\Omega k\int_0^t(2a\sin \Omega s+\sin (z+\omega s))\dd{s}+O(k^2)\\ 
-        &=\tau+\Omega k\left(\frac{2a}{\Omega}\cos\tau+\frac{\tau}{\Omega}\sin z+\frac{1}{\Omega}\cos \varepsilon \tau\right)+O(k^2).
-    \end{align*}
-    最終行では，$\cos x(0)=0,\ \cos y(0)=0$となるように初期時刻$t=0$を定めたことに因る．
-    また，$S(x,y)$を$z,\ t$に関して展開する．
+    \begin{align}
+        x&=\Omega t-\Omega k\int_0^t(2a\sin(x+\Omega s)+\sin (z+\omega s))\dd{s}+O(k^2)\notag\\ 
+        &=\tau-\Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,k\varepsilon^2).\label{eq:x-series}
+    \end{align}
+    最終行では，$\cos x(0)=0$となるように初期時刻$t=0$を定めたことに因る．
+    
+    式\eqref{eq:pertu-ytilde},\ \eqref{eq:x-series}を用いて，$S(x,y)$を$z,\ \tau$に関して展開する．
     \begin{align*}
         S(x,y)&=-a\sin x-2\sin y\\
         &=-a\sin\tau-2\sin z-2 kh_1\cos z\\
-        &-a\cos\tau\cdot \Omega k\left(\frac{2a}{\Omega}\cos \tau+\frac{\tau}{\Omega}\sin z+\frac{1}{\Omega}\cos \varepsilon \tau\right)+O(k^2)\\
+        &+a\cos\tau\cdot \Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,k\varepsilon^2)\\
         &=-a\sin\tau-2\sin z\\
-        &+k\left(-2 \cos z\cdot h_1-2a^2\cos^2\tau-a\tau\cos \tau\sin z-a\cos\tau\cos\varepsilon\tau\right)\\
-        &+O(k^2).
+        &+k\left(-2 \cos z\cdot h_1+a^2\sin 2\tau+a\tau\cos \tau\sin z+\frac{a\varepsilon \tau^2}{2}\cos \tau \cos z\right)+O(k^2,k\varepsilon^2).
     \end{align*}
-    さらに，$S_1:=-a\sin\tau-2\sin z,\ S_2:=-2a^2\cos^2\tau-a\tau\cos \tau\sin z-a\cos\tau\cos\varepsilon\tau$と定めると，
+    さらに，$S_1:=-a\sin\tau-2\sin z,\ S_2:=a^2\sin 2\tau+a\tau\cos \tau\sin z+a\varepsilon \tau^2/2 \cdot\cos \tau \cos z$と定めると，
     \begin{align*}
         S(x,y)=S_1+k\pt_y S_1\cdot h_1+kS_2
     \end{align*}
@@ -275,7 +278,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \begin{align}
         -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\sin(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
         &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon t)-\cos  z)+h_1(z,\tau)\notag\\
-        &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)\notag\\
+        &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)+O(\varepsilon^2)\notag\\
         &=a \sin\tau+2\tau\sin z-\varepsilon \tau^2\cos z+h_1(z,\tau)+O(\varepsilon^2).
         \label{eq-h1-H1}
     \end{align}
@@ -299,7 +302,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \begin{align*}
         h_1(z,\tau)&=2\tau\sin(z-\varepsilon \tau)-2\pi\varepsilon \tau\cos(z-\varepsilon \tau)-a\sin\tau-2\tau\sin z+\varepsilon \tau^2\cos z\\
         &=2\tau(\sin z-\varepsilon \tau\cos z-\sin z)-a\sin\tau+\varepsilon(-2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)\\
-        &=-a\sin\tau-\varepsilon(2\pi \tau+\tau^2)\cos z+O(\varepsilon^2).
+        &=-a\sin\tau-\varepsilon(2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)
     \end{align*}
     となる．
 
@@ -307,7 +310,9 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     \begin{align*}
         H_2(z-\varepsilon \tau)=&\ \pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\\
         =&-2\cos (z+\varepsilon s)\left( -a\sin(\tau+s)-\varepsilon(2\pi (\tau+s)+(\tau+s)^2) \cos (z+\varepsilon s) \right)\\
-        -&\ 2a^2\cos^2(\tau+s)-a(\tau+s)\cos (\tau+s)\sin (z+\varepsilon s)-\pt_\tau h_2+O(\varepsilon^2)\\
+        % +&\  a^2\sin 2(\tau+s)+a(\tau+s)\cos (\tau+s)-\pt_\tau h_2+O(\varepsilon^2)\\
+        +&\ a^2\sin 2(\tau+s)+a(\tau+s)\cos (\tau+s)\sin (z+\varepsilon s)\\
+        +&\ \frac{a\varepsilon (\tau+s)^2}{2}\cos (\tau+s) \cos (z+\varepsilon s)-\pt_\tau h_2+O(\varepsilon^2)\\
         +&\ \varepsilon(2\pi(\tau+s)+(\tau+s)^2)\sin (z+\varepsilon s) \\
         &\left( -a\sin(\tau+s)-2\sin (z+\varepsilon s) +a\cos(\tau+s)\right.\\
         &\left.+\varepsilon(2\pi +2(\tau+s))\cos (z+\varepsilon s)\right).
@@ -318,9 +323,10 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         &-2\pi a\varepsilon\cdot\left(\tau\sin z\right)+2\pi a\varepsilon\left(-\varepsilon \tau\cos z\right)\\
         &-4\pi\varepsilon\left(-\frac{\tau^2}{4}+\frac{\tau^2}{4}\cos 2 z\right)-2\varepsilon\left( -\frac{\tau^3}{6} +\frac{\tau^3}{6}\cos 2z\right)+O(\varepsilon^2)\\
         &-a\varepsilon\left( \tau^2\sin z \right)+a\varepsilon\left( -2\tau^2\sin z \right)\\
-        &-2a^2\left( -\frac{\tau}{2}-\frac{1}{4} \sin 2\tau\right)-a\left( -\tau \cos z\right)\\
+        &+\frac{a^2}{2}\left( \cos 2\tau-1\right)+a\tau(a+\cos z)\\
+        &+\frac{a\varepsilon}{2}(-\tau\sin\tau+1-\cos\tau)\cos z\\
         &=-2a\varepsilon \tau\sin z-2\pi\varepsilon\tau^2\cos 2 z-\frac{2}{3}\varepsilon\tau^3\cos 2z\\
-        &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+\frac{a^2}{2}\sin 2\tau.
+        &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+O(\varepsilon^2)
     \end{align*}
     となる．$\tau=-2\pi$を代入して整理すると以下のようになる．
     \begin{align*}
@@ -365,12 +371,12 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     $z$が安定解を持つ条件は，
     \begin{align*}
         |\varepsilon-a^2k^2|&\leq k\sqrt{4+a^2k^2}\\
-        0\leq |k|&\leq \sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
+        0\leq |k|&\leq \sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
     \end{align*}
     となり，臨界結合強度$K_2$は，
     \begin{align}
         \label{eq:K2-approx}
-        K_2=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
+        K_2=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
     \end{align}
     となる．    
     
@@ -493,7 +499,7 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         \label{eq:3body-matome}
         \begin{split}
             K_1&=\frac{\omega}{2},\\
-            K_2&=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+2a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)},\\
+            K_2&=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)},\\
             K'_3&=\frac{|\Omega|}{2a-1},\\
             K_{41}&=\frac{|2\Omega-\omega|}{3a},\\
             K_{42}&=\frac{|\Omega-2\omega|}{3},\\
@@ -501,8 +507,9 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
         \end{split}
     \end{align}
 
-    臨界結合強度から次のような定性的な同期現象の理解が得られる．固有振動数が近く枝が多く集団のサイズが小さいほど同期しやすい．
-    そして，2つの集団との間の枝の本数の比がある程度偏っていて，結合強度がある程度強いとき鞍替え現象が起こる．
+    臨界結合強度から次のような定性的な同期現象の理解が得られる．
+    固有振動数が近く枝が多いほど同期しやすい．
+    そして，2つの集団との間の枝の本数の比がある程度偏っていて，結合強度がある程度強いとき3体全体同期や鞍替え現象が起こる．
     
     また，$K'_3\geq K_4$から固有振動数の離れた振動子との同期が起こる，つまり，鞍替え現象が発生するための結合強度比$a$の十分条件も求まる．
     \begin{align}
@@ -527,7 +534,6 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     また，$a^\ast_1\simeq 2$を境に結合強度に対する同期状態変化パターンが変化していることもわかる．
     加えて，$|\Omega|\gg|\omega|$の場合は図\ref{fig:3body-notapprox150},\ \ref{fig:3body-notapprox175},\ \ref{fig:3body-notapprox200}の同期状態変化パターンしか存在しないこともわかる．
     $K_2$で$K$が大きい場合に境界から離れているのは，閉形式で解を求めるために利用した$k=K/\Omega$が小さいという近似が成り立たなくなるためであると思われる．
-
     \begin{figure}[tbp]
     \centering
     \includegraphics[width=135mm]{images/three-body-phase.pdf}
@@ -538,6 +544,56 @@ $x=\phi_M-\phi,\ y=\phi_N-\phi$と位相差を取ると，式\eqref{eq:3body}は
     }
     \label{fig:3body-phase}
     \end{figure}
+
+\subsection{一般の集団サイズをもつ3体系}
+これまでの節では，鞍替えに関わる3つ集団のサイズ$L,\ M,\ N$について，$L=1,\ M=1,\ N=1$を仮定した式\eqref{eq:3body}について解析を行ってきた．
+しかし，一般のネットワークにおける枝の増加・減少に伴う同期状態の変化を説明する上では，$L=1,\ M=1,\ N=1$の理論では不十分である．
+そこで，本節では一般の$L,\ M,\ N$について同様の議論を行う．
+
+まず，式\eqref{eq:3body-default}について，$a=m/n$として，$nK/L$を$K$，$N/L,\ M/L$を$N,\ M$で定義し直すと以下のようになる．
+\begin{align}
+    \label{eq:3body-general}
+    \begin{split}
+        \dot{\phi}&=\omega+K\sin\left( \phi_N-\phi \right)+aK\sin\left( \phi_M-\phi \right),\\
+        \dot{\phi}_M&=\omega_M+\frac{K}{M}\sin\left( \phi-\phi_M \right), \\
+        \dot{\phi}_N&=\omega_N+\frac{K}{N}\sin\left( \phi-\phi_N \right).    
+    \end{split}
+\end{align}
+
+式\eqref{eq:3body-general}においても，\ref{sec:3body-synchro-state}節と同様にパラメータ$a,\ K,\ M,\ N$を変化させることで同期状態が変化することが期待される．
+3体系について，様々な振動数差$\Omega:=\omega-\omega_M,\ \omega:=\omega-\omega_N$に対し，パラメータ$a,\ L,\ M,\ N$を様々な値で固定し，結合強度$K$を変化させたときの同期状態の変化を調べた．
+すると，\ref{sec:3body-synchro-state}節と同様に，図\ref{fig:3body-abs}で見られた4つの同期状態の変化パターンを示すことがわかった．
+
+続いて，\ref{sec:3body-phase-plane}節と同様に，3体系の同期状態と2つの位相差の相平面上の安定解との対応を調べる．
+式\eqref{eq:phase-diff}と同様に，$x=\phi-\phi_M,\ y=\phi-\phi_N$という位相差を定義すると，式\eqref{eq:3body-general}は以下の$x,\ y$に関する2本の微分方程式で表される．
+\begin{align}
+    \label{eq:phase-diff-general}
+    \begin{split}
+        \dot{x}&=\Omega-K\left( a\left(1+\frac{1}{M}\right)\sin x +\sin y\right),\\
+        \dot{x}&=\omega-K\left( a\sin x +\left(1+\frac{1}{N}\right)\sin y\right).
+    \end{split}
+\end{align}
+
+図\ref{fig:3body-state}で見られた3つの同期状態は，\ref{sec:3body-phase-plane}節と同様に式\eqref{eq:phase-diff-general}における安定解に対応する．
+また，$x$-$y$平面における相図は図\ref{fig:phase}と同様の幾何学的性質を示す．
+よって，\ref{sec:3body-critical}節と同様の手法で4つの臨界結合強度を求めることができ，以下のように求まる．
+\begin{align}
+    \begin{split}
+        K_1&=\frac{|\omega|}{1+1/N},\\
+        K_2&=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left((1+1/N)^2/2+a^2\varepsilon+\sqrt{((1+1/N)^2/2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)},\\
+        K'_3&=\frac{|\Omega|}{a(1+1/M)-1}\gtrapprox K_3,\\
+        K_4&=\max\left\{\frac{|(1+1/N)\Omega-\omega|}{a(1/N+1/M+1/NM)},\frac{|\Omega-(1+1/M)\omega|}{(1/N+1/M+1/NM)}\right\}.
+    \end{split}
+\end{align}
+ただし，$K_1,\ K_2$については，$\Omega\gg\omega$を仮定し求めた．
+
+集団サイズ$N,\ M$を考慮した臨界結合強度についても同期現象の定性的な理解が得られる．
+実効振動数が近い集団$\Omega_N$のサイズが小さく，実効振動数の差$|\omega|$が小さいほど，実効振動数の近い集団と同期しやすい．
+実効振動数が近い集団$\Omega_N$と同期していた振動子集団$\Omega$は，$\Omega_N$のサイズ$N$が大きく，実効振動数が離れた集団$\Omega_M$との間に枝が多く，$\Omega_M$との振動数差$|\Omega|$が小さいほど，$\Omega_M$に引き寄せられ，同期が解除されやすい．
+ここで，吸引する振動数集団$\Omega_M$のサイズ$M$には依らないことに注意．
+また，実効振動数が離れた集団$\Omega_M$のサイズ$M$が小さく，$\Omega_N$に比べて枝が多く繋がっており，実効振動数の差$\Omega$が小さいほど，$\Omega_M$と同期しやすく，$\Omega_N$から$\Omega_M$に鞍替えしやすい．
+そして，振動子集団$\Omega_N$のサイズ$N$がある程度小さく，結合強度比$a$がある程度大きいと3体全体が同期しやすい．
+
 \section{議論}
 \label{sec:3body-discussion}
 \subsection{同期状態の変化パターン}
@@ -591,7 +647,7 @@ $a=1.5,\ 1.8$を境に$a$を固定し$K$を変化させたときの同期状態�
 $\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=135mm]{./images/k1-compare.pdf}
+\includegraphics[width=105mm]{./images/k1-compare.pdf}
 \centering
 \caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
 $\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．}
@@ -604,7 +660,7 @@ $\varepsilon$が大きくなると閉形式やや外れているものの，$\va
 一方，開形式については閉形式に比べ誤差及び$a$の増大に伴う誤差の増大は小さくなっている．
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=135mm]{./images/k1-error.pdf}
+\includegraphics[width=105mm]{./images/k1-error.pdf}
 \centering
 \caption{$a=1,\ 1.7$のときの$K_1$について数値実験による値と閉形式の値と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
 閉形式の値において$\varepsilon$の増加に伴った誤差の拡大が$a=1$より$a=1.7$で大きい一方で，開形式については閉形式に比べ誤差及び$a$の増大に伴う誤差の増大は小さくなっている．}
@@ -616,7 +672,7 @@ $K_1$と比べると，閉形式．開形式ともに精度が落ちるものの
 ここで，開形式よりも，より多くの仮定を課した閉形式が数値実験による値に近いのは，閉形式において$|\varepsilon k|\ll 1,\ |a\varepsilon k^2| \ll 1$という$\varepsilon$や$k$だけでなく$a$にも依存した仮定を課していることによるアーチファクトであると考えられる．
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=135mm]{./images/k2-compare.pdf}
+\includegraphics[width=105mm]{./images/k2-compare.pdf}
 \centering
 \caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
 $K_1$と比べると，閉形式．開形式ともに精度が落ちるものの．$\varepsilon=0.045$までは閉形式，開形式ともにある程度の精度で近似できている．}
@@ -631,7 +687,7 @@ $K_1$よりも$K_2$で開形式の精度が悪い．
 よって，開形式の値は，閉形式の値を用いるよりも$a$依存性をより精度よく近似しているものの，$\varepsilon$が大きくなると有効ではないと考えられる．
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=135mm]{./images/k1k2-compare-open.pdf}
+\includegraphics[width=105mm]{./images/k1k2-compare-open.pdf}
 \centering
 \caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値 (式\eqref{eq:K1-approx})と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
 $K_1$よりも$K_2$で開形式の精度が悪い．
@@ -639,4 +695,10 @@ $K_1$よりも$K_2$で開形式の精度が悪い．
 \label{fig:k1k2-compare}
 \end{figure}
 
+以上より，\ref{sec:3body-critical}節で求めた閉形式の臨界結合強度は$\varepsilon$が極めて小さい場合は有効であるが，$\varepsilon\sim 1$のような場合は有効ではない．
+また，開形式の臨界結合強度は$K_1$及び$K_2$を連結な曲線で表現するという閉形式の臨界結合強度が持たない性質を持っているものの，
+$\varepsilon$が大きい領域での近似誤差は依然として大きい．
+このため，$\varepsilon\sim 1$の場合の性質を調べるためには，$\varepsilon\ll 1$を利用せずに臨界結合強度を求めることが期待される．
+
+% \subsection{}
 \end{document}
