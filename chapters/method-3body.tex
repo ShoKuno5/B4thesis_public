@@ -27,7 +27,7 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 次節ではこの鞍替え現象に注目し解析を行う．
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=105mm]{./images/cutting_N6K1.pdf}
+\includegraphics[width=105mm]{./images/cutting_N6K10.pdf}
 \centering
 \caption{固有振動数$1$の振動子3つと固有振動数の$-1$の振動子3つからなる6体の振動子ネットワークにおいて，枝を1本ずつランダムに選び全接続まで連続的に増やしたときの各振動子の実効振動数の変化を表す．
 $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の増加により増加前に同期していたnodeと非同期になり別のnodeと同期する「鞍替え」が見られる．}
@@ -36,7 +36,7 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 \section{鞍替え現象のモデル化}
 ある$L$体の集団が$M$体の集団から$N$体の別の集団に鞍替えを起こすとき，以下のようにモデル化できる．
 \begin{screen}
-実効振動数$\omega$の$L$体の振動子集団が実効振動数$\omega_M$の$M$体の振動子集団$\Omega_M$との間に$m$本の枝で繋がっており，また，実効振動数$\omega_N$の$N$体の振動子集団$\Omega_N$との間に$n$本の枝で繋がっている．
+実効振動数$\omega_L$の$L$体の振動子集団が実効振動数$\omega_M$の$M$体の振動子集団$\Omega_M$との間に$m$本の枝で繋がっており，また，実効振動数$\omega_N$の$N$体の振動子集団$\Omega_N$との間に$n$本の枝で繋がっている．
 ただし，振動子集団$\Omega_M$と振動子集団$\Omega_N$との間に枝は存在しないとする．（図\ref{fig:switch}）\\
 枝の本数$m,n$が変化すると，振動子の実効振動数が変化し同期状態が変化する．
 \end{screen}
@@ -53,9 +53,9 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 \begin{align}
     \label{eq:3body-default}
     \begin{split}
-        \dot{\phi}&=\omega+\frac{n}{L}K\sin\left( \phi_N-\phi \right)+\frac{m}{L}K\sin\left( \phi_M-\phi \right),\\
-        \dot{\phi}_M&=\omega_M+\frac{m}{M}K\sin\left( \phi-\phi_M \right), \\
-        \dot{\phi}_N&=\omega_N+\frac{n}{N}K\sin\left( \phi-\phi_N \right).    
+        \dot{\phi_L}&=\omega_L+\frac{n}{L}K\sin\left( \phi_N-\phi_L \right)+\frac{m}{L}K\sin\left( \phi_M-\phi_L \right),\\
+        \dot{\phi}_M&=\omega_M+\frac{m}{M}K\sin\left( \phi_L-\phi_M \right), \\
+        \dot{\phi}_N&=\omega_N+\frac{n}{N}K\sin\left( \phi_L-\phi_N \right).    
     \end{split}
 \end{align}
 特に，結合強度を$nK$で置きなおし，結合強度比$a=m/n,\ L=1,\ M=1,\ N=1$と仮定すると，図\ref{fig:3body}のような鞍替えする振動子を中央とする鎖状の3体ネットワークに簡略化される．
@@ -69,9 +69,9 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 \begin{align}
     \label{eq:3body}
     \begin{split}
-        \dot{\phi}&=\omega+K\sin\left( \phi_N-\phi \right)+aK\sin\left( \phi_M-\phi \right),\\
-        \dot{\phi}_M&=\omega_M+aK\sin\left( \phi-\phi_M \right), \\
-        \dot{\phi}_N&=\omega_N+K\sin\left( \phi-\phi_N \right).    
+        \dot{\phi}_L&=\omega_L+K\sin\left( \phi_N-\phi_L \right)+aK\sin\left( \phi_M-\phi_L \right),\\
+        \dot{\phi}_M&=\omega_M+aK\sin\left( \phi_L-\phi_M \right), \\
+        \dot{\phi}_N&=\omega_N+K\sin\left( \phi_L-\phi_N \right).    
     \end{split}
 \end{align}
 3体系においてパラメータを変化させることで2体の同期に関わる鞍替え現象を観測できることが予想されると同時に，3体全体の同期現象を調べることもできる．
@@ -83,7 +83,7 @@ $m=4$における node $0,\ 3$，$m=5$における node $0,\ 3$では，枝の�
 \label{sec:3body-synchro-state}
 元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,\ n$の変化は，3体系 (図\ref{fig:3body}) においてはパラメータ$a,\ K$の変化に対応する．
 
-3体系について，様々な振動数差$\Omega:=\omega-\omega_M,\ \omega:=\omega-\omega_N$に対し，結合強度比$a$を様々な値で固定し結合強度$K$を変化させる数値実験を行うと，同期状態の変化が図\ref{fig:3body-abs}の4パターン見られた．
+3体系について，様々な振動数差$\Omega:=\omega_L-\omega_M,\ \omega:=\omega_L-\omega_N$に対し，結合強度比$a$を様々な値で固定し結合強度$K$を変化させる数値実験を行うと，同期状態の変化が図\ref{fig:3body-abs}の4パターン見られた．
 \captionsetup[figure]{justification=centering}
 \begin{figure}[tbp]
     \begin{minipage}[b]{0.47\linewidth}
@@ -129,17 +129,17 @@ $|\Omega|\gg|\omega|$となる$a=4.0,\ \Omega=-2,\ \omega=0.05$の場合につ�
 \includegraphics[width=105mm]{./images/three-body-prob.pdf}
 \centering
 \caption{3体ネットワークで$a=4.0,\ \Omega=-2,\ \omega=0.05$のしたときの結合強度$K$と実効振動数の関係．
-$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.03\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi=\phi_N$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
+$0\leq K\lesssim 0.05$では3体が非同期であり (phase 1)，$0.03\lesssim K\lesssim 0.15$では固有振動数の近い2体が同期する($\phi_L=\phi_N$, phase 2)．そして，$0.15 \lesssim K\lesssim 0.27$では鞍替えが起こり非同期になり (phase 3)，$0.27\lesssim K\lesssim 0.7$では振動数の遠い2体が同期する ($\phi_L=\phi_M$,\ phase 4)．最後に$K\gtrsim 0.7$では3体が同期する (phase 5)．}
 \label{fig:3body-state}
 \end{figure}
 4つの臨界結合強度を分岐点として5つの同期状態に分岐することが分かる．
 そこで，4つの臨界結合強度を小さい順にそれぞれ$K_1,\ K_2,\ K_3,\ K_4$とすると，次のようにまとめられる．
-$0\leq K<K_1$では3体が非同期であり (phase 1)，$K_1\leq K<K_2$では固有振動数の近い2体が同期する ($\phi=\phi_N$,\ phase 2)．そして，$K_2\leq K<K_3$では鞍替えが起こり非同期になり (phase 3)，$K_3\leq K<K_4$では振動数の遠い2体が同期する($\phi=\phi_N$,\ phase 4)．最後に$K\leq K_4$では3体が同期する (phase 5)．
+$0\leq K<K_1$では3体が非同期であり (phase 1)，$K_1\leq K<K_2$では固有振動数の近い2体が同期する ($\phi_L=\phi_N$,\ phase 2)．そして，$K_2\leq K<K_3$では鞍替えが起こり非同期になり (phase 3)，$K_3\leq K<K_4$では振動数の遠い2体が同期する($\phi_L=\phi_M$,\ phase 4)．最後に$K\leq K_4$では3体が同期する (phase 5)．
 
 次節ではこれらの5つの同期状態が相平面上でどのように記述されるかを調べる．
 \section{3体系の同期状態の相平面解析}
 \label{sec:3body-phase-plane}
-$x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は2本の位相差方程式になる．
+$x=\phi_L-\phi_M,\ y=\phi_L-\phi_N$と位相差を取ると，式\eqref{eq:3body}は2本の位相差方程式になる．
 \begin{align}
     \label{eq:phase-diff}
     \begin{split}
@@ -378,8 +378,11 @@ $x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は
         \label{eq:K2-approx}
         K_2=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
     \end{align}
-    となる．    
-    
+    となる．
+    ただし，$K_2$が実数となるためには$\varepsilon$及び$a$が以下の条件を満たす必要がある．
+    \begin{align*}
+        a^2\varepsilon^2+4a^2\varepsilon+4\geq 0
+    \end{align*}
     \subsection{固有振動数の遠い2体との同期($K_3$)}
     \label{sec:3body-k3}
     固有振動数の遠い2体との同期については，以下の命題\ref{prop:suff}により，
@@ -546,6 +549,7 @@ $x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は
     \end{figure}
 
 \subsection{一般の集団サイズをもつ3体系}
+\label{sec:3body-general}
 これまでの節では，鞍替えに関わる3つ集団のサイズ$L,\ M,\ N$について，$L=1,\ M=1,\ N=1$を仮定した式\eqref{eq:3body}について解析を行ってきた．
 しかし，一般のネットワークにおける枝の増加・減少に伴う同期状態の変化を説明する上では，$L=1,\ M=1,\ N=1$の理論では不十分である．
 そこで，本節では一般の$L,\ M,\ N$について同様の議論を行う．
@@ -554,23 +558,23 @@ $x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は
 \begin{align}
     \label{eq:3body-general}
     \begin{split}
-        \dot{\phi}&=\omega+K\sin\left( \phi_N-\phi \right)+aK\sin\left( \phi_M-\phi \right),\\
-        \dot{\phi}_M&=\omega_M+\frac{K}{M}\sin\left( \phi-\phi_M \right), \\
-        \dot{\phi}_N&=\omega_N+\frac{K}{N}\sin\left( \phi-\phi_N \right).    
+        \dot{\phi}_L&=\omega_L+K\sin\left( \phi_N-\phi_L \right)+aK\sin\left( \phi_M-\phi_L \right),\\
+        \dot{\phi}_M&=\omega_M+\frac{K}{M}\sin\left( \phi_L-\phi_M \right), \\
+        \dot{\phi}_N&=\omega_N+\frac{K}{N}\sin\left( \phi_L-\phi_N \right).    
     \end{split}
 \end{align}
 
 式\eqref{eq:3body-general}においても，\ref{sec:3body-synchro-state}節と同様にパラメータ$a,\ K,\ M,\ N$を変化させることで同期状態が変化することが期待される．
-3体系について，様々な振動数差$\Omega:=\omega-\omega_M,\ \omega:=\omega-\omega_N$に対し，パラメータ$a,\ L,\ M,\ N$を様々な値で固定し，結合強度$K$を変化させたときの同期状態の変化を調べた．
+3体系について，様々な振動数差$\Omega:=\omega_L-\omega_M,\ \omega:=\omega_L-\omega_N$に対し，パラメータ$a,\ L,\ M,\ N$を様々な値で固定し，結合強度$K$を変化させたときの同期状態の変化を調べた．
 すると，\ref{sec:3body-synchro-state}節と同様に，図\ref{fig:3body-abs}で見られた4つの同期状態の変化パターンを示すことがわかった．
 
 続いて，\ref{sec:3body-phase-plane}節と同様に，3体系の同期状態と2つの位相差の相平面上の安定解との対応を調べる．
-式\eqref{eq:phase-diff}と同様に，$x=\phi-\phi_M,\ y=\phi-\phi_N$という位相差を定義すると，式\eqref{eq:3body-general}は以下の$x,\ y$に関する2本の微分方程式で表される．
+式\eqref{eq:phase-diff}と同様に，$x=\phi_L-\phi_M,\ y=\phi_L-\phi_N$という位相差を定義すると，式\eqref{eq:3body-general}は以下の$x,\ y$に関する2本の微分方程式で表される．
 \begin{align}
     \label{eq:phase-diff-general}
     \begin{split}
         \dot{x}&=\Omega-K\left( a\left(1+\frac{1}{M}\right)\sin x +\sin y\right),\\
-        \dot{x}&=\omega-K\left( a\sin x +\left(1+\frac{1}{N}\right)\sin y\right).
+        \dot{y}&=\omega-K\left( a\sin x +\left(1+\frac{1}{N}\right)\sin y\right).
     \end{split}
 \end{align}
 
@@ -593,6 +597,35 @@ $x=\phi-\phi_M,\ y=\phi-\phi_N$と位相差を取ると，式\eqref{eq:3body}は
 ここで，吸引する振動数集団$\Omega_M$のサイズ$M$には依らないことに注意．
 また，実効振動数が離れた集団$\Omega_M$のサイズ$M$が小さく，$\Omega_N$に比べて枝が多く繋がっており，実効振動数の差$\Omega$が小さいほど，$\Omega_M$と同期しやすく，$\Omega_N$から$\Omega_M$に鞍替えしやすい．
 そして，振動子集団$\Omega_N$のサイズ$N$がある程度小さく，結合強度比$a$がある程度大きいと3体全体が同期しやすい．
+
+\section{3体系の適用例}
+3体系による同期状態の解析の例として，図\ref{fig:cutting_N6K1}において鞍替えの起こる$m=5$のときを用いる．
+そのときのネットワーク及び3体系を適用する場合の集団の分割を図\ref{fig:cutting_N6-m5}に示す．
+node 0, 1, 2 は固有振動数$-1$であり，node 3, 4, 5 は固有振動数$-1$である．全体が同期した$m=4$から赤で示した node 1 と node 2 をつなぐ枝が追加されることで$m=5$となる．\\
+このとき，$\Omega_M=\{0,4,5\},\ \Omega_L=\{1\},\ \Omega_N=\{2\}$として分割すると3体系として計算することができる．
+実際，$K=1$のとき，集団間の枝を無視すると各集団内の振動子は同期する．
+$\Omega_M$は実効振動数$\omega_M=1/3$，サイズ$M=3$の集団で，$\Omega_L$は実効振動数$\omega_M=-1$，サイズ$L=1$の集団で$\Omega_N$は実効振動数$\omega_N=-1$，サイズ$N=1$の集団である．
+
+この集団では$|\Omega|=4/3\gg|\omega|=0$より臨界結合強度を求めることができる．
+式\eqref{eq:phase-diff-general}におけるパラメータは$a=1,\ M=3,\ N=1$であるから，
+$K_1=0,\ K_4=4/3$であり，$K_2>K_4,\ K_3>K_4$となり$K_2,\ K_3$は定義されない．
+よって，式\eqref{eq:phase-diff-general}で$K$をスケーリングしたことに注意して，図\ref{fig:cutting_N6K1}の結合強度$K$が
+\[0\leq K<\frac{4}{3}\]
+を満たすとき，$\Omega_L$及び$\Omega_N$のみが同期し，
+\[nK\geq \frac{4}{3}\]
+のとき，3体全体が同期する．
+
+図\ref{fig:cutting_N6K1}では$K=1$なので，鞍替えが起こる．また，結合強度を$K\geq 4/3$にすると全体が同期することも分かる．
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=105mm]{images/cutting_N6_drawio.pdf}
+\centering
+\caption{図\ref{fig:cutting_N6K1}における$m=5$のときのネットワークを表した．
+node 0, 1, 2 は固有振動数$-1$であり，node 3, 4, 5 は固有振動数$-1$である．全体が同期した$m=4$から赤で示した node 1 と node 2 をつなぐ枝が追加されることで$m=5$となる．\\
+このとき，$\Omega_M=\{0,4,5\},\ \Omega_L=\{1\},\ \Omega_N=\{2\}$として分割すると3体系として計算することができる．実際，$K=1$のとき，集団間の枝を無視すると各集団内の振動子は同期する．
+$\Omega_M$は実効振動数$\omega_M=1/3$，サイズ$M=3$の集団で，$\Omega_L$は実効振動数$\omega_M=-1$，サイズ$L=1$の集団で$\Omega_N$は実効振動数$\omega_N=-1$，サイズ$N=1$の集団である．}
+\label{fig:cutting_N6-m5}
+\end{figure}
 
 \section{議論}
 \label{sec:3body-discussion}
@@ -632,12 +665,13 @@ $|\Omega|\sim|\omega|$の分岐図を図\ref{fig:3body-phase-boundary}に示す�
 $a=1.5,\ 1.8$を境に$a$を固定し$K$を変化させたときの同期状態の変化パターンが変化している．}
 \label{fig:3body-phase-boundary}
 \end{figure}
-\subsection{$\Omega\gg\omega$により定まる臨界結合強度の適用限界}
+
+\subsection{$|\Omega|\gg|\omega|$を用いて求めた臨界結合強度の適用限界}
 \ref{sec:3body-critical}節において$\varepsilon=|\Omega|/|\omega|\gg 1$を仮定し求めた結合強度$K_1,\ K_2$について，どの程度の$\varepsilon$まで有効か調べる．
 ここでは，\ref{sec:3body-k12}節において求めた$K_2$の閉形式の表現である式\eqref{eq:K2-approx}だけでなく，式\eqref{eq:nit-H1},\ \eqref{eq:nit-H2}より定まる以下のような$y$の近恒等変換$z$の微分方程式を考える．
 \begin{align}
     \label{eq:k1k2-open}
-    \dot{z}=\varepsilon+kH_1(z)+k^2H_2(z)+O(k^3,\epsilon^2)
+    \dot{z}=\varepsilon+kH_1(z)+k^2H_2(z)+O(k^3,\varepsilon^2)
 \end{align}
 この式が$\dot{z}=0$の解を持つ同期条件を以下では開形式の同期条件と呼ぶことにする．
 特に，開形式の同期条件から定まる臨界結合強度を開形式の臨界結合強度と略することとする．
@@ -700,5 +734,55 @@ $K_1$よりも$K_2$で開形式の精度が悪い．
 $\varepsilon$が大きい領域での近似誤差は依然として大きい．
 このため，$\varepsilon\sim 1$の場合の性質を調べるためには，$\varepsilon\ll 1$を利用せずに臨界結合強度を求めることが期待される．
 
-% \subsection{}
+\subsection{3体系の適用範囲}
+\ref{fig:switch}節では，以下のような手順で3体系を導入した．
+\begin{itemize}
+    \item ある連結な部分ネットワークにおいて部分ネットワークに属する振動子間に枝が追加されることを考える．
+    \item 加えられた枝の端点が異なる集団に属する形で，3つの同期した集団が鎖状に繋がるように分割する．このとき，集団間の枝を無視した状態で各集団が同期することを仮定する．
+    また，鎖状に繋がった3つの集団のうち両端の集団の間の枝は無視できるほど少ないことを仮定する．
+    \item 各集団をそれぞれ平均場近似を行い，集団間の枝の数に応じた結合強度で結合しているみなす．
+\end{itemize}
+ここで，必ずしも3つの集団が存在する必要はない．
+2つの集団に分割可能であれば，集団間の枝を無視した状態でそれぞれの集団を平均場近似を行うことで2体の同期問題に帰着することができる．
+このように，3体系を適用できる状況であっても適用する必要がない場合がある．
+
+しかしながら，以下のような場合は3体系を用いて同期状態を求めることができないと考えられる．
+\begin{itemize}
+    \item 
+    どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合．
+    \item
+    異なる実行振動数の集団が3つ以内になるように分割できるものの，どのように分割しても，鎖状に連なった3つの集団において両端の集団間の枝がそれ以外の集団間の枝に比べ無視できない場合．
+    \item
+    注目する枝を除いた場合は3つの集団に分割できるものの，そのようなどの分割に対しても，注目する枝を加えると4つ以上の集団に分かれてしまう場合．
+\end{itemize}
+
+最初の2つの場合に該当する部分ネットワークの存在は明らかであるが，最後の場合は明らかではない．
+3つの集団に分かれたものに枝を加えると4つの集団に分かれる場合に存在すれば十分である．
+特に，3つの集団のうち1つの集団が他の集団と弱く結合していると仮定する．
+このとき，2つの集団に対して枝を増やしたときに3つの集団に分かれる場合があることを示せばいい．
+実効振動数が近い2つの集団が同期した状態で，実効振動数が離れた集団との間の枝を追加すると，結合強度比$a$が増加し，3つ全てが非同期となる場合がある．
+実際，$K$-$a$平面における同期状態図（図\ref{fig:3body-phase-m5}）において，$a=m/n$及び$a=(m+1)/n$の直線の間に$K_1,\ K_2$に対応する曲線を含むような枝の本数の組$(m,n)$が，各$K$に対して存在する．
+しかしながら，サイズを固定した場合，それぞれの$K$に対してこのような枝の本数の組$(m,n)$は高々有限個しか存在せず，ほとんどの$(m,n)$においては枝の追加により3つの集団の同期状態が変化することはない．
+\begin{figure}[tbp]
+    \centering
+    \includegraphics[width=135mm]{./images/three-body-phase-m5.pdf}
+    \centering
+    \caption{$\Omega=-2,\ \omega=0,\ M=5,\ N=1$のときの結合強度$K$,\ 結合強度比$a$における同期状態図．\\
+    $m=3$から$m=4$に枝を増やすと$n=1$であるので$a=3$から$a=4$へ変化し，2つが同期していた状態から3つが非同期な状態へ同期状態が変化する．}
+    \label{fig:3body-phase-m5}
+\end{figure}
+
+% \subsection{3体系における実行振動数の偏り}
+% この3体系のモデルは様々な振動子ネットワークの同期状態の解析に利用することができるが，
+% 用いる振動子ネットワークの構造及び振動数分布によって，3体の実効振動数は変化すると考えられる．
+
+% 本研究で用いたERモデルにおいても，定性的な議論が考えられる．
+% ERモデルでは，\ref{sec:er-graph}節で述べたように，枝の数がある一定増大すると巨大な連結成分が出現し，多くの頂点はその連結成分に属する．
+% このため，ERモデルのネットワークに対して3体系が適用できる場合，巨大な連結成分を含んだ部分ネットワークであることが多い．
+% そこで，巨大な連結成分を含んだネットワークにおいて鞍替えが起こる以下の場合について実行振動数の分布を考える．
+% 巨大な連結成分に含まれるサイズの大きな集団$\Omega_M$と同期していた集団$\Omega$が，巨大な連結成分に含まれない集団$\Omega_N$と枝が繋がることによって誘引され分離もしくは鞍替えが起こる．
+% このとき，\ref{sec:3body-general}で述べたように，枝を追加する前に属していた集団$\Omega_M$の実行振動数$\omega_M$が集団$\Omega$の実行振動数$\omega$に近いほど分離及び鞍替えが起こりやすい．
+% そして，追加した後に属する集団$\Omega_N$の実行振動数$\omega_N$が$\omega$に近く，$\Omega$との間の枝が多いほど鞍替えが起こりやすい．
+% 枝を新たに1本だけ追加する場合を考えると，枝を増やす前は$\Omega$は$\Omega_M$と同期していたことから$\Omega_N$，$\Omega$間の枝は多くない．
+% よって，多くの場合で$\Omega\gg\omega$となると考えられる．
 \end{document}
