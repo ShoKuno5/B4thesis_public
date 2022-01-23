@@ -5,10 +5,12 @@
 \cite{XiaHuang:130506}の解析内容について述べる．
 
 鎖状に無向グラフとして$N$個連なった位相振動子ネットワークのふるまいを以下で記述するとする．
-\begin{align*}
-    \dot{\theta}_1&=\omega_1,\\
-    \dot{\theta}_i&=\omega_i+\lambda\sin(\theta_{i-1}-\theta_i),\ i=2,3,\ldots,N.
-\end{align*}
+\begin{align}
+    \begin{split}
+        \dot{\theta}_1&=\omega_1,\\
+        \dot{\theta}_i&=\omega_i+\lambda\sin(\theta_{i-1}-\theta_i),\ i=2,3,\ldots,N.
+    \end{split}
+\end{align}
 ここで，$\theta_i,\ \omega_i$をそれぞれ端から$i$番目の振動子の位相と固有振動数とする．$\lambda>0$は振動子間の結合強度とする．
 このモデルでは端の振動子$1$が固有振動数$\omega_1$をもつ駆動源となり，他の振動子は駆動源に近い方の隣接した振動子と相互作用する．
 
@@ -40,60 +42,60 @@ $\omega_1=2,\ \omega_2=1$とし，他の$\omega_i$をランダムに選択する
     \end{split}
 \end{align}
 ここで，$\phi_{21}=\theta_2-\theta_1,\ \Delta\omega_{21}=\omega_2-\omega_1$とすると，
-\begin{align}
+\begin{equation}
     \label{eq:phasediff-21}
     \dot{\phi_{21}}=\Delta\omega_{21}-\lambda\sin\phi_{21}
-\end{align}
+\end{equation}
 となる．ここで，両辺の長時間平均$\langle\cdot\rangle$を考える．
 $\lambda$が同期が起こらないくらい小さいとき，$\phi_{21}$の確率分布$\rho(\phi_{21},t)$は十分時間が経つと安定分布に収束する．
-\begin{align*}
+\begin{equation}
     \rho(\phi_{21},t)=\frac{\Delta\omega_{21}-\lambda\sin\phi_{21}}{C},\quad C:\mathrm{normalization\ constant}
-\end{align*}
+\end{equation}
 この確率分布に$\phi_{21}$が従うとして式\eqref{eq:phasediff-21}の$\sin\phi_{21}$を平均する．
 すると，以下のようになる．
-\begin{align*}
+\begin{equation}
     \langle\sin\phi_{21}\rangle=\frac{\Delta\omega_{21}-\sqrt{(\Delta\omega_{21})^2-\lambda^2}}{\lambda}.
-\end{align*}
+\end{equation}
 よって，式\eqref{eq:3driving}より，$\theta_2$の実効振動数が得られる．
-\begin{align*}
+\begin{equation}
     \langle\dot{\theta}_2\rangle=\omega_1+\sqrt{(\Delta\omega_{21})^2-\lambda^2}.
-\end{align*}
+\end{equation}
 この式より，$\lambda_c=\Delta\omega_{21}$として，$\lambda\geq\lambda_c$のとき$\langle\dot{\theta}_2\rangle=\omega_1$となり，振動子$1$と振動子$2$は同期する．
 同様の手順で$\theta_3$の実効振動数が得られる．
-\begin{align}
+\begin{equation}
     \label{eq:effective-approx}
     \langle\dot{\theta}_3\rangle=\langle\dot{\theta}_2\rangle+\sqrt{(\Delta\omega_{32})^2-\lambda^2}.
-\end{align}
+\end{equation}
 ただし，$\Delta\omega_{32}=\omega_3-\langle\dot{\theta}_2\rangle$である．\\
 以上より，振動子の同期条件を求めることができる．
 振動子$2$と振動子$3$の同期条件は
 $\Delta\omega_{21}\geq 0$のとき，
-\begin{align*}
+\begin{align}
     \begin{cases}
         -\lambda\leq\Delta\omega_{31}-\sqrt{(\Delta\omega_{32})^2-\lambda^2}\geq\lambda & (\lambda\leq|\Delta\omega_{21}|),\\
         -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|).
     \end{cases}
-\end{align*}
+\end{align}
 $\Delta\omega_{21}< 0$のとき，
-\begin{align*}
+\begin{align}
     \begin{cases}
         -\lambda\leq\Delta\omega_{31}+\sqrt{(\Delta\omega_{32})^2-\lambda^2}\geq\lambda & (\lambda\leq|\Delta\omega_{21}|),\\
         -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|).
     \end{cases}
-\end{align*}
+\end{align}
 ここで，$\Delta\omega_{31}=\omega_3-\omega_1$である．
 これらの同期条件から，$\omega_c=-\sqrt{2}|\Delta\omega_{21}|+\omega_1$という臨界振動数を境界とする領域$\omega_3\in(\omega_c,\omega_2)$でCase \ref{enu:case2}のような分離が起こることがわかる．
 
 次に，振動子$1$と振動子$3$の同期条件を考える．
 $\phi_{31}=\theta_3-\theta_1$とすると，
-\begin{align*}
+\begin{equation}
     \dot{\phi}_{31}=\Delta\omega_{31}-\lambda\sin(\phi_{31}-\phi_{21})
-\end{align*}
+\end{equation}
 となるから同期の必要条件は，$|\Delta\omega_{31}|\leq \lambda$となる．
 また，$\langle\dot{\theta}_3\rangle=\omega_1$の状況を考えると，式\eqref{eq:effective-approx}から，同期の十分条件が求まる．
-\begin{align*}
+\begin{equation}
     \omega_3\leq\omega_1+|\Delta\omega_{21}|-\sqrt{(\Delta\omega_{21})^2-\lambda^2}.
-\end{align*}
+\end{equation}
 
 以上の解析から$\omega_3,\lambda$と同期クラスタの関係が図\ref{fig:appendix-bifurcation}として示される．
 \begin{figure}[t]

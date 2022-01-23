@@ -9,16 +9,16 @@
 このモデルはもともと化学反応における不安定現象を説明する方程式から導出され\cite{kuramoto1975}，今日振動子系の同期現象を記述するモデルとして広く使われている．
 
 固有振動数をそれぞれ$\omega_1,\omega_2$とする2つの振動子$\phi_1,\phi_2\in\mathbb{R}/2\pi\mathbb{Z}$が結合強度$K$で結合した蔵本モデルは以下のように記述される．
-\begin{align}
+\begin{equation}
     \label{eq:kuramoto-2}
     \dot{\phi}_i=\omega_i+K\sin(\phi_j-\phi_i),\ (i,j)=(1,2),(2,1).
-\end{align}
+\end{equation}
 ここで，各$i=1,2$について$\phi_i$は無次元量，$\omega_i$及び$K$は時間の$-1$乗の次元を持つことに注意せよ．
 このとき，$\psi=\phi_1-\phi_2,\ \delta\omega=\omega_1-\omega_2$とすると，1変数の微分方程式になる．
-\begin{align}
+\begin{equation}
     \label{eq:kuramoto-2body}
     \dot{\psi}=\delta\omega-2K\sin\psi.  
-\end{align}
+\end{equation}
 式\eqref{eq:kuramoto-2body}を$\psi-\dot{\psi}$平面に描いたものを図\ref{fig:kuramoto-2}に示す．
 $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$の解を持つ．
 特に，安定解$\delta\psi^\ast$と不安定解の2つの解が存在する．
@@ -32,57 +32,57 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 \label{fig:kuramoto-2}
 \end{figure}
 また，式\eqref{eq:kuramoto-2}に従う振動子の実効振動数$\langle\dot{\phi}_i\rangle$を以下で定義する．
-\begin{align}
-    \langle\dot{\phi}_i\rangle:=\lim_{T\to\infty}\frac{\phi_i(T)-\phi_i(0)}{T}.
-\end{align}
+\begin{equation}
+    \langle\dot{\phi}_i\rangle\coloneqq\lim_{T\to\infty}\frac{\phi_i(T)-\phi_i(0)}{T}.
+\end{equation}
 
 式\eqref{eq:kuramoto-2}を$N$体 ($N\in\mathbb{N}$) に拡張したものは以下のようになる．
-\begin{align}
+\begin{equation}
     \label{eq:kuramoto-N}
     \dot{\phi}_i=\omega_i+\frac{K}{N}\sum_{j=1}^N\sin(\phi_i-\phi_j),\ i=1,2,\ldots,N.
-\end{align}
+\end{equation}
 ここで，$K$は共通の結合強度で，$\omega_i$は振動子$i$の固有振動数とする．
 % $g(\omega)=g(-\omega)$となる振動数分布$g(\omega)$に従うとする．
 
 このとき，振動子全体の同期を評価する量として以下で定義されるオーダーパラメータが用いられている．
-\begin{align}
-    R\mathrm{e}^{\imag \psi}:=\frac{1}{N}\sum_{j=1}^N\mathrm{e}^{\imag \theta_j}.    
-\end{align}
+\begin{equation}
+    R\mathrm{e}^{\imag \psi}\coloneqq\frac{1}{N}\sum_{j=1}^N\mathrm{e}^{\imag \theta_j}.    
+\end{equation}
 オーダーパラメータは，位相が$[0,2\pi)$に一様に分布しているとき，$R= 0$となる．つまり振動子同士に同期が見られない状態を表す．
 一方，振動子全体の位相が一致するとき，$R=1$となる．
 
 式\eqref{eq:kuramoto-N}は，一般の複雑ネットワークにおける位相振動子の大域結合モデル (振動子ネットワーク) に拡張できる．
-\begin{align}
+\begin{equation}
     \label{eq:kuramoto-network}
     \dot{\phi}_i=\omega_i+\frac{K}{N}\sum_{j=1}^NA_{ij}\sin(\phi_i-\phi_j),\ i=1,2,\ldots,N.
-\end{align}
+\end{equation}
 ここで，$A_{ij}$は振動子の接続状況を表す隣接行列$A$の成分で，振動子$i$と振動子$j$の間に枝があれば$1$，そうでなければ$0$である．
 一般には，無向グラフ，有向グラフ両方とも考えることがあるが，本論文では無向グラフのみを考えるため，$A$は対称行列となる．式\eqref{eq:kuramoto-network}で表されるダイナミクスを持つ，複雑ネットワークに拡張された蔵本モデルは振動子ネットワークと呼ばれる．
 \section{近恒等変換}
 本節を書くにあたっては，\cite{james2003}を参考にした．
 
 以下のような周期的な微分方程式を考える．
-\begin{align*}
+\begin{equation}
     \dot{y}=\varepsilon f_1(t,y)+\varepsilon^2f_2(t,y)+\cdots
-\end{align*}
+\end{equation}
 ただし，$y\in\mathbb{R}^{n-1}$で，$f_j$は$t,\ y$に関して周期的な関数である．\\
 ここで，$x\in\mathbb{R}^{n}$として，$f_j$に対し平均化を行うと
-\begin{align*}
+\begin{align}
     a_0(x)&=[1,0,\ldots,0]^\top\in\mathbb{R}^{n+1}\\
     a_j(x)&=[0,f_j(x)]^\top
-\end{align*}
+\end{align}
 として，
-\begin{align*}
+\begin{equation}
     \dot{x}=a(x,\varepsilon)\sim a_0(x)+\varepsilon a_1(x)+\varepsilon^2 a_2(x)+\cdots
-\end{align*}
+\end{equation}
 に近似できる．ただしこの展開誤差はコンパクト集合上の任意の$x$で一様収束する．
 
 この式を周期的で$\varepsilon$に依存した変数変換で，自律系に書き換えることを考える．
 以下のような変形は条件を満たす，
-\begin{align}
+\begin{equation}
     \label{eq:int}
     x=\xi+\sum_{j=1}^k \varepsilon^j s_j(t,\xi).
-\end{align}
+\end{equation}
 ここで，$x\in\mathbb{R}^n$，$s_j:\mathbb{R}\times\mathbb{R}^n\to\mathbb{R}^n$は$t$に関して周期的とする，
 式\eqref{eq:int}は近恒等変換と呼ばれ，誤差が$O(\varepsilon^k)$の範囲で逆変換が存在する．また，この変換は$x$の周期$x_0$で平均化を行ったことに相当する．
 
@@ -127,65 +127,65 @@ percolation には頂点を固定して枝を確率的に配置する bond perco
 \begin{itemize}
     \item パーコレーション確率$P$\\
         無限に大きいネットワーク$G(V,E)$において，ある頂点がサイズが無限大のクラスター（連結成分）に属する確率である．
-        \begin{align*}
+        \begin{equation}
             P=P_p(|C|=\infty)=1-\sum_{1<s<\infty}P_p(|C|=s).
-        \end{align*} 
+        \end{equation} 
         ここで，$P_p(|C|=s)$はある頂点が属するクラスタ$C$のサイズが$s$である確率とする．
         ただし，$|C|/|V|<\infty$となるクラスタ$C$のサイズを$|C|=\infty$と定める．\\
         このとき，ある臨界確率$p_c$を境に$P$が変化する．
-        \begin{align*}
+        \begin{align}
             P
             \begin{cases}
                 = 0 & (p<p_c),\\
                 > 0 & (p\geq p_c).
             \end{cases}
-        \end{align*}
+        \end{align}
     \item 平均的なクラスタのサイズ$\langle s \rangle$
-        \begin{align*}
+        \begin{equation}
             \langle s\rangle =E_p(|C|)=\sum_{s=1}^\infty sP_p(|C|=s).
-        \end{align*}
+        \end{equation}
         $P>0$のときは$\langle s\rangle$は発散するので，代わりにサイズが有限のクラスタの平均サイズを考える．
-        \begin{align*}
+        \begin{equation}
             \langle s\rangle^f =E_p(|C|,|C|<\infty)=\sum_{s<\infty} sP_p(|C|=s).            
-        \end{align*}
+        \end{equation}
     \item クラスタのサイズ分布$n(s)$
-    \begin{align*}
+    \begin{equation}
         n(s)=\frac{1}{s}P_p(|C|=s).
-    \end{align*}
+    \end{equation}
     ここで，ある頂点がサイズ$s$のクラスタに含まれる確率とは必ずしも一致しないことに注意．
 \end{itemize}
 
 ランダムグラフで任意の頂点間に枝を存在しうることは，無限次元の系での bond percolation に対応する．
 このことからランダムグラフと percolation のアナロジーを考えることができる．
 実際，無限次元系において percolation における臨界確率$p_c$は$p_c\simeq 1/N$となり，Erdős–Rényi グラフの巨大な連結成分が出現する本数と対応する．
-\begin{align*}
+\begin{equation}
     \binom{N}{2}p_c\simeq N/2.
-\end{align*}
+\end{equation}
 同じ問題に取り組む二つの理論が存在することは，互いの理論を相補的に活用することができるため重要視されている．
 \section{力学系}
 本節を書くにあたっては，\cite{teschlordinary,Ciesielski+2012+2110+2128}を参考にした．
 \subsection{自律系と流れ}
 以下のような自律系を考える．
-\begin{align}
+\begin{equation}
     \label{eq:autonomous}
     \dot{x}=f(x),\ x(0)=x_0.
-\end{align}
+\end{equation}
 ただし，$f$は開集合$M\subset \mathbb{R}^n$上で定義された$C^k\ (k\geq 1)$級関数とする．\\
 式\eqref{eq:autonomous}の解$\phi:T\subset \mathbb{R}\to M$は積分曲線と呼ばれ，$\phi(0)=x_0$を満たすような積分曲線を$x_0$における積分曲線と呼ぶ．\\
 そして，微分方程式の流れを写像として以下のように定義する．
-\begin{align}
+\begin{equation}
     \Phi:W\subset\mathbb{R}\times M\to M,\ (t,x)\mapsto \phi(t,x).
-\end{align}
+\end{equation}
 ここで，$\phi(t,x)$とは$x$における積分曲線のうち，一意性が保証されるような最大の開区間$I_x=(T_-(x),T_+(x))$で定義されたものとする．
 \subsection{軌道と不変集合}
 $x$における軌道$\gamma(x)$とは以下で定義される．
-\begin{align}
-    \gamma(x):=\Phi(I_x\times \{x\})\subset M.
-\end{align}
+\begin{equation}
+    \gamma(x)\coloneqq\Phi(I_x\times \{x\})\subset M.
+\end{equation}
 同様に前進軌道，後退軌道が定義される．
-\begin{align}
-    \gamma_\pm(x):=\Phi((0,T_\pm (x))\times \{x\}).
-\end{align}
+\begin{equation}
+    \gamma_\pm(x)\coloneqq\Phi((0,T_\pm (x))\times \{x\}).
+\end{equation}
 
 また，$\gamma(x)=\{x\}$のとき$x$は$\Phi$の平衡点と呼ぶ．
 そして，$\Phi(T,x)=x$なる$T>0$が存在するとき，$x$を周期点と呼び$T$の下限を周期と呼ぶ．
@@ -194,18 +194,18 @@ $x$における軌道$\gamma(x)$とは以下で定義される．
 $x\in M$の$\omega_\pm$-極限集合$\omega_\pm(x)$とは，点列$t_n\to \pm\infty$が存在して$\Phi(t_n,x)\to y$となるような点$y\in M$の集合である．\\
 
 集合$U\subset M$が$\sigma$不変 ($\sigma\in\{\pm\}$)とは，以下を満たすことである．
-\begin{align}
+\begin{equation}
     \forall x\in U,\ \gamma_\sigma (x)\subset U.
-\end{align}
+\end{equation}
 また，$\pm$どちらでも不変のとき不変であると呼ぶ．
 集合$U\subset M$が minimal とは，非空で閉かつ不変であるような$M$の部分集合のうち最小のものであることをいう．
 \subsection{Poincar\'{e}-Bendixsonの定理}
 まず，広く知られている$\mathbb{R}^2$上の Poincar\'{e}-Bendixson の定理について述べる．
 \begin{theorem}
     以下の自律系について，解が一意に与えられ任意の$t\in\mathbb{R}$で定義されるとする．
-    \begin{align}
+    \begin{equation}
         \dot{x}=f(x),\ x\in M\subset \mathbb{R}^2,\ f\in C^1(M,\mathbb{R}^2),\ M:\mathrm{open}.         \label{eq:automonous-poincare}
-    \end{align}
+    \end{equation}
     $p\in M$の前進軌道$\gamma_+(p)$が連結な有界閉集合で，$\omega_+$-極限集合$\omega_+(p)$が一つも平衡点を持たないと仮定する．
     このとき，$\omega_+(p)$は周期軌道で$p$が周期点であるか，$\gamma_+(p)$が Limit Cycle に収束するかのどちらかである．
     \label{theorem:poincare}

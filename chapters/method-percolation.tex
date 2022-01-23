@@ -14,9 +14,9 @@
     同じ実効振動数を持つ集団のサイズの最大値$L$．ただし，実効振動数差が$\Delta\ll 1$の振動子を同一のクラスタに属するとみなすこととする．
     \item
     オーダーパラメータ$R$．
-    \begin{align*}
-        R\mathrm{e}^{\imag \psi}:=\frac{1}{n}\sum_{j=1}^n\mathrm{e}^{\imag \theta_j}.    
-    \end{align*}
+    \begin{equation*}
+        R\mathrm{e}^{\imag \psi}\coloneqq\frac{1}{n}\sum_{j=1}^n\mathrm{e}^{\imag \theta_j}.    
+    \end{equation*}
 \end{itemize}
 
 固有振動数の分布として$\pm 1$の二項分布を用いた$n=50$個の振動子に対し，枝の数を$0$から$1225$本まで変化させた試行を$M=100$回行い平均したものを図\ref{fig:edge-cutting-K04}に示す．
@@ -43,9 +43,9 @@
 \end{figure}
 
 4つの同期状態に分かれている．それぞれの境界に相当する枝の臨界本数を$m_1,m_2$とすると以下のようにまとめられる．
-$0\leq m<m_1$では最大集団のサイズ$L$が線形に減少し，オーダーパラメータ$R$は緩やかに増加する (Phase 1)．
-$m_1\leq m< m_2$では最大集団のサイズ$L$が極めて小さくなったまま変化せず，オーダーパラメータ$R$は Phase 1 とは異なるペースで増加する (Phase 2)．
-$m\geq m_2 $では最大集団のサイズ$L$は急激に増加し$n$に漸近し，オーダーパラメータ$R$も急激に増加し$1$に漸近する (Phase 3) ．
+$0\leq m<m_1$では最大集団のサイズ$L$が線形に減少し，オーダーパラメータ$R$は緩やかに増加する（Phase 1）．
+$m_1\leq m< m_2$では最大集団のサイズ$L$が極めて小さくなったまま変化せず，オーダーパラメータ$R$は Phase 1 とは異なるペースで増加する（Phase 2）．
+$m\geq m_2 $では最大集団のサイズ$L$は急激に増加し$n$に漸近し，オーダーパラメータ$R$も急激に増加し$1$に漸近する（Phase 3）．
 \section{同期状態の定性的解釈}
 それぞれの同期状態は定性的に以下のように理解できる．
 \renewcommand{\labelenumi}{Phase \theenumi}
@@ -53,7 +53,9 @@ $m\geq m_2 $では最大集団のサイズ$L$は急激に増加し$n$に漸近�
     \item 固有振動数$\omega_\pm$の孤立した頂点が主な振動数となる．
     枝が1本増えるごとに高い確率で孤立した頂点をつなぐため，固有振動数$\omega_\pm$を実効振動数にもつ頂点数は平均$p$本減少する．
     よって，クラスタの最大サイズ$L$は
-    \[L(m)=np-mp\]
+    \begin{equation}
+        L(m)=np-mp     
+    \end{equation}
     となる．
     一方，オーダーパラメータ$R$も枝の増加に伴う部分的同期により増加する．
     \item ネットワークがほとんど連結になるが，各試行で隣接した振動子の数及びその振動子の分布などのネットワーク構造が不均一であり異なる固有振動数を持つ振動子は同期しないため，ほとんどの振動子が異なるクラスタに属する．
@@ -69,78 +71,84 @@ $m\geq m_2 $では最大集団のサイズ$L$は急激に増加し$n$に漸近�
 \subsection{最大サイズ$L$，オーダーパラメータ$R$が大きく変化する枝の本数$m_2$}
 枝の本数$m$が頂点数$n$に比べ十分多い，特に，全ての振動子の次数が漸近的に等しいとき（\ref{sec:er-graph}節，Phase \ref{prev-er-phase4}）を考える．
 つまり，
-\begin{align}
+\begin{equation}
     \label{eq:percolate-m2-assume}
     m= n\log n\ \omega(n)
-\end{align}
+\end{equation}
 である．
 
 このとき，振動子のネットワークを固有振動数$\omega_\pm$を持つ2種類の振動子が結合したものとして平均場近似することができる．
 各振動子は確率$p$で$\omega_+$，確率$1-p$で$\omega_-$の固有振動数を持つとすると，それぞれの固有振動数を持つ振動子の数の平均はそれぞれ$np,\ n(1-p)$となる．
 また，存在する枝のうち，異なる固有振動数の振動子同士をつなぐものは全体の$2p(1-p)$である．
 以上より，固有振動数$\omega_+\ (\omega_-)$を持つ振動子の平均的な位相を$\phi_+\ (\phi_-)$とすると，平均場近似された2種類の結合振動子系のダイナミクスは以下のように表される．
-\begin{align*}
-    \dot{\phi}_+&=\omega_++\frac{2p(1-p)m}{np}K\sin(\phi_--\phi_+),\\
-    \dot{\phi}_-&=\omega_-+\frac{2p(1-p)m}{n(1-p)}K\sin(\phi_+-\phi_-).
-\end{align*}
-この同期条件は
-\begin{align*}
-    K\geq \frac{|\omega_+-\omega_-|n}{2m}
-\end{align*}
-である，よって，
 \begin{align}
+    \begin{split}
+        \dot{\phi}_+&=\omega_++\frac{2p(1-p)m}{np}K\sin(\phi_--\phi_+),\\
+        \dot{\phi}_-&=\omega_-+\frac{2p(1-p)m}{n(1-p)}K\sin(\phi_+-\phi_-).
+    \end{split}
+\end{align}
+この同期条件は
+\begin{equation*}
+    K\geq \frac{|\omega_+-\omega_-|n}{2m}
+\end{equation*}
+である，よって，
+\begin{equation}
     \label{eq:percolate-m3}
     m_3=\frac{|\omega_+-\omega_-|n}{2K}
-\end{align}
+\end{equation}
 となる．
 ただし，これは，$m_3$が式\eqref{eq:percolate-m2-assume}を満たすような結合強度のときのみ成立する．
 つまり，
-\begin{align}
+\begin{equation}
     \label{eq:er-meanfield-k}
     K=(\omega_+-\omega_-)(\log n)^{-1}O(n^{-1})
-\end{align}
+\end{equation}
 のときのような結合強度が十分弱い場合のみ成立する．
 \subsection{最大サイズ$L$が下げ止まる枝の本数$m_1$}
 \label{sec:percolate-m1}
 クラスタの最大サイズ$L$は線形に減少する．
-\[L(m_1)=np-m_1p=0.\]
+\begin{equation}
+    L(m_1)=np-m_1p=0.
+\end{equation}
 よって，
-\[m_1=n\]
+\begin{equation}
+    m_1=n
+\end{equation}
 となる．
 
 しかしながら，$K$が十分大きい場合は同期が開始し下げ止まるため，$m_1\leq n$となる．
 特に$n\to\infty$の場合を考えると，$m=m_3$付近で
-\begin{align*}
+\begin{align}
     L(m)
     \begin{cases}
         \sim 1&(m<m_3),\\        
         =n'\gtrsim  1p&(m> m_3)        
     \end{cases}
-\end{align*}
+\end{align}
 となる，
 
 振動子が$k$次である確率$P(k)\sim\binom{m}{k}(1/n)^k(1-1/n)^{m-k}$より，
 $m< n$では，ほとんどの振動子の次数は$1$である．
 よって，異なる固有振動数を持つ振動子と1つだけ結合した部分系が同期するか考えればよい．
 同期条件は，
-\begin{align}
+\begin{equation}
     \label{eq:percolate-2body}
     K\geq\frac{|\omega_+-\omega_-|}{2}
-\end{align}
+\end{equation}
 である．
 
 ネットワークの一部の振動子が同期するとき，$m<n$であっても$L>np-mp$となる．
 特に，式\eqref{eq:percolate-2body}が満たされるとき，連結になった振動子はほとんど同期するため，percolation が起こる$m=n/2$において$L>np-mp$となる．
 
 以上より，ある$K^1$が存在して，
-\begin{align*}
+\begin{align}
     m_1
     \begin{cases}
         \gtrapprox n/2&(K \gtrsim |\omega_+-\omega_-|/2),\\        
         n'',\ (n/2<n''<n)&(|\omega_+-\omega_-|/2\gtrsim K>K^1),\\        
         n&(K^1 \geq K>1)        
     \end{cases}
-\end{align*}
+\end{align}
 となる．
 \subsection{臨界本数の数値実験による確認}
 $n=50,\ K=0.4,\ p=1/2$について，$M=100$回試行し平均したものが図\ref{fig:edge-cutting-K04-maxsize}である．
@@ -150,7 +158,9 @@ $m_3$がクラスタの最大サイズ$L$が真に増加し始める$m$と一致
 また，$n=50,\ K=8,\ p=1/2$について，$M=100$試行し平均したものが図\ref{fig:edge-cutting-K8-maxsize}である．
 図\ref{fig:edge-cutting-K8-maxsize}では，枝が繋がっていない孤立した振動子の数の平均値及び，連結な部分ネットワークのうち最大のものに属する振動子の数の平均値を重ねて表した．
 ただし，枝が$m$本のときに連結な部分ネットワークのうち最大のものに属する確率$v$とすると，以下の式が成立することを用いた．
-\[v=1-\left( 1-\frac{2m}{n(n-1)}v \right)^{n-1}\]
+\begin{equation}
+    v=1-\left( 1-\frac{2m}{n(n-1)}v \right)^{n-1}
+\end{equation}
 $K$が$|\omega_+,\omega_-|/2$より十分大きい場合，異なる固有振動数を持つ振動子同士は結合すると必ず同期する．
 そのため，枝の本数$m$が$0<m\lesssim n/2$では，枝の数が少ないため，孤立振動子が同じ実効振動数をもつクラスタの中で最大のサイズをもつクラスタとなる．
 また，$m\gtrsim n/2$では連結な部分ネットワークは全て同期するため，連結な部分ネットワークのうち最大のものが，同じ実効振動数をもつクラスタの中で最大のサイズをもつクラスタとなる．
