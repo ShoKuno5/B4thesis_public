@@ -12,7 +12,7 @@
 このとき，構造の変化に伴い同期状態が変化することが考えられる．
 
 固有振動数の分布として，一般にはローレンツ分布などの連続分布\cite{kuramoto1975}から二項分布のような離散分布\cite{1992BonillaNeuSpigler}まで考えられる．
-本論文では，異なる固有振動数を持つ振動子の同期を扱う最も簡単な分布としてニ項分布を用いる．
+本論文では，異なる固有振動数を持つ振動子の同期を扱う最も簡単な分布として二項分布を用いる．
 特に，一般性を失わず$\pm 1$の二項分布$\operatorname{Bin}(n,p)$を用いる．
 
 よって，ネットワークの各振動子の位相$\phi_i$（$i=1,2,\ldots,N$）は，以下のような方程式に従う．
@@ -26,12 +26,12 @@ $n=6$での数値実験の結果を図\ref{fig:cutting_N6K1}に示す．
 ただし，時刻$t\ (0\leq t\leq T)$で位相$\phi_i(t)$の node $i$の実効振動数は，$\Omega_i^{\mathrm{eff}}\coloneqq(\phi_i(T)-\phi_i(T/2))/(T/2)$で定めた．
 ここで，$m=5$における node $1$のように，枝の増加により増加前に同期していた node と非同期になり別の node と同期する，つまり同期クラスタが変化する現象が見られる．
 以下，このような同期状態の変化を「鞍替え」と呼ぶこととする．
-この鞍替え現象は，振動子が鎖状に繋がりの隣接した振動子の一方からのみ相互作用を受ける蔵本モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}（付録参照）．
+この鞍替え現象は，振動子が鎖状に繋がり隣接した振動子の一方からのみ相互作用を受ける蔵本モデルにおいて結合強度を全て同じ値で変化させた場合に発生することが知られている\cite{XiaHuang:130506}（付録参照）．
 しかしながら，ネットワーク構造の変化で発生することは知られておらず，
 疎なネットワークにおける微視的なクラスタリングパターンの理解において重要な役割を果たすと考えられる．
 また，ネットワーク全体のクラスタリングパターンの変化は，一部の振動子についての同期現象と鞍替え現象に分割して理解することができる．
 
-次節ではこの鞍替え現象に注目し解析を行う．
+次節ではこの鞍替え現象に注目し，二項分布に限らない一般の振動数分布に従うネットワークについて解析を行う．
 
 \begin{figure}[tbp]
 \centering
@@ -43,10 +43,10 @@ $m=5$における node $1$では，枝の増加により増加前に同期して
 \end{figure}
 
 \section{鞍替え現象のモデル化}
-ある$L$体の集団が$M$体の集団から$N$体の別の集団に鞍替えを起こすとき，以下のようにモデル化できる．
+ある$L$体の集団が$M$体の集団から$N$体の別の集団に鞍替えを起こすとき，以下のようにモデル化できる場合がある．
 \begin{screen}
 実効振動数$\omega_L$の$L$体の振動子集団$\Omega_L$が実効振動数$\omega_M$の$M$体の振動子集団$\Omega_M$との間に$m$本の枝で繋がっており，また，実効振動数$\omega_N$の$N$体の振動子集団$\Omega_N$との間に$n$本の枝で繋がっている．
-ただし，振動子集団$\Omega_M$と振動子集団$\Omega_N$との間に枝は存在しないとする．（図\ref{fig:switch}）\\
+ただし，振動子集団$\Omega_M$と振動子集団$\Omega_N$との間の枝は無視できるほど少ないとする．（図\ref{fig:switch}）\\
 枝の本数$m,n$が変化すると，振動子の実効振動数が変化し同期状態が変化する．
 \end{screen}
 
@@ -91,7 +91,7 @@ $m=5$における node $1$では，枝の増加により増加前に同期して
 ネットワーク全体の同期状態の変化は部分ネットワークそれぞれの同期状態の変化で理解されるため，
 簡略化した3体系の同期状態を調べることでネットワーク全体の同期状態の変化を理解することに繋がると期待される．
 
-次節では，3体系について鞍替え現象より広い範囲での同期状態を調べる．
+次節では，鞍替え現象に限定せず，3体系についてどのような同期状態が見られるか調べる．
 \section{3体系の同期状態}
 \label{sec:3body-synchro-state}
 元の部分ネットワーク (図\ref{fig:switch}) における枝の数$m,\ n$の変化は，3体系（図\ref{fig:3body}）においてはパラメータ$a,\ K$の変化に対応する．
@@ -166,6 +166,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
 \end{align}
 
 図\ref{fig:3body-state}のそれぞれの同期状態に対応する$x$-$y$平面上の相図を図\ref{fig:phase}に示す．
+それぞれの相図では，ベクトル場と同時に$x$-nullcline，$y$-nullcline，沈点，及び$(x,y)=(0,0)$から発する軌道を示している．
 
 \captionsetup[figure]{justification=centering}
 \begin{figure}[tbp]
@@ -282,7 +283,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
         &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2 \pt_y S_1h_1+k^2S_2-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)\notag\\
         &=\varepsilon+k(S_1-\pt_\tau h_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\right).
     \end{align}
-    $\dot{z}$が以下のように展開されるとする．
+    $\dot{z}$が以下のように$k$について展開されるとする．
     \begin{equation}
         \dot{z}=\varepsilon+kH_1(z-\varepsilon \tau)+k^2H_2(z-\varepsilon \tau)+O(k^3).
     \end{equation}
@@ -295,7 +296,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     $s=0$から$s=-\tau$で両辺積分すると，
     \begin{align}
         -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\sin(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
-        &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon t)-\cos  z)+h_1(z,\tau)\notag\\
+        &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon \tau)-\cos  z)+h_1(z,\tau)\notag\\
         &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)+O(\varepsilon^2)\notag\\
         &=a \sin\tau+2\tau\sin z-\varepsilon \tau^2\cos z+h_1(z,\tau)+O(\varepsilon^2).
         \label{eq-h1-H1}
@@ -303,7 +304,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     となり，$\tau=-2\pi$を代入すると，以下のようになる．
     \begin{align}
         2\pi H_1\left(z+ 2\pi\varepsilon\right)&=-4\pi\sin z-4\pi^2\varepsilon \cos z+O(\varepsilon^2)\notag\\
-        H_1\left(z+2\pi\varepsilon\right)&=-2 \sin z-2\pi\varepsilon \cos z+O(\varepsilon^2).\label{eq:H1-approx}
+        H_1\left(z+ 2\pi\varepsilon\right)&=-2 \sin z-2\pi\varepsilon \cos z+O(\varepsilon^2).\label{eq:H1-approx}
     \end{align}
     また，式\eqref{eq:H1-approx}の左辺を$z$まわりに$\varepsilon$について展開すると，以下のようになる．
     \begin{equation}
@@ -366,7 +367,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     
     まず，式\eqref{eq:k1-approx}の状況では，
     \begin{equation}
-        \dot{z}=\varepsilon-2k\sin z
+        \dot{z}=\varepsilon-2k\sin z+O(k^2,\varepsilon k)
         \label{eq:z-k1-approx}
     \end{equation}
     となる．これは，式\eqref{eq:phase-diff}に対し$x$の周期で平均化を行った（つまり，$\sin x\sim 0$）式である．
@@ -386,8 +387,8 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \begin{align}
         \label{eq:z-k2-approx}
         \begin{split}
-            \dot{z}&=\varepsilon-2k\sin z-k^2a(a+\cos  z)\\
-            &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin ( z-\alpha)\quad(\alpha:\mathrm{const}).
+            \dot{z}&=\varepsilon-2k\sin z-k^2a(a+\cos  z)+O(k^3,\varepsilon k,a\varepsilon k^2)\\
+            &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin ( z-\alpha)\quad(\alpha:\mathrm{const})+O(k^3,\varepsilon k,a\varepsilon k^2).
         \end{split}
     \end{align}
     $z$が安定解を持つ条件は，
@@ -413,36 +414,40 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
         K_3\lessapprox \frac{|\Omega|}{2a-1}\coloneqq K'_3
     \end{equation}
     を得た．
-    \begin{proposition}
-        \label{prop:suff}
-        トーラス$\mathbb{T}^2$上の自律系
-        \begin{align}
-            \label{eq:prop-2phase}
-            \begin{split}
-                \dot{x}&=\Omega-K(2a\sin x+\sin y),\\
-                \dot{y}&=\omega-K(a\sin x+2\sin y)
-            \end{split}
-        \end{align}
-        において，平衡点を持たず，任意の$y$に対し$\dot{x}=0$が解を持つならば，
-        つまり，$K,a$が
-        \begin{equation*}
-            K\geq \frac{|\Omega|}{2a-1}
-        \end{equation*}
-        を満たすならば，
-        2つの安定，不安定な$x$-$\mathrm{nullcline}$付近に$\mathbb{S}^1$と同相な安定，不安定な周期解がそれぞれ1つずつ存在し，任意の点から発する軌道は2つの周期解のどちらかに収束する．
-    \end{proposition}
+    \begin{screen}
+        \begin{proposition}
+            \label{prop:suff}
+            トーラス$\mathbb{T}^2$上の自律系
+            \begin{align}
+                \label{eq:prop-2phase}
+                \begin{split}
+                    \dot{x}&=\Omega-K(2a\sin x+\sin y),\\
+                    \dot{y}&=\omega-K(a\sin x+2\sin y)
+                \end{split}
+            \end{align}
+            において，平衡点を持たず，任意の$y$に対し$\dot{x}=0$が解を持つならば，
+            つまり，$K,a$が
+            \begin{equation*}
+                K\geq \frac{|\Omega|}{2a-1}
+            \end{equation*}
+            を満たすならば，
+            2つの安定，不安定な$x$-$\mathrm{nullcline}$付近に$\mathbb{S}^1$と同相な安定，不安定な周期解がそれぞれ1つずつ存在し，任意の点から発する軌道は2つの周期解のどちらかに収束する．
+        \end{proposition}
+    \end{screen}
     まず，以下の補題を示す．
-    \begin{lemma}
-        \label{lemma:annulus}
-        命題\ref{prop:suff}の状況で
-        安定な$x$-nullclineの$x$座標の最大値・最小値をそれぞれ$x_{\max},\ x_{\min}$とし，$D=[x_{\min},x_{\max}]\times (-\pi,\pi ]\subset\mathbb{T}^2$とする．
-        このとき，円筒領域$D$内に$\mathbb{S}^1$に同相な安定な周期解がただ一つ存在する．        
-    \end{lemma}
-    \begin{proof}
-        まず，$D$内の任意の点から発する軌道は$D$内に留まる．
-        なぜなら，$D$内の点から発して$D$外に出る軌道が存在すると仮定すると$D$の境界上で$D$外の流れを持つが，図\ref{fig:phase-k50}よりそのような点は存在しないからである．
-
-        そして，命題\ref{prop:suff}の仮定より平衡点は存在せず，$D$は円環に同相でトーラス$\mathbb{T}^2$と同相でない．\\
+    \begin{screen}
+        \begin{lemma}
+            \label{lemma:annulus}
+            命題\ref{prop:suff}の状況で
+            安定な$x$-nullclineの$x$座標の最大値・最小値をそれぞれ$x_{\max},\ x_{\min}$とし，$D=[x_{\min},x_{\max}]\times (-\pi,\pi ]\subset\mathbb{T}^2$とする．
+            このとき，円筒領域$D$内に$\mathbb{S}^1$に同相な安定な周期解がただ一つ存在する．        
+        \end{lemma}
+    \end{screen}
+        \begin{proof}
+            まず，$D$内の任意の点から発する軌道は$D$内に留まる．
+            なぜなら，$D$内の点から発して$D$外に出る軌道が存在すると仮定すると$D$の境界上で$D$外の流れを持つが，図\ref{fig:phase-k50}よりそのような点は存在しないからである．
+            
+            そして，命題\ref{prop:suff}の仮定より平衡点は存在せず，$D$は円環に同相でトーラス$\mathbb{T}^2$と同相でない．\\
         以上より，Poincar\'{e}-Bendixsonの定理の一般化（定理\ref{thm:poiben-gen}）から$D$内に$\mathbb{S}^1$に同相な周期解が存在する．
         
         また，その周期解は$y$方向の流れが一定であることから，安定な$x$-nullclineと交差し，安定な周期解となる．

@@ -1,6 +1,6 @@
 \documentclass[../main]{subfiles}
 \begin{document}
-\chapter{percolationと振動数同期}
+\chapter{Percolationと振動数同期}
 \label{chap:percolation}
 \section{問題設定及び数値実験}
 \ref{sec:method-3body-settting}節と同様に，振動子ネットワークの構造としてERモデル$\Gamma_{n,m}$を採用し，枝の本数を$m=0$から$m=n(n-1)/2$まで変化させることでモデルの構造を変化させることを考える．
@@ -12,11 +12,13 @@
 \begin{itemize}
     \item 
     同じ実効振動数を持つ集団のサイズの最大値$L$．ただし，実効振動数差が$\Delta\ll 1$の振動子を同一のクラスタに属するとみなすこととする．
+    新たに定義した同期状態の指標であり，ネットワーク全体ではなくネットワークの部分の同期の程度を評価する指標である．
     \item
     オーダーパラメータ$R$．
     \begin{equation*}
         R\mathrm{e}^{\imag \psi}\coloneqq\frac{1}{n}\sum_{j=1}^n\mathrm{e}^{\imag \theta_j}.    
     \end{equation*}
+    \ref{sec:kuramoto-model}節で述べたように，ネットワーク全体の同期の程度を評価する指標である．
 \end{itemize}
 
 固有振動数の分布として$\pm 1$の二項分布を用いた$n=50$個の振動子に対し，枝の数を$0$から$1225$本まで変化させた試行を$M=100$回行い平均したものを図\ref{fig:edge-cutting-K04}に示す．

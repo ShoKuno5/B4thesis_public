@@ -3,6 +3,7 @@
 \chapter{前提知識}
 \label{chap:prev}
 \section{蔵本モデル}
+\label{sec:kuramoto-model}
 本節を書くにあたっては，\cite{RODRIGUES20161,biorhythm}を参考にした．
 
 蔵本モデルは，それぞれ固有の振動数に従う自律的な振動子がそれぞれの位相差の$\sin$関数で結合しているとするモデルである．
@@ -14,15 +15,15 @@
     \dot{\phi}_i=\omega_i+K\sin(\phi_j-\phi_i),\ (i,j)=(1,2),(2,1).
 \end{equation}
 ここで，各$i=1,2$について$\phi_i$は無次元量，$\omega_i$及び$K$は時間の$-1$乗の次元を持つことに注意せよ．
-このとき，$\psi=\phi_1-\phi_2,\ \delta\omega=\omega_1-\omega_2$とすると，1変数の微分方程式になる．
+このとき，$\delta\phi=\phi_1-\phi_2,\ \delta\omega=\omega_1-\omega_2$とすると，1変数の微分方程式になる．
 \begin{equation}
     \label{eq:kuramoto-2body}
-    \dot{\psi}=\delta\omega-2K\sin\psi.  
+    \dot{\delta\phi}=\delta\omega-2K\sin\delta\phi.  
 \end{equation}
-式\eqref{eq:kuramoto-2body}を$\psi-\dot{\psi}$平面に描いたものを図\ref{fig:kuramoto-2}に示す．
-$K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$の解を持つ．
-特に，安定解$\delta\psi^\ast$と不安定解の2つの解が存在する．
-このとき，$t\to\infty$で$\psi\to\psi^\ast$に収束する．このとき$\dot{\psi}=0$であるので位相ロックしているという．
+式\eqref{eq:kuramoto-2body}を$\delta\phi-\dot{\delta\phi}$平面に描いたものを図\ref{fig:kuramoto-2}に示す．
+$K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\delta\phi}=0$の解を持つ．
+特に，安定解$\delta\phi^\ast$と不安定解の2つの解が存在する．
+このとき，$t\to\infty$で$\delta\phi\to\delta\phi^\ast$に収束する．このとき$\dot{\delta\phi}=0$であるので位相ロックしているという．
 これは2つの振動子の振動数が完全に一致した振動数同期の一種である．
 
 \begin{figure}[tbp]
@@ -48,6 +49,7 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 
 このとき，振動子全体の同期を評価する量として以下で定義されるオーダーパラメータが用いられている．
 \begin{equation}
+    \label{eq:order-parameter}
     R\mathrm{e}^{\imag \psi}\coloneqq\frac{1}{N}\sum_{j=1}^N\mathrm{e}^{\imag \theta_j}.    
 \end{equation}
 オーダーパラメータは，位相が$[0,2\pi)$に一様に分布しているとき，$R= 0$となる．つまり振動子同士に同期が見られない状態を表す．
@@ -59,7 +61,7 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
     \dot{\phi}_i=\omega_i+\frac{K}{N}\sum_{j=1}^NA_{ij}\sin(\phi_i-\phi_j),\ i=1,2,\ldots,N.
 \end{equation}
 ここで，$A_{ij}$は振動子の接続状況を表す隣接行列$A$の成分で，振動子$i$と振動子$j$の間に枝があれば$1$，そうでなければ$0$である．
-一般には，無向グラフ，有向グラフ両方とも考えることがあるが，本論文では無向グラフのみを考えるため，$A$は対称行列となる．式\eqref{eq:kuramoto-network}で表されるダイナミクスを持つ，複雑ネットワークに拡張された蔵本モデルは振動子ネットワークと呼ばれる．
+一般には，無向グラフ，有向グラフ両方とも考えることがあるが，本論文では無向グラフのみを考えるため，$A$は対称行列となる．式\eqref{eq:kuramoto-network}で表されるダイナミクスを持つ，複雑ネットワークに拡張された蔵本モデルを以下では振動子ネットワークと呼ぶこととする．
 \section{近恒等変換}
 本節を書くにあたっては，\cite{james2003}を参考にした．
 
@@ -93,8 +95,10 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\psi}=0$�
 本節を書くにあたっては，\cite{Bollobas2013,Albert2002}を参考にした．
 \subsection{Erd\H{o}s–R\'{e}nyi グラフ}
 \label{sec:er-graph}
-$V=\{1,2,\ldots,n\}$とラベリングされた$n$個の頂点と$N$本の枝を持つランダムグラフ$\Gamma_{n,N}$を考える．
-つまり，異なる頂点$i,j\in V,\ i\neq j$との間の枝-全$\binom{n}{2}$本から等しい確率で$N$本選んだものを考える．
+ランダムグラフとは，ある性質を満たすグラフの集合を考えるために導入された確率的に構成されるグラフのことである．
+
+Erd\H{o}s–R\'{e}nyi グラフとは，$V=\{1,2,\ldots,n\}$とラベリングされた$n$個の頂点と$N$本の枝を持つランダムグラフ$\Gamma_{n,N}$である．
+つまり，異なる頂点$i,j\in V,\ i\neq j$との間の枝-全$\binom{n}{2}$本から等しい確率で$N$本選ぶことで得られるグラフである．
 
 $\Gamma_{n,N(n)}$について，$N(n)$によりグラフの連結成分や次数などの性質がどのように変化するかという問題が生じる．
 Erd\H{o}s 及び R\'{e}nyi は，$N(n)$の増大に伴って巨大な連結成分が出現することを発見し，以下のような結果を得た．
@@ -122,7 +126,7 @@ $n$を固定し，$N$を1から$\binom{n}{2}$まで増やしたときに，$\Gam
     このときグラフ全体が連結なだけでなく全ての頂点の次数が漸近的に等しい．
 \end{enumerate}
 \renewcommand{\labelenumi}{\theenumi}
-\subsection{percolation}
+\subsection{Percolation}
 percolation は，ネットワーク全体を貫く (percolate) 道の存在を調べる理論である．
 percolation には頂点を固定して枝を確率的に配置する bond percolation と，枝を固定して頂点を確率的に配置する site percolation の2種類が知られている．
 いずれの場合も配置確率$p$に対し，主に以下の3つの指標に注目する．
@@ -203,29 +207,33 @@ $x\in M$の$\omega_\pm$-極限集合$\omega_\pm(x)$とは，点列$t_n\to \pm\in
 集合$U\subset M$が minimal とは，非空で閉かつ不変であるような$M$の部分集合のうち最小のものであることをいう．
 \subsection{Poincar\'{e}-Bendixsonの定理}
 まず，広く知られている$\mathbb{R}^2$上の Poincar\'{e}-Bendixson の定理について述べる．
-\begin{theorem}
-    以下の自律系について，解が一意に与えられ任意の$t\in\mathbb{R}$で定義されるとする．
-    \begin{equation}
-        \dot{x}=f(x),\ x\in M\subset \mathbb{R}^2,\ f\in C^1(M,\mathbb{R}^2),\ M:\mathrm{open}.         \label{eq:automonous-poincare}
-    \end{equation}
-    $p\in M$の前進軌道$\gamma_+(p)$が連結な有界閉集合で，$\omega_+$-極限集合$\omega_+(p)$が一つも平衡点を持たないと仮定する．
-    このとき，$\omega_+(p)$は周期軌道で$p$が周期点であるか，$\gamma_+(p)$が Limit Cycle に収束するかのどちらかである．
-    \label{theorem:poincare}
-\end{theorem}
+\begin{screen}
+    \begin{theorem}
+        以下の自律系について，解が一意に与えられ任意の$t\in\mathbb{R}$で定義されるとする．
+        \begin{equation}
+            \dot{x}=f(x),\ x\in M\subset \mathbb{R}^2,\ f\in C^1(M,\mathbb{R}^2),\ M:\mathrm{open}.         \label{eq:automonous-poincare}
+        \end{equation}
+        $p\in M$の前進軌道$\gamma_+(p)$が連結な有界閉集合で，$\omega_+$-極限集合$\omega_+(p)$が一つも平衡点を持たないと仮定する．
+        このとき，$\omega_+(p)$は周期軌道で$p$が周期点であるか，$\gamma_+(p)$が Limit Cycle に収束するかのどちらかである．
+        \label{theorem:poincare}
+    \end{theorem}
+\end{screen}
 この定理により閉軌道の存在を示すことができるため，具体的に周期解を求めることが難しい非線形力学系の分野で重要な定理となっている．
 
 一方，$\mathbb{R}^2$と同じ2次元平面であっても，トーラス$\mathbb{T}^2$では異なるふるまいを示す．
 Schwartz は定理\ref{theorem:poincare}を任意の二次元多様体に拡張した\cite{Schwartz1963ErrataAG}．
-\begin{theorem}
-    \label{thm:poiben-gen}
-    $C^2$級のコンパクトで連結な二次元多様体$X$で定義された自律系 (式\eqref{eq:automonous-poincare}) が流れを与えるとする．
-    集合$M\subset X$が minimal ならば，$M$は次のうちのどれか一つである．
-    \begin{enumerate}
-        \item 平衡点からなる一元集合．
-        \item 単純かつ閉で$\mathbb{S}^1$に同相な軌道．
-        \item $\mathbb{T}^2$に同相な$X$全体．
-    \end{enumerate}
-\end{theorem}
+\begin{screen}
+    \begin{theorem}
+        \label{thm:poiben-gen}
+        $C^2$級のコンパクトで連結な二次元多様体$X$で定義された自律系 (式\eqref{eq:automonous-poincare}) が流れを与えるとする．
+        集合$M\subset X$が minimal ならば，$M$は次のうちのどれか一つである．
+        \begin{enumerate}
+            \item 平衡点からなる一元集合．
+            \item 単純かつ閉で$\mathbb{S}^1$に同相な軌道．
+            \item $\mathbb{T}^2$に同相な$X$全体．
+        \end{enumerate}
+    \end{theorem}
+\end{screen}
 \subsection{準周期軌道}
 準周期軌道とは，周期的ではあるもののほぼ周期的でないくらい周期が長いような軌道のことであり，
 惑星の軌道や周期運動に摂動を加えた系でよく見られる．
