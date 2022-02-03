@@ -254,38 +254,38 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
 
     一方，$x$については$k$の1次で展開すると以下のようになる．
     \begin{align}
-        x&=\Omega t-\Omega k\int_0^t(2a\sin(x+\Omega s)+\sin (z+\omega s))\dd{s}+O(k^2)\notag\\ 
-        &=\tau-\Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,k\varepsilon^2).\label{eq:x-series}
+        x&=x(0)+\Omega t-\Omega k\int_0^t(2a\sin(x+\Omega s)+\sin (z+\omega s))\dd{s}+O(k^2)\notag\\ 
+        &=\frac{\pi}{2}+\tau-\Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,\varepsilon^2k).\label{eq:x-series}
     \end{align}
     最終行では，$\cos x(0)=0$となるように初期時刻$t=0$を定めたことに因る．
     
     式\eqref{eq:pertu-ytilde},\ \eqref{eq:x-series}を用いて，$S(x,y)$を$z,\ \tau$に関して展開する．
     \begin{align}
         S(x,y)&=-a\sin x-2\sin y\notag\\
-        &=-a\sin\tau-2\sin z-2 kh_1\cos z\notag\\
-        &+a\cos\tau\cdot \Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,k\varepsilon^2)\notag\\
-        &=-a\sin\tau-2\sin z\notag\\
-        &+k\left(-2 \cos z\cdot h_1+a^2\sin 2\tau+a\tau\cos \tau\sin z+\frac{a\varepsilon \tau^2}{2}\cos \tau \cos z\right)+O(k^2,k\varepsilon^2).
+        &=-a\cos\tau-2\sin z-2 kh_1\cos z\notag\\
+        &-a\sin\tau\cdot \Omega k\left(\frac{2a}{\Omega}\sin\tau+\frac{\tau}{\Omega}\sin z+\frac{\omega \tau^2}{2\Omega^2}\cos z\right)+O(k^2,\varepsilon^2k)\notag\\
+        &=-a\cos\tau-2\sin z\notag\\
+        &+k\left(-2 \cos z\cdot h_1-2a^2\sin^2\tau-a\tau\sin \tau\sin z-\frac{a\varepsilon \tau^2}{2}\sin \tau \cos z\right)+O(k^2,\varepsilon^2k).
     \end{align}
-    さらに，$S_1\coloneqq-a\sin\tau-2\sin z,\ S_2\coloneqq a^2\sin 2\tau+a\tau\cos \tau\sin z+a\varepsilon \tau^2/2 \cdot\cos \tau \cos z$と定めると，
+    さらに，$S_1\coloneqq-a\cos\tau-2\sin z,\ S_2\coloneqq -2a^2\sin^2\tau-a\tau\sin \tau\sin z-a\varepsilon \tau^2/2\sin \tau \cos z$と定めると，
     \begin{equation}
         S(x,y)=S_1+k\pt_y S_1\cdot h_1+kS_2
     \end{equation}
     となる．
-    式\eqref{eq:pertu-ytilde}を両辺$\tau$で微分すると，$\dot{\ast}=\dd{\ast}/\dd{\tau}$として，
+    式\eqref{eq:pertu-ytilde}を両辺$\tau$で微分すると，$\ast'\coloneqq\dd{\ast}/\dd{\tau}$として，
     \begin{align}
-        \dv{y}{\tau}&=\dot{z}+k(\dot{z}\partial_zh_1+\partial_\tau h_1)+k^2(\dot{z}\partial_zh_2+\partial_\tau h_2)+O(k^3)\notag\\
-        &=(1+k\partial_zh_1+k^2\partial_zh_2)\dot{z}+k\pt_\tau h_1+k^2\pt_\tau h_2+O(k^3).
+        \dv{y}{\tau}&=z'+k(z'\partial_zh_1+\partial_\tau h_1)+k^2(z'\partial_zh_2+\partial_\tau h_2)+O(k^3)\notag\\
+        &=(1+k\partial_zh_1+k^2\partial_zh_2)z'+k\pt_\tau h_1+k^2\pt_\tau h_2+O(k^3).
     \end{align}
     整理すると，以下のようになる．
     \begin{align}
-        \dot{z}&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{y}{t}-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)+O(k^3)\notag\\
+        z'&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{y}{t}-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)+O(k^3)\notag\\
         &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2 \pt_y S_1h_1+k^2S_2-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)\notag\\
         &=\varepsilon+k(S_1-\pt_\tau h_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\right).
     \end{align}
-    $\dot{z}$が以下のように$k$について展開されるとする．
+    $z'$が以下のように$k$について展開されるとする．
     \begin{equation}
-        \dot{z}=\varepsilon+kH_1(z-\varepsilon \tau)+k^2H_2(z-\varepsilon \tau)+O(k^3).
+        z'=\varepsilon+kH_1(z-\varepsilon \tau)+k^2H_2(z-\varepsilon \tau)+O(k^3).
     \end{equation}
     ここで，$z$が平均的に振動数$\omega$（無次元時間$\tau$では$\varepsilon$）で変動することから$H_1,\ H_2$が$z-\varepsilon \tau$に依存するものとした．
     
@@ -295,7 +295,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \end{equation}
     $s=0$から$s=-\tau$で両辺積分すると，
     \begin{align}
-        -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\sin(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
+        -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\cos(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
         &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon \tau)-\cos  z)+h_1(z,\tau)\notag\\
         &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)+O(\varepsilon^2)\notag\\
         &=a \sin\tau+2\tau\sin z-\varepsilon \tau^2\cos z+h_1(z,\tau)+O(\varepsilon^2).
@@ -325,16 +325,16 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \end{align}
     となる．
 
-    次に$\dot{z}$の$k$の2次を比較し，$h_1$を代入する．
+    次に$z'$の$k$の2次を比較し，$h_1$を代入する．
     \begin{align}
         \begin{split}
             H_2(z-\varepsilon \tau)=&\ \pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\\
             =&-2\cos (z+\varepsilon s)\left( -a\sin(\tau+s)-\varepsilon(2\pi (\tau+s)+(\tau+s)^2) \cos (z+\varepsilon s) \right)\\
             % +&\  a^2\sin 2(\tau+s)+a(\tau+s)\cos (\tau+s)-\pt_\tau h_2+O(\varepsilon^2)\\
-            +&\ a^2\sin 2(\tau+s)+a(\tau+s)\cos (\tau+s)\sin (z+\varepsilon s)\\
-            +&\ \frac{a\varepsilon (\tau+s)^2}{2}\cos (\tau+s) \cos (z+\varepsilon s)-\pt_\tau h_2+O(\varepsilon^2)\\
+            -&\ 2a^2\sin^2(\tau+s)-a(\tau+s)\sin (\tau+s)\sin (z+\varepsilon\tau)\\
+            -&\ \frac{a\varepsilon (\tau+s)^2}{2}\sin (\tau+s) \cos (z+\varepsilon\tau)-\pt_\tau h_2+O(\varepsilon^2)\\
             +&\ \varepsilon(2\pi(\tau+s)+(\tau+s)^2)\sin (z+\varepsilon s) \\
-            &\left( -a\sin(\tau+s)-2\sin (z+\varepsilon s) +a\cos(\tau+s)\right.\\
+            &\left( -a\cos(\tau+s)-2\sin (z+\varepsilon s) +a\cos(\tau+s)\right.\\
             &\left.+\varepsilon(2\pi +2(\tau+s))\cos (z+\varepsilon s)\right).
         \end{split}
     \end{align}
@@ -343,23 +343,25 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
         -\tau H_2(z-\varepsilon \tau)&=2a\cdot -\varepsilon \tau\sin z+4\pi\varepsilon\left( -\frac{\tau^2}{4} -\frac{\tau^2}{4}\cos 2z\right)+2\varepsilon\left( -\frac{\tau^3}{6} -\frac{\tau^3}{6}\cos 2 z\right)\notag\\
         &-2\pi a\varepsilon\cdot\left(\tau\sin z\right)+2\pi a\varepsilon\left(-\varepsilon \tau\cos z\right)\notag\\
         &-4\pi\varepsilon\left(-\frac{\tau^2}{4}+\frac{\tau^2}{4}\cos 2 z\right)-2\varepsilon\left( -\frac{\tau^3}{6} +\frac{\tau^3}{6}\cos 2z\right)+O(\varepsilon^2)\notag\\
-        &-a\varepsilon\left( \tau^2\sin z \right)+a\varepsilon\left( -2\tau^2\sin z \right)\notag\\
-        &+\frac{a^2}{2}\left( \cos 2\tau-1\right)+a\tau(a+\cos z)\notag\\
-        &+\frac{a\varepsilon}{2}(-\tau\sin\tau+1-\cos\tau)\cos z\notag\\
+        % &-a\varepsilon\left( \tau^2\sin z \right)+a\varepsilon\left( -2\tau^2\sin z \right)\notag\\
+        &+\frac{a^2}{2}\left( 2\tau-\sin 2\tau\right)-a(\tau\cos\tau-\sin\tau)\sin z\notag\\
+        &-a\varepsilon(-\tau\sin\tau+2-2\cos\tau)\cos z \notag\\
+        &+\frac{a\varepsilon}{2}(\tau^2\cos\tau-2\tau\sin\tau+1-\cos\tau)\cos z\notag\\
         &=-2a\varepsilon \tau\sin z-2\pi\varepsilon\tau^2\cos 2 z-\frac{2}{3}\varepsilon\tau^3\cos 2z\notag\\
-        &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+O(\varepsilon^2)
+        % &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+O(\varepsilon^2)
+        &+\frac{a\varepsilon}{2}\tau^2\cos\tau\cos z+a\tau(a-\sin z)+O(\varepsilon^2)
     \end{align}
     となる．$\tau=-2\pi$を代入して整理すると以下のようになる．
     \begin{align}
         \begin{split}
-            &H_2(z+2\pi\varepsilon )=-a(a+\cos z)+O(\varepsilon^2)\\
-            &+2\varepsilon\left( a\sin z-2\pi^2\cos2 z+\frac{4\pi^2}{3} \cos 2 z+\pi a\sin z-3\pi a\sin z\right).
+            &H_2(z+2\pi\varepsilon )=-a(a-\sin z)+O(\varepsilon^2)\\
+            &+\varepsilon\left( 2a\sin z-4\pi^2\cos2 z+\frac{8\pi^2}{3} \cos 2 z-\pi a\cos z\right).
         \end{split}
     \end{align}
     $H_1$と同様に$z$まわりに$\varepsilon$に関して展開し，$\varepsilon$について比較すると，以下の式が得られる．
     \begin{equation}
         \label{eq:nit-H2}
-        H_2(z)=-a(a+\cos z)+2\varepsilon\left( (1-3\pi)a\sin z-\frac{2\pi^2}{3} \cos 2 z\right)+O(\varepsilon^2).
+        H_2(z)=-a(a-\sin z)+\varepsilon\left( a(2\sin z-3\pi\cos z)-\frac{4\pi^2}{3} \cos 2 z\right)+O(\varepsilon^2).
     \end{equation}
 
     以上で，位相差$y$の近恒等変換$z$の従う微分方程式を近似的に求めることができる．
@@ -367,13 +369,13 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     
     まず，式\eqref{eq:k1-approx}の状況では，
     \begin{equation}
-        \dot{z}=\varepsilon-2k\sin z+O(k^2,\varepsilon k)
+        z'=\varepsilon-2k\sin z+O(k^2,\varepsilon k)
         \label{eq:z-k1-approx}
     \end{equation}
     となる．これは，式\eqref{eq:phase-diff}に対し$x$の周期で平均化を行った（つまり，$\sin x\sim 0$）式である．
     式\eqref{eq:z-k1-approx}で$z$が安定解を持つ条件は，
     \begin{equation}
-        k\geq\frac{\varepsilon}{2}
+        |k|\geq\frac{|\varepsilon|}{2}
     \end{equation}
     となり，臨界結合強度$K_1$は，
     \begin{equation}
@@ -383,28 +385,28 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     となる．
 
     次に，式\eqref{eq:k2-approx}の状況を考える．
-    閉形式で$K_2$を求めるため$|a\varepsilon k^2| \ll 1,\ |\varepsilon k|\ll 1$を仮定すると，$k$の2次まで考えると$z$は以下のような微分方程式に従う．
+    閉形式で$K_2$を求めるため$|\varepsilon k|\ll 1$を仮定すると，$k$の2次まで考えると$z$は以下のような微分方程式に従う．
     \begin{align}
         \label{eq:z-k2-approx}
         \begin{split}
-            \dot{z}&=\varepsilon-2k\sin z-k^2a(a+\cos  z)+O(k^3,\varepsilon k,a\varepsilon k^2)\\
-            &=\varepsilon-a^2k^2-k\sqrt{4+a^2k^2}\sin ( z-\alpha)\quad(\alpha:\mathrm{const})+O(k^3,\varepsilon k,a\varepsilon k^2).
+            z'&=\varepsilon-2k\sin z-k^2a(a-\sin  z)+O(k^3,\varepsilon k)\\
+            &=\varepsilon-a^2k^2-k(2-ak)\sin z+O(k^3,\varepsilon k).
         \end{split}
     \end{align}
     $z$が安定解を持つ条件は，
     \begin{align}
-        |\varepsilon-a^2k^2|&\leq k\sqrt{4+a^2k^2}\notag\\
-        0\leq |k|&\leq \sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
+        |\varepsilon-a^2k^2|&\leq |k(2-ak)|\notag\\
+        0\leq k&\leq \frac{1}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right)+O(\varepsilon k^{-1})
     \end{align}
     となり，臨界結合強度$K_2$は，
     \begin{equation}
         \label{eq:K2-approx}
-        K_2=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)}
+        K_2=\frac{|\Omega|}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right)
     \end{equation}
     となる．
     ただし，$K_2$が実数となるためには$\varepsilon$及び$a$が以下の条件を満たす必要がある．
     \begin{equation}
-        a^2\varepsilon^2+4a^2\varepsilon+4\geq 0
+        4+2\varepsilon(a^2-1)\geq 0
     \end{equation}
     \subsection{固有振動数の遠い2体との同期（$K_3$）}
     \label{sec:3body-k3}
@@ -529,7 +531,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
         \label{eq:3body-matome}
         \begin{split}
             K_1&=\frac{\omega}{2},\\
-            K_2&=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left(2+a^2\varepsilon+\sqrt{(2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)},\\
+            K_2&=\frac{|\Omega|}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right),\\
             K'_3&=\frac{|\Omega|}{2a-1},\\
             K_{41}&=\frac{|2\Omega-\omega|}{3a},\\
             K_{42}&=\frac{|\Omega-2\omega|}{3},\\
@@ -613,7 +615,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \label{eq:3body-matome-general}
     \begin{split}
         K_1&=\frac{|\omega|}{1+1/\tilde{N}},\\
-        K_2&=|\Omega|\cdot\sqrt{\frac{1}{a^4-a^2}\left((1+1/\tilde{N})^2/2+a^2\varepsilon+\sqrt{((1+1/\tilde{N})^2/2+a^2\varepsilon)^2-\varepsilon^2(a^4-a^2)}\right)},\\
+        K_2&=\frac{|\Omega|}{a^4-a^2}\left(-\left( 1+1/\tilde{N} \right)a+\sqrt{\left( 1+1/\tilde{N} \right)^2a^2+(a^4-a^2)\left(\left( 1+1/\tilde{N} \right)^2+2a^2\varepsilon\right)}\right),\\
         K'_3&=\frac{|\Omega|}{a(1+1/\tilde{M})-1}\gtrapprox K_3,\\
         K_4&=\max\left\{\frac{|(1+1/\tilde{N})\Omega-\omega|}{a(1/\tilde{N}+1/\tilde{M}+1/\tilde{N}\tilde{M})},\frac{|\Omega-(1+1/\tilde{M})\omega|}{(1/\tilde{N}+1/\tilde{M}+1/\tilde{N}\tilde{M})}\right\}.
     \end{split}
@@ -757,29 +759,29 @@ $a=1.5,\ 1.8$を境に$a$を固定し$K$を変化させたときの同期状態�
 ここでは，\ref{sec:3body-k12}節において求めた$K_2$の閉形式の表現である式\eqref{eq:K2-approx}だけでなく，式\eqref{eq:nit-H1},\ \eqref{eq:nit-H2}より定まる以下のような$y$の近恒等変換$z$の微分方程式を考える．
 \begin{equation}
     \label{eq:k1k2-open}
-    \dot{z}=\varepsilon+kH_1(z)+k^2H_2(z)+O(k^3,\varepsilon^2)
+    z'=\varepsilon+kH_1(z)+k^2H_2(z)+O(k^3,\varepsilon^2)
 \end{equation}
-この式が$\dot{z}=0$の解を持つ同期条件を以下では開形式の同期条件と呼ぶことにする．
+この式が$z'=0$の解を持つ同期条件を以下では開形式の同期条件と呼ぶことにする．
 特に，開形式の同期条件から定まる臨界結合強度を開形式の臨界結合強度と略することとする．
 開形式の同期条件の境界は$K$-$a$平面上の連結な曲線であり，ある結合強度比$a$に対して2つの交点を持つ．
 開形式の同期条件は振動数の近い振動子が同期する条件であるため，2つの交点は$K_1,\ K_2$に対応すると考えられる．
 
 まず，$a=1$のときの$K_1$について数値実験による値と閉形式の値（式\eqref{eq:K1-approx}）と開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k1-compare}に示す．
-$\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．
+$\varepsilon$が大きくなるとやや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=105mm]{./images/k1-compare.pdf}
 \centering
 \caption{$a=1$のときの$K_1$について数値実験による値と閉形式の値（式\eqref{eq:K1-approx}）と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
-$\varepsilon$が大きくなると閉形式やや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．}
+$\varepsilon$が大きくなるとやや外れているものの，$\varepsilon=0.3$までは閉形式，開形式ともにいい精度で近似できている．}
 \label{fig:k1-compare}
 \end{figure}
 
 次に，$a=1,\ 1.7$のときの$K_1$について閉形式の値及び開形式の同期条件から定まる値の数値実験による値との誤差を様々な$\varepsilon$で比較したものを図\ref{fig:k1-error}に示す．
-閉形式の値において$\varepsilon$の増加に伴った誤差の拡大が$a=1$より$a=1.7$で大きい．
-これは，図\ref{fig:3body-phase}で$a$が大きいほど$K_1$の真の値が大きいが，式\eqref{eq:K1-approx}は定数であるため，$a$が大きいほど誤差が拡大していると考えられる．
-一方，開形式については閉形式に比べ誤差及び$a$の増大に伴う誤差の増大は小さくなっている．
+開形式の値において$\varepsilon$の増加に伴った誤差の拡大が$a=1$より$a=1.7$で大きい．
+これは，図\ref{fig:3body-phase}で$a$が大きいほど$K_1$の真の値が大きいが，開形式はその変化をうまく近似できていないことを表している．一方，式\eqref{eq:K1-approx}は定数であるため，$a$が大きいほど誤差が拡大している．
+開形式より閉形式の精度がいいのは，閉形式で記述するために$O(\varepsilon k^-1)$を無視したことによるアーチファクトだと考えられる．
 
 \begin{figure}[tbp]
 \centering
@@ -792,7 +794,7 @@ $\varepsilon$が大きくなると閉形式やや外れているものの，$\va
 
 $a=4$のときの$K_2$について数値実験による値と閉形式の値（式\eqref{eq:K2-approx}）と開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k2-compare}に示す．
 $K_1$と比べると，閉形式．開形式ともに精度が落ちるものの．$\varepsilon=0.045$までは閉形式，開形式ともにある程度の精度で近似できている．
-ここで，開形式よりも，より多くの仮定を課した閉形式が数値実験による値に近いのは，閉形式において$|\varepsilon k|\ll 1,\ |a\varepsilon k^2| \ll 1$という$\varepsilon$や$k$だけでなく$a$にも依存した仮定を課していることによるアーチファクトであると考えられる．
+ここで，$\varepsilon$が大きい領域で開形式よりも追加の仮定を課した閉形式が数値実験による値に近いのは，閉形式において$|\varepsilon k^{-1}|\ll 1$という$\varepsilon$及び$k$に依存した仮定を課していることによるアーチファクトであると考えられる．
 
 \begin{figure}[tbp]
 \centering
@@ -806,16 +808,16 @@ $K_1$と比べると，閉形式．開形式ともに精度が落ちるものの
 図\ref{fig:3body-phase}，\ref{fig:3body-phase-boundary}からわかるように，$K_1$及び$K_2$はある$(K,a)$で一致し，$K$-$a$平面で連結な曲線を構成する．
 開形式による$K_1$及び$K_2$も連結な曲線となるため，ある$a$における両曲線の値を異なる$\varepsilon$で比較し精度を評価することが考えられる．
 $a=5$のときの$K_1,\ K_2$について数値実験による値とと開形式の同期条件から定まる値を様々な$\varepsilon$で比較したものを図\ref{fig:k1k2-compare}に示す．
-$K_1$よりも$K_2$で開形式の精度が悪い．
+$\varepsilon$が大きい領域で開形式の精度が$K_1,\ K_2$共に悪い．
 また，$K_1$と$K_2$が一致する$\varepsilon$も数値実験の値と開形式の値とで異なる．
-よって，開形式の値は，閉形式の値を用いるよりも$a$依存性をより精度よく近似しているものの，$\varepsilon$が大きくなると有効ではないと考えられる．
+よって，開形式の値は，閉形式の値を用いるよりも$\varepsilon$依存性をより精度よく近似しているものの，$\varepsilon$が大きくなると有効ではないと考えられる．
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=105mm]{./images/k1k2-compare-open.pdf}
+\includegraphics[width=105mm]{./images/k1k2-compare.pdf}
 \centering
 \caption{$a=4$のときの$K_1,\ K_2$について数値実験による値と閉形式の値（式\eqref{eq:K1-approx}）と開形式の同期条件から定まる値を様々な$\varepsilon$で比較した．
-$K_1$よりも$K_2$で開形式の精度が悪い．
+$\varepsilon$が大きい領域で開形式の精度が$K_1,\ K_2$共に悪い．
 また，$K_1$と$K_2$が一致する$\varepsilon$も数値実験の値と開形式の値とで異なる．}
 \label{fig:k1k2-compare}
 \end{figure}
