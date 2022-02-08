@@ -2,7 +2,7 @@
 \begin{document}
 \chapter{鎖状ネットワークの同期に関する先行研究}
 \label{chap:appendix}
-\cite{XiaHuang:130506}の解析内容について述べる．
+鎖状ネットワークの同期に関する先行研究である\cite{XiaHuang:130506}の解析内容について述べる．
 
 鎖状に無向グラフとして$N$個連なった位相振動子ネットワークのふるまいを以下で記述するとする．
 \begin{align}
@@ -49,7 +49,7 @@ $\omega_1=2,\ \omega_2=1$とし，他の$\omega_i$をランダムに選択する
 となる．ここで，両辺の長時間平均$\langle\cdot\rangle$を考える．
 $\lambda$が同期が起こらないくらい小さいとき，$\phi_{21}$の確率分布$\rho(\phi_{21},t)$は十分時間が経つと安定分布に収束する．
 \begin{equation}
-    \rho(\phi_{21},t)=\frac{\Delta\omega_{21}-\lambda\sin\phi_{21}}{C},\quad C:\mathrm{normalization\ constant}
+    \rho(\phi_{21},t)=\frac{\Delta\omega_{21}-\lambda\sin\phi_{21}}{C},\quad C:\mathrm{normalization\ constant}.
 \end{equation}
 この確率分布に$\phi_{21}$が従うとして式\eqref{eq:phasediff-21}の$\sin\phi_{21}$を平均する．
 すると，以下のようになる．
@@ -73,16 +73,17 @@ $\Delta\omega_{21}\geq 0$のとき，
 \begin{align}
     \begin{cases}
         -\lambda\leq\Delta\omega_{31}-\sqrt{(\Delta\omega_{32})^2-\lambda^2}\geq\lambda & (\lambda\leq|\Delta\omega_{21}|),\\
-        -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|).
+        -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|)
     \end{cases}
 \end{align}
-$\Delta\omega_{21}< 0$のとき，
+となり，$\Delta\omega_{21}< 0$のとき，
 \begin{align}
     \begin{cases}
         -\lambda\leq\Delta\omega_{31}+\sqrt{(\Delta\omega_{32})^2-\lambda^2}\geq\lambda & (\lambda\leq|\Delta\omega_{21}|),\\
-        -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|).
+        -\lambda\leq\Delta\omega_{31}\geq\lambda & (\lambda>|\Delta\omega_{21}|)
     \end{cases}
 \end{align}
+となる．
 ここで，$\Delta\omega_{31}=\omega_3-\omega_1$である．
 これらの同期条件から，$\omega_c=-\sqrt{2}|\Delta\omega_{21}|+\omega_1$という臨界振動数を境界とする領域$\omega_3\in(\omega_c,\omega_2)$でCase \ref{enu:case2}のような分離が起こることがわかる．
 
@@ -115,7 +116,7 @@ $\phi_{31}=\theta_3-\theta_1$とすると，
 \ref{sec:3body-application}節で述べたように3体系が適用できない場合が存在する．
 本節ではそれらの例を示す．
 
-まず，どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合の例（\ref{sec:3body-application}節 Case \ref{counter-case1}）を図\ref{fig:3body-counter1}に示す．
+まず，どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合（\ref{sec:3body-application}節 Case \ref{counter-case1}）の例を図\ref{fig:3body-counter1}に示す．
 $\lambda=3/2$のとき，図のような4つの集団に分かれ，3つの集団に分割することはできない．
 この場合赤で示した枝を増やした場合の同期状態を3体系を用いて解析することはできない．
 
@@ -123,12 +124,12 @@ $\lambda=3/2$のとき，図のような4つの集団に分かれ，3つの集�
     \centering
     \includegraphics[width=90mm]{./images/three-body-counter1.pdf}
     \centering
-    \caption{どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合の例（\ref{sec:3body-application}節 Case \ref{counter-case1}）．\\
+    \caption{どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合（\ref{sec:3body-application}節 Case \ref{counter-case1}）の例．\\
     $\lambda=3/2$のとき，図のような4つの集団に分かれ，3つの集団に分割することはできない．}
     \label{fig:3body-counter1}
 \end{figure}
 
-次に，どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合の例（\ref{sec:3body-application}節 Case \ref{counter-case2}）を図\ref{fig:3body-counter2}に示す．
+次に，どのように分割しても異なる実行振動数の集団が必ず4つ以上存在する場合（\ref{sec:3body-application}節 Case \ref{counter-case2}）の例を図\ref{fig:3body-counter2}に示す．
 $\lambda=1$のとき，図のような4つの集団に分かれ，3つの集団に分割することはできない．
 この場合赤で示した枝を増やした場合の同期状態を3体系を用いて解析することはできない．
 
@@ -136,12 +137,12 @@ $\lambda=1$のとき，図のような4つの集団に分かれ，3つの集団�
     \centering
     \includegraphics[width=90mm]{./images/three-body-counter2.pdf}
     \centering
-    \caption{異なる実行振動数の集団が3つ以内になるように分割できるもの，どのように分割しても鎖状に連なった3つの集団において両端の集団間の枝がそれ以外の集団間の枝に比べ無視できない場合の例（\ref{sec:3body-application}節 Case \ref{counter-case2}）．\\
+    \caption{異なる実行振動数の集団が3つ以内になるように分割できるもの，どのように分割しても鎖状に連なった3つの集団において両端の集団間の枝がそれ以外の集団間の枝に比べ無視できない場合（\ref{sec:3body-application}節 Case \ref{counter-case2}）の例．\\
     $\lambda=1$のとき，図のような3つの集団に分かれるが，どの3集団の間にも枝が存在し無視することができない．}
     \label{fig:3body-counter2}
 \end{figure}
 
-そして，注目する枝を除いた場合は3つの集団に分割できるものの，そのどのような分割に対しても，注目する枝を加えると4つ以上の集団に分かれてしまう場合の例（\ref{sec:3body-application}節 Case \ref{counter-case3}）を図\ref{fig:3body-counter3}に示す．
+そして，注目する枝を除いた場合は3つの集団に分割できるものの，そのどのような分割に対しても，注目する枝を加えると4つ以上の集団に分かれてしまう場合（\ref{sec:3body-application}節 Case \ref{counter-case3}）の例を図\ref{fig:3body-counter3}に示す．
 $\lambda=1/60$のとき，赤で示した枝を除いた場合は図の色で区別した3つの集団に分かれるものの，赤で示した枝を加えた場合は図の楕円で囲った4つの集団に分かれる．
 この場合赤で示した枝を増やした場合の同期状態を3体系を用いて解析することはできない．
 
@@ -149,7 +150,7 @@ $\lambda=1/60$のとき，赤で示した枝を除いた場合は図の色で区
     \centering
     \includegraphics[width=90mm]{./images/three-body-counter3.pdf}
     \centering
-    \caption{注目する枝を除いた場合は3つの集団に分割できるものの，そのどのような分割に対しても，注目する枝を加えると4つ以上の集団に分かれてしまう場合の例（\ref{sec:3body-application}節 Case \ref{counter-case3}）を図\ref{fig:3body-counter3}に示す．
+    \caption{注目する枝を除いた場合は3つの集団に分割できるものの，そのどのような分割に対しても，注目する枝を加えると4つ以上の集団に分かれてしまう場合（\ref{sec:3body-application}節 Case \ref{counter-case3}）の例．
     $\lambda=1/60$のとき，赤で示した枝を除いた場合は図の色で区別した3つの集団に分かれるものの，赤で示した枝を加えた場合は図の楕円で囲った4つの集団に分かれる．}
     \label{fig:3body-counter3}
 \end{figure}

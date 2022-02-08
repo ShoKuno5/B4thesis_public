@@ -7,9 +7,9 @@
 本節を書くにあたっては，\cite{RODRIGUES20161,biorhythm}を参考にした．
 
 蔵本モデルは，それぞれ固有の振動数に従う自律的な振動子がそれぞれの位相差の$\sin$関数で結合しているとするモデルである．
-このモデルはもともと化学反応における不安定現象を説明する方程式から導出され\cite{kuramoto1975}，今日振動子系の同期現象を記述するモデルとして広く使われている．
+このモデルはもともと化学反応における不安定現象を説明する方程式から導出され\cite{kuramoto1975}，今日振動子系の同期現象を記述するモデルとして広く使われている\cite{RevModPhys.77.137}．
 
-固有振動数をそれぞれ$\omega_1,\omega_2$とする2つの振動子$\phi_1,\phi_2\in\mathbb{R}/2\pi\mathbb{Z}$が結合強度$K$で結合した蔵本モデルは以下のように記述される．
+固有振動数をそれぞれ$\omega_1,\ \omega_2$とする2つの振動子$\phi_1,\ \phi_2\in\mathbb{R}/2\pi\mathbb{Z}$が結合強度$K$で結合した蔵本モデルは以下のように記述される．
 \begin{equation}
     \label{eq:kuramoto-2}
     \dot{\phi}_i=\omega_i+K\sin(\phi_j-\phi_i),\ (i,j)=(1,2),(2,1).
@@ -67,12 +67,12 @@ $K\geq\delta\omega/2$のとき，式\eqref{eq:kuramoto-2body}は$\dot{\delta\phi
 
 以下のような周期的な微分方程式を考える．
 \begin{equation}
-    \dot{y}=\varepsilon f_1(t,y)+\varepsilon^2f_2(t,y)+\cdots
+    \dot{y}=\varepsilon f_1(t,y)+\varepsilon^2f_2(t,y)+\cdots.
 \end{equation}
 ただし，$y\in\mathbb{R}^{n-1}$で，$f_j$は$t,\ y$に関して周期的な関数である．\\
 ここで，$x\in\mathbb{R}^{n}$として，$f_j$に対し平均化を行うと
 \begin{align}
-    a_0(x)&=[1,0,\ldots,0]^\top\in\mathbb{R}^{n+1}\\
+    a_0(x)&=[1,0,\ldots,0]^\top\in\mathbb{R}^{n+1},\\
     a_j(x)&=[0,f_j(x)]^\top
 \end{align}
 として，
@@ -137,7 +137,8 @@ percolation には頂点を固定して枝を確率的に配置する bond perco
             P=P_p(|C|=\infty)=1-\sum_{1<s<\infty}P_p(|C|=s).
         \end{equation} 
         ここで，$P_p(|C|=s)$はある頂点が属するクラスタ$C$のサイズが$s$である確率とする．
-        ただし，$|C|/|V|<\infty$となるクラスタ$C$のサイズを$|C|=\infty$と定める．\\
+        ただし，$|C|/|V|<\infty$となるクラスタ$C$のサイズを$|C|=\infty$と定める．
+
         このとき，ある臨界確率$p_c$を境に$P$が変化する．
         \begin{align}
             P
@@ -158,7 +159,7 @@ percolation には頂点を固定して枝を確率的に配置する bond perco
     \begin{equation}
         n(s)=\frac{1}{s}P_p(|C|=s).
     \end{equation}
-    ここで，ある頂点がサイズ$s$のクラスタに含まれる確率とは必ずしも一致しないことに注意．
+    ここで，ある頂点がサイズ$s$のクラスタに含まれる確率とは必ずしも一致しないことに注意せよ．
 \end{itemize}
 
 ランダムグラフで任意の頂点間に枝を存在しうることは，無限次元の系での bond percolation に対応する．
@@ -176,8 +177,10 @@ percolation には頂点を固定して枝を確率的に配置する bond perco
     \label{eq:autonomous}
     \dot{x}=f(x),\ x(0)=x_0.
 \end{equation}
-ただし，$f$は開集合$M\subset \mathbb{R}^n$上で定義された$C^k\ (k\geq 1)$級関数とする．\\
-式\eqref{eq:autonomous}の解$\phi:T\subset \mathbb{R}\to M$は積分曲線と呼ばれ，$\phi(0)=x_0$を満たすような積分曲線を$x_0$における積分曲線と呼ぶ．\\
+ただし，$f$は開集合$M\subset \mathbb{R}^n$上で定義された$C^k\ (k\geq 1)$級関数とする．
+
+式\eqref{eq:autonomous}の解$\phi:T\subset \mathbb{R}\to M$は積分曲線と呼ばれ，$\phi(0)=x_0$を満たすような積分曲線を$x_0$における積分曲線と呼ぶ．
+
 そして，微分方程式の流れを写像として以下のように定義する．
 \begin{equation}
     \Phi:W\subset\mathbb{R}\times M\to M,\ (t,x)\mapsto \phi(t,x).
@@ -238,13 +241,16 @@ Schwartz は定理\ref{theorem:poincare}を任意の二次元多様体に拡張�
 準周期軌道とは，周期的ではあるもののほぼ周期的でないくらい周期が長いような軌道のことであり，
 惑星の軌道や周期運動に摂動を加えた系でよく見られる．
 
-準周期性は，厳密には以下のように定義される\cite{Broer1996}．\\
-不変な$n$トーラス$\mathbb{T}^n$の多様体$M$上の滑らかなベクトル場$X$を考える．\\
+準周期性は，厳密には以下のように定義される\cite{Broer1996}．
+
+不変な$n$トーラス$\mathbb{T}^n$の多様体$M$上の滑らかなベクトル場$X$を考える．
+
 制限$X|_T$を$\dot{x}_i=\omega_i,\ i=1,2,\ldots ,n$に写す微分同相写像$T\to \mathbb{T}^n$が存在するとき，$T$上の$X$が parallel な流れを誘導するという．
-そして，$\omega=(\omega_1,\omega_2,\ldots,\omega_n)$を$T$上の流れの振動数という．\\
+そして，$\omega=(\omega_1,\omega_2,\ldots,\omega_n)$を$T$上の流れの振動数という．
+
 振動数$\omega$が rationally independent, i.e., $\forall k\in\mathbb{Z}^n\setminus \{0\},\ \sum_{i=1}^n\omega_ik_i\neq 0$のとき，振動数$\omega$をもつ parallel な$T$上の流れは準周期的もしくは非調和的と呼ぶ．
 
 例えば，$\mathbb{T}^2$上の流れ$\dot{x}_1=\omega_1,\ \dot{x}_2=\omega_2$が準周期的である必要十分条件は振動数の比$\omega_1/\omega_2$が無理数であることである．
 
-準周期的な流れによる軌道は，流れが定義された空間全体を密に満たす．しかしながら，初期値に鋭敏に依存しないためカオスとは区別される．
+準周期的な流れによる軌道は，流れが定義された空間全体を密に満たす．しかしながら，初期値に対して鋭敏に依存しないためカオスとは区別される．
 \end{document}
