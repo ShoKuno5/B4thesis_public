@@ -15,7 +15,7 @@
 本論文では，異なる固有振動数を持つ振動子の同期を扱う最も簡単な分布として二項分布を用いる．
 特に，一般性を失わず$\pm 1$の二項分布$\operatorname{Bin}(n,p)$を用いる．
 
-よって，ネットワークの各振動子の位相$\phi_i$（$i=1,2,\ldots,N$）は，以下のような方程式に従う．
+よって，ネットワークの各振動子の位相$\phi_i$（$i=1,2,\ldots,n$）は，以下のような方程式に従う．
 \begin{equation}
     \dot{\phi}_i=\omega_i+\lambda\sum_{j=1}^n A_{ij}\sin(\phi_j-\phi_i)
 \end{equation}
@@ -220,6 +220,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
 \label{sec:3body-critical}
     \subsection{固有振動数の近い2体との同期（$K_1$,$K_2$）}
     \label{sec:3body-k12}
+    \newcommand{\sgn}{\operatorname{sgn}(\Omega)}
     本節では解析のために2つの振動数差が大きく異なるとし，以下の関係を仮定する．
     \begin{equation}
         \label{eq:assume}
@@ -240,173 +241,266 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     よって，タイムスケールの分離が存在する．
     つまり，$\dot{x}=\Omega,\ y=z$（$\dot{z}=\omega$）に対して，$K$に依存した周期外力を摂動として扱うような近似ができる．
 
-    式\eqref{eq:phase-diff}において，無次元量$\tau\coloneqq|\Omega| t,\ \varepsilon\coloneqq\omega/|\Omega|,\ k=K/|\Omega|$を導入し，$S(x,y)=-a\sin x-2\sin y$とすると，位相差$y$の時間発展は以下のように表される．
-    \begin{equation}
-        \dv{y}{\tau}=\varepsilon+k S(x,y).
-    \end{equation}
-
-    このとき，$y$を以下のように近恒等変換する．
-    \begin{equation}
-        y=z+kh_1(z,\tau)+k^2h_2(z,\tau)+O(k^3).
+    無次元量$\tau\coloneqq|\Omega| t,\ \varepsilon\coloneqq\omega/|\Omega|,\ k=K/|\Omega|$を導入し，式\eqref{eq:phase-diff}で$Q(x,y)\coloneqq -2a\sin x-\sin y,\ S(x,y)\coloneqq -a\sin x-2\sin y$と定めると，以下のような微分方程式を得る．
+    \begin{align}
+        \dv{x}{\tau}&=\operatorname{sgn}(\Omega) +k Q(x,y),\\
+        \dv{y}{\tau}&=\varepsilon+k S(x,y).
+    \end{align}
+    ここで，次のように$x$及び$y$をそれぞれ$p$，$q$に近恒等変換する．
+    \begin{align}
+        x&=p+kg_1(p,q)+k^2g_2(p,q)+k^3g_3(p,q)+O(k^4),\\
+        y&=q+kh_1(p,q)+k^2h_2(p,q)+k^3h_3(p,q)+O(k^4).
         \label{eq:pertu-ytilde}
-    \end{equation}
-    ここで，$h_i$は$i=1,2,\ h_i(z+2\pi,\tau+2\pi)=h_i(z,\tau),\ h_i(z,0)=0$を満たす関数とする．
+    \end{align}
+    ここで，$g_i,\ h_i,\ i=1,\ 2,\ 3$は$p$に関して周期的な関数で，$g_i(p+2\pi,q)=g_i(p,q),\ g_i(0,q)=0,\ h_i(p+2\pi,q)=h_i(p,q),\ h_i(0,q)=0$を満たす．
 
-    一方，$x$については$k$の1次で展開すると以下のようになる．
+    式\eqref{eq:pertu-ytilde}を用いて，$Q(x,y),\ S(x,y)$を$p$及び$q$に対して展開する．
     \begin{align}
-        x&=x(0)+\Omega t-|\Omega| k\int_0^t(2a\sin(x+\Omega s)+\sin (z+\omega s))\dd{s}+O(k^2)\notag\\ 
-        &=\frac{\pi}{2}+\operatorname{sgn}(\Omega)\tau-|\Omega| k\left(\frac{2a}{\Omega}\operatorname{sgn}(\Omega)\sin\tau+\frac{\tau}{|\Omega|}\sin z+\frac{\omega \tau^2}{2|\Omega|^2}\cos z\right)+O(k^2,\varepsilon^2k).\label{eq:x-series}
+        \begin{split}
+            Q(x,y)&=-2a\sin x-\sin y\\
+            &=-2a\sin p-\sin q+k(-2a\cos p\cdot g_1-\cos q\cdot h_1)+O(k^2),\\
+            S(x,y)&=-a\sin x-2\sin y\\
+            &=-a\sin p-2\sin q+k(-a\cos p\cdot g_1-2\cos q\cdot h_1)\\
+            &\quad +k^2\left(\frac{a}{2}\sin p\cdot g_2+\sin q\cdot h_2\right)+O(k^3).
+        \end{split}
     \end{align}
-    最終行では，$\cos x(0)=0$となるように初期時刻$t=0$を定めたことに因る．
-    
-    式\eqref{eq:pertu-ytilde},\ \eqref{eq:x-series}を用いて，$S(x,y)$を$z,\ \tau$に関して展開する．
-    \begin{align}
-        S(x,y)&=-a\sin x-2\sin y\notag\\
-        &=-a\cos\tau-2\sin z-2 kh_1\cos z\notag\\
-        &-a\sin\tau\cdot |\Omega| k\left(\frac{2a}{|\Omega|}\sin\tau+\frac{\tau}{|\Omega|}\sin z+\frac{\omega \tau^2}{2|\Omega|^2}\cos z\right)+O(k^2,\varepsilon^2k)\notag\\
-        &=-a\cos\tau-2\sin z\notag\\
-        &+k\left(-2 \cos z\cdot h_1-2a^2\sin^2\tau-a\tau\sin \tau\sin z-\frac{a\varepsilon \tau^2}{2}\sin \tau \cos z\right)+O(k^2,\varepsilon^2k).
-    \end{align}
-    さらに，$S_1\coloneqq-a\cos\tau-2\sin z,\ S_2\coloneqq -2a^2\sin^2\tau-a\tau\sin \tau\sin z-a\varepsilon \tau^2/2\sin \tau \cos z$と定めると，
+    さらに，関数$Q_1$及び$Q_2$を$Q_1\coloneqq-2a\sin p-\sin q,\ Q_2\coloneqq -2a\cos p\cdot g_1-\cos q\cdot h_1$と定めると，$Q(x,y)$は以下のように$k$について展開される．
     \begin{equation}
-        S(x,y)=S_1+k\pt_y S_1\cdot h_1+kS_2
-    \end{equation}
-    となる．
-    式\eqref{eq:pertu-ytilde}を両辺$\tau$で微分すると，$\ast'\coloneqq\dd{\ast}/\dd{\tau}$として，以下が得られる．
-    \begin{align}
-        \dv{y}{\tau}&=z'+k(z'\partial_zh_1+\partial_\tau h_1)+k^2(z'\partial_zh_2+\partial_\tau h_2)+O(k^3)\notag\\
-        &=(1+k\partial_zh_1+k^2\partial_zh_2)z'+k\pt_\tau h_1+k^2\pt_\tau h_2+O(k^3).
-    \end{align}
-    整理すると，以下のようになる．
-    \begin{align}
-        z'&=(1+k\pt_zh_1+k^2\pt_zh_2)^{-1}\left( \dv{y}{t}-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)+O(k^3)\notag\\
-        &=(1-k\pt_zh_1-k^2\pt_zh_2)\left(\varepsilon+kS_1+k^2 \pt_y S_1h_1+k^2S_2-k\pt_\tau h_1-k^2\pt_\tau h_2 \right)\notag\\
-        &=\varepsilon+k(S_1-\pt_\tau h_1-\varepsilon\pt_zh_1)\!+\!k^2\left(\pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\right).
-    \end{align}
-    $z'$が以下のように$k$について展開されるとする．
+        Q(x,y)=Q_1(p,q)+kQ_2(p,q)+O(k^2).
+    \end{equation} 
+    同様に，関数$S_1$，$S_2$及び$S_3$を$S_1\coloneqq-a\sin p-2\sin q,\ S_2\coloneqq -a\cos p\cdot g_1-2\cos q\cdot h_1,\ S_3\coloneqq a/2\sin p\cdot g_2+\sin q\cdot h_2$と定めると，$S(x,y)$は以下のよううに$k$について展開される．
     \begin{equation}
-        z'=\varepsilon+kH_1(z-\varepsilon \tau)+k^2H_2(z-\varepsilon \tau)+O(k^3).
+        S(x,y)=S_1(p,q)+kS_2(p,q)+k^2S_3(p,q)+O(k^3).
     \end{equation}
-    ここで，$z$が平均的に振動数$\omega$（無次元時間$\tau$では$\varepsilon$）で変動することから$H_1,\ H_2$が$z-\varepsilon \tau$に依存するものとした．
-    
-    このとき，$k$の1次を比較すると新たな変数$s$を用いて以下の式が成立する．
-    \begin{equation}
-        H_1(z-\varepsilon \tau)=S_1(z+\varepsilon s,\tau+s)-\pt_s h_1(z+\varepsilon s,\tau+s).
-    \end{equation}
-    $s=0$から$s=-\tau$で両辺積分すると，
+
+    式\eqref{eq:pertu-ytilde}の両辺を$\tau$で微分すると，$\ast'\coloneqq\dd{\ast}/\dd{\tau}$という略記を用いて以下の式が得られる．
     \begin{align}
-        -\tau H_1(z-\varepsilon \tau)&=\int_0^{-\tau}\left(-a\cos(\tau+s)-2\sin(z+\varepsilon s)\right)\dd{s}+h_1(z,\tau)\notag \\
-        &=a \sin\tau+\frac{2}{\varepsilon}(\cos (z-\varepsilon \tau)-\cos  z)+h_1(z,\tau)\notag\\
-        &=a \sin\tau+\frac{2}{\varepsilon}(\cos z+\varepsilon \tau\sin z-\varepsilon^2\tau^2/2\cdot\sin z-\cos z)+h_1(z,\tau)+O(\varepsilon^2)\notag\\
-        &=a \sin\tau+2\tau\sin z-\varepsilon \tau^2\cos z+h_1(z,\tau)+O(\varepsilon^2).
+        x'&=p'+k(p'\partial_p g_1+q'\partial_q g_1)+k^2(p'\partial_p g_2+q'\partial_q g_2)+O(k^3)\notag\\
+        &=(1+k\partial_p g_1+k^2\partial_p g_2)p'+(k\pt_q g_1+k^2\pt_q g_2)q'+O(k^3),\label{eq:diff-x-pq}\\
+        y'&=(1+k\partial_q h_1+k^2\partial_q h_2+k^3\partial_q h_3)q'+(k\pt_p h_1+k^2\pt_p h_2+k^3\pt_p h_3)p'+O(k^4).\label{eq:diff-y-pq}
+    \end{align}
+    式\eqref{eq:diff-x-pq}を整理すると，次のようになる． 
+    \begin{align}
+        p'&=(1+k\pt_p g_1+k^2\pt_p g_2)^{-1}\left( x'-(k\pt_q g_1+k^2\pt_q g_2)q' \right)+O(k^3)\notag\\
+        &=(1-k\pt_p g_1-k^2\pt_p g_2)\left(\operatorname{sgn}(\Omega)+kQ_1+k^2 Q_2-(k\pt_q g_1+k^2\pt_q g_2)q'\right)+O(k^3).\label{eq:diff-p-order2}
+    \end{align}
+    式\eqref{eq:diff-p-order2}を式\eqref{eq:diff-y-pq}に代入すると次のような式が得られる．
+    \begin{align}
+        y'&=(1+k\partial_q h_1+k^2\partial_q h_2+k^3\partial_q h_3)q'+(k\pt_p h_1+k^2\pt_p h_2+k^3\pt_p h_3)(1-k\pt_p g_1-k^2\pt_p g_2)\notag\\
+        &\quad\left(\operatorname{sgn}(\Omega)+kQ_1+k^2 Q_2-(k\pt_q g_1+k^2\pt_q g_2)q'\right)+O(k^4)\\
+        &=(1+k\partial_q h_1+k^2\partial_q h_2+k^3\partial_q h_3)q'\notag\\
+        &+\left(k\pt_p h_1+k^2(-\pt_p h_1\cdot \pt_p g_1+\pt_p h_2)+k^3(\pt_p h_3-\pt_p h_1\cdot\pt_p g_2-\pt_p h_2\cdot \pt_p g_1\right)\notag\\
+        &\quad\left(\operatorname{sgn}(\Omega)+kQ_1-k\pt_q g_1q'+k^2Q_2-k^2\pt_q g_2q'\right)+O(k^4)\\
+        &=\left(1+k\partial_q h_1+k^2(\partial_q h_2-\pt_p h_1\cdot \pt_q g_1)\right.\notag\\
+        &\left.+k^3\left(\pt_p h_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right)\right)q'\notag\\
+        &+\left(k\pt_p h_1+k^2(-\pt_p h_1\cdot \pt_p g_1+\pt_p h_2)+k^3(\pt_q h_3-\pt_p h_1\cdot\pt_p g_2-\pt_p h_2\cdot \pt_p g_1\right)\notag\\
+        &\quad\left(\operatorname{sgn}(\Omega)+kQ_1+k^2Q_2\right)+O(k^4),\\
+        q'&=\left(1+k\partial_q h_1+k^2(\partial_q h_2-\pt_p h_1\cdot \pt_q g_1)\right.\notag\\
+        &\left.+k^3\left(\pt_q h_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right)\right)^{-1}\notag\\
+        &\quad\ \left(y'-\left(k\pt_p h_1+k^2(-\pt_p h_1\cdot \pt_p g_1+\pt_p h_2)+k^3(\pt_p h_3-\pt_p h_1\cdot\pt_p g_2-\pt_p h_2\cdot \pt_p g_1)\right)\right.\notag\\
+        &\quad\left. \left(\operatorname{sgn}(\Omega)+kQ_1+k^2Q_2\right)\right)+O(k^4)\\
+        &=\left(1-k\partial_q h_1-k^2(\partial_q h_2-\pt_p h_1\cdot \pt_q g_1)\right.\notag\\
+        &\left.-k^3\left(\pt_q h_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right)\right)\notag\\
+        &\quad\ \left(\varepsilon +kS_1+k^2S_2+k^3S_3-\left(\operatorname{sgn}(\Omega)+kQ_1+k^2Q_2\right)\right.\notag\\
+        &\left.\left(k\pt_p h_1+k^2(-\pt_p h_1\cdot \pt_p g_1+\pt_p h_2)+k^3(\pt_p h_3-\pt_p h_1\cdot\pt_p g_2-\pt_p h_2\cdot \pt_p g_1)\right)\right)+O(k^4)\\
+        &=\left(1-k\partial_q h_1-k^2(\partial_q h_2-\pt_p h_1\cdot \pt_q g_1)\right.\notag\\
+        &\left.-k^3\left(\pt_q h_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right)\right)\notag\\
+        &\quad\ \left(\varepsilon +k(S_1-\operatorname{sgn}(\Omega)\cdot \pt_ph_1)+k^2\left\{S_2-\pt_ph_1\cdot Q_1+\operatorname{sgn}(\Omega)\cdot(\pt_ph_1\cdot\pt_pg_1-\pt_ph_2)\right\}\right.\notag\\
+        &+k^3\left\{S_3-\pt_ph_1\cdot Q_2-Q_1(-\pt_ph_1\cdot \pt_pg_1+\pt_ph_2)\right.\notag\\
+        &\left.-\operatorname{sgn}(\Omega)\left(-\pt_ph_1\cdot\pt_pg_2-\pt_ph_2\cdot\pt_pg_1+\pt_ph_3\right)\right\}\\
+        &=\varepsilon+k\left(-\varepsilon\pt_q h_1+S_1-\operatorname{sgn}(\Omega)\cdot\pt_p h_1\right)+k^2\left\{-\varepsilon \left(\pt_q h_2-\pt_p h_1\cdot \pt_q g_1\right)\right.\notag\\
+        &\left.-\pt_q h_1\left(S_1-\operatorname{sgn}(\Omega)\cdot\pt_p h_1\right)+S_2-\pt_p h_1\cdot Q_1+\operatorname{sgn}(\Omega)\cdot(\pt_p h_1\cdot \pt_p g_1-\pt_p h_2)\right\}\notag\\
+        &+k^3\left[S_3-Q_2\cdot\pt_ph_1-Q_1\cdot\left(-\pt_ph_1\cdot\pt_pg_1+\pt_ph_2\right)\right.\notag\\
+        &-\sgn(-\pt_ph_1\cdot\pt_pg_2-\pt_ph_2\cdot\pt_pg_1+\pt_ph_3)\notag\\
+        &-\pt_qh_1\cdot\left\{S_2-Q_1\cdot\pt_ph_1-\sgn (-\pt_ph_1\cdot\pt_pg_1+\pt_ph_2)\right\}\notag\\
+        &-(\pt_qh_2-\pt_ph_1\cdot\pt_qg_1)(S_1-\sgn\cdot\pt_ph_1)\notag\\
+        &\left.-\varepsilon\left\{\pt_qh_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right\}\right]+O(k^4).
+        \label{eq:diffq-detail}
+    \end{align}
+    式\eqref{eq:diffq-detail}を式\eqref{eq:diff-p-order2}に代入すると，以下の式が得られる．
+    \begin{align}
+        p'&=(1+k\pt_p g_1+k^2\pt_p g_2)^{-1}\left\{ \sgn+kQ_1+k^2Q_2-(k\pt_q g_1+k^2\pt_q g_2)q' \right\}+O(k^3)\notag\\
+        &=(1-k\pt_p g_1-k^2\pt_p g_2)\left[ \sgn+kQ_1+k^2Q_2-(k\pt_q g_1+k^2\pt_q g_2)\right.\notag\\
+        &\quad \left.\left\{\varepsilon+k(S_1-\sgn \pt_ph_1-\varepsilon\pt_qh_1)\right\} \right]+O(k^3)\notag\\
+        &=(1-k\pt_p g_1-k^2\pt_p g_2)\left[ \sgn+k(Q_1-\varepsilon\pt_qg_1)\right.\notag\\
+        &+k^2\left.\left\{Q_2-\varepsilon\pt_qg_2-\pt_qg_1(S_1-\sgn \pt_ph_1-\varepsilon\pt_qh_1)\right\}\right]+O(k^3)\notag\\
+        &=\sgn+k(-\sgn\cdot\pt_p g_1+Q_1-\varepsilon \pt_q g_1)+k^2\left\{Q_2-\varepsilon\pt_qg_2\right.\notag\\
+        &\left.-\pt_qg_1(S_1-\sgn \pt_ph_1-\varepsilon\pt_qh_1)-\pt_pg_1(Q_1-\varepsilon\pt_qg_1)-\sgn \pt_pg_2\right\}\notag\\
+        &+O(k^3).
+        \label{eq:diff-p-order1}
+    \end{align}
+
+    ここで，$p'$及び$q'$が$k$について次のように展開されると仮定する．
+    \begin{align}
+        p'&=\operatorname{sgn}(\Omega)+kG_1(q)+k^2G_2(q)+O(k^3)\label{eq:diffp-expand},\\    
+        q'&=\varepsilon+kH_1(q)+k^2H_2(q)+k^3H_3(q)+O(k^4)\label{eq:diffq-expand}.    
+    \end{align}
+
+    すると，式\eqref{eq:diffq-detail}と式\eqref{eq:diffq-expand}を$k$の1次で比較すると以下の式が得られる．  
+    \begin{equation}
+        H_1(q)=S_1(p,q)-\operatorname{sgn}(\Omega)\cdot \pt_p h_1(p,q)-\varepsilon \pt_q h_1(p,q).
+    \end{equation}
+    両辺$p$について$0$から$\tau$まで積分すると，次のようになる．
+    \begin{align}
+        \tau H_1(q)&=\int_0^{\tau}\left(-a\sin p-2\sin q\right)\dd{p}-\operatorname{sgn}(\Omega)\cdot h_1(\tau,q)+O(\varepsilon\tau)\notag \\
+        &=a(\cos \tau-1)-2\tau\sin q-\operatorname{sgn}(\Omega)\cdot h_1(\tau,q)+O(\varepsilon\tau).
         \label{eq-h1-H1}
     \end{align}
-    となり，$\tau=-2\pi$を代入すると，以下のようになる．
+    $\tau$に$2\pi$を代入すると，以下の式が得られる．
     \begin{align}
-        2\pi H_1\left(z+ 2\pi\varepsilon\right)&=-4\pi\sin z-4\pi^2\varepsilon \cos z+O(\varepsilon^2)\notag\\
-        H_1\left(z+ 2\pi\varepsilon\right)&=-2 \sin z-2\pi\varepsilon \cos z+O(\varepsilon^2).\label{eq:H1-approx}
+        2\pi H_1(q)&=-4\pi\sin q+O(2\pi\varepsilon),\notag\\
+        H_1(q)&=-2\sin q+O(\varepsilon).
+        \label{eq:H1-approx}
     \end{align}
-    また，式\eqref{eq:H1-approx}の左辺を$z$まわりに$\varepsilon$について展開すると，以下のようになる．
+    続いて，式\eqref{eq-h1-H1}を式\eqref{eq:H1-approx}に代入すると，以下のようになる．
     \begin{equation}
-        H_1\left(z+2\pi\varepsilon\right)=H_1(z)+H_1'(z) 2\pi\varepsilon+O(\varepsilon^2).
-        \label{eq:H1-taylor}
-    \end{equation}
-    式\eqref{eq:H1-approx}と式\eqref{eq:H1-taylor}を$\varepsilon$について比較すると，
-    \begin{equation}
-        \label{eq:nit-H1}
-        H_1(z)=-2\sin z+2\pi\varepsilon \cos z+O(\varepsilon^2)
-    \end{equation}
-    が得られる．
-    式\eqref{eq-h1-H1}に代入すると，
-    \begin{align}
-        h_1(z,\tau)&=2\tau\sin(z-\varepsilon \tau)-2\pi\varepsilon \tau\cos(z-\varepsilon \tau)-a\sin\tau-2\tau\sin z+\varepsilon \tau^2\cos z\notag\\
-        &=2\tau(\sin z-\varepsilon \tau\cos z-\sin z)-a\sin\tau+\varepsilon(-2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)\notag\\
-        &=-a\sin\tau-\varepsilon(2\pi \tau+\tau^2)\cos z+O(\varepsilon^2)
-    \end{align}
-    となる．
-
-    次に$z'$の$k$の2次を比較し，$h_1$を代入する．
-    \begin{align}
-        \begin{split}
-            H_2(z-\varepsilon \tau)=&\ \pt_y S_1h_1 -\pt_\tau h_2-\varepsilon\pt_zh_2 -\pt_zh_1(S_1-\pt_\tau h_1)+S_2\\
-            =&-2\cos (z+\varepsilon s)\left( -a\sin(\tau+s)-\varepsilon(2\pi (\tau+s)+(\tau+s)^2) \cos (z+\varepsilon s) \right)\\
-            % +&\  a^2\sin 2(\tau+s)+a(\tau+s)\cos (\tau+s)-\pt_\tau h_2+O(\varepsilon^2)\\
-            -&\ 2a^2\sin^2(\tau+s)-a(\tau+s)\sin (\tau+s)\sin (z+\varepsilon s)\\
-            -&\ \frac{a\varepsilon (\tau+s)^2}{2}\sin (\tau+s) \cos (z+\varepsilon\tau)-\pt_s h_2+O(\varepsilon^2)\\
-            +&\ \varepsilon(2\pi(\tau+s)+(\tau+s)^2)\sin (z+\varepsilon s) \\
-            &\left( -a\cos(\tau+s)-2\sin (z+\varepsilon s) +a\cos(\tau+s)\right.\\
-            &\left.+\varepsilon(2\pi +2(\tau+s))\cos (z+\varepsilon s)\right).
-        \end{split}
-    \end{align}
-    両辺$s=0$から$s=-\tau$で積分して，$\sin\tau\sim 0,\ \cos\tau\sim 1$とすると，
-    \begin{align}
-        -\tau H_2(z-\varepsilon \tau)&=2a\cdot -\varepsilon \tau\sin z+4\pi\varepsilon\left( -\frac{\tau^2}{4} -\frac{\tau^2}{4}\cos 2z\right)+2\varepsilon\left( -\frac{\tau^3}{6} -\frac{\tau^3}{6}\cos 2 z\right)\notag\\
-        &-2\pi a\varepsilon\cdot\left(\tau\sin z\right)+2\pi a\varepsilon\left(-\varepsilon \tau\cos z\right)\notag\\
-        &-4\pi\varepsilon\left(-\frac{\tau^2}{4}+\frac{\tau^2}{4}\cos 2 z\right)-2\varepsilon\left( -\frac{\tau^3}{6} +\frac{\tau^3}{6}\cos 2z\right)+O(\varepsilon^2)\notag\\
-        % &-a\varepsilon\left( \tau^2\sin z \right)+a\varepsilon\left( -2\tau^2\sin z \right)\notag\\
-        &+\frac{a^2}{2}\left( 2\tau-\sin 2\tau\right)-a(\tau\cos\tau-\sin\tau)\sin z\notag\\
-        &-a\varepsilon(-\tau\sin\tau+2-2\cos\tau)\cos z \notag\\
-        &+\frac{a\varepsilon}{2}(\tau^2\cos\tau-2\tau\sin\tau+1-\cos\tau)\cos z\notag\\
-        &=-2a\varepsilon \tau\sin z-2\pi\varepsilon\tau^2\cos 2 z-\frac{2}{3}\varepsilon\tau^3\cos 2z\notag\\
-        % &-2\pi a\varepsilon \tau\sin z-3a\varepsilon\tau^2\sin z+a\tau(a+\cos z)+O(\varepsilon^2)
-        &+\frac{a\varepsilon}{2}\tau^2\cos\tau\cos z+a\tau(a-\sin z)+O(\varepsilon^2)
-    \end{align}
-    となる．$\tau=-2\pi$を代入して整理すると以下のようになる．
-    \begin{align}
-        \begin{split}
-            &H_2(z+2\pi\varepsilon )=-a(a-\sin z)+O(\varepsilon^2)\\
-            &+\varepsilon\left( 2a\sin z-4\pi^2\cos2 z+\frac{8\pi^2}{3} \cos 2 z-\pi a\cos z\right).
-        \end{split}
-    \end{align}
-    $H_1$と同様に$z$まわりに$\varepsilon$に関して展開し，$\varepsilon$について比較すると，以下の式が得られる．
-    \begin{equation}
-        \label{eq:nit-H2}
-        H_2(z)=-a(a-\sin z)+\varepsilon\left( a(2\sin z-3\pi\cos z)-\frac{4\pi^2}{3} \cos 2 z\right)+O(\varepsilon^2).
+        h_1(p,q)=\operatorname{sgn}(\Omega)\cdot a(\cos p-1)+O(\varepsilon p).
+        \label{eq:h1-approx}
     \end{equation}
 
-    以上で，位相差$y$の近恒等変換$z$の従う微分方程式を近似的に求めることができる．
-    よって，$z$が安定解を持つ条件を求めることで$y$が安定解を持つ条件を求めることができる．
+    式\eqref{eq:diff-p-order1}と式\eqref{eq:diffp-expand}を$k$の1次について比較すると以下の式が得られる．
+    \begin{equation}
+        G_1(q)=Q_1(p,q)-\operatorname{sgn}(\Omega)\cdot \pt_p g_1(p,q)-\varepsilon \pt_q g_1(p,q).
+    \end{equation}
+    両辺$p$について$0$から$\tau$まで積分すると，以下のようになる．
+    \begin{align}
+        \tau G_1(q)&=\int_0^{\tau}\left(-2a\sin p-\sin q\right)\dd{p}-\operatorname{sgn}(\Omega)\cdot g_1(\tau,q)+O(\varepsilon\tau)\notag \\
+        &=2a(\cos \tau-1)-\tau\sin q-\operatorname{sgn}(\Omega)\cdot g_1(\tau,q)+O(\varepsilon\tau). 
+        \label{eq-g1-G1}
+    \end{align}
+    $\tau$に$2\pi$を代入すると次のようになる．
+    \begin{align}
+        2\pi G_1(q)&=-2\pi\sin q+O(2\pi\varepsilon),\notag\\
+        G_1(q)&=-\sin q+O(\varepsilon).
+        \label{eq:G1-approx}
+    \end{align}
+    続いて，式\eqref{eq-g1-G1}を式\eqref{eq:G1-approx}に代入すると以下の式が得られる．
+    \begin{equation}
+        g_1(p,q)=\operatorname{sgn}(\Omega)\cdot 2a(\cos p-1)+O(\varepsilon p).
+        \label{eq:g1-approx}
+    \end{equation}
+
+    次に，式\eqref{eq:diffq-detail}と式\eqref{eq:diffq-expand}を$k$の2次で比較し，式\eqref{eq:h1-approx}，\eqref{eq:g1-approx}を用いると次のような式が得られる．
+    \begin{align}
+        \begin{split}
+            H_2(q)=&-\varepsilon \left(\pt_q h_2-\pt_p h_1\cdot \pt_q g_1\right)-\pt_q h_1\left(S_1-\operatorname{sgn}(\Omega)\pt_p h_1\right)+S_2-\pt_p h_1\cdot Q_1\\
+            &+\operatorname{sgn}(\Omega)\cdot(\pt_p h_1\cdot \pt_p g_1-\pt_p h_2)\\
+            =&-a\cos p\cdot \operatorname{sgn}(\Omega)\cdot 2a(\cos p-1)-2\cos q\cdot \operatorname{sgn}(\Omega)\cdot a(\cos p-1)\\
+            &-\operatorname{sgn}(\Omega)\cdot(-a\sin p)\cdot (-2a\sin p-\sin q)-\operatorname{sgn}(\Omega)\cdot a\sin p(-2a\sin p)\notag\\
+            &-\operatorname{sgn}(\Omega)\cdot\pt_p h_2+O(\varepsilon)\\
+            =&\operatorname{sgn}(\Omega)\cdot \left(-2a^2\cos^2 p+2a(a-\cos q)\cdot \cos p+2a\cos q-a\sin q\sin p\right)\notag\\
+            &-\operatorname{sgn}(\Omega)\cdot\pt_p h_2+O(\varepsilon).
+        \end{split}
+    \end{align}
+    両辺$p$について$0$から$\tau$まで積分すると以下のようになる．
+    \begin{align}
+        \label{eq:integral-H2}
+        \tau H_2(q)&=\operatorname{sgn}(\Omega)\cdot \left(-a^2(\tau+1/2\sin 2\tau)+2a(a-\cos q)\sin \tau+2a\tau\cos q\right.\notag\\
+        &\left.+a\sin q(\cos\tau-1)\right)-\sgn\cdot h_2+O(\varepsilon\tau).
+    \end{align}
+    $\tau$に$2\pi$を代入すると次の式が得られる． 
+    \begin{equation}
+        \label{eq:H2-approx}
+        H_2(q)=-\operatorname{sgn}(\Omega)\cdot a(a-2\cos q)+O(\varepsilon).
+    \end{equation}
+    式\eqref{eq:H2-approx}を式\eqref{eq:integral-H2}に代入すると以下のようになる．
+    \begin{equation}
+        \label{eq:h2-approx}
+        h_2(p,q)=-\frac{a^2}{2}\sin 2p +2a(a-\cos q)\sin p+a\sin q(\cos p-1)+O(\varepsilon p)
+    \end{equation}
+
+    式\eqref{eq:diff-p-order1}と式\eqref{eq:diffp-expand}を$k$の2次で比較すると，次の式が得られる．
+    \begin{align}
+        G_2(q)&=Q_2-\varepsilon\pt_q g_2-\pt_q g_1(S_1-\sgn\cdot \pt_ph_1-\varepsilon\pt_qh_1)\notag\\
+        &-\pt_pg_1(Q_1-\varepsilon\pt_qg_1)-\sgn\cdot\pt_pg_2\notag\\
+        &=-2a\cos p\cdot \sgn \cdot 2a(\cos p-1)-\cos q\cdot \sgn \cdot a(\cos p-1)\notag\\
+        &+\sgn\cdot 2a\sin p(-2a\sin p-\sin q)-\sgn \cdot\pt_p g_2+O(\varepsilon)\notag\\
+        &=\sgn \left(-4a^2+(4a^2-a\cos q)\cos p+a\cos q-2a\sin q\sin p-\pt_pg_2\right)+O(\varepsilon).
+    \end{align}
+    両辺$p$について$0$から$\tau$まで積分すると，以下のようになる．
+    \begin{align}
+        \tau G_2(q)&=\sgn\left(-4a^2\tau+(4a^2-a\cos q)\sin\tau+a\tau\cos q\right.\notag\\
+        &\left.+2a\sin q(\cos\tau-1)-g_2\right)+O(\varepsilon\tau). 
+        \label{eq-g2-G2}
+    \end{align}
+    $\tau$に$2\pi$を代入すると，次の式が得られる．
+    \begin{align}
+        G_2(q)&=\sgn (a\cos q-4a^2)+O(\varepsilon).
+        \label{eq:G2-approx}
+    \end{align}
+    続いて，式\eqref{eq-g2-G2}を式\eqref{eq:G2-approx}に代入すると以下のようになる．
+    \begin{equation}
+        g_2(p,q)=(4a^2-a\cos q)\sin p+2a\sin q(\cos p-1)+O(\varepsilon p).
+        \label{eq:g2-approx}
+    \end{equation}
+
+    ここで，式\eqref{eq:diffq-detail}と式\eqref{eq:diffq-expand}を$k$の3次で比較すると，以下の式が得られる． 
+    \begin{align}
+        H_3(q)&=S_3-Q_2\cdot\pt_ph_1-Q_1\cdot\left(-\pt_ph_1\cdot\pt_pg_1+\pt_ph_2\right)\notag\\
+        &-\sgn(-\pt_ph_1\cdot\pt_pg_2-\pt_ph_2\cdot\pt_pg_1+\pt_ph_3)\notag\\
+        &-\pt_qh_1\cdot\left\{S_2-Q_1\cdot\pt_ph_1-\sgn (-\pt_ph_1\cdot\pt_pg_1+\pt_ph_2)\right\}\notag\\
+        &-(\pt_qh_2-\pt_ph_1\cdot\pt_qg_1)(S_1-\sgn\cdot\pt_ph_1)\notag\\
+        &-\varepsilon\left\{\pt_qh_3+\pt_qg_1\cdot(-\pt_ph_2+\pt_ph_1\cdot\pt_pg_1)-\pt_qg_2\cdot\pt_ph_1\right\}\\
+        &=\frac{a}{2}\sin p\cdot \left\{(4a^2-a\cos q)\sin p+2a\sin q(\cos p-1)\right\}\notag\\
+        &+\sin q\cdot\left\{-\frac{a^2}{2}\sin 2p +2a(a-\cos q)\sin p+a\sin q(\cos p-1)\right\}\notag\\
+        &+\sgn\cdot a\sin p\left\{-2a\cos p\cdot 2a(\cos p-1)-\cos q\cdot a(\cos p-1)\right\}\notag\\
+        &+(2a\sin p+\sin q)\left\{a\sin p\cdot(-2a\sin p)-a^2\cos 2p \right.\notag\\
+        &\left.+2a(a-\cos q)\cos p-a\sin q\sin p\right\}\notag\\
+        &-\sgn \left[\sgn\cdot a\sin p\left\{(4a^2-a\cos q)\cos p-2a\sin q\sin p\right\}\right.\notag\\
+        &\left.+\sgn \cdot 2a\sin p\left\{-a^2\cos 2p +2a(a-\cos q)\cos p-a\sin q\sin p\right\}+\pt_p h_3\right]\notag\\
+        &-\left\{2a\sin q\sin p+a\cos q(\cos p-1)\right\}(-2\sin q)+O(\varepsilon)\\
+        &=\frac{a^2}{2}(4a-\cos q)\sin^2 p+a^2\sin q\sin p\cos p-a^2\sin q\sin p\notag\\
+        &-\frac{a^2}{2}\sin q\sin 2p+2a\sin q(a-\cos q)\sin p+a\sin^2 q\cos p-a\sin^2 q\notag\\
+        &+\sgn \left\{-4a^3\cos^2 p\sin p+4a^3\sin p\cos p-a^2\cos q\sin p\cos p+a^2\cos q\sin p\right\}\notag\\
+        &-4a^3\sin^3 p-2a^3\cos 2p\sin p+4a^2(a-\cos q)\sin p\cos p-2a^2\sin q\sin^2 p\notag\\
+        &-2a^2\sin q\sin^2 p-a^2\sin q\cos 2p+2a(a-\cos q)\sin q\cos p-a\sin^2 q\sin p\notag\\
+        &-a^2(4a-\cos q)\sin p\cos p+2a^2\sin q\sin^2 p\notag\\
+        &+2a^3\cos 2p\sin p-4a^2(a-\cos q)\sin p\cos p+2a^2\sin q\sin^2 p-\sgn \cdot\pt_ph_3\notag\\
+        &+4a\sin^2 q\sin p+2a\sin q\cos q\cos p-2a\sin q\cos q.
+    \end{align}
+    両辺$p$について$0$から$\tau$まで積分し$\tau$に$2\pi$を代入すると次のようになる．
+    \begin{align}
+        H_3(q)&=\frac{a^2}{4}(4a-\cos q)-a\sin^2 q-a^2\sin q-a^2\sin q+a^2\sin q+a^2\sin q-2a\sin q\cos q\notag\\
+        &=\frac{a^2}{4}(4a-\cos q)-a\sin^2 q-2a\sin q\cos q.
+        \label{eq:H3-approx}
+    \end{align}
+
+    以上の計算から$y$に近恒等変換$q$が従う微分方程式が得られる．
+    よって，$q$が安定解を持つ条件を求めることで，$y$が安定解を持つ条件を近似的に求めることができる．
     
-    まず，式\eqref{eq:k1-approx}の状況では，
+    まず，式\eqref{eq:k1-approx}の場合について以下の微分方程式を得る．
     \begin{equation}
-        z'=\varepsilon-2k\sin z+O(k^2,\varepsilon k,\varepsilon k\tau)
-        \label{eq:z-k1-approx}
+        q'=\varepsilon-2k\sin q+O(k^2,\varepsilon k).
+        \label{eq:q-k1-approx}
     \end{equation}
-    となる．これは，式\eqref{eq:phase-diff}に対し$x$の周期で平均化を行った（つまり，$\sin x\sim 0$）式である．
-    式\eqref{eq:z-k1-approx}で$z$が安定解を持つ条件は，
+    この式は式\eqref{eq:phase-diff}を$x$の式について平均化（i.e. $\sin x\sim 0$）したものに相当する．
+    式\eqref{eq:q-k1-approx}が安定解を持つ条件は以下の式となる．
     \begin{equation}
-        |k|\geq\frac{|\varepsilon|}{2}
+        |k|\geq\frac{|\varepsilon|}{2}.
     \end{equation}
-    となり，臨界結合強度$K_1$は，
+    ゆえに，臨界結合強度$K_1$は次のようになる．
     \begin{equation}
         \label{eq:K1-approx}
-        K_1=\frac{\omega}{2}
+        K_1=\frac{\omega}{2}.
     \end{equation}
-    となる．
 
-    次に，式\eqref{eq:k2-approx}の状況を考える．
-    閉形式で$K_2$を求めるため$|\varepsilon k|\ll 1$を仮定すると，$k$の2次まで考えると$z$は以下のような微分方程式に従う．
+    次に，式\eqref{eq:k2-approx}の場合について以下の微分方程式を得る．
     \begin{align}
-        \label{eq:z-k2-approx}
+        \label{eq:q-k2-approx}
         \begin{split}
-            z'&=\varepsilon-2k\sin z-k^2a(a-\sin  z)+O(k^3,\varepsilon k,\varepsilon k\tau)\\
-            &=\varepsilon-a^2k^2-k(2-ak)\sin z+O(k^3,\varepsilon k,\varepsilon k\tau).
+            q'&=\varepsilon-2k\sin q-k^2\operatorname{sgn}(\Omega)\cdot a(a-2a\cos  q)+k^3\left(a^3-\frac{a^2}{4}\cos q\right)+O(\varepsilon k,ak^3,k^4)\\
+            &=-\sgn\cdot a^2k^2+a^3k^3-2k\sin q+O(\varepsilon,ak^2,a^2k^3,k^4).
         \end{split}
     \end{align}
-    $z$が安定解を持つ条件は，
+    式\eqref{eq:q-k2-approx}が安定解を持つ条件は次のようになる．
     \begin{align}
-        |\varepsilon-a^2k^2|&\leq |k(2-ak)|,\notag\\
-        0\leq k&\leq \frac{1}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right)+O(\varepsilon k^{-1})
+        |-\operatorname{sgn}(\Omega)\cdot a^2k^2+a^3k^3|&\leq 2k,\notag\\
+        0\leq k&\leq \frac{\sgn \cdot a+\sqrt{a^2+8a}}{2a^2}.
     \end{align}
-    となり，臨界結合強度$K_2$は，
+    よって臨界結合強度$K_2$は以下の式となる．
     \begin{equation}
         \label{eq:K2-approx}
-        K_2=\frac{|\Omega|}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right)
-    \end{equation}
-    となる．
-    ただし，$K_2$が実数となるためには$\varepsilon$及び$a$が以下の条件を満たす必要がある．
-    \begin{equation}
-        4+2\varepsilon(a^2-1)\geq 0.
+        K_2=|\Omega|\cdot\frac{\sgn \cdot a+\sqrt{a^2+8a}}{2a^2}.
     \end{equation}
     \subsection{固有振動数の遠い2体との同期（$K_3$）}
     \label{sec:3body-k3}
@@ -531,7 +625,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
         \label{eq:3body-matome}
         \begin{split}
             K_1&=\frac{\omega}{2},\\
-            K_2&=\frac{|\Omega|}{a^4-a^2}\left(-2a+\sqrt{4a^2+(a^4-a^2)(4+2a^2\varepsilon)}\right),\\
+            K_2&=|\Omega|\cdot\frac{\sgn \cdot a+\sqrt{a^2+8a}}{2a^2},\\
             K'_3&=\frac{|\Omega|}{2a-1},\\
             K_{41}&=\frac{|2\Omega-\omega|}{3a},\\
             K_{42}&=\frac{|\Omega-2\omega|}{3},\\
@@ -752,7 +846,7 @@ $a=1.5,\ 1.8$を境に$a$を固定し$K$を変化させたときの同期状態�
 
 \subsection{$|\Omega|\gg|\omega|$を用いて求めた臨界結合強度の適用限界}
 \ref{sec:3body-critical}節において$\varepsilon=\omega/|\Omega|\ll 1$を仮定し求めた結合強度$K_1,\ K_2$について，どの程度の$\varepsilon$まで有効か調べる．
-ここでは，\ref{sec:3body-k12}節において求めた$K_2$の閉形式の表現である式\eqref{eq:K2-approx}だけでなく，式\eqref{eq:nit-H1},\ \eqref{eq:nit-H2}より定まる以下のような$y$の近恒等変換$z$の微分方程式を考える．
+ここでは，\ref{sec:3body-k12}節において求めた$K_2$の閉形式の表現である式\eqref{eq:K2-approx}だけでなく，式\eqref{eq:H1-approx},\ \eqref{eq:H2-approx}より定まる以下のような$y$の近恒等変換$z$の微分方程式を考える．
 \begin{equation}
     \label{eq:k1k2-open}
     z'=\varepsilon+kH_1(z-\varepsilon\tau)+k^2H_2(z-\varepsilon\tau)+O(k^3)
