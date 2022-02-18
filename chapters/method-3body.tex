@@ -488,7 +488,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \begin{align}
         \label{eq:q-k2-approx}
         \begin{split}
-            q'&=\varepsilon-2k\sin q-k^2\operatorname{sgn}(\Omega)\cdot a(a-2a\cos  q)+k^3\left(a^3-\frac{a^2}{4}\cos q\right)+O(\varepsilon k,ak^3,k^4)\\
+            q'&=\varepsilon-2k\sin q-k^2\operatorname{sgn}(\Omega)\cdot a(a-2\cos  q)+k^3\left(a^3-\frac{a^2}{4}\cos q\right)+O(\varepsilon k,ak^3,k^4)\\
             &=-\sgn\cdot a^2k^2+a^3k^3-2k\sin q+O(\varepsilon,ak^2,a^2k^3,k^4).
         \end{split}
     \end{align}
@@ -708,7 +708,7 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
     \label{eq:3body-matome-general}
     \begin{split}
         K_1&=\frac{|\omega|}{1+1/\tilde{N}},\\
-        K_2&=\frac{|\Omega|}{a^4-a^2}\left(-\left( 1+1/\tilde{N} \right)a+\sqrt{\left( 1+1/\tilde{N} \right)^2a^2+(a^4-a^2)\left(\left( 1+1/\tilde{N} \right)^2+2a^2\varepsilon\right)}\right),\\
+        K_2&=|\Omega|\cdot\frac{\sgn \cdot a+\sqrt{a^2+4\left(1+1/\tilde{N}\right)a}}{\left(1+1/\tilde{M}\right)a^2},\\
         K'_3&=\frac{|\Omega|}{a(1+1/\tilde{M})-1}\gtrapprox K_3,\\
         K_4&=\max\left\{\frac{|(1+1/\tilde{N})\Omega-\omega|}{a(1/\tilde{N}+1/\tilde{M}+1/\tilde{N}\tilde{M})},\frac{|\Omega-(1+1/\tilde{M})\omega|}{(1/\tilde{N}+1/\tilde{M}+1/\tilde{N}\tilde{M})}\right\}.
     \end{split}
@@ -718,7 +718,6 @@ $x\coloneqq \phi_L-\phi_M,\ y\coloneqq\phi_L-\phi_N$というように位相差�
 集団サイズ$N,\ M$を考慮した臨界結合強度についても同期現象の定性的な理解が得られる．
 実効振動数が近い集団$\Omega_N$のサイズ$N$が小さく，実効振動数の差$|\omega|$が小さいほど，実効振動数の近い集団$\Omega_N$と同期しやすい．
 実効振動数が近い集団$\Omega_N$と同期していた振動子集団$\Omega_L$は，$\Omega_N$のサイズ$N$が大きく，実効振動数が離れた集団$\Omega_M$との間に枝が多く，さらに$\Omega_M$との振動数差$|\Omega|$が小さいほど，$\Omega_M$に引き寄せられ，同期が解除されやすい．
-ここで，吸引する振動数集団$\Omega_M$のサイズ$M$には依らないことに注意．
 また，実効振動数が離れた集団$\Omega_M$のサイズ$M$が小さく，$\Omega_N$に比べて枝が多く繋がっており，実効振動数の差$\Omega$が小さいほど，$\Omega_M$と同期しやすく，$\Omega_N$から$\Omega_M$に鞍替えしやすい．
 そして，振動子集団$\Omega_N$のサイズ$N$がある程度小さく，結合強度比$a$がある程度大きいと3体全体が同期しやすい．
 
