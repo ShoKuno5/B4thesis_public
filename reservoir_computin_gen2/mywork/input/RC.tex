@@ -1,0 +1,117 @@
+\section{Papers}
+\subsection{Emergence of a resonance in machine learning}
+Zheng-Meng Zhai , 1 Ling-Wei Kong , 1 and Ying-Cheng Lai 1,2,*
+1School of Electrical, Computer and Energy Engineering, Arizona State University, Tempe, Arizona 85287, USA
+2Department of Physics, Arizona State University, Tempe, Arizona 85287, USA.
+
+\noindent (Received 9 June 2022; revised 1 March 2023; accepted 26 July 2023; published 24 August 2023)
+\\
+
+\noindent 勉強のためのキーワード：Resonance in nonlinear dynamical systems, 
+
+\subsubsection{要旨}
+\begin{enumerate}
+  \item 問い：What is the physical or dynamical mechanism underlying the beneﬁt of noise and
+  how do we ﬁnd the optimal level of noise?
+  \item この論文の意義：In this paper, we uncover a resonance phenomenon in
+  which a certain amount of noise can signiﬁcantly enhance
+  the short-term and long-term prediction accuracy and robust-
+  ness for chaotic systems, where the optimal noise level can
+  be found through a generalized scheme of hyperparameter
+  \item 難点：A challenging issue is to identify the underlying dynamical mechanism responsible for the emergence of a resonance
+  in machine learning optimization.
+\end{enumerate}
+
+\subsubsection{状況設定}
+
+\subsubsection{面白いと思ったところ}
+
+\subsubsection{論文を受けての今後の研究方向}
+\subsubsection{疑問点}
+\begin{enumerate}
+  \item Fig.4とFig.5について，MG system における$\tau$の値が30から17に変えると，$\sigma$にどのような影響があるか．なぜその影響が生まれるか．
+  \item なぜ，Fig.2の（逆）ピークを与える$\sigma$帯とFig.6(c)の（逆）ピークを与える$\sigma$帯が重なるのか．
+  \item IIIで，Machine learningにおけるresonanceが生まれるPhysical reasonを挙げているが，これは対象を正しく説明できているか．extraordinarily complicatedなhidden layerの中身を解析することなく，physical reasonを与えることが，なにを説明しているのか/なにを説明していないのか．
+\end{enumerate}
+
+\subsubsection{関連する文献}
+ 
+\clearpage
+\subsubsection{用語まとめ}
+
+\subsubsection{Abstract}
+\begin{enumerate}
+  \item stochastic/coherence resonance: 
+  \item nonlinear dynamical system:
+  \item regularizer/regularization:
+  \item reservoir computing:
+  \item state variables/attractor:
+  \item hyperparameters:
+\end{enumerate}
+\subsubsection{I. Introduction}
+\begin{enumerate}
+  \item model-free/data-driven:
+  \item oscillatoin/Lyapnov times:
+  \item trajectory:
+  \item basin boundary: 
+  \item robustness:
+  \item Baysian optimization:
+\end{enumerate}
+
+\subsubsection{II. Result}
+\begin{enumerate}
+  \item SURROGATEOPT function (MATLAB):
+  \item surrogate approximation function:
+  \item objective function:
+  \item global minimum:
+  \item sampling/updating:
+  \item radial basis function: 
+  \item Mackey-Glass (MG) system:
+  \item spatiotemporal chaotic Kuramoto-Sivashinsky (KS) system: 
+\end{enumerate}
+
+\subsubsection{A. Emergence of a resonance from short-term prediction}
+\begin{enumerate}
+  \item transient behavior:
+  \item z-score normalization: 
+  \item periodic boundary condition:
+  \item Prediction horizon/stability: 
+\end{enumerate}
+
+\subsubsection{B. Emergence of a resonance from long-term prediction}
+\begin{enumerate}
+  \item collapse:
+  \item wider/narrower resonance:
+\end{enumerate}
+
+\subsubsection{III. HEURISTIC REASON FOR THE OCCURRENCE
+OF A RESONANCE}
+\begin{enumerate}
+  \item time-scale match:
+  \item the mean first-passage time:
+  \item nonlinear activation: 
+  \item linear reservoir computing:
+  \item noise-enhanced temporal regularity:
+  \item vector autoregressive process (VAR): 
+\end{enumerate}
+
+\subsubsection{IV. DISCUSSION}
+\begin{enumerate}
+  \item magnitude: 
+\end{enumerate}
+
+\subsubsection{Appendix A}
+\begin{enumerate}
+  \item recurrent neural network(RNN):
+  \item input/hidden/output layer: 
+  \item linear regression: 
+  \item adjacency matrix:
+  \item state vector: 
+  \item dynamical state/evolution: 
+  \item neuron:
+  \item leakage parameter $\alpha$:
+  \item link probability p: 
+  \item spectral radius:
+\end{enumerate}
+
+\clearpage
