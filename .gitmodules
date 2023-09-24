@@ -1,0 +1,3 @@
+[submodule "reservoirpy"]
+	path = reservoirpy
+	url = git@github.com:reservoirpy/reservoirpy.git
