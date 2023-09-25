@@ -1,0 +1,131 @@
+\section{Papers}
+\subsection{Emergence of a resonance in machine learning}
+Zheng-Meng Zhai , 1 Ling-Wei Kong , 1 and Ying-Cheng Lai 1,2,*
+1School of Electrical, Computer and Energy Engineering, Arizona State University, Tempe, Arizona 85287, USA
+2Department of Physics, Arizona State University, Tempe, Arizona 85287, USA.
+
+\noindent (Received 9 June 2022; revised 1 March 2023; accepted 26 July 2023; published 24 August 2023)
+\\
+
+\noindent キーワード：Resonance in nonlinear dynamical systems, 
+
+\subsubsection{要旨}
+
+\begin{enumerate}
+  \item 入力信号にノイズを挿れた場合のReservoir Computingを考える。\begin{enumerate}
+    \item hyperparametersが最適化されていない時でも、ノイズを挿れることで予測の精度をあげることができる。
+    \item もっとも良い精度を達成するには、hyperparametersが最適化されていなければならない。\begin{enumerate}
+      \item Hyperparametersに対するBaysian optimizationで最適化可能。
+      \item 確率共鳴があると決定づけるために、ノイズの振幅をhypermparameterに数える。
+    \end{enumerate}
+  \end{enumerate} 
+  \item Macky-Glass (MG) systemとKuramoto-Sivashinsky (KS) systemに対して、シミュレーションを行う。
+  \item 物理側から、確率共鳴が生まれる原理を考える。
+\end{enumerate}
+
+\subsubsection{状況設定}
+\begin{enumerate}
+  \item hyperparameters:\begin{enumerate}
+    \item \rho: the specral radius of the  reservoir network.
+    \item \gamma: the scaling factor of the input weights.
+    \item \alpha: the leakage parameter 
+    \item \beta: the regularization coefficient 
+    \item p: the link connection probability of the random network in the hidden layer.
+    \item \sigma: the noise amplitude 
+  \end{enumerate}
+\end{enumerate}
+
+\subsubsection{面白いと思ったところ}
+\begin{enumerate}
+  \item Introductionでも述べられているが、ノイズを入れることによって、初期値鋭敏性を持つカオスシステムに対して。短期的にも長期的にも予測の精度を挙げられるということ。
+\end{enumerate}
+
+\subsubsection{論文を受けての今後の研究方向}
+\subsubsection{疑問点}
+\begin{enumerate}
+  \item Fig.4とFig.5について，MG system における$\tau$の値が30から17に変えると，$\sigma$にどのような影響があるか．なぜその影響が生まれるか．
+  \item なぜ，Fig.2の（逆）ピークを与える$\sigma$帯とFig.6(c)の（逆）ピークを与える$\sigma$帯が重なるのか．
+  \item IIIで，Machine learningにおけるresonanceが生まれるPhysical reasonを挙げているが，これは対象を正しく説明できているか．extraordinarily complicatedなhidden layerの中身を解析することなく，physical reasonを与えることが，なにを説明しているのか/なにを説明していないのか．
+\end{enumerate}
+
+\subsubsection{関連する文献}
+ 
+\clearpage
+\subsubsection{用語まとめ}
+
+\subsubsection{Abstract}
+\begin{enumerate}
+  \item stochastic/coherence resonance: 
+  \item nonlinear dynamical system:
+  \item regularizer/regularization:
+  \item reservoir computing:
+  \item state variables/attractor:
+  \item hyperparameters:
+\end{enumerate}
+\subsubsection{I. Introduction}
+\begin{enumerate}
+  \item model-free/data-driven:
+  \item oscillatoin/Lyapnov times:
+  \item trajectory:
+  \item basin boundary: 
+  \item robustness:
+  \item Baysian optimization:
+\end{enumerate}
+
+\subsubsection{II. Result}
+\begin{enumerate}
+  \item SURROGATEOPT function (MATLAB):
+  \item surrogate approximation function:
+  \item objective function:
+  \item global minimum:
+  \item sampling/updating:
+  \item radial basis function: 
+  \item Mackey-Glass (MG) system:
+  \item spatiotemporal chaotic Kuramoto-Sivashinsky (KS) system: 
+\end{enumerate}
+
+\subsubsection{A. Emergence of a resonance from short-term prediction}
+\begin{enumerate}
+  \item transient behavior:
+  \item z-score normalization: 
+  \item periodic boundary condition:
+  \item Prediction horizon/stability: 
+\end{enumerate}
+
+\subsubsection{B. Emergence of a resonance from long-term prediction}
+\begin{enumerate}
+  \item collapse:
+  \item wider/narrower resonance:
+\end{enumerate}
+
+\subsubsection{III. HEURISTIC REASON FOR THE OCCURRENCE
+OF A RESONANCE}
+\begin{enumerate}
+  \item time-scale match:
+  \item the mean first-passage time:
+  \item nonlinear activation: 
+  \item linear reservoir computing:
+  \item noise-enhanced temporal regularity:
+  \item vector autoregressive process (VAR): 
+\end{enumerate}
+
+\subsubsection{IV. DISCUSSION}
+\begin{enumerate}
+  \item magnitude: 
+\end{enumerate}
+
+\subsubsection{Appendix A}
+\begin{enumerate}
+  \item recurrent neural network(RNN):
+  \item input/hidden/output layer: 
+  \item linear regression: 
+  \item adjacency matrix:
+  \item state vector: 
+  \item dynamical state/evolution: 
+  \item neuron:
+  \item leakage parameter $\alpha$:
+  \item link probability p: 
+  \item spectral radius:
+\end{enumerate}
+
+\clearpage
