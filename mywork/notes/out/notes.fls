@@ -633,6 +633,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmss9.tfm
 INPUT ./input/RC.tex
 INPUT ./input/RC.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT ./input/JosefTeichmann.tex
 INPUT ./input/JosefTeichmann.tex
 INPUT ./input/TODO.tex

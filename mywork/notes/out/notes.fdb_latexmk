@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1695617634 "/Users/manqueenmannequin/mygit/mywork/notes/notes.tex" "out/notes.pdf" "notes" 1695617636 0
+["lualatex"] 1695618405 "/Users/manqueenmannequin/mygit/mywork/notes/notes.tex" "out/notes.pdf" "notes" 1695618407 0
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1695457191 1875369 563a49d56453118cc2bc098475a23186 ""
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1695454459 1961878 305e540f3545673854903467c3d18712 ""
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1695454459 81875 4186f491346ae8e27e9de854d6400326 ""
@@ -66,6 +66,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm" 1254269338 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1254269338 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb" 1254269338 23055 2e5b42921de910eaa97b85df04ca4891 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb" 1254269338 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
@@ -345,12 +346,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1695454176 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/luahbtex/lualatex.fmt" 1695454114 11876010 442aa7a6fcb1a8a41efeae3b9e23dce4 ""
   "input/JosefTeichmann.tex" 1695568893 2933 cfd154d8b7c7d6f69645dac9ad60d8a7 ""
-  "input/RC.tex" 1695617634 5079 4a6264c5349cd66aa73eb159b3d0e436 ""
+  "input/RC.tex" 1695618404 5286 15da857423b653cd3f8042b3b36ccbf7 ""
   "input/TODO.tex" 1695474221 580 2ce0c6857d93550d8f381b15ac885d6e ""
   "notes.tex" 1695474273 3465 ccf4f4bba8aa425a3ecb094a1ac9210c ""
-  "out/notes.aux" 1695617635 3285 297012ece1e4177b334e65db3a3d9895 "lualatex"
-  "out/notes.out" 1695617635 816 15c3934bf2598b19f04c6c470928ae37 "lualatex"
-  "out/notes.toc" 1695617635 1911 e505ebe00acac786f334a33e19a58c48 "lualatex"
+  "out/notes.aux" 1695618407 3287 e363882dff1c65707712c93f93641e79 "lualatex"
+  "out/notes.out" 1695618407 816 15c3934bf2598b19f04c6c470928ae37 "lualatex"
+  "out/notes.toc" 1695618407 1912 328cf581dd116886e206b972b19b06bc "lualatex"
   (generated)
   "out/notes.aux"
   "out/notes.log"
