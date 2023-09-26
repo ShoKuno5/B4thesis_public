@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  25 SEP 2023 14:06
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  25 SEP 2023 14:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/manqueenmannequin/mygit/mywork/notes/notes.tex
@@ -1297,7 +1297,19 @@ LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
 (Font)              scaled to size 11.09656pt on input line 2.
  [2
 
-] [3
+]
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 6.47299pt on input line 40.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 5.54828pt on input line 43.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 54.
+
+Overfull \hbox (4.95479pt too wide) in paragraph at lines 55--56
+[]$\OML/lmm/m/it/10  \OT1/lmr/m/n/10 = 17\OML/lmm/m/it/10 ;  [][] \OMS/lmsy/m/n/10  \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 006[]\OML/lmm/m/it/10  \OT1/lmr/m/n/10 = 30\OML/lmm/m/it/10 ;  [][] \OMS/lmsy/m/n/10  \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 011[]0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 003$
+ []
+
+[3
 
 ] [4
 
@@ -1313,19 +1325,19 @@ Package rerunfilecheck Info: File `notes.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 31734 strings out of 478285
+ 31751 strings out of 478285
  125244,1977958 words of node,token memory allocated
- 1176 words of node memory still in use:
-   10 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 1 glyph, 234 attribute, 64 glue_spec, 32 attribute_list, 2 write, 13 user_defined, 1 pdf_action nodes
-   avail lists: 1:8,2:22612,3:270,4:337,5:271,6:49,7:3480,8:47,9:682,10:6,11:261
- 50346 multiletter control sequences out of 65536+600000
- 100 fonts using 69708039 bytes
- 118i,6n,112p,1837b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on notes.pdf (10 pages, 230852 bytes).
+ 1262 words of node memory still in use:
+   10 hlist, 2 vlist, 5 rule, 4 glue, 4 kern, 1 glyph, 267 attribute, 64 glue_spec, 35 attribute_list, 2 write, 13 user_defined, 1 pdf_action nodes
+   avail lists: 1:8,2:25508,3:341,4:360,5:271,6:49,7:3480,8:51,9:682,10:6,11:261
+ 50353 multiletter control sequences out of 65536+600000
+ 103 fonts using 69976143 bytes
+ 118i,8n,112p,1837b,610s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on notes.pdf (10 pages, 283363 bytes).
 
-PDF statistics: 261 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 114 named destinations out of 1000 (max. 131072)
+PDF statistics: 281 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 124 named destinations out of 1000 (max. 131072)
  56 words of extra memory for PDF output out of 10000 (max. 100000000)
 

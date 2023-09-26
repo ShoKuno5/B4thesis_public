@@ -28,18 +28,36 @@ Zheng-Meng Zhai , 1 Ling-Wei Kong , 1 and Ying-Cheng Lai 1,2,*
 Appendix A 参照。
 \begin{enumerate}
   \item hyperparameters:\begin{enumerate}
-    \item \rho: the specral radius of the  reservoir network.
-    \item \gamma: the scaling factor of the input weights.
-    \item \alpha: the leakage parameter 
-    \item \beta: the regularization coefficient 
+    \item $\rho$: the specral radius of the  reservoir network.
+    \item $\gamma$: the scaling factor of the input weights.
+    \item $\alpha$: the leakage parameter 
+    \item $\beta$: the regularization coefficient 
     \item p: the link connection probability of the random network in the hidden layer.
-    \item \sigma: the noise amplitude 
+    \item $\sigma$: the noise amplitude 
   \end{enumerate}
-  \item hyperparametersの最適化\begin{itemize}
-    \item MATLAB: SURROGATEOPT を用いる。\begin{enumerate}
-      \item 
+  \item hyperparametersの最適化\begin{enumerate}
+    \item MATLAB: SURROGATEOPT を用いる。
+      \footnote{"The Bayesian
+      optimization method can be implemented using PYTHON or
+      other languages. Different packages for Bayesian optimization are now available, such as BAYESIAN-OPTIMIZATION and
+      BOTORCH in PYTHON."としている。}
+    \item $\sigma$ごとにhyperparametersの最適化を行うので、$\sigma$に対する他のhyperparametersの組みは異なる。
+  \end{enumerate}
+  \item シミュレーションを行う。
+  \begin{enumerate}
+    \item MG system: 
+    $$\dot{s}(t)=a s(t-\tau) /\left(1+[s(t-\tau)]^c\right)-b s(t),$$ $\tau$ is the time delay, $a, b$, and $c$ are parameters.
+    \footnote{The state of the system at time t is determined by the entire prior state history
+    within the time delay, making the phase space of the system
+    infinitely dimensional.}  
+    \begin{enumerate}
+      \item $a=0.2, b=0.1, \text { and } c=10$を固定。
+      \item $\tau=17,\ \text{Lyapunov exponents: } \lambda_{+} \approx 0.006 \text { と } \tau=30,\ \text{Lyapunov exponents: } \lambda_{+} \approx 0.011 \text{ and } 0.003$の２つの場合を比べる.
+      \item $\Delta t=100 h=1.0.$
+      \item Warmup: $10000 \Delta t.$
+      \item 時系列データには事前にz-score normalization: $z(t)=[s(t)-\bar{s}] / \sigma_s$を施す。
     \end{enumerate}
-  \end{itemize}
+  \end{enumerate}
 \end{enumerate}
 \clearpage
 
