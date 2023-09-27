@@ -248,6 +248,19 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/csvsimple/csvsimple.sty
@@ -506,9 +519,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ascmac/tascmac.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ascmac/tascmac.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/ascmac/tascmac.sty
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/ascmac/ascgrp.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
-INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
@@ -655,4 +665,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

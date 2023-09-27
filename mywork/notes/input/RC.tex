@@ -13,6 +13,7 @@ Zheng-Meng Zhai , 1 Ling-Wei Kong , 1 and Ying-Cheng Lai 1,2,*
 
 \begin{enumerate}
   \item 入力信号にノイズを挿れた場合のReservoir Computingを考える。\begin{enumerate}
+    \item 47によれば、training phaseとtesting phaseのノイズ振幅が同じ時RCは最も良いパフォーマンスを発揮する。
     \item hyperparametersが最適化されていない時でも、ノイズを挿れることで予測の精度をあげることができる。
     \item もっとも良い精度を達成するには、hyperparametersが最適化されていなければならない。\begin{enumerate}
       \item Hyperparametersに対するBaysian optimizationで最適化可能。
@@ -22,7 +23,15 @@ Zheng-Meng Zhai , 1 Ling-Wei Kong , 1 and Ying-Cheng Lai 1,2,*
   \item Macky-Glass (MG) systemとKuramoto-Sivashinsky (KS) systemに対して、シミュレーションを行う。
   \item 物理側から、確率共鳴が生まれる原理を考える。
 \end{enumerate}
+
+\subsubsection{手法}
+\begin{enumerate}
+  \item MG/KS systemに対して、Baysian Optimizationで最適なhyperparameters（$\sigma$を含む）を決定する。
+  \item $\sigma$を最適値から両側に動かして、$\sigma$ごとに他のhyperparametersの最適値を決定する。
+  \item $\sigma$について、予測誤差を観察することによって、確率共鳴があることを確かめる。
+\end{enumerate}
 \clearpage
+
 
 \subsubsection{状況設定}
 Appendix A 参照。
@@ -33,7 +42,7 @@ Appendix A 参照。
     \item $\alpha$: the leakage parameter 
     \item $\beta$: the regularization coefficient 
     \item p: the link connection probability of the random network in the hidden layer.
-    \item $\sigma$: the noise amplitude 
+    \item $\sigma$: the noise amplitude, taking vallue between $[10^{-8}, 10^{0.5}]$.
   \end{enumerate}
   \item hyperparametersの最適化\begin{enumerate}
     \item MATLAB: SURROGATEOPT を用いる。
@@ -46,112 +55,136 @@ Appendix A 参照。
   \item シミュレーションを行う。
   \begin{enumerate}
     \item MG system: 
-    $$\dot{s}(t)=a s(t-\tau) /\left(1+[s(t-\tau)]^c\right)-b s(t),$$ $\tau$ is the time delay, $a, b$, and $c$ are parameters.
+    $$\dot{s}(t)=\frac{a s(t-\tau)}{\left(1+[s(t-\tau)]^c\right)-b s(t)},$$ $\tau$ is the time delay, $a, b$, and $c$ are parameters.
     \footnote{The state of the system at time t is determined by the entire prior state history
     within the time delay, making the phase space of the system
     infinitely dimensional.}  
     \begin{enumerate}
       \item $a=0.2, b=0.1, \text { and } c=10$を固定。
-      \item $\tau=17,\ \text{Lyapunov exponents: } \lambda_{+} \approx 0.006 \text { と } \tau=30,\ \text{Lyapunov exponents: } \lambda_{+} \approx 0.011 \text{ and } 0.003$の２つの場合を比べる.
-      \item $\Delta t=100 h=1.0.$
-      \item Warmup: $10000 \Delta t.$
+      \item $\tau=17, 30$の２つの場合を比べる.
       \item 時系列データには事前にz-score normalization: $z(t)=[s(t)-\bar{s}] / \sigma_s$を施す。
     \end{enumerate}
+    \item KS system: 
+    $$\frac{\partial u}{\partial t}+\mu \frac{\partial^4 u}{\partial x^4}+\phi\left(\frac{\partial^2 u}{\partial x^2}+u \frac{\partial u}{\partial x}\right)=0$$
+    \begin{enumerate}
+      \item $u(x, t)$ is a scalar field defined in the spatial domain $0 \leqslant x \leqslant L$.
+      \item $\mu=1$ and $\phi=$ 1 , and use the periodic boundary condition.
+      \item $L=60$, where the system has seven positive Lyapunov exponents:\\ $\lambda_{+} \approx 0.089,0.067,0.055,0.041,0.030,0.005$, and 0.003. 
+    \end{enumerate}
   \end{enumerate}
+  \item それぞれに対するESNの変数設定は表\ref{tab:ESN_parameters_inpaper}にある。
 \end{enumerate}
-\clearpage
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lcc}
+      \toprule
+      & MG & KS \\
+      \midrule
+      Warmup & $10000\Delta t$ & $300$ Lyapunov times \\
+      Training phase & $150000\Delta t$ & $1000$ Lyapunov times \\
+      Testing phase for Bayesian optimization & $900\Delta t$ & $-$ \\
+      Short-term prediction & $900\Delta t$ & $6$ Lyapunov times \\
+      Long-term prediction & $20000\Delta t$ & $200$ Lyapunov times \\
+      \bottomrule
+  \end{tabular}
+  \caption{論文中のESNに関する変数設定}
+  \label{tab:ESN_parameters_inpaper}
+\end{table}
+
 
 \subsubsection{面白いと思ったところ}
 \begin{enumerate}
-  \item Introductionでも述べられているが、ノイズを入れることによって、初期値鋭敏性を持つカオスシステムに対して。短期的にも長期的にも予測の精度を挙げられるということ。
+  \item ノイズを入れることによって、本来初期値鋭敏性を持つカオスシステムに対して、短期的にも長期的にも予測の精度を挙げられる。
+  \item Bollt[40]の結果を用いることで、本来high-dimensional neural networkの複雑なdynamicsに対して簡略化された物理モデルを得ることができ、それに対する解析によってRCのhidden layerの中身を説明できる。
+  \\$\longrightarrow$同じ手法で、この物理モデルを用いることで、他の現象がneural networkのdynamicsにおいても現れることを発見・説明できるかもしれない？
 \end{enumerate}
 
-\subsubsection{論文を受けての今後の研究方向}
 \subsubsection{疑問点}
 \begin{enumerate}
   \item Fig.4とFig.5について，MG system における$\tau$の値が30から17に変えると，$\sigma$にどのような影響があるか．なぜその影響が生まれるか．
   \item なぜ，Fig.2の（逆）ピークを与える$\sigma$帯とFig.6(c)の（逆）ピークを与える$\sigma$帯が重なるのか．
   \item IIIで，Machine learningにおけるresonanceが生まれるPhysical reasonを挙げているが，これは対象を正しく説明できているか．extraordinarily complicatedなhidden layerの中身を解析することなく，physical reasonを与えることが，なにを説明しているのか/なにを説明していないのか．
+  \\$\longrightarrow$ Bollt[40]の結果？
+  \item そもそも、shor/long-term predictionの期間は何を表しているのか。
+  \\$\longrightarrow$ある時刻$t$の系の状態は時刻$t - \tau$から$t$までの情報で決定される。
+  short/long-termに依らず定まった時間のwarmupとtraining phaseを設ける。
+  （ここからは調べる必要あり）これによって、ESNは学習を済ませた状態になる。short/long-termのtesting phaseの長さの分だけ学習済みのESNに予測をさせ、実際のデータとの誤差を計測する。
+  \item $T_{opt}$はESNの学習のどの段階に設けられるのか。Training phaseの後？
+  \item $\sigma$: noise amplitude以外のパラメータの取りうる値の範囲は？
+  \item Baysian optimizationでは何について最適化を行なっているのか？
+  \\$\longrightarrow$KSシステムのshort-term predicitonはRMSE, horizon prediction, stabilityを観察しているが、全てRMSEを基にしている。よって、最適化はRMSEを目的関数にとっているのではないか（reservoirpyのチュートリアルではR2という距離も用いられている）。
+  \item RMSE, horizon prediction, stabilityでピークを与える$\sigma$が同じなのは、これらの手法のintrinsicな性質として導かれることか。それぞれの場合を切り離して計測することでどのような新しいことが言えるか。
+\end{enumerate}
+
+\subsubsection{論文を受けての今後の研究方向}
+\begin{enumerate}
+  \item short/long-term predictionでの最適なパラメータは同じか、否か。\begin{enumerate}
+    \item 実験手法：short/long-term predictionそれぞれに対してBaysian optimizationでパラメータの最適化を行い、一致するかどうか確かめる。
+    \item 本文中では記載がないように思えるが、前提としている先行研究で明らかにされているかもしれない。
+  \end{enumerate}
+  \item （些末な点？）論文中では、予測誤差をいくつかの方法で表している（KSに対するshort-term predictionだとRMSE, horizon prediction, stability等）。Baysian optimizationの目的関数はどのように決まるか。目的関数の取り方によって、最適なhyperparametersはどのように変化するか。
+  \item （機械学習の知識が足りていない）論文中では、
+  MG, KSに対して、表\ref{tab:ESN_parameters_inpaper(again)}のようなパラメータでを定数としてhyperparametersの最適化を行なっている。
+  hyperparametersごとのこれらのパラメータの最適値は（大きく）変化しないのか。
+  \begin{table}[h!]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        & MG & KS \\
+        \midrule
+        Warmup & $10000\Delta t$ & $300$ Lyapunov times \\
+        Training phase & $150000\Delta t$ & $1000$ Lyapunov times \\
+        Testing phase for Bayesian optimization & $900\Delta t$ & $-$ \\
+        Short-term prediction & $900\Delta t$ & $6$ Lyapunov times \\
+        Long-term prediction & $20000\Delta t$ & $200$ Lyapunov times \\
+        \bottomrule
+    \end{tabular}
+    \caption{論文中のESNに関する変数設定（再掲）}
+    \label{tab:ESN_parameters_inpaper(again)}
+\end{table}
+\item ノイズの入れ方: RCのhidden layerの入力信号に対するガウシアンノイズ以外に、どのようなノイズの入れ方と結果が考えられるか。
+\item Bollt[40]の手法を理解し、力学系の理論で他にneural networkの力学系に応用できる結果がないか探す。
 \end{enumerate}
 
 \subsubsection{関連する文献}
- 
-\clearpage
+\begin{enumerate}
+  \item Bollt[40]: Dynamics in nerual networkの簡易物理モデルを与える。
+  \item $[51]$:
+  \item $[57, 58]$: Langevin方程式に関する確率共鳴の理論。
+\end{enumerate}
+
 \subsubsection{用語まとめ}
 
 \subsubsection{Abstract}
-\begin{enumerate}
-  \item stochastic/coherence resonance: 
-  \item nonlinear dynamical system:
-  \item regularizer/regularization:
-  \item reservoir computing:
-  \item state variables/attractor:
-  \item hyperparameters:
-\end{enumerate}
+stochastic/coherence resonance, nonlinear dynamical system, regularizer/regularization, reservoir computing, state variables/attractor, hyperparameters.
+
 \subsubsection{I. Introduction}
-\begin{enumerate}
-  \item model-free/data-driven:
-  \item oscillatoin/Lyapnov times:
-  \item trajectory:
-  \item basin boundary: 
-  \item robustness:
-  \item Baysian optimization:
-\end{enumerate}
+
+model-free/data-driven, oscillation/Lyapunov times, trajectory, basin boundary, robustness, Bayesian optimization.
 
 \subsubsection{II. Result}
-\begin{enumerate}
-  \item SURROGATEOPT function (MATLAB):
-  \item surrogate approximation function:
-  \item objective function:
-  \item global minimum:
-  \item sampling/updating:
-  \item radial basis function: 
-  \item Mackey-Glass (MG) system:
-  \item spatiotemporal chaotic Kuramoto-Sivashinsky (KS) system: 
-\end{enumerate}
+
+SURROGATEOPT function (MATLAB), surrogate approximation function, objective function, global minimum, sampling/updating, radial basis function, Mackey-Glass (MG) system, spatiotemporal chaotic Kuramoto-Sivashinsky (KS) system.
 
 \subsubsection{A. Emergence of a resonance from short-term prediction}
-\begin{enumerate}
-  \item transient behavior:
-  \item z-score normalization: 
-  \item periodic boundary condition:
-  \item Prediction horizon/stability: 
-\end{enumerate}
+
+transient behavior, z-score normalization, periodic boundary condition, Prediction horizon/stability.
 
 \subsubsection{B. Emergence of a resonance from long-term prediction}
-\begin{enumerate}
-  \item collapse:
-  \item wider/narrower resonance:
-\end{enumerate}
+
+collapse, wider/narrower resonance.
 
 \subsubsection{III. HEURISTIC REASON FOR THE OCCURRENCE
 OF A RESONANCE}
-\begin{enumerate}
-  \item time-scale match:
-  \item the mean first-passage time:
-  \item nonlinear activation: 
-  \item linear reservoir computing:
-  \item noise-enhanced temporal regularity:
-  \item vector autoregressive process (VAR): 
-\end{enumerate}
+
+time-scale match, the mean first-passage time, nonlinear activation, linear reservoir computing, noise-enhanced temporal regularity, vector autoregressive process (VAR).
 
 \subsubsection{IV. DISCUSSION}
-\begin{enumerate}
-  \item magnitude: 
-\end{enumerate}
+
+magnitude.
 
 \subsubsection{Appendix A}
-\begin{enumerate}
-  \item recurrent neural network(RNN):
-  \item input/hidden/output layer: 
-  \item linear regression: 
-  \item adjacency matrix:
-  \item state vector: 
-  \item dynamical state/evolution: 
-  \item neuron:
-  \item leakage parameter $\alpha$:
-  \item link probability p: 
-  \item spectral radius:
-\end{enumerate}
 
+recurrent neural network(RNN), input/hidden/output layer, linear regression, adjacency matrix, state vector, dynamical state/evolution, neuron, leakage parameter $\alpha$, link probability p, spectral radius.
 \clearpage
