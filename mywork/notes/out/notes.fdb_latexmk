@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1695857822 "/Users/manqueenmannequin/mygit/mywork/notes/notes.tex" "out/notes.pdf" "notes" 1695857824 0
+["lualatex"] 1695857905 "/Users/manqueenmannequin/mygit/mywork/notes/notes.tex" "out/notes.pdf" "notes" 1695857907 0
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1695457191 1875369 563a49d56453118cc2bc098475a23186 ""
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1695454459 1961878 305e540f3545673854903467c3d18712 ""
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1695454459 81875 4186f491346ae8e27e9de854d6400326 ""
@@ -356,11 +356,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/luahbtex/lualatex.fmt" 1695454114 11876010 442aa7a6fcb1a8a41efeae3b9e23dce4 ""
   "input/JosefTeichmann.tex" 1695568893 2933 cfd154d8b7c7d6f69645dac9ad60d8a7 ""
   "input/RC.tex" 1695857768 11910 2ef49e654ed354e50d260990f8b2ed03 ""
-  "input/TODO.tex" 1695857822 903 1ebb44b3dd5000f6bd02af5797b53907 ""
+  "input/TODO.tex" 1695857905 903 1ebb44b3dd5000f6bd02af5797b53907 ""
   "notes.tex" 1695857491 3541 72de4dbe32eb9bf40f31ca14ddde368c ""
-  "out/notes.aux" 1695857824 4065 eaa5f9c82a7328e2469f096e674cba15 "lualatex"
-  "out/notes.out" 1695857824 816 15c3934bf2598b19f04c6c470928ae37 "lualatex"
-  "out/notes.toc" 1695857824 1996 db3f5e6a30f5784d27c260613990991b "lualatex"
+  "out/notes.aux" 1695857907 4065 eaa5f9c82a7328e2469f096e674cba15 "lualatex"
+  "out/notes.out" 1695857907 816 15c3934bf2598b19f04c6c470928ae37 "lualatex"
+  "out/notes.toc" 1695857907 1996 db3f5e6a30f5784d27c260613990991b "lualatex"
   (generated)
   "out/notes.aux"
   "out/notes.log"
