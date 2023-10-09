@@ -2,15 +2,31 @@
 \begin{enumerate}
   \item \href{https://github.com/reservoirpy/reservoirpy}{reservoirpy関連}
   \begin{enumerate}
-  \item Week 2: \href{https://github.com/reservoirpy/reservoirpy/blob/master/tutorials/4-Understand_and_optimize_hyperparameters.ipynb}{Understand and optimize ESN hyperparameters}などのTutorialページを読む．
+  \item \sout{Week 2: \href{https://github.com/reservoirpy/reservoirpy/blob/master/tutorials/4-Understand_and_optimize_hyperparameters.ipynb}{Understand and optimize ESN hyperparameters}などのTutorialページを読む．}
   \end{enumerate}
   \item Reservoir Computingについて学ぶ．\begin{enumerate}
-    \item Week 2: レクチャーノートなどを通じて、知識を準備する。
+    \item \sout{Week 2: レクチャーノートなどを通じて、知識を準備する。}とりあえずざっとは見た。
   \end{enumerate}
   \item \sout{Week 2 Github環境を整備する。} 9/28, Week 2: branchの作り方がよくわからないが、とりあえずpushは出来た。
   \item 論文\ref{Emergence of a resonance in machine learning}関連
     \begin{enumerate}
-    \item 9/28, Week 2: DVの実装。
-    \item 9/28, Week 2: Bollt$[40]$を読む。
+    \item \sout{9/28, Week 2: Bollt$[40]$を読む。}一応終わったが、あまり理解できていない。
+    \item Week 3: Bollt$[40]$をもう一度読む。
+    \item Week 3: Reservoir Computerに関する具体的な問題を見つけるため、情報収集する。
+    \item Week 3: とりあえず何か実装してみる。\begin{enumerate}
+      \item 9/28, Week 2: DVの実装。
+      \item rx1を用いて、並列で動かしてみる。\begin{enumerate}
+        \item 並列といってもどこを並列処理させる？異なる$\sigma$に対する他のhyperparametersの最適値を求めるとき？
+        \item $\sigma$を動かしてみる。
+      \end{enumerate}
+    \end{enumerate}
+    \item Week 3: ノイズの入れ方を工夫してみる。
+    \item Week 3: ローレンツモデルに対してRCを用いていみる。
+  \end{enumerate}
+  \item Week 3: 今後の研究対象を決める。\begin{enumerate}
+    \item 例えば、論文\ref{Emergence of a resonance in machine learning}から着想を得て、カオスに対するRCを考察するとする。
+    しかし、カオスに対する機械学習の問題意識が予測精度の向上（と計算時間の短縮である）とするならば、その意味で新たに研究すべき対象は見つけにくいのではないか。
+    \item 論文\ref{Bollt_paper}にあるとおり、RCはより広いシステムに対する研究も行われているようである。ひとまず、そこまで考える対象をある程度広げてしまった方が出発しやすいのではないだろうか。
+    \item 一貫して機械学習の素養が足りていないため、機械学習そのものの内容というよりは、今は物理・数学的な話題から刺激/触発されたRCという文脈で考えておきたい（そのうちRCや機械学習自体の知識が蓄えられ、少し状況が変わるかもしれない）。
   \end{enumerate}
 \end{enumerate}

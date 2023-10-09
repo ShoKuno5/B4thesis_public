@@ -1,0 +1,159 @@
+\subsection{[Bollt] On Explaining the Surprising Success of Reservoir Computing Forecaster of Chaos?
+The Universal Machine Learning Dynamical System with Contrasts to VAR and DMD
+}\label{Bollt_paper}
+
+RCが重みをランダムに選んでいるのにうまくいく理由は明らかにされていない。
+ここでは、単純な場合、internal activation functionが恒等関数である場合のRCにこの問題を限定し、
+次の方法でこの問題の説明を試みる。
+
+\begin{itemize}
+    \item 特別な場合のRCに対してWOLDの理論を含むVAR（Vector Autoregressive Averages）、特にNVARの理論を適用する。
+    \item これらのパラダイムをDMD(Dynamic Mode Decomposition)と紐付ける。
+\end{itemize}
+
+\subsubsection{1. Introduction}\label{Bollt_1}
+\begin{enumerate}
+    \item 従来のNN手法の問題点
+    \begin{enumerate}
+        \item Back propagationを用いるArtificial neural networks (ANN): データの最適化に関して計算量が極めて多い
+        \item RNN, LSTM: 短期的なデータに対しては有効だが、完全な学習に関しては高級。
+    \end{enumerate}
+    \item RC/ESN:出力層だけの学習で効率がいい。
+    \item RCをactivation functionが線形であるときに限定することで、より成熟した理論の適用を可能にする。
+    \begin{enumerate}
+        \item ARMA:AR (Thoery of autoregression) from time-series analysis and MA (moving averages).
+        \item WOLD: 
+        \item VAR (Vector autoregression): 
+        \item VMA (Vector moving averages): 
+        \item DMD (Dynamic mode decomposition): empirical formulation of Koopman spectral theory.
+    \end{enumerate}
+    \item The machine learning RC approaches, econometrics time-series VAR approach, and also the dynamical systems operator theoretic DMD approachの統合。
+    \item $2\ (\ref{Bollt_2}) \longrightarrow3\ (\ref{Bollt3})\longrightarrow4\longrightarrow5\longrightarrow7\longrightarrow8\longrightarrow9\longrightarrow6$.
+\end{enumerate}
+
+\subsubsection{2. The Data as Sampled From a Stochastic Process}
+\label{Bollt_2}
+
+\subsubsection{3. Review of The Traditional RC With Nonlinear Sigmoidal Activation Function}
+\label{Bollt3}
+
+\begin{enumerate}
+    \item Training data: $\left\{\mathbf{x}_i\right\}_{i=1}^N \subset \mathbb{R}^{d_x}$
+    \item The hidden variable: $\mathbf{r}_i \in \mathbb{R}^{d_r}$\begin{enumerate}
+        \item $d_r>d_x$.
+    \end{enumerate}
+    \item The reservoir computing RNN: 
+    $$
+    \begin{aligned}
+    \mathbf{r}_{i+1} & =(1-\alpha) \mathbf{r}_i+\alpha q\left(\mathbf{A r}_i+\mathbf{u}_i+\mathbf{b}\right) \\
+    \mathbf{y}_{i+1} & =\mathbf{W}^{\text {out }} \mathbf{r}_{i+1}
+    \end{aligned}
+    $$
+    \begin{enumerate}
+        \item $\mathbf{A}: d_r \times d_r,\ \mathbf{A}_{i, j} \sim U(-\beta, \beta)$, with $\beta$: the spectral radius. 
+        \item $\mathbf{W}: d_r \times d_x,\ \mathbf{W}_{i, j}^{i n} \sim U(0, \gamma)$, with $\gamma>0$: the inner variables $\mathbf{r}$.
+        \item $\mathbf{u}_i=\mathbf{W}^{i n} \mathbf{x}_i$.
+        \item $\mathbf{W}^{out}: d_x \times d_r$, readout.
+        \item $q: \mathbb{R} \rightarrow \mathbb{R}$: "activation" function.
+        \item $\alpha=1(0\leq\alpha\leq1)$.
+        \item $\mathbf{b} = 0.$
+    \end{enumerate}
+    \item 次の式で$\mathbf{W}_{\text {out }}$を学習する（線形）。
+    $\mathbf{R}=\left[\mathbf{r}_{k+1}\left|\mathbf{r}_{k+2}\right| \ldots \mid \mathbf{r}_N\right], k \geq 1$として、
+    $$
+    \mathbf{W}_{\text {out }}=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min }\|\mathbf{X}-\mathbf{V R}\|_F=\underset{\mathbf{V} \in \mathbb{R}^{d^x \times d_r}}{\arg \min } \sum_{i=k}^N\left\|\mathbf{x}_i-\mathbf{V r}_i\right\|_2,\ k \geq 1\footnote{kはメモリに関わってくる定数。途中からでも良いということ。この値がkによらないことを示す。} .
+    $$
+    即ち、
+    $$
+    \mathbf{X}=\left[\mathbf{x}_{k+1}\left|\mathbf{x}_{k+2}\right| \ldots \mid \mathbf{x}_N\right]=\left[\mathbf{V r}_{k+1}\left|\mathbf{V} \mathbf{r}_{k+2}\right| \ldots \mid \mathbf{V r}_N\right]=\mathbf{V R},\ k \geq 1
+    $$
+    なる$\mathbf{V}$を求める。
+    \begin{enumerate}
+        \item ridge regression (Tikhonov regularization)　により、
+        $$\mathbf{W}^{\text {out }}:=\mathbf{X R}^T\left(\mathbf{R} \mathbf{R}^T+\lambda \mathbf{I}\right)^{-1}$$
+        ただし、$\lambda \geq 0$.
+        \item $\mathbf{R}_\lambda^{\dagger}:=\mathbf{R}^T\left(\mathbf{R} \mathbf{R}^T+\lambda \mathbf{I}\right)^{-1}$とする（擬似逆行列）。
+    \end{enumerate}
+    \item パラメータの取り方に関してはいくつかの問題が残っている（\ref{Bollts_problems}）。
+\end{enumerate}
+
+\subsubsection{4. RC With A Fully Linear Activation, q(s) = s, Yields a VAR(k)
+}\label{Bollt4}
+\begin{enumerate}
+    \item 
+    \begin{equation}
+        \begin{aligned}
+        \mathbf{r}_{k+1} & =\mathbf{A} \mathbf{r}_k+\mathbf{u}_k \\
+        & =\mathbf{A}\left(\mathbf{A} \mathbf{r}_{k-1}+\mathbf{u}_{k-1}\right)+\mathbf{u}_k \\
+        & \vdots \\
+        & =\mathbf{A}^{k-1} \mathbf{W}^{i n} \mathbf{x}_1+\mathbf{A}^{k-2} \mathbf{W}^{i n} \mathbf{x}_2+\ldots+\mathbf{A} \mathbf{W}^{i n} \mathbf{x}_{k-1}+\mathbf{W}^{i n} \mathbf{x}_k \\
+        & =\sum_{j=1}^k \mathbf{A}^{j-1} \mathbf{u}_{k-j+1}=\sum_{j=1}^k \mathbf{A}^{j-1} \mathbf{W}^{i n} \mathbf{x}_{k-j+1},
+        \end{aligned}
+        \end{equation}
+        \begin{equation}
+    \begin{aligned}\label{data_prediction}
+    \mathbf{y}_{\ell+1} & =\mathbf{W}^{\text {out }} \mathbf{r}_{\ell+1} \\
+    & =\mathbf{W}^{\text {out }} \sum_{j=1}^{\ell} \mathbf{A}^{j-1} \mathbf{W}^{\text {in }} \mathbf{x}_{\ell-j+1} \\
+    & =\mathbf{W}^{\text {out }} \mathbf{A}^{\ell-1} \mathbf{W}^{\text {in }} \mathbf{x}_1+\mathbf{W}^{\text {out }} \mathbf{A}^{\ell-2} \mathbf{W}^{\text {in }} \mathbf{x}_2+\ldots+\mathbf{W}^{\text {out }} \mathbf{A} \mathbf{W}^{\text {in }} \mathbf{x}_{\ell-1}+\mathbf{W}^{\text {out }} \mathbf{W}^{\text {in }} \mathbf{x}_{\ell} \\
+    & =a_{\ell} \mathbf{x}_1+a_{\ell-1} \mathbf{x}_2+\ldots+a_2 \mathbf{x}_{\ell-1}+a_1 \mathbf{x}_{\ell}
+    \end{aligned}
+    \end{equation}
+    with notation,
+    \begin{equation}
+    \begin{aligned}
+    a_j=\mathbf{W}^{\text {out }} \mathbf{A}^{j-1} \mathbf{W}^{i n}, j=1,2, \ldots, \ell .
+    \end{aligned}
+    \end{equation}
+    $a_j : d_x \times d_x$ matrices.
+    
+    式\eqref{data_prediction}はVAR$(k)$の係数行列の表式:
+    \begin{equation}\label{VAR}
+        \mathbf{y}_{k+1}=c+a_k \mathbf{x}_1+a_{k-1} \mathbf{x}_2+\ldots+a_2 \mathbf{x}_{k-1}+a_1 \mathbf{x}_k+\boldsymbol{\xi}_{k+1}
+        \end{equation}
+    と合致する\footnote{$\xi$はノイズ項。}。
+    \item
+    \begin{equation}
+        \left[\begin{array}{llll}
+        \mathbf{y}_{k+1} & \mathbf{y}_{k+2} & \ldots & \mathbf{y}_N
+        \end{array}\right]=\left[\begin{array}{llll}
+        {\left[a_1\right]} & {\left[a_2\right]} & \ldots & {\left[a_k\right]}
+        \end{array}\right]\left[\begin{array}{cccc} 
+        \mathbf{x}_k & \mathbf{x}_{k+1} & \ldots & \mathbf{x}_{N-1} \\
+        \vdots　& \vdots & \vdots　& \vdots\\
+        \mathbf{x}_{k-1} & \mathbf{x}_k & \ldots & \mathbf{x}_{N-2} \\
+        \vdots & \vdots & \vdots & \vdots \\
+        \mathbf{x}_1 & \mathbf{x}_2 & \ldots &　\mathbf{x}_{N-k}
+        \end{array}\right]
+    \end{equation}
+    を
+    $$
+    \mathbf{Y}=\mathbf{a} \mathbb{X}
+    $$
+    と書けば、
+    \begin{enumerate}
+        \item $\mathbf{a}: d_x \times\left(k d_x\right)$
+        \item $\mathbf{Y}=\left\lceil\mathbf{y}_{k+1}\left|\mathbf{y}_{k+2}\right| \ldots \mid \mathbf{y}_N\right\rceil: d_x \times(N-k)$ 
+        \item $\mathbb{X}:(k d x) \times(N-k)$
+    \end{enumerate}
+    \item 
+    最小二乗法を考えて、
+        \begin{equation}
+        J(\mathbf{a})=\|\mathbf{Y}-\mathbf{a} \mathbb{X}\|_F+\lambda\|\mathbf{a}\|_F
+        \end{equation}
+    を最小化する$\mathbf{a}^*$を求めると、
+    \begin{equation}
+        \mathbf{a}^*=\mathbf{Y} \mathbb{X}^T\left(\mathbb{X X}^T+\lambda I\right)^{-1}:=\mathbf{Y} \mathbb{X}_\lambda^{\dagger}
+    \end{equation}
+    で与えられる。
+\end{enumerate}
+
+\paragraph{4.1}
+
+\subsubsection{残された課題}
+\label{Bollts_problems}
+\begin{enumerate}
+    \item Linear RC with quadratic read-outの議論 (\ref{Bollt_1}).
+    \item $d_r>d_x$ must be "large enough," but how big is not well understood. Furthermore, the nature of the underlying distribution of matrices $\mathbf{W}^{i n}$ and $\mathbf{A}$ is not fully understood ... However, we go on in Sec. 6, with details in Appendix 14, to show that fitting a quadratic read-out, that is extending Eq. (8) to also include terms $\mathbf{r} \circ \mathbf{r}$ (componentwise multiplication, "o" is called the Hadamard product) yields a quadratic NVAR of all monomial quadratic terms, which we observe performs quite well (\ref{Bollt3}).
+\end{enumerate}
+\clearpage
+
