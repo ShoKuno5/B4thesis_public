@@ -1,0 +1,24 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "Untitled"}, "version": 1}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2}
+{"obj": {"type": "AssignString", "path": ["monitoring", "1bce9a4a", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 3}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 4}
+{"obj": {"type": "AssignString", "path": ["monitoring", "1bce9a4a", "pid"], "value": "16521"}, "version": 5}
+{"obj": {"type": "AssignString", "path": ["monitoring", "1bce9a4a", "tid"], "value": "8080793280"}, "version": 6}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "1bce9a4a", "stdout"]}, "version": 8}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "1bce9a4a", "stderr"]}, "version": 9}
+{"obj": {"type": "AssignString", "path": ["source_code", "entrypoint"], "value": "2.1.3.py"}, "version": 10}
+{"obj": {"type": "UploadFileSet", "path": ["source_code", "files"], "file_globs": ["/Users/manqueenmannequin/mygit/B4thesis_public/mywork/program/Rossler\u4e88\u6e2c_new/2/2.1/2.1.3.py"], "reset": "False"}, "version": 11}
+{"obj": {"type": "UploadFile", "path": ["source_code", "diff"], "ext": "patch", "file_path": null, "tmp_file_name": "source_code_diff-1699700390.904614-2023-11-11_19.59.50.904614.patch", "clean_after_upload": false}, "version": 12}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "1bce9a4a", "cpu"], "min": 0.0, "max": 100.0, "unit": "%"}, "version": 13}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "1bce9a4a", "cpu"]}, "version": 14}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "1bce9a4a", "memory"], "min": 0.0, "max": 16.0, "unit": "GB"}, "version": 15}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "1bce9a4a", "memory"]}, "version": 16}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "1bce9a4a", "stderr"], "values": [{"value": "Info (NVML): NVML Shared Library Not Found. GPU usage metrics may not be reported. For more information, see https://docs.neptune.ai/help/nvml_error/\n", "step": null, "ts": 1699700390.9118211}]}, "version": 17}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "cpu"], "values": [{"value": 28.1, "step": null, "ts": 1699700390.911934}]}, "version": 18}
+{"obj": {"type": "AssignString", "path": ["source_code", "integrations", "neptune-optuna"], "value": "1.1.0"}, "version": 19}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "memory"], "values": [{"value": 9.711029052734375, "step": null, "ts": 1699700390.911934}]}, "version": 20}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "cpu"], "values": [{"value": 52.5, "step": null, "ts": 1699700400.918608}]}, "version": 21}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "memory"], "values": [{"value": 9.860626220703125, "step": null, "ts": 1699700400.918608}]}, "version": 22}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "cpu"], "values": [{"value": 17.4, "step": null, "ts": 1699700410.9240818}]}, "version": 23}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "1bce9a4a", "memory"], "values": [{"value": 9.859817504882812, "step": null, "ts": 1699700410.9240818}]}, "version": 24}

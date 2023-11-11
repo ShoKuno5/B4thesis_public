@@ -1,0 +1,25 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "Untitled"}, "version": 1}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e3747219", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 3}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 4}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e3747219", "pid"], "value": "10567"}, "version": 5}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e3747219", "tid"], "value": "8080793280"}, "version": 6}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "e3747219", "stdout"]}, "version": 8}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "e3747219", "stderr"]}, "version": 9}
+{"obj": {"type": "AssignString", "path": ["source_code", "entrypoint"], "value": "2.1.3.py"}, "version": 10}
+{"obj": {"type": "UploadFileSet", "path": ["source_code", "files"], "file_globs": ["/Users/manqueenmannequin/mygit/B4thesis_public/mywork/program/Rossler\u4e88\u6e2c_new/2/2.1/2.1.3.py"], "reset": "False"}, "version": 11}
+{"obj": {"type": "UploadFile", "path": ["source_code", "diff"], "ext": "patch", "file_path": null, "tmp_file_name": "source_code_diff-1699690914.875372-2023-11-11_17.21.54.875372.patch", "clean_after_upload": false}, "version": 12}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "e3747219", "cpu"], "min": 0.0, "max": 100.0, "unit": "%"}, "version": 13}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "e3747219", "cpu"]}, "version": 14}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "e3747219", "memory"], "min": 0.0, "max": 16.0, "unit": "GB"}, "version": 15}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "e3747219", "memory"]}, "version": 16}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "e3747219", "cpu"], "values": [{"value": 31.0, "step": null, "ts": 1699690914.881288}]}, "version": 17}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "e3747219", "memory"], "values": [{"value": 11.325958251953125, "step": null, "ts": 1699690914.881288}]}, "version": 18}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "e3747219", "stdout"], "values": [{"value": "https://app.neptune.ai/shokuno55/B4thesis/e/BTHES-22\n", "step": null, "ts": 1699690915.9266088}]}, "version": 19}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "e3747219", "stdout"], "values": [{"value": "https://app.neptune.ai/shokuno55/B4thesis/e/BTHES-23\n", "step": null, "ts": 1699690917.107585}]}, "version": 20}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "e3747219", "stdout"], "values": [{"value": "Shutting down background jobs, please wait a moment...\n", "step": null, "ts": 1699690922.442249}]}, "version": 21}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "e3747219", "stdout"], "values": [{"value": "Done!\n", "step": null, "ts": 1699690922.674506}]}, "version": 22}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "e3747219", "stdout"], "values": [{"value": "Waiting for the remaining 58 operations to synchronize with Neptune. Do not kill this process.\n", "step": null, "ts": 1699690922.674707}]}, "version": 23}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "e3747219", "cpu"], "values": [{"value": 30.9, "step": null, "ts": 1699690924.888285}]}, "version": 24}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "e3747219", "memory"], "values": [{"value": 11.445816040039062, "step": null, "ts": 1699690924.888285}]}, "version": 25}

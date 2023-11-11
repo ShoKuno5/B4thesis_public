@@ -1,0 +1,23 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "Untitled"}, "version": 1}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2}
+{"obj": {"type": "AssignString", "path": ["monitoring", "5020ce8d", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 3}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 4}
+{"obj": {"type": "AssignString", "path": ["monitoring", "5020ce8d", "pid"], "value": "11510"}, "version": 5}
+{"obj": {"type": "AssignString", "path": ["monitoring", "5020ce8d", "tid"], "value": "8080793280"}, "version": 6}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "5020ce8d", "stdout"]}, "version": 8}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "5020ce8d", "stderr"]}, "version": 9}
+{"obj": {"type": "AssignString", "path": ["source_code", "entrypoint"], "value": "2.1.3.py"}, "version": 10}
+{"obj": {"type": "UploadFileSet", "path": ["source_code", "files"], "file_globs": ["/Users/manqueenmannequin/mygit/B4thesis_public/mywork/program/Rossler\u4e88\u6e2c_new/2/2.1/2.1.3.py"], "reset": "False"}, "version": 11}
+{"obj": {"type": "UploadFile", "path": ["source_code", "diff"], "ext": "patch", "file_path": null, "tmp_file_name": "source_code_diff-1699692017.451494-2023-11-11_17.40.17.451494.patch", "clean_after_upload": false}, "version": 12}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "5020ce8d", "cpu"], "min": 0.0, "max": 100.0, "unit": "%"}, "version": 13}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "5020ce8d", "cpu"]}, "version": 14}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "5020ce8d", "memory"], "min": 0.0, "max": 16.0, "unit": "GB"}, "version": 15}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "5020ce8d", "memory"]}, "version": 16}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "cpu"], "values": [{"value": 29.4, "step": null, "ts": 1699692017.456037}]}, "version": 17}
+{"obj": {"type": "AssignString", "path": ["source_code", "integrations", "neptune-optuna"], "value": "1.1.0"}, "version": 18}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "memory"], "values": [{"value": 11.522293090820312, "step": null, "ts": 1699692017.456037}]}, "version": 19}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "cpu"], "values": [{"value": 45.1, "step": null, "ts": 1699692027.4664488}]}, "version": 20}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "memory"], "values": [{"value": 11.448822021484375, "step": null, "ts": 1699692027.4664488}]}, "version": 21}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "cpu"], "values": [{"value": 32.2, "step": null, "ts": 1699692037.4708328}]}, "version": 22}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "5020ce8d", "memory"], "values": [{"value": 11.22808837890625, "step": null, "ts": 1699692037.4708328}]}, "version": 23}
