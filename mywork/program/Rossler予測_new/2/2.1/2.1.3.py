@@ -41,8 +41,8 @@ data_loaded_with_force = pd.read_csv(filename_with_force)
 X = data_loaded_with_force[['x', 'y', 'P_shifted']].values
 
 # ESNに学習させるデータセットを作る
-train_len = 10000
-test_len = 10000
+train_len = 1000
+test_len = 1000
 
 x, y = to_forecasting(X, forecast=1)
 X_train, y_train = x[:train_len], y[:train_len]
