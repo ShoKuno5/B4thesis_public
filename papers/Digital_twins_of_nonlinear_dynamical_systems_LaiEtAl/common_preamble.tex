@@ -1,0 +1,255 @@
+% common_preamble.tex
+% ==================== 共通プリアンブル ====================
+
+
+% パッケージの読み込みと設定
+\usepackage{lmodern}
+
+% ページ数表記設定
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\thepage} % ページ番号を中央下に配置
+\renewcommand{\headrulewidth}{0pt} % ヘッダの線を表示しない
+\renewcommand{\footrulewidth}{0pt} % フッタの線を表示しない
+
+% 余白設定
+\usepackage[top=30truemm,bottom=30truemm,left=20truemm,right=20truemm]{geometry}
+
+% リンク設定
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+}
+
+% tcolorbox 設定
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+% その他のパッケージと設定
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{amssymb,amsfonts, amsthm}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+\usepackage{booktabs,tabularx}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{autobreak}
+\usepackage{braket,physics}
+\usepackage{bm}
+\usepackage{latexsym}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{here}
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\columnseprule=0.2mm
+\usepackage{ascmac}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{lastpage}
+\usepackage{cancel}
+
+% 数学の基本的な定義やショートカット
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\oo}{\omega}
+\newcommand{\OO}{\Omega}
+
+
+% 前書きのスタイル
+\newcommand{\prefacename}{Preface}
+\newenvironment{preface}{
+    %\vspace*{\stretch{2}}
+    {\noindent \bfseries \Huge \prefacename}\\[-3.5em] 
+    \begin{center}
+        %\phantomsection \addcontentsline{toc}{chapter}{\prefacename} % enable this if you want to put the preface in the table of contents
+        \thispagestyle{plain}
+    \end{center}%
+}
+{}
+
+% 目次のスタイル
+\renewcommand{\contentsname}{} % ここでデフォルトのタイトルを空に設定します
+\newenvironment{customcontents}{
+    % 目次ページの開始
+    {\noindent \bfseries \Huge Contents}\\[-3.5em]
+    \begin{center}
+        % \phantomsection \addcontentsline{toc}{chapter}{Contents} % この行を有効にすると目次自体を目次に含めることができます
+        \thispagestyle{plain}
+    \end{center}%
+    % 目次の表示
+    \vspace*{-6.5em}
+    \hypersetup{linkcolor=blue} % ここでリンクの色を設定
+    \tableofcontents
+    \hypersetup{linkcolor=black} % 目次以外のリンクの色を設定
+}
+{}
+
+
+
+
+% その他のスタイルや設定
+\allowdisplaybreaks[4]
+\renewcommand{\baselinestretch}{1.5}
+
+% 可換図を書くためのパッケージ
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+% 段落のスタイルの変更
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex \@plus1ex \@minus.2ex}%
+  {1.5ex \@plus.2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+% グラフィックスの設定 (お勧め)
+\graphicspath{{images/}} % 画像のディレクトリを指定
+
+% 一般的なスタイルと微調整
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} 
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+% セクションの定義を変更
+\let\oldsection\section
+\renewcommand{\section}{\thispagestyle{plain}\oldsection}
+
+% ソースコードの表示設定
+\usepackage{listings}
+\lstset{
+  language=[LaTeX]TeX,
+  breaklines=true,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\makeatletter
+
+% フットノートルールの変更
+\newcommand{\customizefootnoterule}{%
+  \def\footnoterule{\kern-3\p@
+    \hrule \@width \columnwidth % ここを変更
+    \kern 2.6\p@}%
+}
+
+\customizefootnoterule % ここでマクロを呼び出し
+% 番号なしフットノートのマクロ
+\newcommand{\blankfootnote}[1]{%
+  \begingroup
+  \let\@makefnmark\empty % \@makefnmark を空にする
+  \footnotetext{#1}%
+  \endgroup
+}
+
+\makeatother
+
+
+\usepackage{xparse}
+
+\newcommand{\Cinfty}{\text{C}^\infty}
+
+
+%lecture1.tex
+% ==================== 各レクチャー固有の設定 ====================
+
+% レクチャー番号の設定
+\newcounter{lecture}
+\setcounter{lecture}{1} % Xは各レクチャーの番号
+% 各レクチャーの開始前にカウンターを増加させる
+\newcommand{\nextlecture}{
+    \stepcounter{lecture}  % Increment the lecture counter here
+}
+
+
+\newcommand{\lecturetitle}[1]{
+    {
+        \phantomsection  % Add this to fix the hyperref issue
+        \centering  % centering without additional vertical space
+        LECTURE \arabic{lecture} \\[-1em]  % Adjust vertical space
+        \LARGE \textbf{#1} \\
+    }
+    \addcontentsline{toc}{section}{LECTURE \arabic{lecture}: #1}  % Add to ToC
+    \vspace{3em}
+}
+
+\newcounter{item}
+% item カウンターの表示形式を lecture.item に設定
+\renewcommand{\theitem}{\arabic{lecture}.\thesubsection.\arabic{item}}
+
+\makeatletter
+\@addtoreset{item}{subsection}
+\makeatother
+
+
+% 各環境に対する新しいラベリングシステム
+\NewDocumentEnvironment{definition}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large D}EFINITION \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 定理環境
+\NewDocumentEnvironment{theorem}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large T}HEOREM \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 補題環境
+\NewDocumentEnvironment{lemma}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large L}EMMA \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 注意環境
+\NewDocumentEnvironment{remark}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large R}EMARK \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 命題環境
+\NewDocumentEnvironment{proposition}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large P}ROPOSITION \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 系環境
+\NewDocumentEnvironment{corollary}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large C}OROLLARY \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 練習問題環境
+\NewDocumentEnvironment{exercise}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large E}XERCISE \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 式環境
+\NewDocumentEnvironment{myequation}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large E}QUATION \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}
+
+% 例環境
+\NewDocumentEnvironment{example}{o}{
+  \refstepcounter{item}%
+  \par\noindent{\large E}XAMPLE \theitem\quad
+  \IfValueT{#1}{\label{#1}}
+}{\par}

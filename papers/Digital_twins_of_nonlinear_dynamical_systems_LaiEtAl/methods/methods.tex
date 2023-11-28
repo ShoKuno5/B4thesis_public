@@ -1,0 +1,32 @@
+\subsection{METHODS}
+\begin{itemize}
+    \item Digital twins: a recurrent RC neural network with a control
+    mechanism, which requires two types of input signals:
+    the observational time series for training and the con-trol signal $f(t)$ that remains in both the training and
+    self-evolving phase. \begin{itemize}
+        \item During the train-ing, the hidden recurrent layer is driven by both the in-
+        put signal $u(t)$ and the control signal $f(t)$. 
+    \end{itemize}
+    \item Reservoir updating equations:
+    \begin{align}
+    \text{training phase: }& \mathbf{r}(t+\Delta t)=(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathbf{u}(t)+\mathcal{W}_c f(t)\right] \\
+    \text{self-evolving phase: } & \mathbf{r}(t+\Delta t)=(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathcal{W}_{\text {out }} \mathbf{r}^{\prime}(t)+\mathcal{W}_c f(t)\right]
+    \end{align}
+
+    \item $\bold{“sense, learn, and mingle”}$: During
+    the training, several trials of data are typically used un-der diﬀerent driving signals so that the digital twin can
+    the responses of the target sys-tem to gain the ability to extrapolate a response to a new driving signal that has never been encountered before. We input these trials of training data, i.e., a few pairs of $\mathbf{u}(t)$ and the associated $f(t)$, through the matrices $\mathcal{W}_{\text {in }}$ and $\mathcal{W}_c$ sequentially. 
+
+    \item $\bold{validation/testing}$: the validation of the RC net-works are done with the same driving signals $f(t)$ as in
+    the training data. We test driving signals $f(t)$ that are
+    diﬀerent from those generating the training data (e.g.,
+    with diﬀerent amplitude, frequency, or waveform).  
+
+    \item $\bold{warming-up}$ During the warming-up process to initialize the RC networks prior to making the predictions, we feed randomly chosen short segments of the training time series to feed into the RC network.
+    That is, no data from the target system under the testing
+    driving signals $f(t)$ are required for making the predic-
+    tions.
+\end{itemize}
+
+
+\clearpage
