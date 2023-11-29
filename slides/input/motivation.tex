@@ -30,8 +30,8 @@
         \end{itemize}
         \item Kong, L.-W., Weng, Y., Glaz, B., Haile, M., and Lai, Y.-C. Digital twins of nonlinear dynamical systems. arXiv:2210.06144 (2022).
             \begin{itemize}
-            \item 外力付きカオス時系列モデルの未来予測
-            \item 外力の振幅や位相の変数によって biffurcation map（統計量）などを調べる．
+            \item 外力付き非線形力学系モデルの未来予測
+            \item 外力の振幅や位相をパラメータに取ることによって biffurcation map（統計量）などを調べる．
             \item 観測されない変数がある場合も含めて，外力を実データで更新し続けた場合のcontinual forecasting を行う．
         \end{itemize}
     \end{itemize}
@@ -74,8 +74,8 @@
             \item $\mathbf{r}(t)$ は 学習期間，self-evolving 期間においてそれぞれ次の式で決定される．
             \vspace{-.2cm}
             \begin{align}
-                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathbf{u}(t)+\mathcal{W}_c f(t)\right] \\
-                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathcal{W}_{\text {out }} \mathbf{r}^{\prime}(t)+\mathcal{W}_c f(t)\right]
+                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathbf{u}(t)+\mathcal{W}_c f(t)\right] \label{Lai_r1}\\
+                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathcal{W}_{\text {out }} \mathbf{r}^{\prime}(t)+\mathcal{W}_c f(t)\right]\label{Lai_r2}
             \end{align}
         \end{itemize}
         \item 複数の $f(t)$ に対して Reservior を sequential に学習させることで，未知の外力がある場合でも予測できるようにする．また，Hyperparameter に関する最適化を行う（後述）．
@@ -110,42 +110,3 @@
         \end{figure}
     \end{minipage}
 \end{frame}
-
-\section{実験方法と結果}
-
-\begin{frame}{実験方法}
-
-\end{frame}
-
-\begin{frame}{実験方法}
-
-\end{frame}
-
-\begin{frame}{結果}
-
-\end{frame}
-
-\begin{frame}{結果}
-
-\end{frame}
-
-\begin{frame}{結果}
-
-\end{frame}
-
-\begin{frame}{結果}
-
-\end{frame}
-
-\section{理論的展開}
-
-\begin{frame}{理論的展開}
-
-\end{frame}
-
-
-
-
-
-
-
