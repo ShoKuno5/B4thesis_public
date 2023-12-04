@@ -1,13 +1,2 @@
 \section{理論的な展開}
 
-\begin{frame}{理論的な展開}
-    Resrvoir Computerの理論的な研究としては Bollt (2021) の研究などが挙げられる．
-    \begin{block}{Bollt (2021)}
-        Reservoir Computer の activation function （式 \eqref{Lai_r1}, \eqref{Lai_r2} における $\tanh$ 関数）を局所的に線型 activation function $q:\R \ni s \mapsto s \in \R$ とみなすことで，Reservoir 内のダイナミクスに関して次のを得る． \vspace{-.5cm}
-        \begin{align}
-            \mathbf{v}_{l+1} = \mathbf{W}^{\text {out }} \sum_{j=1}^{\ell} \mathbf{A}^{j-1} \mathbf{W}^{\text {in }} \mathbf{u}_{\ell-j+1} \label{Bollt_eq}
-        \end{align}
-        式\eqref{Bollt_eq} が VAR(NVAR) の係数行列を表すものだとみなせる．
-    \end{block}
-
-\end{frame}

@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Security-Policy" content="script-src 'none'; media-src 'none'">
+		<title>Zotero レポート</title>
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,Ym9keSB7CgliYWNrZ3JvdW5kOiB3aGl0ZTsKfQoKYSB7Cgl0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsKfQoKYm9keSB7CglwYWRkaW5nOiAwOwp9Cgp1bC5yZXBvcnQgbGkuaXRlbSB7Cglib3JkZXItdG9wOiA0cHggc29saWQgIzU1NTsKCXBhZGRpbmctdG9wOiAxZW07CglwYWRkaW5nLWxlZnQ6IDFlbTsKCXBhZGRpbmctcmlnaHQ6IDFlbTsKCW1hcmdpbi1ib3R0b206IDJlbTsKfQoKaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7Cglmb250LXdlaWdodDogbm9ybWFsOwp9CgpoMiB7CgltYXJnaW46IDAgMCAuNWVtOwp9CgpoMi5wYXJlbnRJdGVtIHsKCWZvbnQtd2VpZ2h0OiBib2xkOwoJZm9udC1zaXplOiAxZW07CglwYWRkaW5nOiAwIDAgLjVlbTsKCWJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjOwp9CgovKiBJZiBjb21iaW5pbmcgY2hpbGRyZW4sIGRpc3BsYXkgcGFyZW50IHNsaWdodGx5IGxhcmdlciAqLwp1bC5yZXBvcnQuY29tYmluZUNoaWxkSXRlbXMgaDIucGFyZW50SXRlbSB7Cglmb250LXNpemU6IDEuMWVtOwoJcGFkZGluZy1ib3R0b206IC43NWVtOwoJbWFyZ2luLWJvdHRvbTogLjRlbTsKfQoKaDIucGFyZW50SXRlbSAudGl0bGUgewoJZm9udC13ZWlnaHQ6IG5vcm1hbDsKfQoKaDMgewoJbWFyZ2luLWJvdHRvbTogLjZlbTsKCWZvbnQtd2VpZ2h0OiBib2xkICFpbXBvcnRhbnQ7Cglmb250LXNpemU6IDFlbTsKCWRpc3BsYXk6IGJsb2NrOwp9CgovKiBNZXRhZGF0YSB0YWJsZSAqLwp0aCB7Cgl2ZXJ0aWNhbC1hbGlnbjogdG9wOwoJdGV4dC1hbGlnbjogcmlnaHQ7Cgl3aWR0aDogMTUlOwoJd2hpdGUtc3BhY2U6IG5vd3JhcDsKfQoKdGQgewoJcGFkZGluZy1sZWZ0OiAuNWVtOwp9CgoKdWwucmVwb3J0LCB1bC5ub3RlcywgdWwudGFncyB7CglsaXN0LXN0eWxlOiBub25lOwoJbWFyZ2luLWxlZnQ6IDA7CglwYWRkaW5nLWxlZnQ6IDA7Cn0KCi8qIFRhZ3MgKi8KaDMudGFncyB7Cglmb250LXNpemU6IDEuMWVtOwp9Cgp1bC50YWdzIHsKCWxpbmUtaGVpZ2h0OiAxLjc1ZW07CglsaXN0LXN0eWxlOiBub25lOwp9Cgp1bC50YWdzIGxpIHsKCWRpc3BsYXk6IGlubGluZTsKfQoKdWwudGFncyBsaTpub3QoOmxhc3QtY2hpbGQpOmFmdGVyIHsKCWNvbnRlbnQ6ICcsICc7Cn0KCgovKiBDaGlsZCBub3RlcyAqLwpoMy5ub3RlcyB7Cglmb250LXNpemU6IDEuMWVtOwp9Cgp1bC5ub3RlcyB7CgltYXJnaW4tYm90dG9tOiAxLjJlbTsKfQoKdWwubm90ZXMgPiBsaTpmaXJzdC1jaGlsZCBwIHsKCW1hcmdpbi10b3A6IDA7Cn0KCnVsLm5vdGVzID4gbGkgewoJcGFkZGluZzogLjdlbSAwOwp9Cgp1bC5ub3RlcyA+IGxpOm5vdCg6bGFzdC1jaGlsZCkgewoJYm9yZGVyLWJvdHRvbTogMXB4ICNjY2Mgc29saWQ7Cn0KCgp1bC5ub3RlcyA+IGxpIHA6Zmlyc3QtY2hpbGQgewoJbWFyZ2luLXRvcDogMDsKfQoKdWwubm90ZXMgPiBsaSBwOmxhc3QtY2hpbGQgewoJbWFyZ2luLWJvdHRvbTogMDsKfQoKLyogQWRkIHF1b3RhdGlvbiBtYXJrcyBhcm91bmQgYmxvY2txdW90ZSAqLwp1bC5ub3RlcyA+IGxpIGJsb2NrcXVvdGUgcDpub3QoOmVtcHR5KTpiZWZvcmUsCmxpLm5vdGUgYmxvY2txdW90ZSBwOm5vdCg6ZW1wdHkpOmJlZm9yZSB7Cgljb250ZW50OiAn4oCcJzsKfQoKdWwubm90ZXMgPiBsaSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6bGFzdC1jaGlsZDphZnRlciwKbGkubm90ZSBibG9ja3F1b3RlIHA6bm90KDplbXB0eSk6bGFzdC1jaGlsZDphZnRlciB7Cgljb250ZW50OiAn4oCdJzsKfQoKLyogUHJlc2VydmUgd2hpdGVzcGFjZSBvbiBwbGFpbnRleHQgbm90ZXMgKi8KdWwubm90ZXMgbGkgcC5wbGFpbnRleHQsIGxpLm5vdGUgcC5wbGFpbnRleHQsIGRpdi5ub3RlIHAucGxhaW50ZXh0IHsKCXdoaXRlLXNwYWNlOiBwcmUtd3JhcDsKfQoKLyogRGlzcGxheSB0YWdzIHdpdGhpbiBjaGlsZCBub3RlcyBpbmxpbmUgKi8KdWwubm90ZXMgaDMudGFncyB7CglkaXNwbGF5OiBpbmxpbmU7Cglmb250LXNpemU6IDFlbTsKfQoKdWwubm90ZXMgaDMudGFnczphZnRlciB7Cgljb250ZW50OiAnICc7Cn0KCnVsLm5vdGVzIHVsLnRhZ3MgewoJZGlzcGxheTogaW5saW5lOwp9Cgp1bC5ub3RlcyB1bC50YWdzIGxpOm5vdCg6bGFzdC1jaGlsZCk6YWZ0ZXIgewoJY29udGVudDogJywgJzsKfQoKCi8qIENoaWxkIGF0dGFjaG1lbnRzICovCmgzLmF0dGFjaG1lbnRzIHsKCWZvbnQtc2l6ZTogMS4xZW07Cn0KCnVsLmF0dGFjaG1lbnRzIGxpIHsKCXBhZGRpbmctdG9wOiAuNWVtOwp9Cgp1bC5hdHRhY2htZW50cyBkaXYubm90ZSB7CgltYXJnaW4tbGVmdDogMmVtOwp9Cgp1bC5hdHRhY2htZW50cyBkaXYubm90ZSBwOmZpcnN0LWNoaWxkIHsKCW1hcmdpbi10b3A6IC43NWVtOwp9CgpkaXYgdGFibGUgewoJYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTsKfQoKZGl2IHRhYmxlIHRkLCBkaXYgdGFibGUgdGggewoJYm9yZGVyOiAxcHggI2NjYyBzb2xpZDsKCWJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7Cgl3b3JkLWJyZWFrOiBicmVhay1hbGw7Cn0KCmRpdiB0YWJsZSB0ZCBwOmVtcHR5OjphZnRlciwgZGl2IHRhYmxlIHRoIHA6ZW1wdHk6OmFmdGVyIHsKCWNvbnRlbnQ6ICJcMDBhMCI7Cn0KCmRpdiB0YWJsZSB0ZCAqOmZpcnN0LWNoaWxkLCBkaXYgdGFibGUgdGggKjpmaXJzdC1jaGlsZCB7CgltYXJnaW4tdG9wOiAwOwp9CgpkaXYgdGFibGUgdGQgKjpsYXN0LWNoaWxkLCBkaXYgdGFibGUgdGggKjpsYXN0LWNoaWxkIHsKCW1hcmdpbi1ib3R0b206IDA7Cn0K">
+		<link rel="stylesheet" type="text/css" media="screen,projection" href="data:text/css;base64,LyogR2VuZXJpYyBzdHlsZXMgKi8KYm9keSB7Cglmb250OiA2Mi41JSBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cgl3aWR0aDogNzgwcHg7CgltYXJnaW46IDAgYXV0bzsKfQoKaDIgewoJZm9udC1zaXplOiAxLjVlbTsKCWxpbmUtaGVpZ2h0OiAxLjVlbTsKCWZvbnQtZmFtaWx5OiBHZW9yZ2lhLCBUaW1lcywgc2VyaWY7Cn0KCnAgewoJbGluZS1oZWlnaHQ6IDEuNWVtOwp9CgphOmxpbmssIGE6dmlzaXRlZCB7Cgljb2xvcjogIzkwMDsKfQoKYTpob3ZlciwgYTphY3RpdmUgewoJY29sb3I6ICM3Nzc7Cn0KCgp1bC5yZXBvcnQgewoJZm9udC1zaXplOiAxLjRlbTsKCXdpZHRoOiA2ODBweDsKCW1hcmdpbjogMCBhdXRvOwoJcGFkZGluZzogMjBweCAyMHB4Owp9CgovKiBNZXRhZGF0YSB0YWJsZSAqLwp0YWJsZSB7Cglib3JkZXI6IDFweCAjY2NjIHNvbGlkOwoJb3ZlcmZsb3c6IGF1dG87Cgl3aWR0aDogMTAwJTsKCW1hcmdpbjogLjFlbSBhdXRvIC43NWVtOwoJcGFkZGluZzogMC41ZW07Cn0K">
+		<link rel="stylesheet" type="text/css" media="print" href="data:text/css;base64,Ym9keSB7Cglmb250OiAxMnB0ICJUaW1lcyBOZXcgUm9tYW4iLCBUaW1lcywgR2VvcmdpYSwgc2VyaWY7CgltYXJnaW46IDA7Cgl3aWR0aDogYXV0bzsKCWNvbG9yOiBibGFjazsKfQoKLyogUGFnZSBCcmVha3MgKHBhZ2UtYnJlYWstaW5zaWRlIG9ubHkgcmVjb2duaXplZCBieSBPcGVyYSkgKi8KaDEsIGgyLCBoMywgaDQsIGg1LCBoNiB7CglwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDsKCXBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDsKfQoKdWwsIG9sLCBkbCB7CglwYWdlLWJyZWFrLWluc2lkZTogYXZvaWQ7Cgljb2xvci1hZGp1c3Q6IGV4YWN0Owp9CgpoMiB7Cglmb250LXNpemU6IDEuM2VtOwoJbGluZS1oZWlnaHQ6IDEuM2VtOwp9CgphIHsKCWNvbG9yOiAjMDAwOwoJdGV4dC1kZWNvcmF0aW9uOiBub25lOwp9Cg==">
+	</head>
+	<body>
+		<ul class="report combineChildItems">
+			<li id="item_7GRJIUR7" class="item journalArticle">
+			<h2>Combining machine learning and data assimilation to forecast dynamical systems from noisy partial observations</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Georg A. Gottwald</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Sebastian Reich</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>We present a supervised learning method to learn the 
+propagator map of a dynamical system from partial and noisy 
+observations. In our computationally cheap and easy-to-implement 
+framework, a neural network consisting of random feature maps is trained
+ sequentially by incoming observations within a data assimilation 
+procedure. By employing Takens’s embedding theorem, the network is 
+trained on delay coordinates. We show that the combination of random 
+feature maps and data assimilation, called RAFDA, outperforms standard 
+random feature maps for which the dynamics is learned using batch data.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2021-10-12</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0066080">https://doi.org/10.1063/5.0066080</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:36:53</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>31</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>101103</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0066080">10.1063/5.0066080</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>10</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:36:53</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:36:56</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_SAQ63WMK">Full Text PDF					</li>
+					<li id="item_62BDVBPR">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_LT9S7ZEQ" class="item journalArticle">
+			<h2>Deep learning delay coordinate dynamics for chaotic attractors from partial observable data</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Charles D. Young</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Michael D. Graham</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>A common problem in time-series analysis is to predict 
+dynamics with only scalar or partial observations of the underlying 
+dynamical system. For data on a smooth compact manifold, Takens' theorem
+ proves a time-delayed embedding of the partial state is diffeomorphic 
+to the attractor, although for chaotic and highly nonlinear systems, 
+learning these delay coordinate mappings is challenging. We utilize deep
+ artificial neural networks (ANNs) to learn discrete time maps and 
+continuous time flows of the partial state. Given training data for the 
+full state, we also learn a reconstruction map. Thus, predictions of a 
+time series can be made from the current state and several previous 
+observations with embedding parameters determined from time-series 
+analysis. The state space for time evolution is of comparable dimension 
+to reduced order manifold models. These are advantages over recurrent 
+neural network models, which require a high-dimensional internal state 
+or additional memory terms and hyperparameters. We demonstrate the 
+capacity of deep ANNs to predict chaotic behavior from a scalar 
+observation on a manifold of dimension three via the Lorenz system. We 
+also consider multivariate observations on the Kuramoto-Sivashinsky 
+equation, where the observation dimension required for accurately 
+reproducing dynamics increases with the manifold dimension via the 
+spatial extent of the system.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2023-03-30</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>APS</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevE.107.034215">https://link.aps.org/doi/10.1103/PhysRevE.107.034215</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:23:07</td>
+					</tr>
+					<tr>
+					<th>その他</th>
+						<td>Publisher: American Physical Society</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>107</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>034215</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Physical Review E</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevE.107.034215">10.1103/PhysRevE.107.034215</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Phys. Rev. E</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:23:07</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:23:07</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_CVULJ5JZ">APS Snapshot					</li>
+					<li id="item_GRVK6RTX">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_M5LX5S6W" class="item journalArticle">
+			<h2>Delay Embedded Echo-State Network: A Predictor for Partially Observed Systems</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Debdipta Goswami</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>This paper considers the problem of data-driven prediction of 
+partially observed systems using a recurrent neural network. While 
+neural network based dynamic predictors perform well with full-state 
+training data, prediction with partial observation during training phase
+ poses a significant challenge. Here a predictor for partial 
+observations is developed using an echo-state network (ESN) and time 
+delay embedding of the partially observed state. The proposed method is 
+theoretically justified with Taken's embedding theorem and strong 
+observability of a nonlinear system. The efficacy of the proposed method
+ is demonstrated on three systems: two synthetic datasets from chaotic 
+dynamical systems and a set of real-time traffic data.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2023-01-01</td>
+					</tr>
+					<tr>
+					<th>題名 (略)</th>
+						<td>Delay Embedded Echo-State Network</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>ScienceDirect</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.sciencedirect.com/science/article/pii/S2405896323008376">https://www.sciencedirect.com/science/article/pii/S2405896323008376</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:23:23</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>56</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>6826-6832</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>IFAC-PapersOnLine</td>
+					</tr>
+					<tr>
+					<th>叢書</th>
+						<td>22nd IFAC World Congress</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.ifacol.2023.10.470">10.1016/j.ifacol.2023.10.470</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>IFAC-PapersOnLine</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2405-8963</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:23:23</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:23:23</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">タグ:</h3>
+				<ul class="tags">
+					<li>Chaotic attractor</li>
+					<li>Machine learning</li>
+					<li>Neural networks</li>
+					<li>Nonlinear system identification</li>
+					<li>Observability</li>
+					<li>Reservoir computer</li>
+				</ul>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_HPGFQFLN">ScienceDirect Snapshot					</li>
+					<li id="item_Q7G77374">報告したバージョン					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_T8DG2GHF" class="item journalArticle">
+			<h2>Finding nonlinear system equations and complex network structures from data: A sparse optimization approach</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Ying-Cheng Lai</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>In applications of nonlinear and complex dynamical systems, a 
+common situation is that the system can be measured, but its structure 
+and the detailed rules of dynamical evolution are unknown. The inverse 
+problem is to determine the system equations and structure from time 
+series. The principle of exploiting sparse optimization to find the 
+equations of dynamical systems from data was first articulated in 2011 
+by the ASU group. The basic idea is to expand the system equations into a
+ power series or a Fourier series of a finite number of terms and then 
+to determine the vector of the expansion coefficients based solely on 
+data through sparse optimization. This Tutorial presents a brief review 
+of the recent progress in this area. Issues discussed include 
+discovering the equations of stationary or nonstationary chaotic systems
+ to enable the prediction of critical transition and system collapse, 
+inferring the full topology of complex oscillator networks and social 
+networks hosting evolutionary game dynamics, and identifying partial 
+differential equations for spatiotemporal dynamical systems. Situations 
+where sparse optimization works or fails are pointed out. The relation 
+with the traditional delay-coordinate embedding method is discussed, and
+ the recent development of a model-free, data-driven prediction 
+framework based on machine learning is mentioned.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2021-08-27</td>
+					</tr>
+					<tr>
+					<th>題名 (略)</th>
+						<td>Finding nonlinear system equations and complex network structures from data</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0062042">https://doi.org/10.1063/5.0062042</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:38:54</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>31</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>082101</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0062042">10.1063/5.0062042</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:38:54</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:38:56</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_CPKKJQIG">Full Text PDF					</li>
+					<li id="item_JJXSR4QQ">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_HJZ8IN79" class="item journalArticle">
+			<h2>Learning Theory for Dynamical Systems</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Tyrus Berry</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Suddhasattwa Das</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>.In this paper, we consider the density estimation problem 
+associated with the stationary measure of ergodic Itô diffusions from a 
+discrete-time series that approximate the solutions of the stochastic 
+differential equations. To take advantage of the characterization of 
+density function through the stationary solution of a parabolic-type 
+Fokker–Planck PDE, we proceed as follows: First, we employ deep neural 
+networks to approximate the drift and diffusion terms of the SDE by 
+solving appropriate supervised learning tasks. Subsequently, we solve a 
+steady-state Fokker–Planck equation associated with the estimated drift 
+and diffusion coefficients with a neural-network–based least squares 
+method. We establish the convergence of the proposed scheme under 
+appropriate mathematical assumptions, accounting for the generalization 
+errors induced by regressing the drift and diffusion coefficients and 
+the PDE solvers. This theoretical study relies on a recent perturbation 
+theory of Markov chain result that shows a linear dependence of the 
+density estimation to the error in estimating the drift term and 
+generalization error results of nonparametric regression and PDE 
+regression solution obtained with neural-network models. We demonstrate 
+the effectiveness of this method by numerical simulations of a 
+two-dimensional Student t-distribution and a 20-dimensional Langevin 
+dynamics.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2023-09-30</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>epubs.siam.org (Atypon)</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://epubs.siam.org/doi/10.1137/22M1516865">https://epubs.siam.org/doi/10.1137/22M1516865</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:18:10</td>
+					</tr>
+					<tr>
+					<th>その他</th>
+						<td>Publisher: Society for Industrial and Applied Mathematics</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>22</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>2082-2122</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>SIAM Journal on Applied Dynamical Systems</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1137/22M1516865">10.1137/22M1516865</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>SIAM J. Appl. Dyn. Syst.</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:18:10</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:18:10</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_XQZSHRMZ">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_DN25FNYG" class="item journalArticle">
+			<h2>Low dimensional manifolds in reservoir computers</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>T. L. Carroll</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>A reservoir computer is a complex dynamical system, often 
+created by coupling nonlinear nodes in a network. The nodes are all 
+driven by a common driving signal. Reservoir computers can contain 
+hundreds to thousands of nodes, resulting in a high dimensional 
+dynamical system, but the reservoir computer variables evolve on a lower
+ dimensional manifold in this high dimensional space. This paper 
+describes how this manifold dimension depends on the parameters of the 
+reservoir computer, and how the manifold dimension is related to the 
+performance of the reservoir computer at a signal estimation task. It is
+ demonstrated that increasing the coupling between nodes while 
+controlling the largest Lyapunov exponent of the reservoir computer can 
+optimize the reservoir computer performance. It is also noted that the 
+sparsity of the reservoir computer network does not have any influence 
+on performance.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2021-04-12</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0047006">https://doi.org/10.1063/5.0047006</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:38:30</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>31</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>043113</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0047006">10.1063/5.0047006</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>4</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:38:31</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:38:31</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_D2CKAU87">Full Text PDF					</li>
+					<li id="item_CACW9ECA">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_Y35KLZUB" class="item journalArticle">
+			<h2>Model selection of chaotic systems from data with hidden variables using sparse data assimilation</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>H. Ribera</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>S. Shirman</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>A. V. Nguyen</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>N. M. Mangan</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>Many natural systems exhibit chaotic behavior, including the 
+weather, hydrology, neuroscience, and population dynamics. Although many
+ chaotic systems can be described by relatively simple dynamical 
+equations, characterizing these systems can be challenging due to 
+sensitivity to initial conditions and difficulties in differentiating 
+chaotic behavior from noise. Ideally, one wishes to find a parsimonious 
+set of equations that describe a dynamical system. However, model 
+selection is more challenging when only a subset of the variables are 
+experimentally accessible. Manifold learning methods using time-delay 
+embeddings can successfully reconstruct the underlying structure of the 
+system from data with hidden variables, but not the equations. Recent 
+work in sparse-optimization based model selection has enabled model 
+discovery given a library of possible terms, but regression-based 
+methods require measurements of all state variables. We present a method
+ combining variational annealing—a technique previously used for 
+parameter estimation in chaotic systems with hidden variables—with 
+sparse-optimization methods to perform model identification for chaotic 
+systems with unmeasured variables. We applied the method to ground-truth
+ time-series simulated from the classic Lorenz system and experimental 
+data from an electrical circuit with Lorenz-system like behavior. In 
+both cases, we successfully recover the expected equations with two 
+measured and one hidden variable. Application to simulated data from the
+ Colpitts oscillator demonstrates successful model selection of terms 
+within nonlinear functions. We discuss the robustness of our method to 
+varying noise.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2022-06-01</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0066066">https://doi.org/10.1063/5.0066066</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:09:51</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>32</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>063101</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0066066">10.1063/5.0066066</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>6</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:09:51</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:09:51</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_UFQTXWAX">Full Text PDF					</li>
+					<li id="item_9QDIZ986">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_ITXWVUEK" class="item journalArticle">
+			<h2>Model-free prediction of spatiotemporal dynamical systems with recurrent neural networks: Role of network spectral radius</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Junjie Jiang</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Ying-Cheng Lai</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>A common difficulty in applications of machine learning is the
+ lack of any general principle for guiding the choices of key parameters
+ of the underlying neural network. Focusing on a class of recurrent 
+neural networks—reservoir computing systems, which have recently been 
+exploited for model-free prediction of nonlinear dynamical systems—we 
+uncover a surprising phenomenon: the emergence of an interval in the 
+spectral radius of the neural network in which the prediction error is 
+minimized. In a three-dimensional representation of the error versus the
+ time and spectral radius, the interval corresponds to the bottom region
+ of a “valley.” Such a valley arises for a variety of spatiotemporal 
+dynamical systems described by nonlinear partial differential equations,
+ regardless of the structure and the edge-weight distribution of the 
+underlying reservoir network. We also find that, while the particular 
+location and size of the valley depend on the details of the target 
+system to be predicted, the interval tends to be larger for undirected 
+than for directed networks. The valley phenomenon can be beneficial to 
+the design of optimal reservoir computing, representing a small step 
+forward in understanding these machine-learning systems.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2019-10-29</td>
+					</tr>
+					<tr>
+					<th>題名 (略)</th>
+						<td>Model-free prediction of spatiotemporal dynamical systems with recurrent neural networks</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>APS</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://link.aps.org/doi/10.1103/PhysRevResearch.1.033056">https://link.aps.org/doi/10.1103/PhysRevResearch.1.033056</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:55:13</td>
+					</tr>
+					<tr>
+					<th>その他</th>
+						<td>Publisher: American Physical Society</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>1</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>033056</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Physical Review Research</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1103/PhysRevResearch.1.033056">10.1103/PhysRevResearch.1.033056</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>3</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Phys. Rev. Res.</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:55:13</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:55:13</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_R6FQYM8R">APS Snapshot					</li>
+					<li id="item_B9TBD36N">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_9LVKTRVV" class="item journalArticle">
+			<h2>Network structure effects in reservoir computers</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>T. L. Carroll</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>L. M. Pecora</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>A reservoir computer is a complex nonlinear dynamical system 
+that has been shown to be useful for solving certain problems, such as 
+prediction of chaotic signals, speech recognition, or control of robotic
+ systems. Typically, a reservoir computer is constructed by connecting a
+ large number of nonlinear nodes in a network, driving the nodes with an
+ input signal and using the node outputs to fit a training signal. In 
+this work, we set up reservoirs where the edges (or connections) between
+ all the network nodes are either +1 or 0 and proceed to alter the 
+network structure by flipping some of these edges from +1 to −1. We use 
+this simple network because it turns out to be easy to characterize; we 
+may use the fraction of edges flipped as a measure of how much we have 
+altered the network. In some cases, the network can be rearranged in a 
+finite number of ways without changing its structure; these 
+rearrangements are symmetries of the network, and the number of 
+symmetries is also useful for characterizing the network. We find that 
+changing the number of edges flipped in the network changes the rank of 
+the covariance of a matrix consisting of the time series from the 
+different nodes in the network and speculate that this rank is important
+ for understanding the reservoir computer performance.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2019-08-28</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/1.5097686">https://doi.org/10.1063/1.5097686</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:07:20</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>29</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>083130</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/1.5097686">10.1063/1.5097686</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:07:20</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:07:22</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_UGYC9GU5">Full Text PDF					</li>
+					<li id="item_X3DNUS88">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_J3W9W537" class="item journalArticle">
+			<h2>Path length statistics in reservoir computers</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>T. L. Carroll</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>Because reservoir computers are high dimensional dynamical 
+systems, designing a good reservoir computer is difficult. In many 
+cases, the designer must search a large nonlinear parameter space, and 
+each step of the search requires simulating the full reservoir computer.
+ In this work, I show that a simple statistic based on the mean path 
+length between nodes in the reservoir computer is correlated with better
+ reservoir computer performance. The statistic predicts the diversity of
+ signals produced by the reservoir computer, as measured by the 
+covariance matrix of the reservoir computer. This statistic by itself is
+ not sufficient to predict reservoir computer performance because not 
+only must the reservoir computer produce a diverse set of signals, it 
+must be well matched to the training signals. Nevertheless, this path 
+length statistic allows the designer to eliminate some network 
+configurations from consideration without having to actually simulate 
+the reservoir computer, reducing the complexity of the design process.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2020-08-14</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0014643">https://doi.org/10.1063/5.0014643</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:06:42</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>30</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>083130</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0014643">10.1063/5.0014643</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:06:42</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:06:44</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_ZNKFKNDT">Full Text PDF					</li>
+					<li id="item_UB3KYMQN">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_4ACK3BHC" class="item journalArticle">
+			<h2>Prediction of chaotic time series using recurrent neural networks and reservoir computing techniques: A comparative study</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Shahrokh Shahi</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Flavio H. Fenton</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Elizabeth M. Cherry</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>In recent years, machine-learning techniques, particularly 
+deep learning, have outperformed traditional time-series forecasting 
+approaches in many contexts, including univariate and multivariate 
+predictions. This study aims to investigate the capability of (i) gated 
+recurrent neural networks, including long short-term memory (LSTM) and 
+gated recurrent unit (GRU) networks, (ii) reservoir computing (RC) 
+techniques, such as echo state networks (ESNs) and hybrid 
+physics-informed ESNs, and (iii) the nonlinear vector autoregression 
+(NVAR) approach, which has recently been introduced as the next 
+generation RC, for the prediction of chaotic time series and to compare 
+their performance in terms of accuracy, efficiency, and robustness. We 
+apply the methods to predict time series obtained from two widely used 
+chaotic benchmarks, the Mackey-Glass and Lorenz-63 models, as well as 
+two other chaotic datasets representing a bursting neuron and the 
+dynamics of the El Niño Southern Oscillation, and to one experimental 
+dataset representing a time series of cardiac voltage with complex 
+dynamics. We find that even though gated RNN techniques have been 
+successful in forecasting time series generally, they can fall short in 
+predicting chaotic time series for the methods, datasets, and ranges of 
+hyperparameter values considered here. In contrast, for the chaotic 
+datasets studied, we found that reservoir computing and NVAR techniques 
+are more computationally efficient and offer more promise in long-term 
+prediction of chaotic time series.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2022-06</td>
+					</tr>
+					<tr>
+					<th>言語</th>
+						<td>eng</td>
+					</tr>
+					<tr>
+					<th>題名 (略)</th>
+						<td>Prediction of chaotic time series using recurrent neural networks and reservoir computing techniques</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>PubMed</td>
+					</tr>
+					<tr>
+					<th>その他</th>
+						<td>PMID: 35755176
+PMCID: PMC9230140</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>8</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>100300</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Machine Learning with Applications</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1016/j.mlwa.2022.100300">10.1016/j.mlwa.2022.100300</a></td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Mach Learn Appl</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>2666-8270</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:20:56</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:20:58</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">タグ:</h3>
+				<ul class="tags">
+					<li>Reservoir computing</li>
+					<li>Chaotic time series</li>
+					<li>Deep learning</li>
+					<li>Echo state networks</li>
+					<li>Nonlinear vector autoregression</li>
+					<li>Recurrent neural networks</li>
+				</ul>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_QI2V2HIV">PubMed entry					</li>
+					<li id="item_PUYLDE6R">受け入れたバージョン					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_PLT4DTRF" class="item journalArticle">
+			<h2>Prediction of dynamic systems driven by Lévy noise based on deep learning</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Zi-Fei Lin</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Yan-Ming Liang</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Jia-Li Zhao</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Jiao-Rui Li</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Tomasz Kapitaniak</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>Predicting strongly noise-driven dynamic systems has always 
+been a difficult problem due to their chaotic properties. In this study,
+ we investigated the prediction of dynamic systems driven by strong 
+noise intensities, which proves that deep learning can be applied in 
+diverse fields. This is the first study that uses deep learning 
+algorithms to predict dynamic systems driven by strong noise 
+intensities. We examined the effect of hyperparameters in deep learning 
+and introduced an improved algorithm for prediction. Several numerical 
+examples are presented to illustrate the performance of the proposed 
+algorithm, including the Lorenz system and the Rössler system driven by 
+noise intensities of 0.1, 0.5, 1, and 1.25. All the results suggest that
+ the proposed improved algorithm is feasible and effective for 
+predicting strongly noise-driven dynamic systems. Furthermore, the 
+influences of the number of neurons, the spectral radius, and the 
+regularization parameters are discussed in detail. These results 
+indicate that the performances of the machine learning techniques can be
+ improved by appropriately constructing the neural networks.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2023-01-01</td>
+					</tr>
+					<tr>
+					<th>言語</th>
+						<td>en</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Springer Link</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1007/s11071-022-07883-9">https://doi.org/10.1007/s11071-022-07883-9</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 13:21:18</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>111</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>1511-1535</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Nonlinear Dynamics</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1007/s11071-022-07883-9">10.1007/s11071-022-07883-9</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>2</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Nonlinear Dyn</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1573-269X</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 13:21:18</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 13:21:18</td>
+					</tr>
+				</tbody></table>
+				<h3 class="tags">タグ:</h3>
+				<ul class="tags">
+					<li>Improved reservoir computing</li>
+					<li>Lévy noise</li>
+					<li>Reservoir computing</li>
+				</ul>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_G3WKNNDW">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_HTHXJWJX" class="item journalArticle">
+			<h2>Randomly distributed embedding making short-term high-dimensional data predictable</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Huanfei Ma</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Siyang Leng</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Kazuyuki Aihara</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Wei Lin</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Luonan Chen</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>Future state prediction for nonlinear dynamical systems is a 
+challenging task, particularly when only a few time series samples for 
+high-dimensional variables are available from real-world systems. In 
+this work, we propose a model-free framework, named randomly distributed
+ embedding (RDE), to achieve accurate future state prediction based on 
+short-term high-dimensional data. Specifically, from the observed data 
+of high-dimensional variables, the RDE framework randomly generates a 
+sufficient number of low-dimensional “nondelay embeddings” and maps each
+ of them to a “delay embedding,” which is constructed from the data of a
+ to be predicted target variable. Any of these mappings can perform as a
+ low-dimensional weak predictor for future state prediction, and all of 
+such mappings generate a distribution of predicted future states. This 
+distribution actually patches all pieces of association information from
+ various embeddings unbiasedly or biasedly into the whole dynamics of 
+the target variable, which after operated by appropriate estimation 
+strategies, creates a stronger predictor for achieving prediction in a 
+more reliable and robust form. Through applying the RDE framework to 
+data from both representative models and real-world systems, we reveal 
+that a high-dimension feature is no longer an obstacle but a source of 
+information crucial to accurate prediction for short-term data, even 
+under noise deterioration.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2018-10-23</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>pnas.org (Atypon)</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://www.pnas.org/doi/full/10.1073/pnas.1802987115">https://www.pnas.org/doi/full/10.1073/pnas.1802987115</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:02:34</td>
+					</tr>
+					<tr>
+					<th>その他</th>
+						<td>Publisher: Proceedings of the National Academy of Sciences</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>115</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>E9994-E10002</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Proceedings of the National Academy of Sciences</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1073/pnas.1802987115">10.1073/pnas.1802987115</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>43</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:02:34</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:02:35</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_JG4TWS6D">Full Text PDF					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_UGRPFZDA" class="item journalArticle">
+			<h2>Reducing network size and improving prediction stability of reservoir computing</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Alexander Haluszczynski</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Jonas Aumeier</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Joschka Herteux</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Christoph Räth</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>Reservoir computing is a very promising approach for the 
+prediction of complex nonlinear dynamical systems. Besides capturing the
+ exact short-term trajectories of nonlinear systems, it has also proved 
+to reproduce its characteristic long-term properties very accurately. 
+However, predictions do not always work equivalently well. It has been 
+shown that both short- and long-term predictions vary significantly 
+among different random realizations of the reservoir. In order to gain 
+an understanding on when reservoir computing works best, we investigate 
+some differential properties of the respective realization of the 
+reservoir in a systematic way. We find that removing nodes that 
+correspond to the largest weights in the output regression matrix 
+reduces outliers and improves overall prediction quality. Moreover, this
+ allows to effectively reduce the network size and, therefore, increase 
+computational efficiency. In addition, we use a nonlinear scaling factor
+ in the hyperbolic tangent of the activation function. This adjusts the 
+response of the activation function to the range of values of the input 
+variables of the nodes. As a consequence, this reduces the number of 
+outliers significantly and increases both the short- and long-term 
+prediction quality for the nonlinear systems investigated in this study.
+ Our results demonstrate that a large optimization potential lies in the
+ systematical refinement of the differential reservoir properties for a 
+given dataset.</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2020-06-16</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/5.0006869">https://doi.org/10.1063/5.0006869</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:06:02</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>30</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>063136</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/5.0006869">10.1063/5.0006869</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>6</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:06:02</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:06:03</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_24ZNVLLH">Full Text PDF					</li>
+					<li id="item_8G47VUKC">Snapshot					</li>
+				</ul>
+			</li>
+
+
+			<li id="item_Y7KLKK6P" class="item journalArticle">
+			<h2>Stability analysis of reservoir computers dynamics via Lyapunov functions</h2>
+				<table>
+					<tbody><tr>
+						<th>アイテムの種類</th>
+						<td>学術論文</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Afroza Shirin</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Isaac S. Klickstein</td>
+					</tr>
+					<tr>
+						<th class="author">著者名</th>
+						<td>Francesco Sorrentino</td>
+					</tr>
+					<tr>
+					<th>抄録</th>
+						<td>A Lyapunov design method is used to analyze the nonlinear 
+stability of a generic reservoir computer for both the cases of 
+continuous-time and discrete-time dynamics. Using this method, for a 
+given nonlinear reservoir computer, a radial region of stability around a
+ fixed point is analytically determined. We see that the training error 
+of the reservoir computer is lower in the region where the analysis 
+predicts global stability but is also affected by the particular choice 
+of the individual dynamics for the reservoir systems. For the case that 
+the dynamics is polynomial, it appears to be important for the 
+polynomial to have nonzero coefficients corresponding to at least one 
+odd power (e.g., linear term) and one even power (e.g., quadratic term).</td>
+					</tr>
+					<tr>
+					<th>出版年月日</th>
+						<td>2019-10-29</td>
+					</tr>
+					<tr>
+					<th>書誌情報</th>
+						<td>Silverchair</td>
+					</tr>
+					<tr>
+					<th>URL</th>
+						<td><a href="https://doi.org/10.1063/1.5123733">https://doi.org/10.1063/1.5123733</a></td>
+					</tr>
+					<tr>
+					<th>アクセス日時</th>
+						<td>2023/12/1 14:01:35</td>
+					</tr>
+					<tr>
+					<th>巻</th>
+						<td>29</td>
+					</tr>
+					<tr>
+					<th>ページ数</th>
+						<td>103147</td>
+					</tr>
+					<tr>
+					<th>雑誌</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>DOI</th>
+						<td><a href="http://doi.org/10.1063/1.5123733">10.1063/1.5123733</a></td>
+					</tr>
+					<tr>
+					<th>号</th>
+						<td>10</td>
+					</tr>
+					<tr>
+					<th>雑誌略誌名</th>
+						<td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+					</tr>
+					<tr>
+					<th>ISSN</th>
+						<td>1054-1500</td>
+					</tr>
+					<tr>
+					<th>追加日時</th>
+						<td>2023/12/1 14:01:35</td>
+					</tr>
+					<tr>
+					<th>更新日時</th>
+						<td>2023/12/1 14:01:37</td>
+					</tr>
+				</tbody></table>
+				<h3 class="attachments">添付ファイル</h3>
+				<ul class="attachments">
+					<li id="item_XRGGRRIF">Full Text PDF					</li>
+					<li id="item_G4T7DPKW">Snapshot					</li>
+				</ul>
+			</li>
+
+		</ul>
+	
+</body></html>
