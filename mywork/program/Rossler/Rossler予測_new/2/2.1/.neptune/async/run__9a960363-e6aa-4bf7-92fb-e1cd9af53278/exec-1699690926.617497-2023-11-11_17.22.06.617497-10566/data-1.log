@@ -1,0 +1,33 @@
+{"obj": {"type": "AssignString", "path": ["sys", "name"], "value": "Untitled"}, "version": 1}
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 2}
+{"obj": {"type": "AssignString", "path": ["monitoring", "a05c0110", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 3}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "ManQueennoMacBook-Pro.local"}, "version": 4}
+{"obj": {"type": "AssignString", "path": ["monitoring", "a05c0110", "pid"], "value": "10566"}, "version": 5}
+{"obj": {"type": "AssignString", "path": ["monitoring", "a05c0110", "tid"], "value": "8080793280"}, "version": 6}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 7}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "a05c0110", "stdout"]}, "version": 8}
+{"obj": {"type": "ClearStringLog", "path": ["monitoring", "a05c0110", "stderr"]}, "version": 9}
+{"obj": {"type": "AssignString", "path": ["source_code", "entrypoint"], "value": "2.1.3.py"}, "version": 10}
+{"obj": {"type": "UploadFileSet", "path": ["source_code", "files"], "file_globs": ["/Users/manqueenmannequin/mygit/B4thesis_public/mywork/program/Rossler\u4e88\u6e2c_new/2/2.1/2.1.3.py"], "reset": "False"}, "version": 11}
+{"obj": {"type": "UploadFile", "path": ["source_code", "diff"], "ext": "patch", "file_path": null, "tmp_file_name": "source_code_diff-1699690926.941153-2023-11-11_17.22.06.941153.patch", "clean_after_upload": false}, "version": 12}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "a05c0110", "cpu"], "min": 0.0, "max": 100.0, "unit": "%"}, "version": 13}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "a05c0110", "cpu"]}, "version": 14}
+{"obj": {"type": "ConfigFloatSeries", "path": ["monitoring", "a05c0110", "memory"], "min": 0.0, "max": 16.0, "unit": "GB"}, "version": 15}
+{"obj": {"type": "ClearFloatLog", "path": ["monitoring", "a05c0110", "memory"]}, "version": 16}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "cpu"], "values": [{"value": 30.0, "step": null, "ts": 1699690926.946294}]}, "version": 17}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "memory"], "values": [{"value": 11.556533813476562, "step": null, "ts": 1699690926.946294}]}, "version": 18}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "https://app.neptune.ai/shokuno55/B4thesis/e/BTHES-26\n", "step": null, "ts": 1699690927.992297}]}, "version": 19}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "cpu"], "values": [{"value": 60.2, "step": null, "ts": 1699690936.952554}]}, "version": 20}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "memory"], "values": [{"value": 11.3665771484375, "step": null, "ts": 1699690936.952554}]}, "version": 21}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "Shutting down background jobs, please wait a moment...\n", "step": null, "ts": 1699690939.218793}]}, "version": 22}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "Done!\n", "step": null, "ts": 1699690939.455412}]}, "version": 23}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "Waiting for the remaining 108 operations to synchronize with Neptune. Do not kill this process.\n", "step": null, "ts": 1699690939.455799}]}, "version": 24}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "cpu"], "values": [{"value": 35.4, "step": null, "ts": 1699690946.957799}]}, "version": 25}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "memory"], "values": [{"value": 11.497650146484375, "step": null, "ts": 1699690946.957799}]}, "version": 26}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "All 108 operations synced, thanks for waiting!\n", "step": null, "ts": 1699690952.0100842}]}, "version": 27}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "Explore the metadata in the Neptune app:\n", "step": null, "ts": 1699690952.010897}]}, "version": 28}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "a05c0110", "stdout"], "values": [{"value": "https://app.neptune.ai/shokuno55/B4thesis/e/BTHES-26/metadata\n", "step": null, "ts": 1699690952.0110989}]}, "version": 29}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "cpu"], "values": [{"value": 30.4, "step": null, "ts": 1699690956.9599192}]}, "version": 30}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "memory"], "values": [{"value": 11.460968017578125, "step": null, "ts": 1699690956.9599192}]}, "version": 31}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "cpu"], "values": [{"value": 33.8, "step": null, "ts": 1699690966.964055}]}, "version": 32}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "a05c0110", "memory"], "values": [{"value": 11.346267700195312, "step": null, "ts": 1699690966.964055}]}, "version": 33}
