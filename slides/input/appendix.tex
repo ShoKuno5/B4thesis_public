@@ -8,7 +8,7 @@
 
 
 
-\subsection{Reservoir Computer の原理}
+\subsection{Reservoir Computer の中のダイナミクスについて}
 \begin{frame}{Reservoir Computer の構造}
     \begin{columns}[T] % [T] は列を上部で揃えるオプション
   
@@ -41,16 +41,19 @@
 \begin{frame}{Reservoir Computerの学習}
     \begin{itemize}
         \item Reservoir Computer の特徴は，出力層の行列 $\mathbf{W}^{\text {out }}$ のみ学習されること．\begin{itemize}
-            \item 伝統的な RNN では，$\mathbf{W}^{\text {in}}, \mathbf{A}$も学習の対象 
+            \item 他の RNN では，$\mathbf{W}^{\text {in}}, \mathbf{A}$も学習の対象 
             
-            \rightarrow 高次元かつ非線形関数の $q(\cdot)$ の関わる勾配降下法最適化をしなければならない 
+            \rightarrow 高次元空間の中で，非線形関数の $q(\cdot)$ の関わる勾配降下法最適化をしなければならない 
             
             \item Reservoir Computer はこれを回避し，$\mathbf{W}^{\text {out }}$の学習は線形な演算になる: 
             \begin{align}
                 \mathbf{W}_{\text {out }}=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min }\|\underline{\mathbf{X}}-\mathbf{V R}\|_F=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min } \sum_{i=k}^N\left\|\mathbf{x}_i-\mathbf{V r}_i\right\|_2, k \geq 1 
             \end{align}
             $k > 1$ で Reservoir Computer のメモリを反映させることができる．
-            \item Ridge Regression（リッジ回帰）、またはTikhonov正則化を伴う最小二乗法を用いて，過学習を防ぎながら学習させる（Hyperparameter の ridge については後述）．
+            \item Ridge Regression（リッジ回帰）、またはTikhonov正則化を伴う最小二乗法を用いて，過学習を防ぎながら学習させる（Hyperparameter の ridge については後述）．解は形式的に次のように表される：
+            \begin{align}
+                \mathbf{W}^{\text {out }}:=\mathbf{X R}^T\left(\mathbf{R R}^T+\lambda \mathbf{I}\right)^{-1}
+            \end{align}
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -61,9 +64,60 @@
 \end{frame}
 
 \subsection{実験に関する先行研究}
-\begin{frame}
-    
+
+
+
+\begin{frame}{Y. C. Lai et al. (2022) の結果 (1/2)}
+    Reservior Computer は Input, Hidden, Output の三つの層から構成される．
+    \begin{block}{Reservior Computer の構成：Y. C. Lai et al. (2022)}
+    \vspace{0.1cm}
+        \begin{minipage}{0.4\textwidth}
+            \begin{figure}
+                %\centering % 画像を中央揃えにする（オプション）
+                \includegraphics[width=\textwidth]{Fig/Fig.1_Lai.png}
+                \caption*{Fig.1 from Y. C. Lai et al. (2022)}
+                \label{Fig.1_Lai.png} % ラベルを付ける（参照する場合に使用）
+            \end{figure}
+        \end{minipage}%
+        \begin{minipage}{0.6\textwidth}
+            \begin{itemize}
+                \item $\mathbf{u}(t) \in \R^{D_{\text{in}}}$: input signal. 
+                \item $\mathbf{r}(t) \in \R^{D_r} $: hidden layer state vector.
+                \item $f(t)$: (control) external driving signal.  
+                \item $\mathcal{W}_{\text{in}} \in D_r \times D_{\text{in}}$: Weighted input matrix.  
+                \item $\mathcal{W}_c$: Controller matrix.
+                \item $ \mathcal{W}_r \in D_r \times D_{r}$: Weighted network matrix inside.
+                \item $\mathcal{W}_{\text{out}}: D_{\text{out}} \times D_{r}$: Output weighted matrix.
+            \end{itemize}
+    \end{minipage}
+    \end{block}
+    $\mathbf{u}(t)$ に時系列モデル（low/high-dimensional Lorenz-96 climate network, driven chaotic laser systemなど），$f(t)$にはsinusoidal関数などを使用する（e.g. $f(t) = A \sin (\Omega t) + F$）．
 \end{frame}
+
+\begin{frame}{Y. C. Lai et al. (2022) の結果 (2/2)}
+    学習期間全体の $\mathbf{u}(t)$，全期間の $\mathbf{v}(t)$ を記録する行列をそれぞれ $\mathcal{R'}, \mathcal{V}$ とする．
+    \begin{itemize}
+        \item $\mathcal{W}_{\text {in }}, \mathcal{W}_c, \mathcal{W}_r$ は Reservior の学習に前もってランダムに定められる．
+        \item 学習期間において，$\mathbf{u(t)}$ と $f(t)$ の実データが入力される．
+        学習期間の後のself-evolving 期間では，Reservior による出力 $\mathbf{v}(t)$ と $f(t)$ の実データが予測の入力に用いられる．
+        \begin{itemize}
+            \item $\mathbf{r}(t)$ は 学習期間，self-evolving 期間においてそれぞれ次の式で決定される．
+            \vspace{-.2cm}
+            \begin{align}
+                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathbf{u}(t)+\mathcal{W}_c f(t)\right] \label{Lai_r1}\\
+                \mathbf{r}(t+\Delta t) & =(1-\alpha) \mathbf{r}(t) + \alpha \tanh \left[\mathcal{W}_r \mathbf{r}(t)+\mathcal{W}_{\text {in }} \mathcal{W}_{\text {out }} \mathbf{r}^{\prime}(t)+\mathcal{W}_c f(t)\right]\label{Lai_r2}
+            \end{align}
+        \end{itemize}
+        \item 複数の $f(t)$ に対して Reservior を sequential に学習させることで，未知の外力がある場合でも予測できるようにする．また，Hyperparameter に関する最適化を行う（後述）．
+        \item Reservoir に次式における$\mathcal{V}, \mathcal{R'}$ 間のLinear Regressionを通じて$\mathcal{W}_{\text {out }}$ を学習させる．
+        \vspace{-.2cm}
+        \begin{align}
+            \mathcal{W}_{\text {out }}=\mathcal{V} \cdot \mathcal{R}^{\prime T}\left(\mathcal{R}^{\prime} \cdot \mathcal{R}^{\prime T}+\beta \mathcal{I}\right)^{-1}
+        \end{align}
+    \end{itemize}
+
+\end{frame}
+
 
 \subsection{Hyperparameters の最適化}
 \begin{frame}{Reservoir に関する Hyperparameters}
@@ -108,14 +162,14 @@
         \begin{column}{.5\textwidth}
             \begin{itemize}
                 \item この研究では，CmaEsSampler （最終的に採用）, TPESampler と hyperopt という別のpython ライブラリの random search を用いた．\begin{itemize}
-                    \item 経験的に，その順により好ましい best value を与えた．
+                    \item 経験的に，同順により好ましい best value を与えた．
                     
                 \end{itemize}
                 \item また，Optuna搭載の pruner も利用した．\begin{itemize}
                     \item 見込みの悪い Hyperparameters のセットを見限ること．
                     \item 使用したのは SuccessiveHalvingPruner.
                 \end{itemize}
-                \item なお，hyperopt には Optunaのいくつかの機能は搭載されていない．
+                \item なお，hyperopt には Optunaのいくつかの機能は搭載されていないので注意．
             \end{itemize}
         \end{column}
       \end{columns}
@@ -183,6 +237,183 @@
     
 \end{frame}
 
+\subsection{結果のまとめ}
+\begin{frame}{self-evolve 期間における予測結果：位相シフトが$8, 10$のとき（再掲）}
+    \begin{columns}[T] % [T] は列を上部で揃えるオプション
+      \begin{column}{.5\textwidth}
+        \begin{figure}
+          \vspace{-.5cm}
+          % 画像1
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/8.x.png}
+          \end{minipage}
+      
+          \vspace{-.5em}
+  
+          % 画像2
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/8.y.png}
+          \end{minipage}
+          
+          \vspace{.5em}
+          % 画像3
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/8.p.png}
+            \caption{\scriptsize{位相シフト（8時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$. }}
+          \end{minipage}
+        \end{figure}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{figure}
+          \vspace{-.5cm}
+          % 画像1
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/10.x.png}
+          \end{minipage}
+      
+          \vspace{-.5em}
+  
+          % 画像2
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/10.y.png}
+          \end{minipage}
+          
+          \vspace{.5em}
+          % 画像3
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/10.p.png}
+            \caption{\scriptsize{位相シフト（10時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$.}}
+          \end{minipage}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{self-evolve 期間における予測結果：位相シフトが$4, 6$のとき}
+  \begin{columns}[T] % [T] は列を上部で揃えるオプション
+    \begin{column}{.5\textwidth}
+        \begin{figure}
+            \vspace{-.5cm}
+            % 画像1
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/4.x.png}
+            \end{minipage}
+        
+            \vspace{-.5em}
+    
+            % 画像2
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/4.y.png}
+            \end{minipage}
+            
+            \vspace{.5em}
+            % 画像3
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/4.p.png}
+              \caption{\scriptsize{位相シフト（4時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$. }}
+            \end{minipage}
+          \end{figure}
+
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}
+        \vspace{-.5cm}
+        % 画像1
+        \begin{minipage}[c][.27\textheight][c]{\linewidth}
+          \centering
+          \includegraphics[width=0.7\linewidth]{Fig/6.x.png}
+        \end{minipage}
+    
+        \vspace{-.5em}
+
+        % 画像2
+        \begin{minipage}[c][.27\textheight][c]{\linewidth}
+          \centering
+          \includegraphics[width=0.7\linewidth]{Fig/6.y.png}
+        \end{minipage}
+        
+        \vspace{.5em}
+        % 画像3
+        \begin{minipage}[c][.27\textheight][c]{\linewidth}
+          \centering
+          \includegraphics[width=0.7\linewidth]{Fig/6.p.png}
+          \caption{\scriptsize{位相シフト（6時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$.}}
+        \end{minipage}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{self-evolve 期間における予測結果：位相シフトが$-4, -8$のとき}
+    \begin{columns}[T] % [T] は列を上部で揃えるオプション
+      \begin{column}{.5\textwidth}
+        \begin{figure}
+            \vspace{-.5cm}
+            % 画像1
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/-4.x.png}
+            \end{minipage}
+        
+            \vspace{-.5em}
+    
+            % 画像2
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/-4.y.png}
+            \end{minipage}
+            
+            \vspace{.5em}
+            % 画像3
+            \begin{minipage}[c][.27\textheight][c]{\linewidth}
+              \centering
+              \includegraphics[width=0.7\linewidth]{Fig/-4.p.png}
+              \caption{\scriptsize{位相シフト（-4時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$. }}
+            \end{minipage}
+          \end{figure}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{figure}
+          \vspace{-.5cm}
+          % 画像1
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/-8.x.png}
+          \end{minipage}
+      
+          \vspace{-.5em}
+  
+          % 画像2
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/-8.y.png}
+          \end{minipage}
+          
+          \vspace{.5em}
+          % 画像3
+          \begin{minipage}[c][.27\textheight][c]{\linewidth}
+            \centering
+            \includegraphics[width=0.7\linewidth]{Fig/-8.p.png}
+            \caption{\scriptsize{位相シフト（-8時間分）のある外力付きRösslerモデルの予測．上から $x, y, P(t)$.}}
+          \end{minipage}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  \end{frame}
+  
+  
+
+
+
 \section{参考文献}
 
 \begin{frame}{参考文献 - 1}
@@ -204,7 +435,7 @@
         Optuna. (2018). Optuna Documentation. Retrieved from \url{https://optuna.readthedocs.io/en/stable/} [Accessed on: \today]
 
         \bibitem[5]{rpy_doc}
-        ReservoirPy Team. (Year). ReservoirPy Documentation. Retrieved from \url{https://reservoirpy.readthedocs.io/en/latest/} [Accessed on: \today].
+        ReservoirPy Team. (2020). ReservoirPy Documentation. Retrieved from \url{https://reservoirpy.readthedocs.io/en/latest/} [Accessed on: \today].
 
     \end{thebibliography}
 \end{frame}

@@ -97,7 +97,7 @@
 
 
 \section{結果}
-\begin{frame}{予測結果}
+\begin{frame}{self-evolve 期間における予測結果：位相シフトが$8, 10$のとき}
   \begin{columns}[T] % [T] は列を上部で揃えるオプション
     \begin{column}{.5\textwidth}
       \begin{figure}
@@ -158,11 +158,30 @@
 \begin{frame}
   \begin{columns}[T] % [T] は列を上部で揃えるオプション
     \begin{column}{.5\textwidth}
-      \begin{figure}
-        
-      \end{figure}
+      まとめ
+      \begin{itemize}
+        \item Rösslerモデルの予測に関して，Reservoir Computer が有効である\begin{itemize}
+          \item 外力があり，かつ観測されない変数がある場合でも予測可能．
+          \item 特に外力がある場合は，Reservoir による予測値を真の値で修正することで長期の予測が可能．
+        \end{itemize}
+        \item 位相シフトの値が異なる外力に対しても，同一の Reservoir Computer を用いてある程度の予測が可能．\begin{itemize}
+          \item 新たな外力について Hyperparameters の最適化をし直さなくても良い．
+        \end{itemize}
+      \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
+      展望
+      \begin{itemize}
+          \item 未知の外力やより複雑な外力に対しても長期の予測が可能か？
+          \begin{itemize}
+            \item 外力に対する位相シフトがランダムな値を取る時など．
+          \end{itemize}
+        \item Reservoir の構造や Hyperparameters の最適化を改善することで予測性能を上げられるか？
+        \item 理論的な展開 \begin{itemize}
+          \item Reservoir Computer の学習期間等に関して，何か理論的に推定できないか？
+          \item Reservoir Computer に関連する理論の適用（Appendix）．
+        \end{itemize}
+      \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
