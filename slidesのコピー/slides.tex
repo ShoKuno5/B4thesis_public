@@ -1,0 +1,73 @@
+\documentclass[aspectratio=169, 11pt]{beamer} % aspectratio=43, 149, 169
+% 余分なオプションを削除しました。aspectratioはそのままで大丈夫です。
+
+% 必要なパッケージを読み込みます
+\usepackage{amsmath, amssymb, bm, mathtools, multicol, tcolorbox, subfig, physics, ulem}
+\usepackage{here} % 'here' パッケージは推奨されていない場合があるので注意
+\usepackage{ascmac, array}
+
+% Beamerテーマとカラーテーマ
+\usetheme{Malmoe}
+\usecolortheme[RGB={4, 56, 76}]{structure}
+\usefonttheme{professionalfonts}
+\useinnertheme{circles}
+\useoutertheme{infolines}
+\setbeamertemplate{headline}{} % ヘッダーの内容を空にする
+
+
+% ナビゲーションシンボルを非表示に
+\setbeamertemplate{navigation symbols}{}
+
+% タイトルとフレームタイトルの色設定
+\setbeamercolor{title}{fg=structure, bg=}
+\setbeamercolor{frametitle}{fg=structure, bg=}
+
+% itemizeの設定
+\setbeamertemplate{itemize item}{\small\raise0.5pt\hbox{$\bullet$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{$\bigstar$}}
+
+\usepackage{fontspec}
+\usepackage{luatexja-fontspec}
+
+\setsansfont{Helvetica} % 英語用のサンセリフフォント
+\setmainjfont{Hiragino Kaku Gothic ProN} % 日本語用のゴシック体フォント
+\setsansjfont{Hiragino Kaku Gothic ProN} % 日本語用のサンセリフ（ゴシック体）フォント
+
+
+
+% カラーのショートカット
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green!40!black}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue!80!black}{#1}}
+
+% 数学的なコマンド
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}} 
+
+\includeonly{input/experiments}
+
+% タイトル情報
+\title[]{Reservoir Computerによる外力付きカオス時系列モデルの予測と生体リズム研究への応用}
+\subtitle{}
+\author[]{発表者：久野証}
+\institute[]{東京大学工学部計数工学科数理情報工学コース 4年}
+\date{\today}
+
+% ドキュメントの開始
+\begin{document}
+    \maketitle
+    % ここにスライドの内容を追加
+
+    \begin{frame}{目次}
+        \tableofcontents
+    \end{frame}  
+
+    \input{input/motivation.tex}
+    \input{input/experiments.tex}
+    \input{input/theory.tex}
+    \input{input/appendix.tex}
+
+\end{document}
