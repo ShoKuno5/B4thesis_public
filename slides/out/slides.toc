@@ -1,9 +1,10 @@
 \beamer@sectionintoc {1}{背景}{3}{0}{1}
-\beamer@sectionintoc {2}{これまでの結果}{6}{0}{2}
-\beamer@sectionintoc {3}{理論的な展開}{8}{0}{3}
-\beamer@sectionintoc {4}{Appendix}{8}{0}{4}
-\beamer@subsectionintoc {4}{1}{その他の主な結果}{10}{0}{4}
-\beamer@subsectionintoc {4}{2}{ReservoirPy (v0.3.10)}{12}{0}{4}
-\beamer@subsectionintoc {4}{3}{Hyperparameters の最適化}{13}{0}{4}
-\beamer@subsectionintoc {4}{4}{先行研究}{15}{0}{4}
-\beamer@sectionintoc {5}{参考文献}{18}{0}{5}
+\beamer@sectionintoc {2}{手法}{4}{0}{2}
+\beamer@sectionintoc {3}{結果}{8}{0}{3}
+\beamer@sectionintoc {4}{まとめと展望}{9}{0}{4}
+\beamer@sectionintoc {5}{Appendix}{10}{0}{5}
+\beamer@subsectionintoc {5}{1}{Reservoir Computer の原理}{11}{0}{5}
+\beamer@subsectionintoc {5}{2}{Reservoir Computer に関する理論}{12}{0}{5}
+\beamer@subsectionintoc {5}{3}{先行研究}{13}{0}{5}
+\beamer@subsectionintoc {5}{4}{Hyperparameters の最適化}{14}{0}{5}
+\beamer@subsectionintoc {5}{5}{実験のパラメータ設定}{16}{0}{5}

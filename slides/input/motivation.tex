@@ -1,5 +1,4 @@
 \section{背景}
-
 \begin{frame}{LD Cycleによる生体リズムの研究}
         \begin{block}{概日リズムの研究：LD Cycle}
           \begin{itemize}
@@ -15,12 +14,13 @@
 
       
         \begin{figure}
-          \includegraphics[width=0.45\textwidth]{Fig/Jetlag.png}
+          \includegraphics[width=0.4\textwidth]{Fig/Jetlag.png}
           \caption{\scriptsize{Day 1に8時間のJet Lagを受けた時のマウスの Per2 の推移}\\\tiny{Image: Fig.2 from \cite{Yamaguchi et al.}.}}
       \end{figure}    
       
   \end{frame}
 
+  \section{手法}
 
 \begin{frame}{Reservoir Computer を用いたカオス予測 (1/2)}
     % スライドを2つの列に分割
@@ -40,17 +40,19 @@
         \end{figure}  
         \begin{figure}
             \includegraphics[width=\textwidth]{Fig/esn_nodes.svg.png}
-            \caption{\scriptsize{Reservoir Computer の構造}\\ \tiny{Image: ReservoirPy, MIT License.}}
+            \caption{\scriptsize{Reservoirpy での reservoir computer の構造}\\ \tiny{Image: ReservoirPy, MIT License.}}
         \end{figure}  
       \end{column}
     \end{columns}
   \end{frame}
+
 
 \begin{frame}{Reservoir Computer を用いたカオス予測 (2/2)}
 % スライドを2つの列に分割
 \begin{columns}[T] % [T] は列を上部で揃えるオプション
 
     \begin{column}{.5\textwidth}
+    \vspace{-.35cm}
     % ここに右側のコンテンツを配置
     \begin{block}{予測の手法}
       \begin{enumerate}
@@ -77,6 +79,7 @@
     \begin{column}{.5\textwidth}
     \begin{figure}
         \includegraphics[width=\textwidth]{Fig/please.png}
+        \caption{\scriptsize{Reservoir Computer を用いたカオス予測の手順}}
     \end{figure}   
     \end{column}
 \end{columns}
