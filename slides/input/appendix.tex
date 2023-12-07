@@ -6,6 +6,30 @@
     \end{center}
 \end{frame}
 
+
+\begin{frame}{Reservoir Computerによる予測：手法}
+    $\triangle t = 0.1$ とした．
+    \begin{itemize}
+        \item Hyperparametersの最適化
+        \begin{itemize}
+            \item 学習期間: Rössler システムにおける $z$ 変数が観測できないものとして， $x, y$ 変数 と 外力 $f(t)$ を入力する．期間は $\left.\left[ 0, 1000 \right.\right).$ \vspace{.2em}
+            \item 損失関数を学習期間全体に対して定義された nrmse として最適化：
+            \vspace{.2em}
+            \begin{align}
+                \text{nrmse}(y, M) = \sqrt{\frac{\sum_{i=0}^{M-1}\left(y_i-\hat{y}_i\right)^2}{M}}
+            \end{align}
+            \item Hyperparameters は Cell number (N), spectral radius (sr), leaking rate (lr), input scaling (iss), regularization (ridge), random seed(seed). \vspace{.2em}
+            \item 最適化アルゴリズムはTPE (Tree-structured Parzen Estimator) algorithm.
+        \end{itemize}
+        \item Self-evolving 期間
+        \begin{itemize}
+            \item warming up：
+            $\left.\left[ 1000,  1500\right.\right]$, Self-evolving 期間: $\left[ 1500,  2510\right].$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
 \subsection{その他の主な結果}
 
 
@@ -153,17 +177,12 @@
 \end{frame}
 
 
-\section{参考資料}
-\begin{frame}{参考資料}
-    \begin{minipage}{0.49\textwidth}
-        \begin{itemize}
-            \item Bollt, E. On explaining the surprising success of reservoir computing forecaster of chaos? The universal machine learning dynamical system with contrast to VAR and DMD. \textit{Chaos}, 31(1), 013108 (2021). 
-        \end{itemize}    
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
-        \begin{itemize}
-            \item Kong, L.-W., Weng, Y., Glaz, B., Haile, M., and Lai, Y.-C. Digital twins of nonlinear dynamical systems. arXiv:2210.06144 (2022).
-        \end{itemize}
-    \end{minipage}
+\section{参考文献}
+\begin{frame}{参考文献}
+    \begin{thebibliography}{99}    
+        \bibitem{Yamaguchi et al.}
+        Yamaguchi, Y., Suzuki, T., Mizoro, Y., Kori, H., Okada, K., Chen, Y., Fustin, J. M., Yamazaki, F., Mizuguchi, N., Zhang, J., Dong, X., Tsujimoto, G., Okuno, Y., Doi, M., and Okamura, H. (2013). Mice genetically deficient in vasopressin V1a and V1b receptors are resistant to jet lag. Science (New York, N.Y.), 342(6154), 85–90. 
+
+    \end{thebibliography}
 \end{frame}
 

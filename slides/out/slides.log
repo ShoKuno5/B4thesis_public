@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  7 DEC 2023 12:46
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  7 DEC 2023 18:35
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/manqueenmannequin/mygit/B4thesis_public/slides/slides.tex
@@ -803,7 +803,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip77
 \backup@length=\skip78
 \ar@cellbox=\box147
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeMalmoe.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemesplit.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemestructure.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeBerlin.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerectangles.sty)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemestructure.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 Lua module: fontspec 2022/01/15 2.8a Font selection for XeLaTeX and LuaLaTeX (/usr/local/texlive/2023/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
@@ -1179,54 +1179,41 @@ Package: lltjp-tascmac 2022-08-24 Patch to (t)ascmac for LuaTeX-ja
 warning  (map file): entry for 'ascgrp' already exists, duplicates ignored
 ) (/usr/local/texlive/2023/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
 Package: lltjp-array 2019-07-18 Patch to array for LuaTeX-ja
-) (./out/slides.aux
-
-LaTeX Warning: Label `custard_3.png' multiply defined.
-
-
-LaTeX Warning: Label `rossler_+sin_1.png' multiply defined.
-
-
-LaTeX Warning: Label `rossler_+sin_2.png' multiply defined.
-
-
-LaTeX Warning: Label `rossler_+sin_3.png' multiply defined.
-
-)
+) (./out/slides.aux)
 \openout1 = slides.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    Trying loading font information for TS1+cmr on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    Trying loading font information for TS1+cmr on input line 61.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 10.53629pt on input line 60.
+(Font)              scaled to size 10.53629pt on input line 61.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 10.53629pt on input line 60.
+(Font)              scaled to size 10.53629pt on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1281,7 +1268,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 61.
  (./out/slides.out) (./out/slides.out)
 \@outlinefile=\write5
 
@@ -1309,255 +1296,225 @@ Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 
 \symlegacymaths=\mathgroup12
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 60.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 60.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 60.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 60.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 60.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 60.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 60.
-LaTeX Font Info:    Redeclaring math accent \check on input line 60.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 60.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 60.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 60.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 60.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 60.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 61.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 61.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 61.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 61.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 61.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 61.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 61.
+LaTeX Font Info:    Redeclaring math accent \check on input line 61.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 61.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 61.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 61.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 61.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 61.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 60.
+(Font)              `operators' in the math version `normal' on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 60.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 61.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 60.
+(Font)              `operators' in the math version `bold' on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 60.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 60.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 60.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Helvetica(0)/m/n on input line 60.
+(Font)                  OT1/cmss/m/n --> TU/Helvetica(0)/m/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 61.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 60.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 60.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Helvetica(0)/b/n on input line 60.
+(Font)                  OT1/cmss/bx/n --> TU/Helvetica(0)/b/n on input line 61.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 60.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 61.
  (./out/slides.nav)
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 60.
+(Font)              scaled to size 5.77332pt on input line 61.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 60.
+(Font)              scaled to size 5.77332pt on input line 61.
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 61.
+(Font)              scaled to size 13.85594pt on input line 62.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 61.
+(Font)              scaled to size 13.85594pt on input line 62.
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 61.
+(Font)              scaled to size 7.69775pt on input line 62.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 61.
+(Font)              scaled to size 7.69775pt on input line 62.
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 3.84888pt on input line 61.
+(Font)              scaled to size 3.84888pt on input line 62.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 3.84888pt on input line 61.
+(Font)              scaled to size 3.84888pt on input line 62.
  [1
 
 ] (./out/slides.toc) [2
 
 ] (./input/motivation.tex(load cache: extra_lmroman7-regular.luc)(load cache: extra_lmroman5-regular.luc)
-LaTeX Font Info:    Trying loading font information for U+msa on input line 24.
+LaTeX Font Info:    Trying loading font information for U+msa on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying loading font information for U+msb on input line 24.
+LaTeX Font Info:    Trying loading font information for U+msb on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying loading font information for OT1+mathkerncmss on input line 24.
+LaTeX Font Info:    Trying loading font information for OT1+mathkerncmss on input line 22.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 24.
+(Font)              scaled to size 6.73553pt on input line 22.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 24.
-(load cache: extra_lmroman6-regular.luc)(load cache: extra_lmroman8-regular.luc)
+(Font)              scaled to size 4.8111pt on input line 22.
+(load cache: extra_lmroman6-regular.luc)
 <Fig/Jetlag.png, id=84, 2747.26375pt x 1003.75pt>
 File: Fig/Jetlag.png Graphic file (type png)
 <use Fig/Jetlag.png>
-Package luatex.def Info: Fig/Jetlag.png  used on input line 24.
-(luatex.def)             Requested size: 162.50403pt x 59.3647pt.
- [3
+Package luatex.def Info: Fig/Jetlag.png  used on input line 22.
+(luatex.def)             Requested size: 195.00351pt x 71.23457pt.
+
+Overfull \vbox (4.55269pt too high) detected at line 22
+ []
+
+[3
 
 <./Fig/Jetlag.png>]
-LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 39.
-LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 39.
+<Fig/esn.svg.png, id=96, 654.445pt x 304.13625pt>
+File: Fig/esn.svg.png Graphic file (type png)
+<use Fig/esn.svg.png>
+Package luatex.def Info: Fig/esn.svg.png  used on input line 47.
+(luatex.def)             Requested size: 216.67204pt x 100.69011pt.
+<Fig/esn_nodes.svg.png, id=97, 706.64pt x 138.5175pt>
+File: Fig/esn_nodes.svg.png Graphic file (type png)
+<use Fig/esn_nodes.svg.png>
+Package luatex.def Info: Fig/esn_nodes.svg.png  used on input line 47.
+(luatex.def)             Requested size: 216.67204pt x 42.47287pt.
  [4
 
-]) (./input/experiments.tex
-<Fig/Rossler_attractor.png, id=101, 188.705pt x 186.6975pt>
-File: Fig/Rossler_attractor.png Graphic file (type png)
-<use Fig/Rossler_attractor.png>
-Package luatex.def Info: Fig/Rossler_attractor.png  used on input line 29.
-(luatex.def)             Requested size: 121.33395pt x 120.04149pt.
- [5
+<./Fig/esn.svg.png><./Fig/esn_nodes.svg.png>]
+<Fig/please.png, id=107, 450.483pt x 353.247pt>
+File: Fig/please.png Graphic file (type png)
+<use Fig/please.png>
+Package luatex.def Info: Fig/please.png  used on input line 83.
+(luatex.def)             Requested size: 216.67204pt x 169.90698pt.
 
-<./Fig/Rossler_attractor.png>]
-<Fig/Plot_rossler_variables.png, id=115, 511.9125pt x 258.9675pt>
-File: Fig/Plot_rossler_variables.png Graphic file (type png)
-<use Fig/Plot_rossler_variables.png>
-Package luatex.def Info: Fig/Plot_rossler_variables.png  used on input line 38.
-(luatex.def)             Requested size: 325.00806pt x 164.41486pt.
+Overfull \vbox (2.80899pt too high) detected at line 83
+ []
+
+[5
+
+<./Fig/please.png>]) (./input/experiments.tex(load cache: extra_lmroman8-regular.luc)
+<Fig/NEWrossler_attractor.png, id=118, 357.7365pt x 366.4089pt>
+File: Fig/NEWrossler_attractor.png Graphic file (type png)
+<use Fig/NEWrossler_attractor.png>
+Package luatex.def Info: Fig/NEWrossler_attractor.png  used on input line 26.
+(luatex.def)             Requested size: 195.00351pt x 199.73082pt.
  [6
 
-<./Fig/Plot_rossler_variables.png>]
-LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 61.
-LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 61.
- [7
+<./Fig/NEWrossler_attractor.png>]
+<Fig/phase_shift_plot.png, id=130, 726.3135pt x 393.8715pt>
+File: Fig/phase_shift_plot.png Graphic file (type png)
+<use Fig/phase_shift_plot.png>
+Package luatex.def Info: Fig/phase_shift_plot.png  used on input line 55.
+(luatex.def)             Requested size: 195.00351pt x 105.74571pt.
+<Fig/NEWrossler_waves.png, id=131, 906.2658pt x 988.6536pt>
+File: Fig/NEWrossler_waves.png Graphic file (type png)
+<use Fig/NEWrossler_waves.png>
+Package luatex.def Info: Fig/NEWrossler_waves.png  used on input line 55.
+(luatex.def)             Requested size: 173.33829pt x 189.09824pt.
 
-]
-<Fig/custard1.png, id=136, 896.8707pt x 338.2236pt>
-File: Fig/custard1.png Graphic file (type png)
-<use Fig/custard1.png>
-Package luatex.def Info: Fig/custard1.png  used on input line 103.
-(luatex.def)             Requested size: 169.87341pt x 64.06187pt.
-<Fig/custard2.png, id=137, 896.8707pt x 338.2236pt>
-File: Fig/custard2.png Graphic file (type png)
-<use Fig/custard2.png>
-Package luatex.def Info: Fig/custard2.png  used on input line 103.
-(luatex.def)             Requested size: 169.87341pt x 64.06187pt.
-<Fig/custard3.png, id=138, 890.3664pt x 338.2236pt>
-File: Fig/custard3.png Graphic file (type png)
-<use Fig/custard3.png>
-Package luatex.def Info: Fig/custard3.png  used on input line 103.
-(luatex.def)             Requested size: 169.87341pt x 64.52635pt.
-<Fig/rossler_+sin_1.png, id=139, 896.8707pt x 338.2236pt>
-File: Fig/rossler_+sin_1.png Graphic file (type png)
-<use Fig/rossler_+sin_1.png>
-Package luatex.def Info: Fig/rossler_+sin_1.png  used on input line 103.
-(luatex.def)             Requested size: 173.33829pt x 65.36757pt.
-<Fig/rossler_+sin_2.png, id=140, 906.2658pt x 338.2236pt>
-File: Fig/rossler_+sin_2.png Graphic file (type png)
-<use Fig/rossler_+sin_2.png>
-Package luatex.def Info: Fig/rossler_+sin_2.png  used on input line 103.
-(luatex.def)             Requested size: 173.33829pt x 64.6915pt.
-<Fig/rossler_+sin_3.png, id=141, 891.0891pt x 338.2236pt>
-File: Fig/rossler_+sin_3.png Graphic file (type png)
-<use Fig/rossler_+sin_3.png>
-Package luatex.def Info: Fig/rossler_+sin_3.png  used on input line 103.
-(luatex.def)             Requested size: 173.33829pt x 65.79076pt.
- [8
+Overfull \vbox (10.75621pt too high) detected at line 55
+ []
 
-<./Fig/custard1.png><./Fig/custard2.png><./Fig/custard3.png><./Fig/rossler_+sin_1.png><./Fig/rossler_+sin_2.png><./Fig/rossler_+sin_3.png>]
-<Fig/custard_1.png, id=161, 896.8707pt x 338.2236pt>
-File: Fig/custard_1.png Graphic file (type png)
-<use Fig/custard_1.png>
-Package luatex.def Info: Fig/custard_1.png  used on input line 130.
-(luatex.def)             Requested size: 169.87341pt x 64.06187pt.
-<Fig/custard_2.png, id=162, 896.8707pt x 338.2236pt>
-File: Fig/custard_2.png Graphic file (type png)
-<use Fig/custard_2.png>
-Package luatex.def Info: Fig/custard_2.png  used on input line 130.
-(luatex.def)             Requested size: 169.87341pt x 64.06187pt.
-<Fig/custard_3.png, id=163, 899.7615pt x 338.2236pt>
-File: Fig/custard_3.png Graphic file (type png)
-<use Fig/custard_3.png>
-Package luatex.def Info: Fig/custard_3.png  used on input line 130.
-(luatex.def)             Requested size: 169.87341pt x 63.85544pt.
+[7
 
-warning  (pdf backend): ignoring duplicate destination with the name 'custard_3.png'
-[9
-
-<./Fig/custard_1.png><./Fig/custard_2.png><./Fig/custard_3.png>] [10
-
-]) (./input/theory.tex) (./input/appendix.tex
+<./Fig/phase_shift_plot.png><./Fig/NEWrossler_waves.png>]) (./input/theory.tex) (./input/appendix.tex
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
 (Font)              scaled to size 16.62714pt on input line 7.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
 (Font)              scaled to size 16.62714pt on input line 7.
- [11
+ [8
 
 ]
+LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 30.
+LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 30.
+ [9
+
+]
+<Fig/rossler_+sin_1.png, id=158, 896.8707pt x 338.2236pt>
 File: Fig/rossler_+sin_1.png Graphic file (type png)
 <use Fig/rossler_+sin_1.png>
-Package luatex.def Info: Fig/rossler_+sin_1.png  used on input line 44.
+Package luatex.def Info: Fig/rossler_+sin_1.png  used on input line 68.
 (luatex.def)             Requested size: 178.96921pt x 67.4887pt.
-
-warning  (pdf backend): ignoring duplicate destination with the name 'rossler_+sin_1.png'
+<Fig/rossler_+sin_2.png, id=159, 906.2658pt x 338.2236pt>
 File: Fig/rossler_+sin_2.png Graphic file (type png)
 <use Fig/rossler_+sin_2.png>
-Package luatex.def Info: Fig/rossler_+sin_2.png  used on input line 44.
+Package luatex.def Info: Fig/rossler_+sin_2.png  used on input line 68.
 (luatex.def)             Requested size: 178.96921pt x 66.79198pt.
-
-warning  (pdf backend): ignoring duplicate destination with the name 'rossler_+sin_2.png'
+<Fig/rossler_+sin_3.png, id=160, 891.0891pt x 338.2236pt>
 File: Fig/rossler_+sin_3.png Graphic file (type png)
 <use Fig/rossler_+sin_3.png>
-Package luatex.def Info: Fig/rossler_+sin_3.png  used on input line 44.
+Package luatex.def Info: Fig/rossler_+sin_3.png  used on input line 68.
 (luatex.def)             Requested size: 178.96921pt x 67.92737pt.
+ [10
 
-warning  (pdf backend): ignoring duplicate destination with the name 'rossler_+sin_3.png'
-[12
-
-]
-<Fig/output1.png, id=197, 875.9124pt x 309.3156pt>
+<./Fig/rossler_+sin_1.png><./Fig/rossler_+sin_2.png><./Fig/rossler_+sin_3.png>]
+<Fig/output1.png, id=173, 875.9124pt x 309.3156pt>
 File: Fig/output1.png Graphic file (type png)
 <use Fig/output1.png>
-Package luatex.def Info: Fig/output1.png  used on input line 69.
+Package luatex.def Info: Fig/output1.png  used on input line 93.
 (luatex.def)             Requested size: 169.87341pt x 59.98827pt.
-<Fig/output2.png, id=198, 875.9124pt x 309.3156pt>
+<Fig/output2.png, id=174, 875.9124pt x 309.3156pt>
 File: Fig/output2.png Graphic file (type png)
 <use Fig/output2.png>
-Package luatex.def Info: Fig/output2.png  used on input line 69.
+Package luatex.def Info: Fig/output2.png  used on input line 93.
 (luatex.def)             Requested size: 169.87341pt x 59.98827pt.
-<Fig/output3.png, id=199, 882.4167pt x 309.3156pt>
+<Fig/output3.png, id=175, 882.4167pt x 309.3156pt>
 File: Fig/output3.png Graphic file (type png)
 <use Fig/output3.png>
-Package luatex.def Info: Fig/output3.png  used on input line 69.
+Package luatex.def Info: Fig/output3.png  used on input line 93.
 (luatex.def)             Requested size: 169.87341pt x 59.5446pt.
- [13
+ [11
 
-<./Fig/output1.png><./Fig/output2.png><./Fig/output3.png>] [14
+<./Fig/output1.png><./Fig/output2.png><./Fig/output3.png>] [12
 
-] [15
+] [13
 
-] [16
+] [14
 
 ]
-<Fig/Fig.1_Lai.png, id=232, 689.57625pt x 345.29pt>
+<Fig/Fig.1_Lai.png, id=210, 689.57625pt x 345.29pt>
 File: Fig/Fig.1_Lai.png Graphic file (type png)
 <use Fig/Fig.1_Lai.png>
-Package luatex.def Info: Fig/Fig.1_Lai.png  used on input line 117.
+Package luatex.def Info: Fig/Fig.1_Lai.png  used on input line 141.
 (luatex.def)             Requested size: 173.33498pt x 86.79118pt.
-(load cache: extra_lmromandemi10-regular.luc) [17
+(load cache: extra_lmromandemi10-regular.luc) [15
 
-<./Fig/Fig.1_Lai.png>] [18
+<./Fig/Fig.1_Lai.png>] [16
 
-] [19
+] [17
 
-]
-LaTeX Font Info:    Kanji font shape `JY3/HiraginoKakuGothicProN(0)/m/it' undefined
-(Font)              No change on input line 168.
- [20
+] [18
 
 ])
 \tf@nav=\write6
@@ -1570,27 +1527,24 @@ LaTeX Font Info:    Kanji font shape `JY3/HiraginoKakuGothicProN(0)/m/it' undefi
 
 \openout8 = slides.snm
  (./out/slides.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 224910CCBF376DB38E20AF239E1907C2;964.
+(rerunfilecheck)             Checksum: 37FA20401A0857594E6E349075B7E151;964.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33686 strings out of 478285
+ 33735 strings out of 478285
  125244,1977958 words of node,token memory allocated
- 17327 words of node memory still in use:
-   46 hlist, 13 vlist, 11 rule, 28 disc, 5 local_par, 8 math, 112 glue, 6 kern, 23 penalty, 315 glyph, 5674 attribute, 71 glue_spec, 561 attribute_list, 4 write, 56 user_defined, 22 pdf_colorstack nodes
-   avail lists: 1:17,2:23125,3:438,4:662,5:165,6:58,7:2914,8:49,9:1193,10:42,11:78
- 51975 multiletter control sequences out of 65536+600000
- 150 fonts using 79407631 bytes
- 128i,15n,115p,1791b,931s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (20 pages, 3109005 bytes).
+ 15501 words of node memory still in use:
+   29 hlist, 9 vlist, 12 rule, 19 disc, 3 local_par, 102 glue, 5 kern, 19 penalty, 302 glyph, 5135 attribute, 71 glue_spec, 497 attribute_list, 4 write, 36 user_defined, 1 pdf_dest, 16 pdf_colorstack nodes
+   avail lists: 1:17,2:24190,3:525,4:792,5:154,6:60,7:2945,8:49,9:1212,10:38,11:87
+ 52047 multiletter control sequences out of 65536+600000
+ 147 fonts using 75377847 bytes
+ 128i,15n,115p,1791b,1364s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on slides.pdf (18 pages, 2559578 bytes).
 
-PDF statistics: 351 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 131072)
+PDF statistics: 320 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 131072)
  88 words of extra memory for PDF output out of 10000 (max. 100000000)
 
