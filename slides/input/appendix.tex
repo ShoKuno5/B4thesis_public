@@ -13,7 +13,21 @@
     \begin{columns}[T] % [T] は列を上部で揃えるオプション
   
         \begin{column}{.5\textwidth}
-            \cite{Bollt}では，Reservoir Computer が非線形力学系に対して良いモデル・予測性能を持つことに関して，理論的な説明を試みている．
+            Reservoir Computer の学習の計量さについて\cite{Bollt}に倣って確認する．
+            \begin{itemize}
+                \item $\left\{\mathbf{x}_i\right\}_{i=1}^N \subset \mathbb{R}^{d_x}$: input data.
+                \item $\mathbf{r}_i \in \mathbb{R}^{d_r}$: hidden variable. $d_r>d_x$. \begin{itemize}
+                    \item $\mathbf{u}_i=\mathbf{W}^{i n} \mathbf{x}_i$. $\mathbf{W}^{i n}$ はランダムに選ばれた 重み付きの $d_r \times d_x$ 行列. 
+                    \item $\mathbf{r}_{i+1}=(1-\alpha) \mathbf{r}_i+\alpha q\left(\mathbf{A r}_i+\mathbf{u}_i+\mathbf{b}\right)$. 
+                    
+                    $\mathbf{A}:$ ランダムに選ばれた 重み付きの $d_r \times d_r$ 行列．$\alpha:$ leaking rate （後述）. $\mathbf{b}:$ offset for activation, $0$ とする．
+                    
+                    $q:$ activation funciton. $\tanh(\cdot)$ など．
+                \end{itemize}
+                \item $\mathbf{y}_{i+1}=\mathbf{W}^{\text {out }} \mathbf{r}_{i+1}$: output data．\begin{itemize}
+                    \item $\mathbf{W}^{\text {out }}:$ 重み付きの $d_x \times d_r$ 行列. データに対して学習される．
+                \end{itemize}
+            \end{itemize}
         \end{column}
         \begin{column}{.5\textwidth}
             \begin{figure}
@@ -24,14 +38,29 @@
       \end{columns}
 \end{frame}
 
-
+\begin{frame}{Reservoir Computerの学習}
+    \begin{itemize}
+        \item Reservoir Computer の特徴は，出力層の行列 $\mathbf{W}^{\text {out }}$ のみ学習されること．\begin{itemize}
+            \item 伝統的な RNN では，$\mathbf{W}^{\text {in}}, \mathbf{A}$も学習の対象 
+            
+            \rightarrow 高次元かつ非線形関数の $q(\cdot)$ の関わる勾配降下法最適化をしなければならない 
+            
+            \item Reservoir Computer はこれを回避し，$\mathbf{W}^{\text {out }}$の学習は線形な演算になる: 
+            \begin{align}
+                \mathbf{W}_{\text {out }}=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min }\|\underline{\mathbf{X}}-\mathbf{V R}\|_F=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min } \sum_{i=k}^N\left\|\mathbf{x}_i-\mathbf{V r}_i\right\|_2, k \geq 1 
+            \end{align}
+            $k > 1$ で Reservoir Computer のメモリを反映させることができる．
+            \item Ridge Regression（リッジ回帰）、またはTikhonov正則化を伴う最小二乗法を用いて，過学習を防ぎながら学習させる（Hyperparameter の ridge については後述）．
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 
 \subsection{Reservoir Computer に関する理論}
 \begin{frame}
     
 \end{frame}
 
-\subsection{先行研究}
+\subsection{実験に関する先行研究}
 \begin{frame}
     
 \end{frame}
@@ -154,6 +183,7 @@
     
 \end{frame}
 
+\section{参考文献}
 
 \begin{frame}{参考文献 - 1}
     \begin{thebibliography}{99}    

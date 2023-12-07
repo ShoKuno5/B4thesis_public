@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  7 DEC 2023 22:28
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  8 DEC 2023 00:08
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/manqueenmannequin/mygit/B4thesis_public/slides/slides.tex
@@ -1368,65 +1368,53 @@ LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
 ] (./out/slides.toc) [2
 
 ] (./input/motivation.tex(load cache: extra_lmroman7-regular.luc)(load cache: extra_lmroman5-regular.luc)
-LaTeX Font Info:    Trying loading font information for U+msa on input line 21.
+LaTeX Font Info:    Trying loading font information for U+msa on input line 19.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying loading font information for U+msb on input line 21.
+LaTeX Font Info:    Trying loading font information for U+msb on input line 19.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying loading font information for OT1+mathkerncmss on input line 21.
+LaTeX Font Info:    Trying loading font information for OT1+mathkerncmss on input line 19.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 21.
+(Font)              scaled to size 6.73553pt on input line 19.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 21.
+(Font)              scaled to size 4.8111pt on input line 19.
 (load cache: extra_lmroman6-regular.luc)
-<Fig/Jetlag.png, id=92, 2747.26375pt x 1003.75pt>
+<Fig/Jetlag.png, id=98, 2747.26375pt x 1003.75pt>
 File: Fig/Jetlag.png Graphic file (type png)
 <use Fig/Jetlag.png>
-Package luatex.def Info: Fig/Jetlag.png  used on input line 21.
+Package luatex.def Info: Fig/Jetlag.png  used on input line 19.
 (luatex.def)             Requested size: 173.33498pt x 63.31622pt.
 
-Overfull \vbox (9.65575pt too high) detected at line 21
+Overfull \vbox (4.29045pt too high) detected at line 19
  []
 
 [3
 
 <./Fig/Jetlag.png>]
-<Fig/esn.svg.png, id=105, 654.445pt x 304.13625pt>
+<Fig/esn.svg.png, id=111, 654.445pt x 304.13625pt>
 File: Fig/esn.svg.png Graphic file (type png)
 <use Fig/esn.svg.png>
-Package luatex.def Info: Fig/esn.svg.png  used on input line 47.
+Package luatex.def Info: Fig/esn.svg.png  used on input line 45.
 (luatex.def)             Requested size: 216.67204pt x 100.69011pt.
-<Fig/esn_nodes.svg.png, id=106, 706.64pt x 138.5175pt>
+<Fig/esn_nodes.svg.png, id=112, 706.64pt x 138.5175pt>
 File: Fig/esn_nodes.svg.png Graphic file (type png)
 <use Fig/esn_nodes.svg.png>
-Package luatex.def Info: Fig/esn_nodes.svg.png  used on input line 47.
+Package luatex.def Info: Fig/esn_nodes.svg.png  used on input line 45.
 (luatex.def)             Requested size: 216.67204pt x 42.47287pt.
 
-Overfull \vbox (2.41829pt too high) detected at line 47
+Overfull \vbox (2.41829pt too high) detected at line 45
  []
 
 [4
 
-<./Fig/esn.svg.png><./Fig/esn_nodes.svg.png>]
-<Fig/please.png, id=116, 450.483pt x 353.247pt>
-File: Fig/please.png Graphic file (type png)
-<use Fig/please.png>
-Package luatex.def Info: Fig/please.png  used on input line 86.
-(luatex.def)             Requested size: 216.67204pt x 169.90698pt.
-
-Overfull \vbox (5.87177pt too high) detected at line 86
- []
-
-[5
-
-<./Fig/please.png>]) (./input/experiments.tex(load cache: extra_lmroman8-regular.luc)
-<Fig/NEWrossler_attractor.png, id=128, 357.7365pt x 366.4089pt>
+<./Fig/esn.svg.png><./Fig/esn_nodes.svg.png>]) (./input/experiments.tex(load cache: extra_lmroman8-regular.luc)
+<Fig/NEWrossler_attractor.png, id=122, 357.7365pt x 366.4089pt>
 File: Fig/NEWrossler_attractor.png Graphic file (type png)
 <use Fig/NEWrossler_attractor.png>
 Package luatex.def Info: Fig/NEWrossler_attractor.png  used on input line 29.
@@ -1435,28 +1423,71 @@ Package luatex.def Info: Fig/NEWrossler_attractor.png  used on input line 29.
 Overfull \vbox (6.70567pt too high) detected at line 29
  []
 
-[6
+[5
 
 <./Fig/NEWrossler_attractor.png>]
-<Fig/phase_shift_plot.png, id=142, 726.3135pt x 393.8715pt>
+<Fig/please.png, id=137, 450.483pt x 353.247pt>
+File: Fig/please.png Graphic file (type png)
+<use Fig/please.png>
+Package luatex.def Info: Fig/please.png  used on input line 68.
+(luatex.def)             Requested size: 216.67204pt x 169.90698pt.
+
+Overfull \vbox (5.87177pt too high) detected at line 68
+ []
+
+[6
+
+<./Fig/please.png>]
+<Fig/phase_shift_plot.png, id=148, 726.3135pt x 393.8715pt>
 File: Fig/phase_shift_plot.png Graphic file (type png)
 <use Fig/phase_shift_plot.png>
-Package luatex.def Info: Fig/phase_shift_plot.png  used on input line 59.
+Package luatex.def Info: Fig/phase_shift_plot.png  used on input line 96.
 (luatex.def)             Requested size: 173.33829pt x 93.9962pt.
-<Fig/NEWrossler_waves.png, id=143, 906.2658pt x 988.6536pt>
+<Fig/NEWrossler_waves.png, id=149, 906.2658pt x 988.6536pt>
 File: Fig/NEWrossler_waves.png Graphic file (type png)
 <use Fig/NEWrossler_waves.png>
-Package luatex.def Info: Fig/NEWrossler_waves.png  used on input line 59.
-(luatex.def)             Requested size: 173.33829pt x 189.09824pt.
+Package luatex.def Info: Fig/NEWrossler_waves.png  used on input line 96.
+(luatex.def)             Requested size: 151.66975pt x 165.45908pt.
 
-Overfull \vbox (6.55312pt too high) detected at line 59
+Overfull \vbox (8.96439pt too high) detected at line 96
  []
 
 [7
 
-<./Fig/phase_shift_plot.png><./Fig/NEWrossler_waves.png>] [8
+<./Fig/phase_shift_plot.png><./Fig/NEWrossler_waves.png>]
+<Fig/8.x.png, id=161, 896.8707pt x 338.2236pt>
+File: Fig/8.x.png Graphic file (type png)
+<use Fig/8.x.png>
+Package luatex.def Info: Fig/8.x.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 57.19275pt.
+<Fig/8.y.png, id=162, 896.8707pt x 338.2236pt>
+File: Fig/8.y.png Graphic file (type png)
+<use Fig/8.y.png>
+Package luatex.def Info: Fig/8.y.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 57.19275pt.
+<Fig/8.p.png, id=163, 906.2658pt x 338.2236pt>
+File: Fig/8.p.png Graphic file (type png)
+<use Fig/8.p.png>
+Package luatex.def Info: Fig/8.p.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 56.60442pt.
+<Fig/10.x.png, id=164, 896.8707pt x 338.2236pt>
+File: Fig/10.x.png Graphic file (type png)
+<use Fig/10.x.png>
+Package luatex.def Info: Fig/10.x.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 57.19275pt.
+<Fig/10.y.png, id=165, 896.8707pt x 338.2236pt>
+File: Fig/10.y.png Graphic file (type png)
+<use Fig/10.y.png>
+Package luatex.def Info: Fig/10.y.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 57.19275pt.
+<Fig/10.p.png, id=166, 899.7615pt x 338.2236pt>
+File: Fig/10.p.png Graphic file (type png)
+<use Fig/10.p.png>
+Package luatex.def Info: Fig/10.p.png  used on input line 155.
+(luatex.def)             Requested size: 151.66975pt x 57.01213pt.
+ [8
 
-] [9
+<./Fig/8.x.png><./Fig/8.y.png><./Fig/8.p.png><./Fig/10.x.png><./Fig/10.y.png><./Fig/10.p.png>] [9
 
 ]) (./input/appendix.tex
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
@@ -1465,11 +1496,15 @@ LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/m/n' will be
 (Font)              scaled to size 16.62714pt on input line 7.
  [10
 
-]
-<Fig/bollt_reservoir.png, id=178, 1407.2575pt x 824.07875pt>
+](load cache: extra_lmromandemi10-regular.luc)
+LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 39.
+LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
+(Font)              scaled to size 4.8111pt on input line 39.
+<Fig/bollt_reservoir.png, id=196, 1407.2575pt x 824.07875pt>
 File: Fig/bollt_reservoir.png Graphic file (type png)
 <use Fig/bollt_reservoir.png>
-Package luatex.def Info: Fig/bollt_reservoir.png  used on input line 25.
+Package luatex.def Info: Fig/bollt_reservoir.png  used on input line 39.
 (luatex.def)             Requested size: 216.67204pt x 126.87582pt.
  [11
 
@@ -1479,27 +1514,24 @@ Package luatex.def Info: Fig/bollt_reservoir.png  used on input line 25.
 
 ] [14
 
+] [15
+
 ]
 LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/b/n' will be
-(Font)              scaled to size 10.53629pt on input line 95.
+(Font)              scaled to size 10.53629pt on input line 124.
 LaTeX Font Info:    Font shape `JY3/HiraginoKakuGothicProN(0)/b/n' will be
-(Font)              scaled to size 10.53629pt on input line 95.
+(Font)              scaled to size 10.53629pt on input line 124.
 
-Overfull \vbox (0.55876pt too high) detected at line 95
+Overfull \vbox (0.55876pt too high) detected at line 124
  []
 
-[15
-
-]
-LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 155.
-LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
-(Font)              scaled to size 4.8111pt on input line 155.
- [16
+[16
 
 ] [17
 
-](load cache: extra_lmmono10-regular.luc) [18
+] [18
+
+](load cache: extra_lmmono10-regular.luc) [19
 
 ])
 \tf@nav=\write6
@@ -1513,23 +1545,23 @@ LaTeX Font Info:    Font shape `JT3/HiraginoKakuGothicProN(0)/m/n' will be
 \openout8 = slides.snm
  (./out/slides.aux)
 Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 2699CA03FE85E5B6D2C11B002AE363FF;1143.
+(rerunfilecheck)             Checksum: 55204233A58B2023980A766E12D6FB81;1267.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33659 strings out of 478285
+ 33746 strings out of 478285
  156557,1977958 words of node,token memory allocated
  18395 words of node memory still in use:
    50 hlist, 11 vlist, 15 rule, 20 disc, 7 local_par, 4 math, 133 glue, 10 kern, 40 penalty, 281 glyph, 6140 attribute, 71 glue_spec, 605 attribute_list, 4 write, 56 user_defined, 2 pdf_start_link, 2 pdf_end_link, 2 pdf_dest, 2 pdf_action, 38 pdf_colorstack nodes
-   avail lists: 1:43,2:38561,3:592,4:967,5:169,6:107,7:3779,8:45,9:1530,10:35,11:199
- 52021 multiletter control sequences out of 65536+600000
- 144 fonts using 78385023 bytes
+   avail lists: 1:44,2:38561,3:592,4:967,5:178,6:107,7:3779,8:64,9:1530,10:37,11:199
+ 52069 multiletter control sequences out of 65536+600000
+ 150 fonts using 79175151 bytes
  128i,15n,115p,1791b,1372s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on slides.pdf (18 pages, 2635279 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on slides.pdf (19 pages, 3451845 bytes).
 
-PDF statistics: 326 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 131072)
- 96 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 381 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 131072)
+ 104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

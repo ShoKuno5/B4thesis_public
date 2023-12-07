@@ -37,30 +37,35 @@
 \headcommand {\beamer@subsectionentry {0}{5}{1}{11}{Reservoir Computer の原理}}
 \headcommand {\slideentry {5}{1}{1}{11/11}{Reservoir Computer の原理}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{12}{Reservoir Computer に関する理論}}
-\headcommand {\slideentry {5}{2}{1}{12/12}{Reservoir Computer に関する理論}{0}}
+\headcommand {\slideentry {5}{1}{2}{12/12}{Reservoir Computer の原理}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\beamer@subsectionentry {0}{5}{3}{13}{先行研究}}
-\headcommand {\slideentry {5}{3}{1}{13/13}{先行研究}{0}}
+\headcommand {\beamer@subsectionpages {11}{12}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{13}{Reservoir Computer に関する理論}}
+\headcommand {\slideentry {5}{2}{1}{13/13}{Reservoir Computer に関する理論}{0}}
 \headcommand {\beamer@framepages {13}{13}}
 \headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{5}{4}{14}{Hyperparameters の最適化}}
-\headcommand {\slideentry {5}{4}{1}{14/14}{Hyperparameters の最適化}{0}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{14}{実験に関する先行研究}}
+\headcommand {\slideentry {5}{3}{1}{14/14}{実験に関する先行研究}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {5}{4}{2}{15/15}{Hyperparameters の最適化}{0}}
+\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{5}{4}{15}{Hyperparameters の最適化}}
+\headcommand {\slideentry {5}{4}{1}{15/15}{Hyperparameters の最適化}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@subsectionpages {14}{15}}
-\headcommand {\beamer@subsectionentry {0}{5}{5}{16}{実験のパラメータ設定}}
-\headcommand {\slideentry {5}{5}{1}{16/16}{実験のパラメータ設定}{0}}
+\headcommand {\slideentry {5}{4}{2}{16/16}{Hyperparameters の最適化}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {5}{5}{2}{17/17}{実験のパラメータ設定}{0}}
+\headcommand {\beamer@subsectionpages {15}{16}}
+\headcommand {\beamer@subsectionentry {0}{5}{5}{17}{実験のパラメータ設定}}
+\headcommand {\slideentry {5}{5}{1}{17/17}{実験のパラメータ設定}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {5}{5}{3}{18/18}{実験のパラメータ設定}{0}}
+\headcommand {\beamer@sectionpages {10}{17}}
+\headcommand {\beamer@subsectionpages {17}{17}}
+\headcommand {\sectionentry {6}{参考文献}{18}{参考文献}{0}}
+\headcommand {\slideentry {6}{0}{1}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {16}{18}}
-\headcommand {\beamer@sectionpages {10}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\slideentry {6}{0}{2}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@partpages {1}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\beamer@sectionpages {18}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\gdef \inserttotalframenumber {19}}

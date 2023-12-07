@@ -4,7 +4,8 @@
 \beamer@sectionintoc {4}{まとめと展望}{9}{0}{4}
 \beamer@sectionintoc {5}{Appendix}{10}{0}{5}
 \beamer@subsectionintoc {5}{1}{Reservoir Computer の原理}{11}{0}{5}
-\beamer@subsectionintoc {5}{2}{Reservoir Computer に関する理論}{12}{0}{5}
-\beamer@subsectionintoc {5}{3}{先行研究}{13}{0}{5}
-\beamer@subsectionintoc {5}{4}{Hyperparameters の最適化}{14}{0}{5}
-\beamer@subsectionintoc {5}{5}{実験のパラメータ設定}{16}{0}{5}
+\beamer@subsectionintoc {5}{2}{Reservoir Computer に関する理論}{13}{0}{5}
+\beamer@subsectionintoc {5}{3}{実験に関する先行研究}{14}{0}{5}
+\beamer@subsectionintoc {5}{4}{Hyperparameters の最適化}{15}{0}{5}
+\beamer@subsectionintoc {5}{5}{実験のパラメータ設定}{17}{0}{5}
+\beamer@sectionintoc {6}{参考文献}{18}{0}{6}
