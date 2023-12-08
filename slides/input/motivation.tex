@@ -25,11 +25,19 @@
     \begin{columns}[T] % [T] は列を上部で揃えるオプション
   
       \begin{column}{.5\textwidth}
-        
-        \begin{itemize}
-          \item 右側のアイテム1
-          \item 右側のアイテム2
-        \end{itemize}
+        \begin{block}{Reservoir Computer}
+          input, reservoir, output層から成るRecurrent Neural Network(RNN) の一種．特徴は，
+          \begin{itemize}
+            \item 入力を高次元の reservoir 層に写す．\begin{itemize}
+              \item reservoir 内のニューロンはランダムに接続されている．
+              \item 高次元のダイナミクスを持ち，複雑な時系列パターンを捉えやすい．
+            \end{itemize}
+            \item 出力層のみを学習\begin{itemize}
+              \item 計算コストが低く，過学習のリスクも減少する．
+            \end{itemize}
+            \item 時間を通じて過去の入力の影響を保持する．
+          \end{itemize}
+        \end{block}
       \end{column}
 
       \begin{column}{.5\textwidth}
