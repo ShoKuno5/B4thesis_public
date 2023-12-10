@@ -51,7 +51,7 @@
                 \mathbf{W}_{\text {out }}=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min }\|\underline{\mathbf{X}}-\mathbf{V R}\|_F=\underset{\mathbf{V} \in \mathbb{R}^{d_x \times d_r}}{\arg \min } \sum_{i=k}^N\left\|\mathbf{x}_i-\mathbf{V r}_i\right\|_2, k \geq 1 
             \end{align}
             $k > 1$ で Reservoir Computer のメモリを反映させることができる．
-            \item Ridge Regression（リッジ回帰）、またはTikhonov正則化を伴う最小二乗法を用いて，過学習を防ぎながら学習させる（Hyperparameter の ridge については後述）．解は形式的に次のように表される：
+            \item Ridge Regression（リッジ回帰）、またはTikhonov正則化を伴う最小二乗法を用いて，過学習を防ぎながら学習させる（Hyperparameter の ridge については後述）．解は解析的に次のように表される：
             \begin{align}
                 \mathbf{W}^{\text {out }}:=\mathbf{X R}^T\left(\mathbf{R R}^T+\lambda \mathbf{I}\right)^{-1}
             \end{align}
