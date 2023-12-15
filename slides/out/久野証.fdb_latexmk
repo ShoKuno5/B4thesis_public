@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1702012208 "/Users/manqueenmannequin/mygit/B4thesis_public/slides/久野証.tex" "out/久野証.pdf" "久野証" 1702012215 0
+["lualatex"] 1702254768 "/Users/manqueenmannequin/mygit/B4thesis_public/slides/久野証.tex" "out/久野証.pdf" "久野証" 1702254775 0
   "/System/Library/Fonts/Helvetica.ttc" 1700331239 2369592 c34e8289dcaa9e28d8f05ac4234444cf ""
   "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc" 1700331239 7863180 0efac9a21bb1c77b8158bcfd26d62e17 ""
   "/Users/manqueenmannequin/Library/texlive/2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1695454459 1961878 305e540f3545673854903467c3d18712 ""
@@ -463,12 +463,12 @@
   "Fig/phase_shift_plot.png" 1701941195 34938 aaf9b0810422cb12ad9ddce057d857b1 ""
   "Fig/please.png" 1701930118 188501 ff56eeb99560ec8d0b343dcca195c26d ""
   "input/appendix.tex" 1702011301 29149 802c4e8ece0cca9046ce2755f74685b1 ""
-  "input/experiments.tex" 1701964428 7867 fa6a90d8153f360226fbe5e23f8784c9 ""
-  "input/motivation.tex" 1701986427 2574 cd3bc3763bbb6c949e27c526a888f477 ""
-  "out/久野証.aux" 1702012215 9840 c90da1b73db5eea9c07e391b0c74425b "lualatex"
-  "out/久野証.nav" 1702012215 5146 9c56de2e597f38817ce16df5e06f7907 "lualatex"
-  "out/久野証.out" 1702012215 1454 065ce425a5bbfa14d666210e27be96d5 "lualatex"
-  "out/久野証.toc" 1702012215 733 98c9be7d336a47369c8cc82447183171 "lualatex"
+  "input/experiments.tex" 1702254764 7927 90ea10c82575fda8778943d7e23f8732 ""
+  "input/motivation.tex" 1702254629 2640 906142ff326ea85e4b0e9aa430fa74cf ""
+  "out/久野証.aux" 1702254775 9840 c90da1b73db5eea9c07e391b0c74425b "lualatex"
+  "out/久野証.nav" 1702254775 5146 9c56de2e597f38817ce16df5e06f7907 "lualatex"
+  "out/久野証.out" 1702254775 1454 065ce425a5bbfa14d666210e27be96d5 "lualatex"
+  "out/久野証.toc" 1702254775 733 98c9be7d336a47369c8cc82447183171 "lualatex"
   "久野証.tex" 1702012208 2443 55c1ffd015d8689820a3acde94a187c6 ""
   (generated)
   "out/久野証.aux"

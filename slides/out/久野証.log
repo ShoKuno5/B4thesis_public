@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  8 DEC 2023 14:10
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.9.23)  11 DEC 2023 09:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/manqueenmannequin/mygit/B4thesis_public/slides/久野証.tex
@@ -1396,7 +1396,7 @@ File: Fig/Jetlag.png Graphic file (type png)
 Package luatex.def Info: Fig/Jetlag.png  used on input line 19.
 (luatex.def)             Requested size: 173.33498pt x 63.31622pt.
 
-Overfull \vbox (4.29045pt too high) detected at line 19
+Overfull \vbox (16.29045pt too high) detected at line 19
  []
 
 [3
@@ -1405,15 +1405,15 @@ Overfull \vbox (4.29045pt too high) detected at line 19
 <Fig/esn.svg.png, id=117, 654.445pt x 304.13625pt>
 File: Fig/esn.svg.png Graphic file (type png)
 <use Fig/esn.svg.png>
-Package luatex.def Info: Fig/esn.svg.png  used on input line 53.
+Package luatex.def Info: Fig/esn.svg.png  used on input line 55.
 (luatex.def)             Requested size: 216.67204pt x 100.69011pt.
 <Fig/esn_nodes.svg.png, id=118, 706.64pt x 138.5175pt>
 File: Fig/esn_nodes.svg.png Graphic file (type png)
 <use Fig/esn_nodes.svg.png>
-Package luatex.def Info: Fig/esn_nodes.svg.png  used on input line 53.
+Package luatex.def Info: Fig/esn_nodes.svg.png  used on input line 55.
 (luatex.def)             Requested size: 216.67204pt x 42.47287pt.
 
-Overfull \vbox (2.41829pt too high) detected at line 53
+Overfull \vbox (13.95457pt too high) detected at line 55
  []
 
 [4
@@ -1463,32 +1463,32 @@ Overfull \vbox (8.96439pt too high) detected at line 96
 <Fig/8.x.png, id=167, 896.8707pt x 338.2236pt>
 File: Fig/8.x.png Graphic file (type png)
 <use Fig/8.x.png>
-Package luatex.def Info: Fig/8.x.png  used on input line 155.
+Package luatex.def Info: Fig/8.x.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 57.19275pt.
 <Fig/8.y.png, id=168, 896.8707pt x 338.2236pt>
 File: Fig/8.y.png Graphic file (type png)
 <use Fig/8.y.png>
-Package luatex.def Info: Fig/8.y.png  used on input line 155.
+Package luatex.def Info: Fig/8.y.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 57.19275pt.
 <Fig/8.p.png, id=169, 906.2658pt x 338.2236pt>
 File: Fig/8.p.png Graphic file (type png)
 <use Fig/8.p.png>
-Package luatex.def Info: Fig/8.p.png  used on input line 155.
+Package luatex.def Info: Fig/8.p.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 56.60442pt.
 <Fig/10.x.png, id=170, 896.8707pt x 338.2236pt>
 File: Fig/10.x.png Graphic file (type png)
 <use Fig/10.x.png>
-Package luatex.def Info: Fig/10.x.png  used on input line 155.
+Package luatex.def Info: Fig/10.x.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 57.19275pt.
 <Fig/10.y.png, id=171, 896.8707pt x 338.2236pt>
 File: Fig/10.y.png Graphic file (type png)
 <use Fig/10.y.png>
-Package luatex.def Info: Fig/10.y.png  used on input line 155.
+Package luatex.def Info: Fig/10.y.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 57.19275pt.
 <Fig/10.p.png, id=172, 899.7615pt x 338.2236pt>
 File: Fig/10.p.png Graphic file (type png)
 <use Fig/10.p.png>
-Package luatex.def Info: Fig/10.p.png  used on input line 155.
+Package luatex.def Info: Fig/10.p.png  used on input line 156.
 (luatex.def)             Requested size: 151.66975pt x 57.01213pt.
 (load cache: extra_lmroman12-regular.luc) [8
 
@@ -1683,14 +1683,14 @@ Package rerunfilecheck Info: File `久野証.out' has not changed.
 Here is how much of LuaTeX's memory you used:
  34055 strings out of 478285
  156557,1977958 words of node,token memory allocated
- 39527 words of node memory still in use:
-   65 hlist, 11 vlist, 16 rule, 60 disc, 9 local_par, 4 math, 247 glue, 12 kern, 52 penalty, 803 glyph, 13422 attribute, 71 glue_spec, 1279 attribute_list, 4 write, 71 user_defined, 2 pdf_start_link, 2 pdf_end_link, 4 pdf_dest, 2 pdf_action, 50 pdf_colorstack nodes
-   avail lists: 1:41,2:32742,3:601,4:940,5:190,6:105,7:3356,8:64,9:1620,10:42,11:168
+ 39589 words of node memory still in use:
+   65 hlist, 11 vlist, 16 rule, 60 disc, 9 local_par, 4 math, 247 glue, 12 kern, 52 penalty, 805 glyph, 13444 attribute, 71 glue_spec, 1281 attribute_list, 4 write, 71 user_defined, 2 pdf_start_link, 2 pdf_end_link, 4 pdf_dest, 2 pdf_action, 50 pdf_colorstack nodes
+   avail lists: 1:45,2:32718,3:601,4:940,5:190,6:105,7:3356,8:64,9:1620,10:42,11:168
  52228 multiletter control sequences out of 65536+600000
  184 fonts using 85746271 bytes
  128i,19n,115p,1794b,1372s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></System/Library/Fonts/Helvetica.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromandemi10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/ヒラギノ角ゴシック W3.ttc></System/Library/Fonts/Helvetica.ttc></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on 久野証.pdf (29 pages, 5382005 bytes).
+Output written on 久野証.pdf (29 pages, 5382776 bytes).
 
 PDF statistics: 556 PDF objects out of 1000 (max. 8388607)
  418 compressed objects within 5 object streams
