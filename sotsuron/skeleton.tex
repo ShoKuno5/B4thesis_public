@@ -1,0 +1,285 @@
+\documentclass[uplatex]{suribt}
+\bibliographystyle{junsrt}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[legacycolonsymbols]{mathtools}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem*{theorem*}{定理}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem*{definition*}{定義}
+\newtheorem{fact}[theorem]{事実}
+\newtheorem{assumption}[theorem]{仮定}
+\newtheorem{corollary}[theorem]{系}
+\renewcommand\proofname{\bf 証明}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%\documentclass[oneside]{suribt}% 本文が * ページ以下のときに (掲示に注意)
+\title{Reservoir Computer によるカオス時系列予測と生体リズム研究への応用}
+%\titlewidth{}% タイトル幅 (指定するときは単位つきで)
+\author{久野証}
+\eauthor{Sho Kuno}% Copyright 表示で使われる
+\studentid{03-210622}
+\supervisor{郡 宏 教授}% 1 つ引数をとる (役職まで含めて書く)
+%\supervisor{指導教員名 役職 \and 指導教員名 役職}% 複数教員の場合，\and でつなげる
+\handin{2024}{02}% 提出月. 2 つ (年, 月) 引数をとる
+%\keywords{キーワード1, キーワード2} % 概要の下に表示される
+
+\begin{document}
+\maketitle%%%%%%%%%%%%%%%%%%% タイトル %%%%
+
+\frontmatter% ここから前文
+\begin{abstract}%%%%%%%%%%%%% 概要 %%%%%%%%
+\end{abstract}
+
+\tableofcontents%%%%%%%%%%%%% 目次 %%%%%%%%
+
+\mainmatter% ここから本文 %%% 本文 %%%%%%%%
+\chapter{はじめに}
+
+\section{本研究の位置付け}
+機械学習, 制御理論, 最適化理論をはじめとしたさまざまな分野での問題において, 舞台となるのはユークリッド空間である. さらに, 応用においてはユークリッド空間に制約条件が備わっていることが多い. この制約をユークリッド空間の部分集合として見るのではなく, 制約そのものを全体の空間として見ることも可能である(例挟んだ方がいいかも). リーマン多様体はそのような空間の表現に適しており, 近年そこではさまざまな工学が展開されている.(ここからざっくり)特に機械学習とか制御で2点間の距離や, それを結ぶまっすぐな線を計算する場面がある. しかし, リーマン多様体はユークリッド空間と大きく異なり困難が伴う. うまく計算できる例もあるけど, 一般的な枠組みでのアルゴリズムはあまり提案されていない.
+\section{本研究の内容}
+時間対称性に着目して新たなアルゴリズムを提案. いくつかのリーマン多様体上で先行研究でのアルゴリズムと比較.
+\section{本論文の構成}
+第2章では, 以降の章を読み解くのに必要な,リーマン幾何学まわりの定義や性質と, 時間反転対称性という概念を述べる. 第3章では, リーマン多様体上の2点間の測地線を計算する手法を提案する. 第4章では, 提案手法を用いた数値実験を行い, 先行研究でのアルゴリズムと比較する. 第5章では, まとめと今後の課題を述べる.
+\section{記法の準備}
+
+\chapter{準備}
+
+本章では, 本研究の舞台となる多様体を定義し, それにまつわる重要な概念について述べる. さらに, 本研究のテーマであるリーマン幾何学を概観する. 後に有用になる諸概念などもこの章で述べる.
+
+\section{多様体}
+まずは多様体を定義する.
+\begin{definition}
+(定義6.1 松本). \(M\)を位相空間とする. \(M\)の開集合\(U\)と写像\(\varphi:U \to \mathbb{R}^m\)が存在して,
+\begin{equation*}
+    \varphi:U \to \varphi(U)
+\end{equation*}
+が同相写像であるとき, \((U,\varphi)\)を\(m\)次元座標近傍といい, \(\varphi\)を\(U\)上の局所座標系という. 任意の\(p \in U\)に対し, \(\varphi(p)\)は\(\mathbb{R}^m\)の座標を用いて,
+\begin{equation*}
+    \varphi(p) = (x_1,x_2,\ldots,x_m)
+\end{equation*}
+とかけるが, \((x_1,x_2,\ldots,x_m)\)を, \((U,\varphi)\)に関する\(p\)の局所座標という.
+\end{definition}
+
+\begin{definition}
+(定義6.4 松本). \(r \ge 1\)を自然数または\(\infty\)とする. 位相空間\(M\)が以下の条件をみたすとき, \(M\)を\(m\)次元\(C^r\)級多様体という.
+\begin{enumerate}
+    \item \(M\)はハウスドルフ空間である.
+    \item \(M\)の\(m\)次元座標近傍からなる族\({(U_\alpha,\varphi_\alpha)}_{\alpha \in A}\)が存在して,
+        \begin{equation*}
+            M = \bigcup_{\alpha \in A}U_\alpha
+        \end{equation*}
+    が成立する.
+    \item \(U_\alpha \cap U_\beta \neq \emptyset\)であるような任意の\(\alpha,\beta \in A\)について, 座標変換
+        \begin{equation*}
+            \varphi_\beta \circ \varphi_{\alpha}^{-1}:\varphi_\alpha(U_\alpha \cap U_\beta) \to \varphi_\beta(U_\alpha \cap U_\beta)
+        \end{equation*}
+    は\(C^r\)級である.
+\end{enumerate}
+\end{definition}
+
+以後, 断らない限り, \(M\)は\(m\)次元\(C^\infty\)級多様体を指すものとする.
+
+\begin{definition}
+(定義8.1 松本) \(p \in M\)における方向微分もしくは接ベクトル\(v\)とは, \(p\)の開近傍で定義された\(C^\infty\)級関数\(f\)に実数\(v(f)\)を対応させる操作であって, 以下の条件をみたすものである.
+\begin{enumerate}
+    \item \(f\)と\(g\)が\(p\)の十分小さな開近傍上で一致すれば, \(v(f)=v(g)\).
+    \item 任意の\(C^\infty\)級関数\(f,g\)と\(a,b \in \mathbb{R}\)に対して,
+        \begin{equation*}
+            v(af+bg) = av(f)+bv(g)
+        \end{equation*}
+    が成立する.
+    \item 任意の\(C^\infty\)級関数\(f,g\)に対して,
+        \begin{equation*}
+            v(fg) = v(f)g(p) + f(p)v(g)
+        \end{equation*}
+    が成立する.
+\end{enumerate}
+\(p\)における方向微分全体の集合を接空間といい, \(T_pM\)とかく.
+\end{definition}
+
+\begin{theorem}
+(命題8.1-8.3と注意 松本) \(p \in M\)に対して, \(T_pM\)は\(m\)次元実ベクトル空間をなし, 座標近傍と局所座標系によらない. \(p\)のまわりの局所座標系\((x_1,x_2,\ldots,x_m)\)を選び, \(p\)のまわりで定義された\(C^\infty\)級関数\(f\)に対して,
+\begin{equation*}
+    \bigg(\frac{\partial}{\partial x_i}\bigg)_p:f \mapsto \frac{\partial f}{\partial x_i}(p) \qquad (i=1,2,\ldots,m)
+\end{equation*}
+という操作を定義する. このとき,
+\begin{equation*}
+    \bigg(\frac{\partial}{\partial x_1}\bigg)_p, \bigg(\frac{\partial}{\partial x_2}\bigg)_p,\ldots,\bigg(\frac{\partial}{\partial x_m}\bigg)_p
+\end{equation*}
+は\(T_pM\)の基底をなす.
+\end{theorem}
+
+\begin{definition}
+(定義8.3 松本) \(c:(-\epsilon,\epsilon) \to M\)を\(C^\infty\)級曲線として, \(c(0)=p\)であるとする. 曲線\(c\)の\(t=0\)における速度ベクトルとは
+\begin{equation*}
+    \left.\frac{dc}{dt}\right|_{t=0}(f) = \left.\frac{df(c(t))}{dt}\right|_{t=0}
+\end{equation*}
+で定義される接ベクトル\(\left.\frac{dc}{dt}\right|_{t=0} \in T_pM\)のことである. ただし, \(f\)は\(p\)のまわりで定義された任意の\(C^\infty\)級関数である.
+\end{definition}
+
+\begin{theorem}
+(定義8.3の下 松本) \(T_pM\)の基底\(\big\{\big(\frac{\partial}{\partial x_1}\big)_p,\big(\frac{\partial}{\partial x_2}\big)_p,\ldots,\big(\frac{\partial}{\partial x_m}\big)_p\big\}\)を用いて表すと,
+\begin{equation*}
+    \left.\frac{dc}{dt}\right|_{t=0} = \frac{dx_i}{dt}(0)\bigg(\frac{\partial}{\partial x_i}\bigg)_p
+\end{equation*}
+ただし, \(c(t)=(x_1(t),x_2(t),\ldots,x_m(t))\)は\(c\)の局所座標表示である.
+\end{theorem}
+
+\begin{theorem}
+\label{thm_velo}
+(命題9.2 松本) 任意の接ベクトル\(v \in T_pM\)に対して, \(p\)を通る\(C^\infty\)級曲線
+\begin{equation*}
+    c:(-\epsilon,\epsilon) \to M \qquad (c(0)=p)
+\end{equation*}
+が存在して, \(\left.\frac{dc}{dt}\right|_{t=0} = v\)が成立する.
+\end{theorem}
+
+\begin{definition}
+(定義9.2 松本) \(M,N\)をそれぞれ\(m\)次元, \(n\)次元の\(C^\infty\)級多様体, \(f:M \to N\)を\(C^\infty\)級とする. 任意の接ベクトル\(v \in T_pM\)をとる. 定理(\ref{thm_velo})により, \(\left.\frac{dc}{dt}\right|_{t=0} = v\)となる, \(p\)を通る\(C^\infty\)級曲線
+\begin{equation*}
+    c:(-\epsilon,\epsilon) \to M \qquad (c(0)=p)
+\end{equation*}
+が存在する. この曲線を写像\(f\)でうつすと, \(q=f(p)\)を通る\(C^\infty\)曲線
+\begin{equation*}
+    f \circ c:(-\epsilon,\epsilon) \to N \qquad (f \circ c(0) = q)
+\end{equation*}
+になる. \(t=0\)における\(f \circ c\)の速度ベクトル\(\left.\frac{d(f \circ c)}{dt}\right|_{t=0}\)を\(w \in T_qN\)とかく. このとき, \(w\)は\(v\)のみによって決まり, 曲線\(c\)のとり方によらない. \(v\)に\(w\)を対応させれば, 写像\(T_pM \to T_qN\)が得られる. こうして得られた写像を
+\begin{equation*}
+    (df)_p:T_pM \to T_qN
+\end{equation*}
+とかき, \(p\)における\(f:M \to N\)の微分とよぶ.
+\end{definition}
+%微分いらんかも
+\begin{definition}
+(定義7.5 松本) \(M,N\)を\(C^r\)級多様体とする. \(f:M \to N\)が以下の条件をみたすとき, \(f\)を\(C^s\)級微分同相写像という.
+\begin{enumerate}
+    \item \(f:M \to N\)は全単射である.
+    \item \(f:M \to N\)と\(f^{-1}:N \to M\)は, ともに\(C^s\)級写像である.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+(定義16.1 松本) \(M\)の各\(p \in M\)に, \(p\)における接ベクトル\(X_p \in T_pM\)がひとつずつ対応しているとき, その対応\(X = \{X_p\}_{p \in M}\)を\(M\)上のベクトル場という.
+\end{definition}
+
+\begin{definition}
+(松本16.1の下) \((U;x_1,\ldots,x_m)\)を\(M\)の座標近傍, \(X=\{X_p\}_{p \in M}\)を\(M\)上のベクトル場とする. \(U\)上に限れば, \(X\)は
+\begin{equation*}
+    X = \xi_1 \frac{\partial}{\partial x_1}+\xi_2 \frac{\partial}{\partial x_2}+ \cdots + \xi_m \frac{\partial}{\partial x_m} 
+\end{equation*}
+と, \(U\)上の関数\(\xi_i : U \to \mathbb{R}\)によって局所座標表示される. ただし,
+\begin{equation*}
+    \frac{\partial}{\partial x_i} = \bigg\{\bigg(\frac{\partial}{\partial x_i}\bigg)_{p}\bigg\}_{p \in U} \qquad (i=1,2,\ldots,m)
+\end{equation*}
+である.
+\end{definition}
+
+\section{リーマン幾何学}
+%計量, レビチビタ接続, クリストッフェル, きょうへん微分,測地線方程式, 指数写像
+\begin{theorem}
+\label{diffeo}
+(2.9 do carmo). \((M,g)\)をリーマン多様体とする. \(q \in M\)に対し, ある\(\epsilon_q > 0\)が存在し, \(\exp_q:B(0;\epsilon_q) \subset T_qM \to M\) が\(B(0;\epsilon_q)\)から\(M\)の部分開集合への微分同相写像となる.
+\end{theorem}
+以下の系がただちに従う.
+\begin{corollary}
+\label{uniquegeo}
+\(V_q \coloneqq \exp_q(B(0;\epsilon_q))\)とすると, 次が成立する.
+\begin{equation}
+\exists! \: v \in B(0;\epsilon_q) \quad \text{s.t.} \quad \gamma(q,v,1)=q^{\prime}, \quad \forall q^{\prime} \in V_q
+\end{equation}
+\end{corollary}
+%測地的完備,hopf rinow
+
+\section{時間反転対称性}
+
+\begin{definition}
+(時間反転対称性, officialな定義なし) 変数\(t \in \mathbb{R}\)に関する常微分方程式があるとする. 任意の解\(r(t)\)に対して, \(r(-t)\)も解であるとき, この常微分方程式は時間反転対称であるという. また, \(r(-t)\)を\(r(t)\)の時間反転解という.
+\end{definition}
+
+\begin{fact}
+測地線方程式は時間反転対称である.
+\end{fact}
+\begin{proof}
+測地線方程式は以下の通りである.
+\begin{equation*}
+    fff
+\end{equation*}
+\end{proof}
+\begin{theorem}
+\label{thm_ode_df}
+初期値に対する解の微分可能性
+\end{theorem}
+
+\chapter{提案手法}
+問題設定を確認する. \((M,g)\)を測地的完備なリーマン多様体, \((U,\varphi)\)を\(M\)のある座標近傍, \((x_1,\ldots,x_m)\)をその局所座標とする. 定理\ref{diffeo}およびその系\ref{uniquegeo}より, \(y_0 \in U\)に対して, ある\(\epsilon_{y_0}\)が存在して, \(y_1 \in V_{y_0} = \exp_{y_0}(B(0;\epsilon_{y_0}))\)に対して, \(\gamma(y_0,v_0,1) = y_1\)なる\(v_0 \in B(0;\epsilon_{y_0})\)が一意に存在する. 今, この\(v_0\)を計算する問題を考える.
+\cite{RODRIGUES20161}
+本研究では, この問題を最小化問題に還元する. まず, 目的関数\(f:\mathbb{R}^m \times \mathbb{R}^m \cong T_{y_0}M \times T_{y_1}M \to \mathbb{R}_{\geq 0} \)を以下のように定義する.
+\begin{equation}
+\label{obj}
+f(v_0,v_1) \coloneqq \int_{0}^{1}|\gamma(y_0,v_0,t)-\gamma(y_1,v_1,1-t)|_2 dt
+\end{equation}
+次の事実を確認する.
+\begin{fact}
+\(f\)の定義域を\(B(0;\epsilon_{y_0}) \times \mathbb{R}^m\)に制限する. このとき, ただ一つの最適解\(v_{0}^{*},v_{1}^{*}\)が存在して, \(\gamma(y_0,v_{0}^{*},1)=y_1\)をみたす.
+\end{fact}
+\begin{proof}
+定義より, \(f(v_{0}^{*},v_{1}^{*})=0\)は, 
+\begin{equation}
+\label{eq_fact}
+    \gamma(y_0,v_{0}^*,t) = \gamma(y_1,v_{1}^*,1-t), \quad 0\le \forall t \le 1
+\end{equation}
+と同値である. このとき, \(\gamma(y_0,v_{0}^*,1) = \gamma(y_1,v_{1}^*,0) = y_1\)であり, \(\gamma\)の定義より, \(\gamma(y_0,v_{0}^*,t)\)は\(y_0\)と\(y_1\)を結ぶ測地線である. 章冒頭の議論から, そのような\(v_{0}^*\)は一意に存在する. また,式\ref{eq_fact}は, \(\gamma(y_1,v_{1}^*,t)\)が\(\gamma(y_0.v_{0}^*,t)\)の時間反転解であることを意味する. つまり, \(v_{1}^* = -\dot{\gamma}(y_0,v_{0}^*,1)\)として一意に決定される. 
+\end{proof}
+\noindent
+この事実によって, \(y_0\)と\(y_1\)を結ぶ測地線を計算することは, 以下の最小化問題と等価である.
+\begin{equation*}
+\text{minimize} \quad f(v_0,v_1) \quad \text{s.t.} \quad \|v_0\|_g \le \epsilon_{y_0}   
+\end{equation*}
+これを最急降下法を用いて解く. 最急降下法では,目的関数の勾配を用いる. ここで次の事実を確認する.
+\begin{fact}
+任意の\((v_0,v_1) \in \mathbb{R}^2 \times \mathbb{R}^2\)に対して, \(f\)の勾配\(\nabla f(v_0,v_1)\)が存在する.
+\end{fact}
+\begin{proof}
+リーマン計量の滑らかさと定理(\ref{thm_ode_df})より測地線は初期値で偏微分可能.積分と交換して,ノルムも連続だからokay
+\end{proof}
+\noindent
+よって勾配が存在するので, 次のような一般的な最急降下法が適用できる.
+\begin{algorithm}
+    \caption{最急降下法}
+    \begin{algorithmic}[1]
+    \REQUIRE 初期点\((v_0^{(0)},v_1^{(0)}) \in B(0;\epsilon_{y_0}) \times \mathbb{R}^m\), 探索幅\(\alpha > 0\), 最大反復回数\(N \in \mathbb{N}\), 許容誤差\(\eta > 0\)
+    \ENSURE 解\((v_{0}^*,v_{1}^*)\)
+    \FOR{\(i = 0,1,\ldots,N-1\)}
+    \IF{\(f(v_0^{(i)},v_1^{(i)}) < \eta\)}
+    \STATE \((v_{0}^*,v_{1}^*)=(v_0^{(i)},v_1^{(i)})\)を出力
+    \ENDIF
+    \STATE 勾配\(\nabla f(v_0^{(i)},v_1^{(i)})\)を計算
+    \STATE \(d_i \leftarrow -\nabla f(v_0^{(i)},v_1^{(i)})\)
+    \STATE \((v_0^{(i+1)},v_1^{(i+1)}) \leftarrow (v_0^{(i)},v_1^{(i)}) + \alpha d_i\)
+    \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+%なんかうまいこと位置を調整しろ
+また, 下記のバックトラッキングによって探索幅を適応的に変化させるものもある. 
+
+\chapter{数値実験}
+
+\chapter{まとめと今後の課題}
+\backmatter% ここから後付
+\chapter{謝辞}%%%%%%%%%%%%%%% 謝辞 %%%%%%%
+
+%\begin{thebibliography}{}%%%% 参考文献 %%%
+% \bibitem{}
+%\end{thebibliography}
+%\bibliographystyle{}%           BibTeX を使う場合
+\bibliography{reference.bib}% BibTeX を使う場合
+
+\appendix% ここから付録 %%%%% 付録 %%%%%%%
+\chapter{}
+\end{document}
