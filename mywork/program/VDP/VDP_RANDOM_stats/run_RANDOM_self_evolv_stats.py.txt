@@ -1,0 +1,19 @@
+python RANDOM_self_evolv_stats.py -12 & python RANDOM_self_evolv_stats.py -11 & python RANDOM_self_evolv_stats.py -10 & python RANDOM_self_evolv_stats.py -9 & python RANDOM_self_evolv_stats.py -8 & python RANDOM_self_evolv_stats.py -7 & python RANDOM_self_evolv_stats.py -6 & python RANDOM_self_evolv_stats.py -5 & python RANDOM_self_evolv_stats.py -4 & python RANDOM_self_evolv_stats.py -3 & python RANDOM_self_evolv_stats.py -2 & python RANDOM_self_evolv_stats.py -1 & python RANDOM_self_evolv_stats.py 0 & python RANDOM_self_evolv_stats.py 1 & python RANDOM_self_evolv_stats.py 2 & python RANDOM_self_evolv_stats.py 3 & python RANDOM_self_evolv_stats.py 4 & python RANDOM_self_evolv_stats.py 5 & python RANDOM_self_evolv_stats.py 6 & python RANDOM_self_evolv_stats.py 7 & python RANDOM_self_evolv_stats.py 8 & python RANDOM_self_evolv_stats.py 9 & python RANDOM_self_evolv_stats.py 10 & python RANDOM_self_evolv_stats.py 11 & python RANDOM_self_evolv_stats.py 12
+wait
+
+
+python RANDOM_self_evolv_stats.py -12 & python RANDOM_self_evolv_stats.py -11 & python RANDOM_self_evolv_stats.py -10 & python RANDOM_self_evolv_stats.py -9 & python RANDOM_self_evolv_stats.py -8 & python RANDOM_self_evolv_stats.py -7 & python RANDOM_self_evolv_stats.py -6 & python RANDOM_self_evolv_stats.py -5 
+wait
+
+python RANDOM_self_evolv_stats.py -4 & python RANDOM_self_evolv_stats.py -3 & python RANDOM_self_evolv_stats.py -2 & python RANDOM_self_evolv_stats.py -1 & python RANDOM_self_evolv_stats.py 0 & python RANDOM_self_evolv_stats.py 1 & python RANDOM_self_evolv_stats.py 2 & python RANDOM_self_evolv_stats.py 3 & python RANDOM_self_evolv_stats.py 4
+wait
+
+python RANDOM_self_evolv_stats.py 5 & python RANDOM_self_evolv_stats.py 6 & python RANDOM_self_evolv_stats.py 7 & python RANDOM_self_evolv_stats.py 8 & python RANDOM_self_evolv_stats.py 9 & python RANDOM_self_evolv_stats.py 10 & python RANDOM_self_evolv_stats.py 11 & python RANDOM_self_evolv_stats.py 12
+wait
+
+
+python RANDOM_self_evolv_stats.py 5 & python RANDOM_self_evolv_stats.py 6 & python RANDOM_self_evolv_stats.py 7 & python RANDOM_self_evolv_stats.py 8 
+wait
+
+python RANDOM_self_evolv_stats.py 9 & python RANDOM_self_evolv_stats.py 10 & python RANDOM_self_evolv_stats.py 11 & python RANDOM_self_evolv_stats.py 12
+wait
