@@ -1,0 +1,43 @@
+{
+    "latex-workshop.latex.outDir": "./out",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=out",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "out/%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex -> bibtex -> lualatex x 2",
+            "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.synctex.enabled": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "github.copilot.terminal.suggestCommand",
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true
+}
