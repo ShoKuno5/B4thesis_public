@@ -35,7 +35,6 @@
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
-\NeedsTeXFormat{pLaTeX2e}
 \ProvidesClass{suribt}
   [2007/01/18 KUROKI Yusuke]
 \newif\ifdraft
@@ -79,14 +78,14 @@
 \DeclareOption{doctor}{\@undergraduatefalse\@graduatedoctortrue}
 \ExecuteOptions{final,twoside,tocchaplong,mi,bachelor}
 \ProcessOptions
-\LoadClass[a4paper,onecolumn,titlepage,11pt,uplatex
+\LoadClass[a4paper,onecolumn,titlepage,11pt
 \ifdraft ,draft\else ,final\fi%
 \ifwinjis ,winjis\else\ifjisfont\else ,mingoth\fi\fi%
 \iftombow ,tombow\else\iftombo ,tombo\else\ifmentuke ,mentuke\fi\fi\fi%
 \if@twoside ,twoside,openright\else ,oneside,openany\fi%
 \ifpapersize ,papersize\fi%
 \if@english ,english\fi%
-]{jsbook}
+]{ltjsbook}
 \iftombowdate
   \newcount\@totalpage
   \def\@lastoftotalpage{?}
@@ -101,10 +100,10 @@
 \fi
 \setlength{\fullwidth}{\paperwidth}
 \addtolength{\fullwidth}{-36mm}
-\@tempdima=1zw
+\@tempdima=1\zw
 \divide\fullwidth\@tempdima \multiply\fullwidth\@tempdima
-\ifdim \fullwidth>42zw
-  \setlength{\fullwidth}{42zw}
+\ifdim \fullwidth>42\zw
+  \setlength{\fullwidth}{42\zw}
 \fi
 \setlength{\textwidth}{\fullwidth}
 \setlength{\oddsidemargin}{\paperwidth}
@@ -146,12 +145,12 @@
   \def\chaptermark##1{\markboth{%
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
-        \@chapapp\thechapter\@chappos\hskip1zw
+        \@chapapp\thechapter\@chappos\hskip1\zw
       \fi
     \fi
     ##1}{}}%
   \def\sectionmark##1{\markright{%
-    \ifnum \c@secnumdepth >\z@ \thesection \hskip1zw\fi
+    \ifnum \c@secnumdepth >\z@ \thesection \hskip1\zw\fi
     ##1}}}%
 \renewenvironment{titlepage}{%
   \cleardoublepage
@@ -344,10 +343,10 @@
       \parfillskip-\rightskip
       \leavevmode\headfont
       \if@tocchaplong
-        \@tempdima4.683zw%
-        \setbox\tw@=\hbox{\headfont{}\appendixname{}M\hskip.683zw}%
+        \@tempdima4.683\zw%
+        \setbox\tw@=\hbox{\headfont{}\appendixname{}M\hskip.683\zw}%
         \ifdim \wd\tw@>\@tempdima \@tempdima\wd\tw@\fi
-        \setbox\thr@@=\hbox{\headfont{}\@chapapp{99}\@chappos\hskip.683zw}%
+        \setbox\thr@@=\hbox{\headfont{}\@chapapp{99}\@chappos\hskip.683\zw}%
         \ifdim \wd\thr@@>\@tempdima \@tempdima\wd\thr@@\fi
         \setlength\@lnumwidth{\@tempdima}%
       \else
@@ -360,21 +359,21 @@
   \fi}
 \renewcommand*{\l@section}{%
   \if@tocchaplong% [2005/01/20] 改善
-    \@tempdima4.683zw%
-    \setbox\tw@=\hbox{\headfont{}\appendixname{}M\hskip.683zw}%
+    \@tempdima4.683\zw%
+    \setbox\tw@=\hbox{\headfont{}\appendixname{}M\hskip.683\zw}%
     \ifdim \wd\tw@>\@tempdima \@tempdima\wd\tw@\fi
-    \setbox\thr@@=\hbox{\headfont{}\@chapapp{99}\@chappos\hskip.683zw}%
+    \setbox\thr@@=\hbox{\headfont{}\@chapapp{99}\@chappos\hskip.683\zw}%
     \ifdim \wd\thr@@>\@tempdima \@tempdima\wd\thr@@\fi
-    \advance\@tempdima-3.683zw%
-    \ifdim \@tempdima<1zw \@tempdima1zw\fi
-    \@tempdimb3.683zw%
+    \advance\@tempdima-3.683\zw%
+    \ifdim \@tempdima<1\zw \@tempdima1\zw\fi
+    \@tempdimb3.683\zw%
   \else
     \@tempdima1.5em \@tempdimb2.3em
   \fi
   \@dottedtocline{1}{\@tempdima}{\@tempdimb}}
   \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\z@}%
     {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
-    {-1zw}% 改行せず 1zw のアキ
+    {-1\zw}% 改行せず 1\zw のアキ
     {\normalfont\normalsize\headfont}}
 \newcommand{\abstractname}{\if@english Abstract\else 概要\fi}
 \renewenvironment{abstract}{%
@@ -415,23 +414,23 @@
     {\@latex@warning{Empty `thebibliography' environment}}%
   \endlist}
 \long\def\@makecaption#1#2{{\small%
-  \advance\leftskip2zw
-  \advance\rightskip2zw
+  \advance\leftskip2\zw
+  \advance\rightskip2\zw
   \@tempdimb\hsize
-  \advance\@tempdimb-4zw
+  \advance\@tempdimb-4\zw
   \vskip\abovecaptionskip
-  \setbox\tw@=\hbox{\hskip2zw{\headfont#1.}~}%
+  \setbox\tw@=\hbox{\hskip2\zw{\headfont#1.}~}%
   \sbox\@tempboxa{{\headfont#1.}~#2}%
   \ifdim \wd\@tempboxa >\@tempdimb
     \list{\headfont#1.}{%
-      \renewcommand{\makelabel}[1]{\hskip2zw##1\hfil}
+      \renewcommand{\makelabel}[1]{\hskip2\zw##1\hfil}
       \itemsep    \z@
       \itemindent \z@
       \labelsep   \z@
       \labelwidth \wd\tw@
       \listparindent\z@
       \leftmargin \wd\tw@
-      \rightmargin 2zw}\item\relax #2\endlist
+      \rightmargin 2\zw}\item\relax #2\endlist
   \else
     \global \@minipagefalse
     \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
@@ -439,16 +438,6 @@
   \vskip\belowcaptionskip}}
 
 %%% jsarticle.clsから引用 (2019.12.13) %%%
-\def\pltx@today@year@#1{%
-  \ifnum\numexpr\year-#1=1 元\else
-    \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi
-      \kansuji\numexpr\year-#1\relax
-    \else
-      \number\numexpr\year-#1\relax\nobreak
-    \fi
-  \fi 年
-}
-
 \def\pltx@today@year{%
   \ifnum\numexpr\year*10000+\month*100+\day<19890108
     昭和\pltx@today@year@{1925}%
@@ -457,27 +446,59 @@
   \else
     令和\pltx@today@year@{2018}%
   \fi\fi}
-
-\def\today{%
-  \if@english
-    \ifcase\month\or
-      January\or February\or March\or April\or May\or June\or
-      July\or August\or September\or October\or November\or December\fi
-      %\space\number\day
-      , \number\year
-  \else\if西暦
-    \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi \kansuji\year
+\def\today{{%
+  \if西暦
+    \ifnum\ltjgetparameter{direction}=3 \kansuji\year
     \else\number\year\nobreak\fi 年
   \else
     \pltx@today@year
   \fi
-  \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi
+  \ifnum\ltjgetparameter{direction}=3
     \kansuji\month 月
-%    \kansuji\day 日
+  %  \kansuji\day 日
   \else
     \number\month\nobreak 月
-%    \number\day\nobreak 日
-  \fi\fi}
+  %  \number\day\nobreak 日
+  \fi}}
+% \def\pltx@today@year@#1{%
+%   \ifnum\numexpr\year-#1=1 元\else
+%     \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi
+%       \kansuji\numexpr\year-#1\relax
+%     \else
+%       \number\numexpr\year-#1\relax\nobreak
+%     \fi
+%   \fi 年
+% }
+
+% \def\pltx@today@year{%
+%   \ifnum\numexpr\year*10000+\month*100+\day<19890108
+%     昭和\pltx@today@year@{1925}%
+%   \else\ifnum\numexpr\year*10000+\month*100+\day<20190501
+%     平成\pltx@today@year@{1988}%
+%   \else
+%     令和\pltx@today@year@{2018}%
+%   \fi\fi}
+
+% \def\today{%
+%   \if@english
+%     \ifcase\month\or
+%       January\or February\or March\or April\or May\or June\or
+%       July\or August\or September\or October\or November\or December\fi
+%       %\space\number\day
+%       , \number\year
+%   \else\if西暦
+%     \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi \kansuji\year
+%     \else\number\year\nobreak\fi 年
+%   \else
+%     \pltx@today@year
+%   \fi
+%   \ifnum1=\iftdir\ifmdir0\else1\fi\else0\fi
+%     \kansuji\month 月
+% %    \kansuji\day 日
+%   \else
+%     \number\month\nobreak 月
+% %    \number\day\nobreak 日
+%  \fi\fi}
 %%% 引用終わり %%%
 
 \pagestyle{headings}
