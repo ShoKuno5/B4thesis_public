@@ -1,2 +1,37 @@
 \chapter{手法}
+
+
+\section{数値シミュレーション}
+\subsection{外力付き Van Der Pol モデル}
+
+\begin{comment}
+    \begin{align}
+    \frac{d x}{d t} &= y\\
+    \frac{d y}{d t} &= \mu\left(1-x^2\right)y - x + P(x)
+\end{align}
+
+\begin{align}
+    \begin{cases}
+        \frac{d x}{d t} = y \\
+        \frac{d y}{d t} = \mu (1 - x^2) y - x + P(x)
+    \end{cases}
+\end{align}
+\end{comment}
+    
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        \frac{d x}{d t} &= y \\
+        \frac{d y}{d t} &= \mu(1 - x^2)y - x + P(x)
+    \end{aligned}
+    \right.
+\end{equation}
+
+\subsection{外力付き Rössler モデル}
+
+\section{学習空間の測定}
+\section{教師データ付き学習とHyperparameters の最適化}
+\section{短期的未来予測と統計量の取得}
+
+
 \clearpage

@@ -2,8 +2,48 @@
 %\documentclass[oneside]{suribt}% 本文が * ページ以下のときに (掲示に注意)
 
 \usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{amssymb,amsmath,amsfonts,amsthm}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+\usepackage{booktabs,tabularx}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{autobreak}
+\usepackage{lmodern}
+\usepackage{braket,physics} 
+\usepackage{bm}
+\usepackage{latexsym}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{here}
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+\columnseprule=0.2mm
+\usepackage{ascmac}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{lastpage}
+\usepackage{cancel}
+\usepackage{ulem} % ulemパッケージを追加
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{comment}
 
-\title{Reservoir Computer による\\カオス時系列予測と\\生体リズム研究への応用}
+
+% ========= 数学の基本的な定義やショートカット =========
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}} 
+
+
+
+\title{Reservoir Computer による\\外力付きカオス時系列予測と\\生体リズム研究への応用}
 %\titlewidth{}% タイトル幅 (指定するときは単位つきで)
 \author{久野　証}
 \eauthor{Sho Kuno}% Copyright 表示で使われる
@@ -46,6 +86,5 @@
 \bibliographystyle{unsrt}%           BibTeX を使う場合
 \bibliography{reference.bib}% BibTeX を使う場合
 
-\appendix% ここから付録 %%%%% 付録 %%%%%%%
-\chapter{}
+\input{input/appendix.tex}
 \end{document}

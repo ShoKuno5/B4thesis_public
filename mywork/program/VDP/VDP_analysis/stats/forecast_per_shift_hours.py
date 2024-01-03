@@ -68,15 +68,15 @@ def reset_esn():
     return reservoir >> readout
 
 
-# %%
-opt_shift_hour = -7
+# ここから変える
+opt_shift_hour = 0
 
 N = 10000
-iss = 0.27485355587624805
-lr = 0.5345512189408888
-ridge = 0.000655264507023661
+iss = 0.10559236858500565
+lr = 0.7072505111678798
 seed = 3
-sr = 0.33549492278694165
+ridge = 4.103903362369966e-06
+sr = 0.6723917252819582
 forecast = 1
 
 train_len = 40000
@@ -85,7 +85,7 @@ test_length = 20000
 nb_generations = 10000
 
 seed_timesteps = test_length 
-
+# ここまで変える
 
 # %%
 dir_name_1 = f"opt_{opt_shift_hour}_VDP_val"
