@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.24)  31 DEC 2023 22:32
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.12.24)  4 JAN 2024 20:18
  restricted system commands enabled.
  file:line:error style messages enabled.
 **skeleton
@@ -1448,36 +1448,40 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
 [2
 
 
+]
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 16.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 16.
+(load cache: extra_lmsans9-regular.luc) [3
+
+] [4
+
 ]) (./input/methods.tex
 第3章
-Excluding 'comment' comment. [3
+Excluding 'comment' comment. [5
 
 
 ]) (./input/results.tex
 第4章
-[4
+[6
 
 
 ]) (./input/discussion.tex
 第5章
-[5
+[7
 
 
-])
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 80.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 80.
-(load cache: extra_lmsans9-regular.luc) [6
+]) [8
 
-] (./out/skeleton.bbl [7
+] (./out/skeleton.bbl [9
 
 
-]) (./input/appendix.tex [8
+]) (./input/appendix.tex [10
 
 ]
 付録A
-) [9
+) [11
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1496,19 +1500,19 @@ Package rerunfilecheck Info: File `skeleton.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33784 strings out of 476506
+ 33786 strings out of 476506
  125244,1977958 words of node,token memory allocated
  3967 words of node memory still in use:
    35 hlist, 2 vlist, 17 rule, 2 glue, 4 kern, 1 glyph, 1221 attribute, 64 glue_spec, 143 attribute_list, 2 write, 38 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:13,2:14063,3:315,4:324,5:115,6:68,7:1493,8:26,9:600,10:19,11:29
+   avail lists: 1:13,2:14111,3:315,4:324,5:115,6:68,7:1501,8:26,9:600,10:19,11:29
  54721 multiletter control sequences out of 65536+600000
  143 fonts using 114336927 bytes
  139i,9n,141p,1756b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmsans9-regular.otf>{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmsans17-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on skeleton.pdf (15 pages, 118391 bytes).
+Output written on skeleton.pdf (17 pages, 120751 bytes).
 
-PDF statistics: 313 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 131072)
+PDF statistics: 321 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
+ 45 named destinations out of 1000 (max. 131072)
  432 words of extra memory for PDF output out of 10000 (max. 100000000)
 
