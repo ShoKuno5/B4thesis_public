@@ -5,7 +5,7 @@
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{breakable, skins, theorems}
 \usepackage{xcolor}
-\usepackage{ulem}
+%\usepackage{ulem}
 \usepackage{amssymb,amsmath,amsfonts,amsthm}
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs=true}
@@ -29,7 +29,7 @@
 \usepackage{physics}
 \usepackage{lastpage}
 \usepackage{cancel}
-\usepackage{ulem} % ulemパッケージを追加
+%\usepackage{ulem} % ulemパッケージを追加
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{comment}
@@ -75,7 +75,7 @@
 
 \input{input/discussion.tex}
 
-\cite{RODRIGUES20161}
+\input{input/summary.tex}
 
 \backmatter% ここから後付
 \chapter{謝辞}%%%%%%%%%%%%%%% 謝辞 %%%%%%%
@@ -83,7 +83,8 @@
 %\begin{thebibliography}{}%%%% 参考文献 %%%
 % \bibitem{}
 %\end{thebibliography}
-\bibliographystyle{unsrt}%           BibTeX を使う場合
+\bibliographystyle{unsrt}%           BibTeX を使う場合(引用された順)
+%\bibliographystyle{plain}%           BibTeX を使う場合(著者alphabet順)
 \bibliography{reference.bib}% BibTeX を使う場合
 
 \input{input/appendix.tex}

@@ -1,8 +1,52 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{RODRIGUES20161}
-Francisco~A. Rodrigues, Thomas K.~DM. Peron, Peng Ji, and Jurgen Kurths.
-\newblock The kuramoto model in complex networks.
-\newblock {\em Physics Reports}, 610:1--98, 2016.
+\bibitem{koriAcceleratingRecoveryJet2017}
+Hiroshi Kori, Yoshiaki Yamaguchi, and Hitoshi Okamura.
+\newblock Accelerating recovery from jet lag: Prediction from a multi-oscillator model and its experimental confirmation in model animals.
+\newblock {\em Sci Rep}, 7(1):46702, April 2017.
+
+\bibitem{yamaguchiMiceGeneticallyDeficient2013a}
+Yoshiaki Yamaguchi, Toru Suzuki, Yasutaka Mizoro, Hiroshi Kori, Kazuki Okada, Yulin Chen, Jean-Michel Fustin, Fumiyoshi Yamazaki, Naoki Mizuguchi, Jing Zhang, Xin Dong, Gozoh Tsujimoto, Yasushi Okuno, Masao Doi, and Hitoshi Okamura.
+\newblock Mice genetically deficient in vasopressin {{V1a}} and {{V1b}} receptors are resistant to jet lag.
+\newblock {\em Science}, 342(6154):85--90, October 2013.
+
+\bibitem{strogatz2018nonlinear}
+S.H. Strogatz.
+\newblock {\em Nonlinear Dynamics and Chaos: {{With}} Applications to Physics, Biology, Chemistry, and Engineering}.
+\newblock {CRC Press}, 2018.
+
+\bibitem{bolltExplainingSurprisingSuccess2021}
+Erik Bollt.
+\newblock On explaining the surprising success of reservoir computing forecaster of chaos? {{The}} universal machine learning dynamical system with contrast to {{VAR}} and {{DMD}}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science}, 31(1):013108, January 2021.
+
+\bibitem{grigoryevaChaosCompactManifolds2021}
+Lyudmila Grigoryeva, Allen Hart, and Juan-Pablo Ortega.
+\newblock Chaos on compact manifolds: {{Differentiable}} synchronizations beyond the {{Takens}} theorem.
+\newblock {\em Phys. Rev. E}, 103(6):062204, June 2021.
+
+\bibitem{grigoryevaLearningStrangeAttractors2023}
+Lyudmila Grigoryeva, Allen Hart, and Juan-Pablo Ortega.
+\newblock Learning strange attractors with reservoir systems.
+\newblock {\em Nonlinearity}, 36(9):4674--4708, September 2023.
+
+\bibitem{berryLearningTheoryDynamical2023a}
+Tyrus Berry and Suddhasattwa Das.
+\newblock Learning {{Theory}} for {{Dynamical Systems}}.
+\newblock {\em SIAM J. Appl. Dyn. Syst.}, 22(3):2082--2122, September 2023.
+
+\bibitem{grigoryevaUniversalDiscretetimeReservoir2018}
+Lyudmila Grigoryeva and Juan-Pablo Ortega.
+\newblock Universal discrete-time reservoir computers with stochastic inputs and linear readouts using non-homogeneous state-affine systems.
+\newblock {\em Journal of Machine Learning Research}, 19:1--40, September 2018.
+
+\bibitem{zhangSurveyReservoirComputing2023}
+Heng Zhang and Danilo~Vasconcellos Vargas.
+\newblock A {{Survey}} on {{Reservoir Computing}} and its {{Interdisciplinary Applications Beyond Traditional Machine Learning}}.
+\newblock {\em IEEE Access}, 11:81033--81070, 2023.
+
+\bibitem{kongDigitalTwinsNonlinear2022}
+Ling-Wei Kong, Yang Weng, Bryan Glaz, Mulugeta Haile, and Ying-Cheng Lai.
+\newblock Digital twins of nonlinear dynamical systems, October 2022.
 
 \end{thebibliography}
